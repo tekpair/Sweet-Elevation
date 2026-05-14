@@ -645,20 +645,26 @@
     color: rgba(251, 248, 244, 0.5);
     letter-spacing: 0.05em;
   }
-  .tekpair-credit {
+.tekpair-credit {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     color: var(--pink) !important;
     text-decoration: none;
-    margin: 0 4px;
-    transition: opacity 0.2s;
-  }
-  .tekpair-credit:hover { opacity: 0.75; }
-  .tekpair-credit img {
-    border-radius: 4px;
+    margin: 0 2px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: background 0.2s, opacity 0.2s;
     vertical-align: middle;
-    display: inline-block;
+    position: relative;
+    top: -1px;
+  }
+  .tekpair-credit:hover { background: rgba(41, 212, 245, 0.08); opacity: 1; }
+.tekpair-credit img,
+  .tekpair-credit svg {
+    border-radius: 4px;
+    display: block;
+    flex-shrink: 0;
   }
   .tekpair-credit span { display: inline; }
 
