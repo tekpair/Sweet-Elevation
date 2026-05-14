@@ -192,10 +192,17 @@
     align-items: center;
     justify-content: center;
   }
+.logo-slot img,
   .logo-slot svg {
-    height: 50px;
+    height: 70px;
     width: auto;
     display: block;
+    max-width: 240px;
+    object-fit: contain;
+  }
+  .logo-slot a {
+    display: block;
+    line-height: 0;
   }
   .nav-links {
     display: flex;
@@ -629,13 +636,16 @@
     transition: color 0.2s;
   }
   .foot-grid a:hover { color: var(--pink); }
-  .foot-logo-slot {
+.foot-logo-slot {
     margin-bottom: 20px;
   }
+  .foot-logo-slot img,
   .foot-logo-slot svg {
-    height: 56px;
+    height: 80px;
     width: auto;
+    max-width: 220px;
     display: block;
+    object-fit: contain;
   }
   .foot-bottom {
     border-top: 1px solid rgba(251, 248, 244, 0.1);
