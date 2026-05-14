@@ -47,8 +47,8 @@
 <meta name="twitter:image" content="https://sweetelevationbakery.com/og-image.jpg">
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#2d1b2e">
 
 <!-- Local Business Schema -->
@@ -161,18 +161,6 @@
     overflow-x: hidden;
   }
 
-  /* ─── Top Announcement Bar ─── */
-  .announce {
-    background: var(--accent);
-    color: var(--cream);
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .announce span { color: var(--pink); margin: 0 8px; }
-
   /* ─── Navigation ─── */
   nav {
     display: flex;
@@ -192,7 +180,7 @@
     align-items: center;
     justify-content: center;
   }
-.logo-slot img,
+  .logo-slot img,
   .logo-slot svg {
     height: 70px;
     width: auto;
@@ -232,20 +220,6 @@
   }
   .nav-links a:hover::after { width: 100%; }
 
-  .nav-icons {
-    display: flex;
-    gap: 22px;
-    align-items: center;
-  }
-  .nav-icons svg {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    color: var(--ink);
-    transition: color 0.2s;
-  }
-  .nav-icons svg:hover { color: var(--pink-deep); }
-
   /* ─── Hero ─── */
   .hero {
     display: grid;
@@ -276,39 +250,12 @@
     display: block;
   }
 
-  .photo-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    color: rgba(45, 27, 46, 0.5);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
   .hero-image::before {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4), transparent 50%);
     pointer-events: none;
-  }
-
-  .hero-badge {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    background: var(--accent);
-    color: var(--cream);
-    padding: 8px 16px;
-    border-radius: 100px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
   }
 
   .hero-content .eyebrow {
@@ -443,12 +390,6 @@
     max-width: 600px;
   }
   .section-head h2 em { font-style: italic; color: var(--pink-deep); }
-  .section-head .label {
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
 
   .cat-grid {
     display: grid;
@@ -465,27 +406,11 @@
     background: linear-gradient(135deg, #fdeef1 0%, #f4c6d0 100%);
   }
   .cat-card:hover { transform: translateY(-6px); }
-  .cat-card svg { display: block; }
   .cat-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-
-  .cat-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: rgba(45, 27, 46, 0.5);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
   }
 
   .cat-card .label-wrap {
@@ -568,42 +493,6 @@
     object-fit: cover;
     display: block;
   }
-  .doordash-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    color: rgba(255, 48, 8, 0.5);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  /* ─── About Strip ─── */
-  .about-strip {
-    padding: 100px 60px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .about-strip .eyebrow {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    color: var(--pink-deep);
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  .about-strip h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(34px, 3.5vw, 48px);
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--accent);
-    letter-spacing: -0.015em;
-  }
-  .about-strip h2 em { font-style: italic; color: var(--pink-deep); }
 
   /* ─── Footer ─── */
   footer {
@@ -636,7 +525,7 @@
     transition: color 0.2s;
   }
   .foot-grid a:hover { color: var(--pink); }
-.foot-logo-slot {
+  .foot-logo-slot {
     margin-bottom: 20px;
   }
   .foot-logo-slot img,
@@ -655,7 +544,7 @@
     color: rgba(251, 248, 244, 0.5);
     letter-spacing: 0.05em;
   }
-.tekpair-credit {
+  .tekpair-credit {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -670,7 +559,7 @@
     top: -1px;
   }
   .tekpair-credit:hover { background: rgba(41, 212, 245, 0.08); opacity: 1; }
-.tekpair-credit img,
+  .tekpair-credit img,
   .tekpair-credit svg {
     border-radius: 4px;
     display: block;
@@ -697,103 +586,103 @@
 
   <!-- Navigation -->
   <header>
-  <nav aria-label="Main navigation">
-    <div class="logo-slot">
-      <a href="/" aria-label="Sweet Elevation Bakery — Home">
-        <img src="assets/logo.png" alt="Sweet Elevation Bakery">
-      </a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="/about-us/">About</a></li>
-      <li><a href="/order-quote-request/">Order</a></li>
-      <li><a href="/weddings-events/">Weddings</a></li>
-      <li><a href="/classes/">Classes</a></li>
-      <li><a href="/portfolio/">Portfolio</a></li>
-      <li><a href="/charcuterie/">Charcuterie</a></li>
-      <li><a href="/contact-us/">Contact</a></li>
-    </ul>
-  </nav>
+    <nav aria-label="Main navigation">
+      <div class="logo-slot">
+        <a href="/" aria-label="Sweet Elevation Bakery — Home">
+          <img src="assets/logo.png" alt="Sweet Elevation Bakery">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/order-quote-request/">Order</a></li>
+        <li><a href="/weddings-events/">Weddings</a></li>
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/charcuterie/">Charcuterie</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
 
- <!-- Hero -->
-  <section class="hero">
-    <div class="hero-image">
-      <img src="assets/hero.jpg" alt="Custom decorated cake by Sweet Elevation Bakery in Latham, NY" loading="eager" fetchpriority="high">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-image">
+        <img src="assets/hero.jpg" alt="Custom decorated cake by Sweet Elevation Bakery in Latham, NY" loading="eager" fetchpriority="high">
+      </div>
+
+      <div class="hero-content">
+        <div class="eyebrow">elevate your dessert experience</div>
+        <h1>Storefront Bakery in <em>Latham, NY.</em></h1>
+        <p>Cupcakes, cookies, custom cakes, bars, brownies — plus allergy-friendly options.</p>
+        <div class="cta-group">
+          <a href="/order-quote-request/" class="btn btn-primary">Get a Quote →</a>
+          <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener" class="btn btn-doordash">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.071 8.409a6.09 6.09 0 0 0-5.396-3.228H.584A.589.589 0 0 0 .17 6.184L3.894 9.93a1.752 1.752 0 0 0 1.242.516h12.049a1.554 1.554 0 1 1 .031 3.108H8.91a.589.589 0 0 0-.415 1.003l3.725 3.747a1.75 1.75 0 0 0 1.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"/></svg>
+            Order on DoorDash
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-item">cupcakes</div>
+        <div class="marquee-item">custom cakes</div>
+        <div class="marquee-item">cookies</div>
+        <div class="marquee-item">brownies</div>
+        <div class="marquee-item">allergy-friendly</div>
+        <div class="marquee-item">charcuterie</div>
+        <div class="marquee-item">cupcakes</div>
+        <div class="marquee-item">custom cakes</div>
+        <div class="marquee-item">cookies</div>
+        <div class="marquee-item">brownies</div>
+        <div class="marquee-item">allergy-friendly</div>
+        <div class="marquee-item">charcuterie</div>
+      </div>
     </div>
 
-    <div class="hero-content">
-      <div class="eyebrow">elevate your dessert experience</div>
-      <h1>Storefront Bakery in <em>Latham, NY.</em></h1>
-      <p>Cupcakes, cookies, custom cakes, bars, brownies — plus allergy-friendly options.</p>
-      <div class="cta-group">
-        <a href="/order-quote-request/" class="btn btn-primary">Get a Quote →</a>
+    <!-- Categories -->
+    <section class="categories">
+      <div class="section-head">
+        <h2>A <em>look at</em> what we offer</h2>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <img src="assets/cupcakes.jpg" alt="Assorted cupcakes from Sweet Elevation Bakery, Latham NY" loading="lazy">
+          <div class="label-wrap"><span>01</span><h3>Cupcakes</h3></div>
+        </div>
+        <div class="cat-card">
+          <img src="assets/cookies.jpg" alt="Decorated cookies from Sweet Elevation Bakery, Latham NY" loading="lazy">
+          <div class="label-wrap"><span>02</span><h3>Cookies</h3></div>
+        </div>
+        <div class="cat-card">
+          <img src="assets/custom-cakes.jpg" alt="Custom decorated cake from Sweet Elevation Bakery, Latham NY" loading="lazy">
+          <div class="label-wrap"><span>03</span><h3>Custom Cakes</h3></div>
+        </div>
+        <div class="cat-card">
+          <img src="assets/brownies.jpg" alt="Brownies and dessert bars from Sweet Elevation Bakery, Latham NY" loading="lazy">
+          <div class="label-wrap"><span>04</span><h3>Brownies & Bars</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DoorDash Block -->
+    <section class="doordash-block" id="doordash">
+      <div>
+        <h2>Cravings, <em>delivered.</em></h2>
+        <p>Skip the trip. Order our most popular sweets straight to your door — same fresh-baked quality, just faster.</p>
         <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener" class="btn btn-doordash">
           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.071 8.409a6.09 6.09 0 0 0-5.396-3.228H.584A.589.589 0 0 0 .17 6.184L3.894 9.93a1.752 1.752 0 0 0 1.242.516h12.049a1.554 1.554 0 1 1 .031 3.108H8.91a.589.589 0 0 0-.415 1.003l3.725 3.747a1.75 1.75 0 0 0 1.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"/></svg>
           Order on DoorDash
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Marquee -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <div class="marquee-item">cupcakes</div>
-      <div class="marquee-item">custom cakes</div>
-      <div class="marquee-item">cookies</div>
-      <div class="marquee-item">brownies</div>
-      <div class="marquee-item">allergy-friendly</div>
-      <div class="marquee-item">charcuterie</div>
-      <div class="marquee-item">cupcakes</div>
-      <div class="marquee-item">custom cakes</div>
-      <div class="marquee-item">cookies</div>
-      <div class="marquee-item">brownies</div>
-      <div class="marquee-item">allergy-friendly</div>
-      <div class="marquee-item">charcuterie</div>
-    </div>
-  </div>
-
-  <!-- Categories -->
-<section class="categories">
-  <div class="section-head">
-    <h2>A <em>look at</em> what we offer</h2>
-  </div>
-  <div class="cat-grid">
-    <div class="cat-card">
-      <img src="assets/cupcakes.jpg" alt="Assorted cupcakes from Sweet Elevation Bakery, Latham NY" loading="lazy">
-      <div class="label-wrap"><span>01</span><h3>Cupcakes</h3></div>
-    </div>
-    <div class="cat-card">
-      <img src="assets/cookies.jpg" alt="Decorated cookies from Sweet Elevation Bakery, Latham NY" loading="lazy">
-      <div class="label-wrap"><span>02</span><h3>Cookies</h3></div>
-    </div>
-    <div class="cat-card">
-      <img src="assets/custom-cakes.jpg" alt="Custom decorated cake from Sweet Elevation Bakery, Latham NY" loading="lazy">
-      <div class="label-wrap"><span>03</span><h3>Custom Cakes</h3></div>
-    </div>
-    <div class="cat-card">
-      <img src="assets/brownies.jpg" alt="Brownies and dessert bars from Sweet Elevation Bakery, Latham NY" loading="lazy">
-      <div class="label-wrap"><span>04</span><h3>Brownies & Bars</h3></div>
-    </div>
-  </div>
-</section>
-
-<!-- DoorDash Block -->
-  <section class="doordash-block" id="doordash">
-    <div>
-      <h2>Cravings, <em>delivered.</em></h2>
-      <p>Skip the trip. Order our most popular sweets straight to your door — same fresh-baked quality, just faster.</p>
-      <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener" class="btn btn-doordash">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.071 8.409a6.09 6.09 0 0 0-5.396-3.228H.584A.589.589 0 0 0 .17 6.184L3.894 9.93a1.752 1.752 0 0 0 1.242.516h12.049a1.554 1.554 0 1 1 .031 3.108H8.91a.589.589 0 0 0-.415 1.003l3.725 3.747a1.75 1.75 0 0 0 1.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"/></svg>
-        Order on DoorDash
-      </a>
-    </div>
-    <div class="doordash-visual">
-      <img src="assets/doordash.jpg" alt="Sweet Elevation Bakery desserts available for DoorDash delivery in Latham, NY" loading="lazy">
-    </div>
-  </section>
+      <div class="doordash-visual">
+        <img src="assets/doordash.jpg" alt="Sweet Elevation Bakery desserts available for DoorDash delivery in Latham, NY" loading="lazy">
+      </div>
+    </section>
 
   </main>
 
@@ -801,7 +690,7 @@
   <footer>
     <div class="foot-grid">
       <div>
-<div class="foot-logo-slot">
+        <div class="foot-logo-slot">
           <img src="assets/logo.png" alt="Sweet Elevation Bakery">
         </div>
         <p>Storefront bakery serving Latham, NY and the greater Capital Region with custom cakes, cupcakes, cookies, and allergy-friendly desserts.</p>
@@ -831,7 +720,7 @@
     </div>
     <div class="foot-bottom">
       © 2026 Sweet Elevation Bakery — Made with care by
-<a href="https://tekpair.com" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+      <a href="https://tekpair.com" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
         <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
           <path fill="#29D4F5" d="M881.38,0H118.62C53.11,0,0,53.11,0,118.62v762.77C0,946.89,53.11,1000,118.62,1000h762.77 c65.51,0,118.62-53.11,118.62-118.62V118.62C1000,53.11,946.89,0,881.38,0z M452.91,895.55L126.36,644.31V355.69l125.22-96.34 v240.59l-0.1,0.08l201.43,154.97V895.55z M452.91,345.05l-124.74,95.97V200.42l124.74-95.98V345.05z M671.83,799.58l-124.74,95.98 v-240.6l124.74-95.97V799.58z M873.64,644.31l-125.22,96.34V500.06l0.1-0.08L547.09,345.01V104.45l326.54,251.25V644.31z"/>
           <polygon fill="#111318" points="328.17,441.02 452.91,345.05 452.91,104.45 328.17,200.42"/>
