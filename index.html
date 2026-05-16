@@ -327,26 +327,28 @@
     display: inline-block;
     font-weight: 600;
   }
-  .menu h2 {
+.menu h2 {
     font-family: 'DM Serif Display', serif;
     font-size: clamp(44px, 5.5vw, 84px);
     font-weight: 400;
     line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--navy);
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
   .menu h2 em {
     font-style: italic;
     color: var(--cream);
   }
-  .menu-sub {
-    font-size: 17px;
-    color: var(--navy-soft);
-    max-width: 540px;
+  .menu-squiggle {
+    width: 120px;
+    height: 14px;
     margin: 0 auto 64px;
-    line-height: 1.6;
+    display: block;
+    color: var(--cream);
   }
+
+
 
   .menu-grid {
     display: grid;
@@ -375,21 +377,37 @@
     transition: transform 0.7s ease;
   }
   .menu-item:hover .menu-img img { transform: scale(1.05); }
-  .menu-info {
-    padding: 20px 22px 24px;
+.menu-info {
+    padding: 22px 22px 26px;
+    text-align: center;
   }
-  .menu-info h3 {
+  .menu-info a {
     font-family: 'DM Serif Display', serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 400;
     color: var(--navy);
-    margin-bottom: 4px;
     letter-spacing: -0.01em;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s;
   }
-  .menu-info p {
-    font-size: 13px;
-    color: var(--ink-soft);
-    line-height: 1.5;
+  .menu-info a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: var(--peach-deep);
+    transition: width 0.3s ease;
+  }
+  .menu-info a:hover {
+    color: var(--peach-deep);
+  }
+  .menu-info a:hover::after {
+    width: 100%;
   }
 
   /* ─── Story section ─── */
