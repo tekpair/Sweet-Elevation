@@ -115,43 +115,15 @@
     border-bottom: 1px solid var(--line);
   }
   nav {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 18px 48px;
+    padding: 22px 48px 18px;
     max-width: 1600px;
     margin: 0 auto;
-    gap: 40px;
+    gap: 14px;
   }
-  .nav-left, .nav-right {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-    align-items: center;
-  }
-  .nav-right { justify-content: flex-end; }
-  nav a {
-    text-decoration: none;
-    color: var(--navy);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-    position: relative;
-  }
-  nav a:hover { color: var(--peach-deep); }
-  .nav-soon {
-    font-size: 9px;
-    background: var(--peach);
-    color: var(--navy);
-    padding: 2px 6px;
-    border-radius: 100px;
-    margin-left: 6px;
-    letter-spacing: 0.1em;
-    vertical-align: middle;
-    font-weight: 600;
-  }
+  .logo-slot a { display: block; line-height: 0; }
   .logo-slot img {
     height: 78px;
     width: auto;
@@ -159,15 +131,84 @@
     object-fit: contain;
     display: block;
   }
-  .logo-slot a { display: block; line-height: 0; }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--peach-deep); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: var(--peach-deep);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 80%; }
+  .nav-soon {
+    font-size: 9px;
+    background: var(--peach);
+    color: var(--navy);
+    padding: 2px 6px;
+    border-radius: 100px;
+    margin-left: 4px;
+    letter-spacing: 0.1em;
+    vertical-align: middle;
+    font-weight: 600;
+  }
 
-  /* ─── Hero ─── */
+  /* ─── Hero with video background ─── */
   .hero {
-    padding: 110px 48px 70px;
-    max-width: 1300px;
-    margin: 0 auto;
+    padding: 140px 48px 140px;
     text-align: center;
     position: relative;
+    overflow: hidden;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      linear-gradient(to bottom, rgba(250, 243, 234, 0.55) 0%, rgba(250, 243, 234, 0.3) 50%, var(--cream) 100%);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .hero-script {
     font-family: 'Caveat', cursive;
@@ -252,59 +293,21 @@
     color: var(--cream);
   }
 
-/* ─── Video Showcase ─── */
-  .showcase {
-    padding: 0 48px 0;
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-  .showcase-video {
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    border-radius: 6px;
-    background: var(--cream-deep);
-    position: relative;
-  }
-  .showcase-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .showcase-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to bottom, transparent 0%, var(--cream) 100%);
-    pointer-events: none;
-  }
-
   /* ─── Menu (peach background) ─── */
   .menu-wrap {
     background: var(--peach);
-    margin-top: 100px;
     position: relative;
   }
-  .menu-wrap-top, .menu-wrap-bottom {
+  .menu-wrap-bottom {
     position: absolute;
     left: 0;
     right: 0;
     width: 100%;
     height: 30px;
     display: block;
-  }
-  .menu-wrap-top {
-    top: -1px;
-    transform: translateY(-100%);
-  }
-  .menu-wrap-bottom {
     bottom: -1px;
     transform: translateY(100%);
   }
-  .menu-wrap-top path,
   .menu-wrap-bottom path {
     fill: var(--peach);
   }
@@ -607,23 +610,28 @@
   footer {
     background: var(--navy);
     color: var(--cream);
-    padding: 80px 48px 32px;
+    padding: 90px 48px 36px;
   }
-  .foot-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    gap: 60px;
+  .foot-inner {
     max-width: 1400px;
-    margin: 0 auto 60px;
+    margin: 0 auto;
   }
-  .foot-logo {
+  .foot-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(250, 243, 234, 0.1);
+    margin-bottom: 36px;
+  }
+  .foot-brand .foot-logo {
     background: var(--cream);
-    padding: 16px;
-    border-radius: 6px;
+    padding: 16px 20px;
+    border-radius: 8px;
     width: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
-  .foot-logo img {
+  .foot-brand .foot-logo img {
     height: 64px;
     width: auto;
     max-width: 200px;
@@ -636,65 +644,101 @@
     line-height: 1.5;
     color: var(--peach);
     max-width: 280px;
+    margin-bottom: 24px;
   }
-  .foot-grid h4 {
+  .foot-contact {
+    font-size: 14px;
+    color: rgba(250, 243, 234, 0.65);
+    line-height: 1.8;
+  }
+  .foot-contact a {
+    color: rgba(250, 243, 234, 0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .foot-contact a:hover { color: var(--peach); }
+
+  .foot-col h4 {
     font-family: 'DM Serif Display', serif;
     font-size: 20px;
     margin-bottom: 20px;
     color: var(--peach);
     font-weight: 400;
+    letter-spacing: 0.01em;
   }
-  .foot-grid p, .foot-grid a {
+  .foot-col ul {
+    list-style: none;
+  }
+  .foot-col li {
+    margin-bottom: 12px;
+  }
+  .foot-col a {
     color: rgba(250, 243, 234, 0.65);
     text-decoration: none;
     font-size: 14px;
-    line-height: 2;
-    display: block;
     transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
-  .foot-grid a:hover { color: var(--peach); }
+  .foot-col a:hover { color: var(--peach); }
+  .foot-soon {
+    font-size: 9px;
+    background: rgba(244, 196, 173, 0.15);
+    color: var(--peach);
+    padding: 2px 7px;
+    border-radius: 100px;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
   .foot-bottom {
-    border-top: 1px solid rgba(250, 243, 234, 0.1);
-    padding-top: 28px;
-    max-width: 1400px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    color: rgba(250, 243, 234, 0.45);
-    letter-spacing: 0.05em;
-    gap: 16px;
+    color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .foot-bottom .copyright {
+    line-height: 1;
   }
   .tekpair-credit {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: var(--peach);
     text-decoration: none;
     transition: opacity 0.2s;
     line-height: 1;
+    font-size: 12px;
+    font-weight: 500;
   }
-  .tekpair-credit:hover { opacity: 0.7; }
+  .tekpair-credit:hover { opacity: 0.75; }
   .tekpair-credit svg {
-    width: 14px;
-    height: 14px;
+    width: 16px !important;
+    height: 16px !important;
     border-radius: 3px;
     flex-shrink: 0;
     display: block;
   }
+  .tekpair-credit span {
+    line-height: 1;
+    display: inline-block;
+  }
 
   /* ─── Responsive ─── */
   @media (max-width: 900px) {
-    nav { grid-template-columns: 1fr auto 1fr; padding: 14px 20px; gap: 12px; }
-    .nav-left, .nav-right { display: none; }
-    .logo-slot img { height: 58px; }
+    nav { padding: 18px 20px 16px; gap: 12px; }
+    .logo-slot img { height: 60px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.08em; }
 
-    .hero { padding: 60px 24px 50px; }
-    .showcase { padding: 0 24px; }
-    .showcase-image { aspect-ratio: 4/3; }
+    .hero { padding: 80px 24px 100px; min-height: 560px; }
 
-    .menu-wrap { margin-top: 60px; }
     .menu { padding: 70px 24px 60px; }
     .menu-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -720,16 +764,30 @@
       margin-bottom: 40px;
     }
 
-    .foot-grid {
+    footer { padding: 70px 24px 32px; }
+    .foot-top {
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 40px 32px;
+      padding-bottom: 40px;
+    }
+    .foot-brand {
+      grid-column: 1 / -1;
     }
     .foot-bottom {
+      justify-content: center;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       text-align: center;
     }
-    footer { padding: 60px 24px 30px; }
+  }
+
+  @media (max-width: 500px) {
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 10px; }
+    .foot-top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
   }
 </style>
 </head>
@@ -738,55 +796,47 @@
   <!-- Navigation -->
   <header>
     <nav aria-label="Main navigation">
-      <ul class="nav-left">
-        <li><a href="about-us/">About</a></li>
-        <li><a href="weddings-events/">Weddings & Events</a></li>
-        <li><a href="classes/">Store</a></li>
-      </ul>
       <div class="logo-slot">
         <a href="/" aria-label="Sweet Elevation Bakery — Home">
           <img src="assets/logo.png" alt="Sweet Elevation Bakery">
         </a>
       </div>
-      <ul class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about-us/">About</a></li>
+        <li><a href="weddings-events/">Weddings &amp; Events</a></li>
+        <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Order</a></li>
+        <li><a href="classes/">Store</a></li>
         <li><a href="portfolio/">Portfolio</a></li>
-        <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Order ↗</a></li>
-        <li><a href="contact-us/">Visit</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
 
-    <!-- Hero -->
+    <!-- Hero with video background -->
     <section class="hero">
-      <div class="hero-script">from the Adirondacks, with love</div>
-      <h1>Mountain-town recipes,<br><em>Capital District home.</em></h1>
-      <p class="hero-sub">A small-batch storefront bakery in Latham, NY — custom cakes, cupcakes, cookies, and allergy-friendly desserts, all handmade by Jennifer and her team.</p>
-      <div class="hero-cta-row">
-        <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5" rx="1"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-          Order Custom Cakes
-        </a>
-        <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener" class="btn btn-doordash">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.071 8.409a6.09 6.09 0 0 0-5.396-3.228H.584A.589.589 0 0 0 .17 6.184L3.894 9.93a1.752 1.752 0 0 0 1.242.516h12.049a1.554 1.554 0 1 1 .031 3.108H8.91a.589.589 0 0 0-.415 1.003l3.725 3.747a1.75 1.75 0 0 0 1.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"/></svg>
-          DoorDash Delivery
-        </a>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-script">from the Adirondacks, with love</div>
+        <h1>Mountain-town recipes,<br><em>Capital District home.</em></h1>
+        <p class="hero-sub">A small-batch storefront bakery in Latham, NY — custom cakes, cupcakes, cookies, and allergy-friendly desserts, all handmade by Jennifer and her team.</p>
+        <div class="hero-cta-row">
+          <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/><path d="M2 21h20"/></svg>
+            Order Custom Cakes
+          </a>
+          <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener" class="btn btn-doordash">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.071 8.409a6.09 6.09 0 0 0-5.396-3.228H.584A.589.589 0 0 0 .17 6.184L3.894 9.93a1.752 1.752 0 0 0 1.242.516h12.049a1.554 1.554 0 1 1 .031 3.108H8.91a.589.589 0 0 0-.415 1.003l3.725 3.747a1.75 1.75 0 0 0 1.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"/></svg>
+            DoorDash Delivery
+          </a>
+        </div>
       </div>
     </section>
 
-<!-- Video Showcase -->
-    <section class="showcase">
-      <div class="showcase-video">
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="Sweet Elevation Bakery — behind the scenes">
-          <source src="assets/hero-video.mp4" type="video/mp4">
-          <source src="assets/hero-video.webm" type="video/webm">
-        </video>
-        <div class="showcase-fade"></div>
-      </div>
-    </section>
-
-    <!-- Menu (peach background, no top scallop, only bottom wave) -->
+    <!-- Menu (peach background) -->
     <div class="menu-wrap">
       <section class="menu">
         <div class="menu-eyebrow">a little taste</div>
@@ -826,14 +876,14 @@
               <img src="assets/brownies.jpg" alt="Brownies and bars by Sweet Elevation Bakery" loading="lazy">
             </div>
             <div class="menu-info">
-              <h3>Brownies & Bars</h3>
+              <h3>Brownies &amp; Bars</h3>
               <p>Fudgy, chewy, dangerously good.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Bottom wave (the one you liked) -->
+      <!-- Bottom wave -->
       <svg class="menu-wrap-bottom" viewBox="0 0 1200 30" preserveAspectRatio="none">
         <path d="M0,0 Q30,30 60,0 T120,0 T180,0 T240,0 T300,0 T360,0 T420,0 T480,0 T540,0 T600,0 T660,0 T720,0 T780,0 T840,0 T900,0 T960,0 T1020,0 T1080,0 T1140,0 T1200,0 L1200,0 L0,0 Z" />
       </svg>
@@ -904,7 +954,7 @@
           </div>
           <div class="visit-card">
             <h3>Hours</h3>
-            <p>Tue–Fri · 8am – 6pm<br>Saturday · 8am – 5pm<br>Sun & Mon · Closed</p>
+            <p>Tue–Fri · 8am – 6pm<br>Saturday · 8am – 5pm<br>Sun &amp; Mon · Closed</p>
           </div>
           <div class="visit-card">
             <h3>Call</h3>
@@ -913,7 +963,7 @@
         </div>
 
         <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5" rx="1"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/><path d="M2 21h20"/></svg>
           Order Custom Cakes
         </a>
       </div>
@@ -923,49 +973,71 @@
 
   <!-- Footer -->
   <footer>
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo">
-          <img src="assets/logo.png" alt="Sweet Elevation Bakery">
+    <div class="foot-inner">
+
+      <div class="foot-top">
+
+        <div class="foot-brand">
+          <div class="foot-logo">
+            <img src="assets/logo.png" alt="Sweet Elevation Bakery">
+          </div>
+          <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+          <div class="foot-contact">
+            <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+            <a href="tel:+15188180010">(518) 818-0010</a><br>
+            Tue – Sat
+          </div>
         </div>
-        <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+
+        <div class="foot-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Custom Cakes</a></li>
+            <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash</a></li>
+            <li><a href="weddings-events/">Weddings &amp; Events</a></li>
+            <li><a href="charcuterie/">Charcuterie</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="classes/">Courses <span class="foot-soon">Soon</span></a></li>
+            <li><a href="recipes/">Recipes <span class="foot-soon">Soon</span></a></li>
+            <li><a href="membership/">Members Club <span class="foot-soon">Soon</span></a></li>
+            <li><a href="portfolio/">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about-us/">Our Story</a></li>
+            <li><a href="contact-us/">Contact</a></li>
+            <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div>
-        <h4>Order</h4>
-        <a href="https://mycustombakes.com" target="_blank" rel="noopener">Custom Cakes ↗</a>
-        <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash ↗</a>
-        <a href="weddings-events/">Weddings & Events</a>
-        <a href="charcuterie/">Charcuterie</a>
+
+      <div class="foot-bottom">
+        <div class="copyright">© 2026 Sweet Elevation Bakery</div>
+        <div>
+          Website by
+          <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+            <svg viewBox="0 0 1000 1000" width="16" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#29D4F5" d="M881.38,0H118.62C53.11,0,0,53.11,0,118.62v762.77C0,946.89,53.11,1000,118.62,1000h762.77 c65.51,0,118.62-53.11,118.62-118.62V118.62C1000,53.11,946.89,0,881.38,0z M452.91,895.55L126.36,644.31V355.69l125.22-96.34 v240.59l-0.1,0.08l201.43,154.97V895.55z M452.91,345.05l-124.74,95.97V200.42l124.74-95.98V345.05z M671.83,799.58l-124.74,95.98 v-240.6l124.74-95.97V799.58z M873.64,644.31l-125.22,96.34V500.06l0.1-0.08L547.09,345.01V104.45l326.54,251.25V644.31z"/>
+              <polygon fill="#111318" points="328.17,441.02 452.91,345.05 452.91,104.45 328.17,200.42"/>
+              <polygon fill="#111318" points="251.58,499.94 251.58,259.35 126.36,355.69 126.36,644.31 452.91,895.55 452.91,654.99 251.48,500.02"/>
+              <polygon fill="#111318" points="547.09,895.55 671.83,799.58 671.83,558.99 547.09,654.95"/>
+              <polygon fill="#111318" points="547.09,345.01 748.52,499.98 748.42,500.06 748.42,740.65 873.64,644.31 873.64,355.69 547.09,104.45"/>
+            </svg>
+            <span>Tekpair</span>
+          </a>
+        </div>
       </div>
-      <div>
-        <h4>Learn</h4>
-        <a href="classes/">Courses · Soon</a>
-        <a href="recipes/">Recipes · Soon</a>
-        <a href="membership/">Members Club · Soon</a>
-        <a href="portfolio/">Portfolio</a>
-      </div>
-      <div>
-        <h4>Find Us</h4>
-        <p>356 Troy Schenectady Rd<br>Latham, NY 12110</p>
-        <p>(518) 818-0010</p>
-        <p>Tue–Sat</p>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div>© 2026 Sweet Elevation Bakery</div>
-      <div>
-        Website by
-        <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
-          <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path fill="#29D4F5" d="M881.38,0H118.62C53.11,0,0,53.11,0,118.62v762.77C0,946.89,53.11,1000,118.62,1000h762.77 c65.51,0,118.62-53.11,118.62-118.62V118.62C1000,53.11,946.89,0,881.38,0z M452.91,895.55L126.36,644.31V355.69l125.22-96.34 v240.59l-0.1,0.08l201.43,154.97V895.55z M452.91,345.05l-124.74,95.97V200.42l124.74-95.98V345.05z M671.83,799.58l-124.74,95.98 v-240.6l124.74-95.97V799.58z M873.64,644.31l-125.22,96.34V500.06l0.1-0.08L547.09,345.01V104.45l326.54,251.25V644.31z"/>
-            <polygon fill="#111318" points="328.17,441.02 452.91,345.05 452.91,104.45 328.17,200.42"/>
-            <polygon fill="#111318" points="251.58,499.94 251.58,259.35 126.36,355.69 126.36,644.31 452.91,895.55 452.91,654.99 251.48,500.02"/>
-            <polygon fill="#111318" points="547.09,895.55 671.83,799.58 671.83,558.99 547.09,654.95"/>
-            <polygon fill="#111318" points="547.09,345.01 748.52,499.98 748.42,500.06 748.42,740.65 873.64,644.31 873.64,355.69 547.09,104.45"/>
-          </svg>
-          Tekpair
-        </a>
-      </div>
+
     </div>
   </footer>
 
