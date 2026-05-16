@@ -252,13 +252,13 @@
     color: var(--cream);
   }
 
-  /* ─── Hero image showcase ─── */
+/* ─── Video Showcase ─── */
   .showcase {
     padding: 0 48px 0;
     max-width: 1300px;
     margin: 0 auto;
   }
-  .showcase-image {
+  .showcase-video {
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
@@ -266,11 +266,20 @@
     background: var(--cream-deep);
     position: relative;
   }
-  .showcase-image img {
+  .showcase-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+  .showcase-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent 0%, var(--cream) 100%);
+    pointer-events: none;
   }
 
   /* ─── Menu (peach background) ─── */
@@ -766,10 +775,14 @@
       </div>
     </section>
 
-    <!-- Showcase image -->
+<!-- Video Showcase -->
     <section class="showcase">
-      <div class="showcase-image">
-        <img src="assets/hero.jpg" alt="Custom decorated cake by Sweet Elevation Bakery in Latham, NY" loading="eager" fetchpriority="high">
+      <div class="showcase-video">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="Sweet Elevation Bakery — behind the scenes">
+          <source src="assets/hero-video.mp4" type="video/mp4">
+          <source src="assets/hero-video.webm" type="video/webm">
+        </video>
+        <div class="showcase-fade"></div>
       </div>
     </section>
 
