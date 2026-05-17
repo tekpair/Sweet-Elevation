@@ -920,6 +920,7 @@
         slug: 'bake-at-home',
         name: 'Bake at Home',
         category: 'digital',
+        categoryLabel: 'Digital',
         description: 'Step-by-step guides and video tutorials from Jennifer — bake her signatures at home, on your own schedule.',
         price: null,
         status: 'Coming Soon',
@@ -931,6 +932,7 @@
         slug: 'signature-recipes',
         name: 'Signature Recipes',
         category: 'digital',
+        categoryLabel: 'Digital',
         description: "The recipes Jennifer built her name on — single recipes and curated bundles, instantly downloadable.",
         price: null,
         status: 'Coming Soon',
@@ -942,6 +944,7 @@
         slug: 'recipe-cards',
         name: 'Printed Recipe Cards',
         category: 'physical',
+        categoryLabel: 'Physical',
         description: "Beautifully printed 4×6 cards of Jennifer's signature recipes — sold in collectible sets, shipped to your door.",
         price: null,
         status: 'Coming Soon',
@@ -953,6 +956,7 @@
         slug: 'cookbook',
         name: 'The Cookbook',
         category: 'physical',
+        categoryLabel: 'Physical',
         description: 'A real, printed cookbook from Sweet Elevation — every recipe, every story, every signature. Available digitally or in print.',
         price: null,
         status: 'Coming Soon',
@@ -964,6 +968,7 @@
         slug: 'gift-cards',
         name: 'Gift Cards',
         category: 'gift',
+        categoryLabel: 'Gift',
         description: 'Give the gift of Sweet Elevation. Use in-store or for any custom order. Sent by email — no shipping required.',
         price: null,
         status: 'Coming Soon',
@@ -987,6 +992,7 @@
         const matchesSearch = searchTerm === '' ||
           p.name.toLowerCase().includes(searchTerm) ||
           p.description.toLowerCase().includes(searchTerm) ||
+          p.categoryLabel.toLowerCase().includes(searchTerm);
         return matchesFilter && matchesSearch;
       });
 
