@@ -1012,7 +1012,7 @@
         const priceBlock = p.price
           ? `<span class="product-card-price">$${p.price}</span>`
           : `<span class="product-card-price soon">${p.status}</span>`;
-        const ctaLabel = p.price ? 'View';
+        const ctaLabel = p.price ? 'View' ? 'Details';
 
         return `
           <a href="${p.url}" class="product-card">
