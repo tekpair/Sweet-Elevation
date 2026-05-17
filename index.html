@@ -410,6 +410,29 @@
     width: 100%;
   }
 
+  .menu-storelink {
+    display: inline-block;
+    margin-top: 48px;
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .menu-storelink::after {
+    content: ' →';
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .menu-storelink:hover {
+    color: var(--cream);
+  }
+  .menu-storelink:hover::after {
+    transform: translateX(4px);
+  }
+
   /* ─── Story section ─── */
   .story {
     background: var(--cream);
@@ -910,7 +933,7 @@
         <a href="portfolio/#cheesecakes">Cheesecakes</a>
       </div>
     </div>
-    <div class="menu-item">
+<div class="menu-item">
       <div class="menu-img">
         <img src="assets/platters.jpg" alt="Dessert Platters by Sweet Elevation Bakery" loading="lazy">
       </div>
@@ -919,6 +942,7 @@
       </div>
     </div>
   </div>
+  <a href="store/" class="menu-storelink">View our online store</a>
 </section>
 
       <!-- Bottom wave -->
