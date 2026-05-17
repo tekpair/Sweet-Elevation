@@ -381,33 +381,37 @@
     padding: 22px 22px 26px;
     text-align: center;
   }
-  .menu-info a {
+  .menu-info h3 {
     font-family: 'DM Serif Display', serif;
     font-size: 24px;
     font-weight: 400;
     color: var(--navy);
     letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .menu-info .menu-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 100px;
     text-decoration: none;
-    position: relative;
-    display: inline-block;
-    transition: color 0.2s;
+    transition: all 0.25s ease;
   }
-  .menu-info a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 1.5px;
+  .menu-info .menu-cta:hover {
     background: var(--peach-deep);
-    transition: width 0.3s ease;
+    transform: translateY(-1px);
   }
-  .menu-info a:hover {
-    color: var(--peach-deep);
-  }
-  .menu-info a:hover::after {
-    width: 100%;
+  .menu-info .menu-cta svg {
+    width: 11px;
+    height: 11px;
   }
 
   /* ─── Story section ─── */
@@ -857,9 +861,13 @@
       <div class="menu-img">
         <img src="assets/custom-cakes.jpg" alt="Custom cakes by Sweet Elevation Bakery" loading="lazy">
       </div>
-      <div class="menu-info">
-        <a href="https://www.mycustombakes.com/sweetelevationbakery/products/view/Custom%20Decorated%20Cake%20">Custom Cakes</a>
-      </div>
+<div class="menu-info">
+  <h3>Custom Cakes</h3>
+  <a href="https://www.mycustombakes.com/sweetelevationbakery/products/view/Custom%20Decorated%20Cake%20" target="_blank" rel="noopener" class="menu-cta">
+    Get Quote
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+  </a>
+</div>
     </div>
     <div class="menu-item">
       <div class="menu-img">
