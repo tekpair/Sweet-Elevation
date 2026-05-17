@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  WEBSITE BY TEKPAIR
+  ============================================================
+
+  Design & Development: Tekpair
+  tekpair.com/webdesign | Cohoes, NY | Capital Region
+
+  A site like this starts at $300.
+  connor@tekpair.com
+
+  ============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Weddings & Events | Sweet Elevation Bakery — Latham, NY</title>
+<meta name="description" content="Custom wedding cakes, dessert tables, and event desserts from Sweet Elevation Bakery in Latham, NY. Delivery and setup available across the Capital Region.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sweet Elevation Bakery">
+<meta name="geo.region" content="US-NY">
+<meta name="geo.placename" content="Latham, New York">
+<link rel="canonical" href="https://sweetelevationbakery.com/weddings-events/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sweet Elevation Bakery">
+<meta property="og:title" content="Weddings & Events | Sweet Elevation Bakery">
+<meta property="og:description" content="Custom wedding cakes and event desserts in the Capital Region.">
+<meta property="og:url" content="https://sweetelevationbakery.com/weddings-events/">
+<meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1f2950">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #faf3ea;
+    --cream-deep: #f4ead9;
+    --navy: #1f2950;
+    --navy-soft: #3d4670;
+    --peach: #f4c4ad;
+    --peach-deep: #e89f80;
+    --ink-soft: #5a5b73;
+    --line: #e8dfd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── Navigation ─── */
+  header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 48px 18px;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .logo-slot a { display: block; line-height: 0; }
+  .logo-slot img {
+    height: 78px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+    display: block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--peach-deep); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: var(--peach-deep);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 80%; }
+  .nav-links a.active { color: var(--peach-deep); }
+  .nav-links a.active::after { width: 80%; }
+
+  /* ─── Page Hero ─── */
+  .page-hero {
+    text-align: center;
+    padding: 90px 48px 50px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .page-hero .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .page-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 6.5vw, 92px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
+  .page-hero p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ─── What We Offer ─── */
+  .offer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 48px 100px;
+  }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .offer-card {
+    background: var(--cream-deep);
+    padding: 40px 32px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .offer-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--peach-deep);
+    margin: 0 auto 20px;
+    display: block;
+  }
+  .offer-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .offer-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .offer-card .tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    background: var(--peach);
+    color: var(--navy);
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ─── Planning Details ─── */
+  .planning {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 100px 48px;
+  }
+  .planning-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .planning-head {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .planning-head .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .planning-head h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .planning-head h2 em { font-style: italic; color: var(--peach); }
+  .planning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .planning-card {
+    background: rgba(250, 243, 234, 0.05);
+    border: 1px solid rgba(250, 243, 234, 0.12);
+    padding: 32px 28px;
+    border-radius: 6px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .planning-card .num {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: var(--peach);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .planning-card h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .planning-card p {
+    font-size: 14px;
+    color: rgba(250, 243, 234, 0.7);
+    line-height: 1.7;
+  }
+
+  /* ─── Carousel ─── */
+  .gallery {
+    padding: 110px 0 100px;
+    background: var(--cream);
+  }
+  .gallery-head {
+    text-align: center;
+    margin-bottom: 56px;
+    padding: 0 48px;
+  }
+  .gallery-head .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .gallery-head h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+  }
+  .gallery-head h2 em { font-style: italic; color: var(--peach-deep); }
+
+  .carousel-wrap {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--peach-deep) var(--cream-deep);
+  }
+  .carousel::-webkit-scrollbar {
+    height: 6px;
+  }
+  .carousel::-webkit-scrollbar-track {
+    background: var(--cream-deep);
+    border-radius: 100px;
+  }
+  .carousel::-webkit-scrollbar-thumb {
+    background: var(--peach-deep);
+    border-radius: 100px;
+  }
+  .carousel-item {
+    flex: 0 0 auto;
+    width: clamp(280px, 38vw, 460px);
+    aspect-ratio: 4/5;
+    scroll-snap-align: start;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--cream-deep);
+    position: relative;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(45, 36, 36, 0.4);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .carousel-placeholder svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .carousel-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    background: var(--navy);
+    color: var(--cream);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .carousel-btn:hover {
+    background: var(--peach-deep);
+    transform: translateY(-2px);
+  }
+  .carousel-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ─── Contact Form ─── */
+  .contact {
+    padding: 110px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .contact-head {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .contact-head .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .contact-head h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .contact-head h2 em { font-style: italic; color: var(--peach-deep); }
+  .contact-head p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .contact-form {
+    background: var(--cream-deep);
+    padding: 48px;
+    border-radius: 8px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .form-row .form-field { margin-bottom: 0; }
+  .form-field label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    transition: border 0.2s, box-shadow 0.2s;
+    width: 100%;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--peach-deep);
+    box-shadow: 0 0 0 3px rgba(232, 159, 128, 0.15);
+  }
+  .form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Inter', sans-serif;
+  }
+  .form-submit {
+    margin-top: 8px;
+    text-align: center;
+  }
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 18px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--peach-deep);
+    transform: translateY(-2px);
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 90px 48px 36px;
+  }
+  .foot-inner { max-width: 1400px; margin: 0 auto; }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(250, 243, 234, 0.1);
+    margin-bottom: 36px;
+  }
+  .foot-brand .foot-logo {
+    background: var(--cream);
+    padding: 16px 20px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+  .foot-brand .foot-logo img {
+    height: 64px;
+    width: auto;
+    max-width: 200px;
+    display: block;
+  }
+  .foot-tagline {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--peach);
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+  .foot-contact {
+    font-size: 14px;
+    color: rgba(250, 243, 234, 0.65);
+    line-height: 1.8;
+  }
+  .foot-contact a {
+    color: rgba(250, 243, 234, 0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .foot-contact a:hover { color: var(--peach); }
+  .foot-col h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--peach);
+    font-weight: 400;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 12px; }
+  .foot-col a {
+    color: rgba(250, 243, 234, 0.65);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .foot-col a:hover { color: var(--peach); }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .tekpair-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--peach);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .tekpair-credit:hover { opacity: 0.75; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    nav { padding: 18px 20px 16px; gap: 12px; }
+    .logo-slot img { height: 60px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.08em; }
+
+    .page-hero { padding: 60px 24px 40px; }
+    .offer { padding: 40px 24px 80px; }
+    .offer-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    .planning { padding: 80px 24px; }
+    .planning-grid { grid-template-columns: 1fr; gap: 14px; }
+
+    .gallery { padding: 80px 0; }
+    .gallery-head, .carousel-wrap { padding-left: 24px; padding-right: 24px; }
+    .carousel-item { width: 78vw; }
+
+    .contact { padding: 80px 24px; }
+    .contact-form { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-row .form-field { margin-bottom: 16px; }
+
+    footer { padding: 70px 24px 32px; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-bottom { justify-content: center; flex-direction: column; gap: 14px; text-align: center; }
+  }
+
+  @media (max-width: 500px) {
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 10px; }
+    .foot-top { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo-slot">
+        <a href="/" aria-label="Sweet Elevation Bakery — Home">
+          <img src="/Sweet-Elevation/assets/logo.png" alt="Sweet Elevation Bakery">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/weddings-events/" class="active">Weddings &amp; Events</a></li>
+        <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Order</a></li>
+        <li><a href="/classes/">Store</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/charcuterie/">Charcuterie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="script">make it unforgettable</div>
+      <h1>Weddings &amp; <em>Events.</em></h1>
+      <p>From wedding cakes to dessert tables for milestone birthdays, showers, and corporate events — we'll build something worth remembering.</p>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="offer">
+      <div class="offer-grid">
+
+        <div class="offer-card">
+          <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-8H4v8"/>
+            <path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/>
+            <path d="M12 9V5"/>
+            <path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/>
+            <path d="M2 21h20"/>
+          </svg>
+          <h3>Custom Cakes</h3>
+          <p>Tiered, sculpted, or simple — designed around your event, your flavors, and your vision.</p>
+        </div>
+
+        <div class="offer-card">
+          <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="6" rx="1"/>
+            <path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
+            <path d="M8 6V4M12 6V4M16 6V4"/>
+            <path d="M3 17v3M21 17v3"/>
+          </svg>
+          <h3>Dessert Tables</h3>
+          <p>Curated spreads of cupcakes, cookies, macarons, and platters — styled to fit the room.</p>
+        </div>
+
+        <div class="offer-card">
+          <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l2-5h14l2 5"/>
+            <path d="M3 9h18v11H3z"/>
+            <path d="M8 9v11M16 9v11"/>
+          </svg>
+          <h3>Delivery &amp; Setup</h3>
+          <p>We'll deliver to your venue, set up the cake, arrange the table, and make sure everything's presentation-ready.</p>
+          <span class="tag">Available · Ask for Quote</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Planning Details -->
+    <section class="planning">
+      <div class="planning-inner">
+
+        <div class="planning-head">
+          <div class="script">a few things to know</div>
+          <h2>Planning <em>ahead.</em></h2>
+        </div>
+
+        <div class="planning-grid">
+
+          <div class="planning-card">
+            <div class="num">01</div>
+            <div>
+              <h4>Book at least a month in advance</h4>
+              <p>Wedding and event orders take time to plan, design, and execute. The earlier you reach out, the more we can do for you. Less than a month out, we may not be able to take on new bookings.</p>
+            </div>
+          </div>
+
+          <div class="planning-card">
+            <div class="num">02</div>
+            <div>
+              <h4>Up to 3 business days for a response</h4>
+              <p>Please allow up to three business days for us to review your inquiry and get back to you. We read every request personally.</p>
+            </div>
+          </div>
+
+          <div class="planning-card">
+            <div class="num">03</div>
+            <div>
+              <h4>Delivery &amp; setup is extra</h4>
+              <p>If you'd like us to deliver, bring our own cards, set up cakes and plates on the table, and handle the presentation — that's available for an additional fee. Just mention it in your inquiry and we'll quote it with the rest of your order.</p>
+            </div>
+          </div>
+
+          <div class="planning-card">
+            <div class="num">04</div>
+            <div>
+              <h4>Some flexibility in design execution</h4>
+              <p>Every cake is handmade. Colors, textures, and finishing touches may vary slightly from references shared — that's part of the craft. We'll always bring our best interpretation to your vision.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery / Carousel -->
+    <section class="gallery">
+      <div class="gallery-head">
+        <div class="script">past events</div>
+        <h2>A look at <em>what we've done.</em></h2>
+      </div>
+
+      <div class="carousel-wrap">
+        <div class="carousel" id="carousel">
+
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Event Photo 01</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Event Photo 02</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Event Photo 03</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Event Photo 04</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Event Photo 05</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Event Photo 06</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" onclick="scrollCarousel(-1)" aria-label="Previous photos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" onclick="scrollCarousel(1)" aria-label="Next photos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact">
+      <div class="contact-head">
+        <div class="script">let's talk</div>
+        <h2>Tell us about your <em>event.</em></h2>
+        <p>Fill in the details below and we'll get back to you within three business days.</p>
+      </div>
+
+      <!-- ====================================================
+           FORMSPREE SETUP REQUIRED:
+           1. Sign up free at formspree.io
+           2. Create a new form, set Jennifer's email as recipient
+           3. Replace YOUR_FORM_ID below with your real form ID
+           ==================================================== -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-field">
+            <label for="event-date">Event Date</label>
+            <input type="date" id="event-date" name="event-date" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="event-type">Event Type</label>
+            <select id="event-type" name="event-type" required>
+              <option value="">Choose one…</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Shower">Bridal / Baby Shower</option>
+              <option value="Corporate">Corporate Event</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="guest-count">Approx. Guest Count</label>
+            <input type="number" id="guest-count" name="guest-count" min="1" placeholder="e.g. 50">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="setup">Do you need delivery & setup?</label>
+          <select id="setup" name="setup">
+            <option value="No, pickup only">No, I'll pick it up</option>
+            <option value="Yes, delivery only">Delivery only</option>
+            <option value="Yes, delivery + setup">Delivery + full setup (table, plates, presentation)</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="details">Tell us about your event</label>
+          <textarea id="details" name="details" placeholder="What are you celebrating? Any color palette, flavors, or design references? The more detail the better." required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send Inquiry</button>
+        </div>
+
+        <p class="form-note">We read every inquiry personally and respond within three business days.<br>Please book at least one month before your event.</p>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="foot-logo">
+            <img src="/Sweet-Elevation/assets/logo.png" alt="Sweet Elevation Bakery">
+          </div>
+          <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+          <div class="foot-contact">
+            <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+            <a href="tel:+15188180010">(518) 818-0010</a><br>
+            Tue – Sat
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Custom Quotes</a></li>
+            <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
+            <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+            <li><a href="/charcuterie/">Charcuterie</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="/classes/">Courses</a></li>
+            <li><a href="/recipes/">Recipes</a></li>
+            <li><a href="/membership/">Members Club</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="/about-us/">Our Story</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <div class="copyright">© 2026 Sweet Elevation Bakery</div>
+        <div>
+          Website by
+          <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+            <span>Tekpair</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const item = carousel.querySelector('.carousel-item');
+      if (!item) return;
+      const scrollAmount = item.offsetWidth + 20; // item width + gap
+      carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
