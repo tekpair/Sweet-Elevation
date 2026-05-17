@@ -34,117 +34,129 @@
 <meta property="og:url" content="https://sweetelevationbakery.com/about-us/">
 <meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
 
-<!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#2d1b2e">
+<meta name="theme-color" content="#1f2950">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #ffffff;
-    --ink: #1a1a1a;
-    --ink-soft: #555;
-    --pink: #f4c6d0;
-    --pink-deep: #d97a8e;
-    --pink-soft: #fdeef1;
-    --accent: #2D2424;
-    --cream: #fbf8f4;
-    --gold: #c9a961;
+    --cream: #faf3ea;
+    --cream-deep: #f4ead9;
+    --navy: #1f2950;
+    --navy-soft: #3d4670;
+    --peach: #f4c4ad;
+    --peach-deep: #e89f80;
+    --ink-soft: #5a5b73;
+    --line: #e8dfd0;
     --doordash: #ff3008;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--ink);
+    background: var(--cream);
+    color: var(--navy);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
   /* ─── Navigation ─── */
+  header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+  }
   nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 24px 60px 20px;
-    border-bottom: 1px solid #eee;
-    background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    gap: 18px;
-  }
-  .logo-slot { display: flex; align-items: center; justify-content: center; }
-  .logo-slot img {
-    height: 70px;
-    width: auto;
-    display: block;
-    max-width: 240px;
-    object-fit: contain;
+    padding: 22px 48px 18px;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 14px;
   }
   .logo-slot a { display: block; line-height: 0; }
-  .nav-links { display: flex; gap: 38px; list-style: none; justify-content: center; }
+  .logo-slot img {
+    height: 78px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+    display: block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .nav-links a {
     text-decoration: none;
-    color: var(--ink);
-    font-size: 14px;
+    color: var(--navy);
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     transition: color 0.2s;
     position: relative;
   }
-  .nav-links a:hover { color: var(--pink-deep); }
+  .nav-links a:hover { color: var(--peach-deep); }
   .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -6px;
-    left: 0;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 1.5px;
-    background: var(--pink-deep);
+    background: var(--peach-deep);
     transition: width 0.3s;
   }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-links a.active { color: var(--pink-deep); }
-  .nav-links a.active::after { width: 100%; }
+  .nav-links a:hover::after { width: 80%; }
+  .nav-links a.active { color: var(--peach-deep); }
+  .nav-links a.active::after { width: 80%; }
 
   /* ─── Page Hero ─── */
   .page-hero {
     text-align: center;
-    padding: 80px 60px 40px;
-    max-width: 800px;
+    padding: 90px 48px 50px;
+    max-width: 900px;
     margin: 0 auto;
   }
-  .page-hero .eyebrow {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    color: var(--pink-deep);
-    font-size: 18px;
-    margin-bottom: 16px;
+  .page-hero .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
   }
   .page-hero h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(48px, 5.5vw, 78px);
-    line-height: 1.05;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(54px, 7vw, 104px);
+    line-height: 1.0;
     letter-spacing: -0.025em;
     font-weight: 400;
-    color: var(--accent);
+    color: var(--navy);
   }
-  .page-hero h1 em { font-style: italic; color: var(--pink-deep); }
+  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
 
   /* ─── Story Layout ─── */
   .story {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 60px 100px;
+    padding: 50px 48px 120px;
     display: grid;
     grid-template-columns: 1fr 1.3fr;
     gap: 80px;
@@ -152,11 +164,11 @@
   }
   .story-image {
     aspect-ratio: 4/5;
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
-    background: linear-gradient(135deg, #fdeef1 0%, #f4c6d0 100%);
+    background: var(--cream-deep);
     position: sticky;
-    top: 140px;
+    top: 150px;
   }
   .story-image img {
     width: 100%;
@@ -164,99 +176,130 @@
     object-fit: cover;
     display: block;
   }
+  .story-image-wrap {
+    position: sticky;
+    top: 150px;
+  }
+  .story-image-wrap .story-image {
+    position: relative;
+    top: 0;
+  }
+  .story-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--peach-deep);
+    border-radius: 6px;
+    z-index: -1;
+  }
   .story-content h2 {
-    font-family: 'Fraunces', serif;
-    font-size: 32px;
-    line-height: 1.2;
-    color: var(--accent);
-    margin-top: 40px;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.15;
+    color: var(--navy);
+    margin-top: 48px;
     margin-bottom: 18px;
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
   .story-content h2:first-child { margin-top: 0; }
-  .story-content h2 em { font-style: italic; color: var(--pink-deep); }
+  .story-content h2 em { font-style: italic; color: var(--peach-deep); }
   .story-content p {
     font-size: 17px;
     color: var(--ink-soft);
     line-height: 1.8;
     margin-bottom: 20px;
   }
-  .story-content em {
-    font-family: 'Fraunces', serif;
+  .story-content p em {
+    font-family: 'DM Serif Display', serif;
     font-style: italic;
-    color: var(--accent);
+    color: var(--navy);
   }
 
   /* ─── Pull Quote ─── */
   .pull-quote {
-    background: var(--pink-soft);
-    border-left: 4px solid var(--pink-deep);
-    padding: 24px 28px;
-    margin: 28px 0;
-    font-family: 'Fraunces', serif;
+    background: var(--cream-deep);
+    border-left: 3px solid var(--peach-deep);
+    padding: 28px 32px;
+    margin: 36px 0;
+    font-family: 'DM Serif Display', serif;
     font-style: italic;
-    font-size: 20px;
-    line-height: 1.5;
-    color: var(--accent);
-    border-radius: 0 4px 4px 0;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--navy);
+    border-radius: 0 6px 6px 0;
+  }
+  .pull-quote strong {
+    font-weight: 400;
+    color: var(--peach-deep);
   }
 
   /* ─── Signature ─── */
   .signature {
-    margin-top: 50px;
+    margin-top: 60px;
     padding-top: 40px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--line);
   }
   .signature .xoxo {
-    font-family: 'Fraunces', serif;
-    font-size: 24px;
-    color: var(--accent);
-    margin-bottom: 8px;
-    letter-spacing: 0.04em;
-  }
-  .about-credit {
-  margin-top: 25px;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: rgba(85, 85, 85, 0.7);
-}
-  .signature .name {
-    font-family: 'Fraunces', serif;
+    font-family: 'Caveat', cursive;
     font-size: 38px;
-    color: var(--accent);
-    font-weight: 500;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    font-weight: 600;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .signature .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    color: var(--navy);
+    font-weight: 400;
     margin-bottom: 6px;
+    line-height: 1;
   }
   .signature .title {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--ink-soft);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
   /* ─── CTA Strip ─── */
   .cta-strip {
-    background: var(--accent);
+    background: var(--navy);
     color: var(--cream);
-    padding: 80px 60px;
+    padding: 110px 48px;
     text-align: center;
   }
+  .cta-strip .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
   .cta-strip h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 1.1;
-    margin-bottom: 16px;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    margin-bottom: 18px;
     font-weight: 400;
     letter-spacing: -0.02em;
   }
-  .cta-strip h2 em { font-style: italic; color: var(--pink); }
+  .cta-strip h2 em { font-style: italic; color: var(--peach); }
   .cta-strip p {
-    color: rgba(251, 248, 244, 0.7);
-    margin-bottom: 32px;
+    color: rgba(250, 243, 234, 0.7);
+    margin-bottom: 36px;
     font-size: 17px;
     max-width: 560px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.65;
   }
   .cta-strip .cta-group {
     display: flex;
@@ -264,126 +307,198 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .btn {
-    padding: 16px 32px;
-    border: none;
-    border-radius: 100px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: all 0.25s ease;
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    padding: 16px 30px;
+    border: none;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
   }
   .btn-primary {
-    background: var(--pink);
-    color: var(--accent);
+    background: var(--peach);
+    color: var(--navy);
   }
   .btn-primary:hover {
-    background: var(--pink-deep);
-    color: white;
+    background: var(--peach-deep);
+    color: var(--cream);
     transform: translateY(-2px);
   }
   .btn-outline {
     background: transparent;
     color: var(--cream);
-    border: 1.5px solid rgba(251, 248, 244, 0.3);
+    border: 1.5px solid rgba(250, 243, 234, 0.3);
   }
   .btn-outline:hover {
-    border-color: var(--pink);
-    color: var(--pink);
+    border-color: var(--peach);
+    color: var(--peach);
   }
 
   /* ─── Footer ─── */
   footer {
-    background: var(--accent);
+    background: var(--navy);
     color: var(--cream);
-    padding: 80px 60px 30px;
-    border-top: 1px solid rgba(251, 248, 244, 0.08);
+    padding: 90px 48px 36px;
   }
-  .foot-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 60px;
+  .foot-inner {
     max-width: 1400px;
-    margin: 0 auto 60px;
+    margin: 0 auto;
   }
-  .foot-grid h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 16px;
-    margin-bottom: 18px;
-    color: var(--pink);
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  .foot-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(250, 243, 234, 0.1);
+    margin-bottom: 36px;
   }
-  .foot-grid p, .foot-grid a {
-    color: rgba(251, 248, 244, 0.7);
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 2;
+  .foot-brand .foot-logo {
+    background: var(--cream);
+    padding: 16px 20px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+  .foot-brand .foot-logo img {
+    height: 64px;
+    width: auto;
+    max-width: 200px;
     display: block;
+  }
+  .foot-tagline {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--peach);
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+  .foot-contact {
+    font-size: 14px;
+    color: rgba(250, 243, 234, 0.65);
+    line-height: 1.8;
+  }
+  .foot-contact a {
+    color: rgba(250, 243, 234, 0.85);
+    text-decoration: none;
     transition: color 0.2s;
   }
-  .foot-grid a:hover { color: var(--pink); }
-  .foot-logo-slot { margin-bottom: 20px; }
-  .foot-logo-slot img {
-    height: 80px;
-    width: auto;
-    max-width: 220px;
-    display: block;
-    object-fit: contain;
+  .foot-contact a:hover { color: var(--peach); }
+
+  .foot-col h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--peach);
+    font-weight: 400;
+    letter-spacing: 0.01em;
   }
+  .foot-col ul {
+    list-style: none;
+  }
+  .foot-col li {
+    margin-bottom: 12px;
+  }
+  .foot-col a {
+    color: rgba(250, 243, 234, 0.65);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .foot-col a:hover { color: var(--peach); }
+
   .foot-bottom {
-    border-top: 1px solid rgba(251, 248, 244, 0.1);
-    padding-top: 24px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 12px;
-    color: rgba(251, 248, 244, 0.5);
-    letter-spacing: 0.05em;
+    color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .foot-bottom .copyright {
+    line-height: 1;
   }
   .tekpair-credit {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    color: var(--pink) !important;
+    gap: 8px;
+    color: var(--peach);
     text-decoration: none;
-    margin: 0 2px;
-    padding: 2px 6px;
-    border-radius: 6px;
-    transition: background 0.2s, opacity 0.2s;
-    vertical-align: middle;
-    position: relative;
-    top: -1px;
+    transition: opacity 0.2s;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 500;
   }
-  .tekpair-credit:hover { background: rgba(41, 212, 245, 0.08); opacity: 1; }
-  .tekpair-credit svg {
-    border-radius: 4px;
-    display: block;
-    flex-shrink: 0;
+  .tekpair-credit:hover { opacity: 0.75; }
+  .tekpair-credit span {
+    line-height: 1;
+    display: inline-block;
   }
 
   /* ─── Responsive ─── */
   @media (max-width: 900px) {
-    nav { padding: 18px 24px; }
-    .nav-links { display: none; }
-    .page-hero { padding: 50px 24px 30px; }
+    nav { padding: 18px 20px 16px; gap: 12px; }
+    .logo-slot img { height: 60px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.08em; }
+
+    .page-hero { padding: 60px 24px 30px; }
     .story {
       grid-template-columns: 1fr;
-      padding: 30px 24px 60px;
-      gap: 40px;
+      padding: 30px 24px 80px;
+      gap: 50px;
     }
-    .story-image { position: relative; top: 0; max-width: 400px; margin: 0 auto; }
-    .story-content h2 { font-size: 26px; }
+    .story-image-wrap, .story-image {
+      position: relative;
+      top: 0;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .story-content h2 { font-size: 24px; }
     .story-content p { font-size: 16px; }
-    .pull-quote { font-size: 18px; padding: 20px; }
-    .cta-strip { padding: 60px 24px; }
-    .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    footer { padding: 60px 24px 30px; }
+    .pull-quote { font-size: 19px; padding: 22px 24px; }
+
+    .cta-strip { padding: 80px 24px; }
+
+    footer { padding: 70px 24px 32px; }
+    .foot-top {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 32px;
+      padding-bottom: 40px;
+    }
+    .foot-brand {
+      grid-column: 1 / -1;
+    }
+    .foot-bottom {
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 10px; }
+    .foot-top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
   }
 </style>
 </head>
@@ -399,12 +514,11 @@
       </div>
       <ul class="nav-links">
         <li><a href="/about-us/" class="active">About</a></li>
-        <li><a href="/order-quote-request/">Order</a></li>
-        <li><a href="/weddings-events/">Weddings</a></li>
-        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+        <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Order</a></li>
+        <li><a href="/classes/">Store</a></li>
         <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/charcuterie/">Charcuterie</a></li>
-        <li><a href="/contact-us/">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -413,14 +527,16 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
-      <div class="eyebrow">where it all began</div>
+      <div class="script">where it all began</div>
       <h1>Meet <em>Jennifer.</em></h1>
     </section>
 
     <!-- Story -->
     <section class="story">
-      <div class="story-image">
-        <img src="/Sweet-Elevation/assets/jennifer.jpg" alt="Jennifer, Owner and Executive Pastry Chef of Sweet Elevation Bakery in Latham, NY" loading="eager">
+      <div class="story-image-wrap">
+        <div class="story-image">
+          <img src="/Sweet-Elevation/assets/jennifer.jpg" alt="Jennifer, Owner and Executive Pastry Chef of Sweet Elevation Bakery in Latham, NY" loading="eager">
+        </div>
       </div>
 
       <div class="story-content">
@@ -451,19 +567,16 @@
           <div class="title">Owner, Executive Pastry Chef</div>
         </div>
 
-        <div class="about-credit">
-  Website created and managed in-house (family) by Tekpair
-</div>
-
       </div>
     </section>
 
     <!-- CTA Strip -->
     <section class="cta-strip">
+      <div class="script">come say hi</div>
       <h2>Ready to <em>stop in?</em></h2>
       <p>Come see the space, place an order, or just say hi. We're at 356 Troy Schenectady Rd in Latham.</p>
       <div class="cta-group">
-        <a href="/order-quote-request/" class="btn btn-primary">Get a Quote →</a>
+        <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="btn btn-primary">Order Custom Cakes</a>
         <a href="/contact-us/" class="btn btn-outline">Contact Us</a>
       </div>
     </section>
@@ -472,49 +585,64 @@
 
   <!-- Footer -->
   <footer>
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo-slot">
-          <img src="/Sweet-Elevation/assets/logo.png" alt="Sweet Elevation Bakery">
+    <div class="foot-inner">
+
+      <div class="foot-top">
+
+        <div class="foot-brand">
+          <div class="foot-logo">
+            <img src="/Sweet-Elevation/assets/logo.png" alt="Sweet Elevation Bakery">
+          </div>
+          <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+          <div class="foot-contact">
+            <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+            <a href="tel:+15188180010">(518) 818-0010</a><br>
+            Tue – Sat
+          </div>
         </div>
-        <p>Storefront bakery serving Latham, NY and the greater Capital Region with custom cakes, cupcakes, cookies, and allergy-friendly desserts.</p>
+
+        <div class="foot-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Custom Quotes</a></li>
+            <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
+            <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+            <li><a href="/charcuterie/">Charcuterie</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="/classes/">Courses</a></li>
+            <li><a href="/recipes/">Recipes</a></li>
+            <li><a href="/membership/">Members Club</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="/about-us/">Our Story</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div>
-        <h4>Shop</h4>
-        <a href="/order-quote-request/">Order</a>
-        <a href="/weddings-events/">Weddings & Events</a>
-        <a href="/charcuterie/">Charcuterie</a>
-        <a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash</a>
+
+      <div class="foot-bottom">
+        <div class="copyright">© 2026 Sweet Elevation Bakery</div>
+        <div>
+          Website by
+          <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+            <span>Tekpair</span>
+          </a>
+        </div>
       </div>
-      <div>
-        <h4>About</h4>
-        <a href="/about-us/">Our Story</a>
-        <a href="/classes/">Classes</a>
-        <a href="/portfolio/">Portfolio</a>
-        <a href="/contact-us/">Contact</a>
-      </div>
-      <div>
-        <h4>Visit</h4>
-        <address style="font-style: normal;">
-          <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd<br>Latham, NY 12110</a>
-          <a href="tel:+15188180010">(518) 818-0010</a>
-        </address>
-        <p>Tue–Fri: 8am–6pm<br>Sat: 8am–5pm<br>Sun & Mon: Closed</p>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      © 2026 Sweet Elevation Bakery — Website created by
-      <a href="https://tekpair.com" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
-        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
-          <path fill="#29D4F5" d="M881.38,0H118.62C53.11,0,0,53.11,0,118.62v762.77C0,946.89,53.11,1000,118.62,1000h762.77 c65.51,0,118.62-53.11,118.62-118.62V118.62C1000,53.11,946.89,0,881.38,0z M452.91,895.55L126.36,644.31V355.69l125.22-96.34 v240.59l-0.1,0.08l201.43,154.97V895.55z M452.91,345.05l-124.74,95.97V200.42l124.74-95.98V345.05z M671.83,799.58l-124.74,95.98 v-240.6l124.74-95.97V799.58z M873.64,644.31l-125.22,96.34V500.06l0.1-0.08L547.09,345.01V104.45l326.54,251.25V644.31z"/>
-          <polygon fill="#111318" points="328.17,441.02 452.91,345.05 452.91,104.45 328.17,200.42"/>
-          <polygon fill="#111318" points="251.58,499.94 251.58,259.35 126.36,355.69 126.36,644.31 452.91,895.55 452.91,654.99 251.48,500.02"/>
-          <polygon fill="#111318" points="547.09,895.55 671.83,799.58 671.83,558.99 547.09,654.95"/>
-          <polygon fill="#111318" points="547.09,345.01 748.52,499.98 748.42,500.06 748.42,740.65 873.64,644.31 873.64,355.69 547.09,104.45"/>
-        </svg>
-        <span>Tekpair</span>
-      </a>
-      in Latham, NY
+
     </div>
   </footer>
 
