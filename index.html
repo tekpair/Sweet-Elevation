@@ -174,6 +174,150 @@
     font-weight: 600;
   }
 
+  /* ─── Hamburger Button ─── */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 102;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger-icon {
+  position: relative;
+  width: 22px;
+  height: 16px;
+}
+.hamburger-icon span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+.hamburger-icon span:nth-child(1) { top: 0; }
+.hamburger-icon span:nth-child(2) { top: 7px; }
+.hamburger-icon span:nth-child(3) { top: 14px; }
+
+/* Active state: morph into X */
+.hamburger.active .hamburger-icon span:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+  background: var(--cream);
+}
+.hamburger.active .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .hamburger-icon span:nth-child(3) {
+  top: 7px;
+  transform: rotate(-45deg);
+  background: var(--cream);
+}
+
+/* ─── Mobile Menu Overlay ─── */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--navy);
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.mobile-menu a {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: color 0.2s, opacity 0.5s ease, transform 0.5s ease;
+}
+.mobile-menu.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger the link animations when menu opens */
+.mobile-menu.active li:nth-child(1) a { transition-delay: 0.1s; }
+.mobile-menu.active li:nth-child(2) a { transition-delay: 0.15s; }
+.mobile-menu.active li:nth-child(3) a { transition-delay: 0.2s; }
+.mobile-menu.active li:nth-child(4) a { transition-delay: 0.25s; }
+.mobile-menu.active li:nth-child(5) a { transition-delay: 0.3s; }
+.mobile-menu.active li:nth-child(6) a { transition-delay: 0.35s; }
+.mobile-menu a:hover {
+  color: var(--peach);
+}
+.mobile-menu a em {
+  font-style: italic;
+  color: var(--peach);
+}
+.mobile-menu-foot {
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  color: rgba(250, 243, 234, 0.5);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.mobile-menu-foot a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--peach);
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* Lock body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ─── Responsive: Show hamburger on mobile ─── */
+@media (max-width: 900px) {
+  .hamburger {
+    display: inline-flex;
+  }
+  /* Hide the desktop nav links on mobile */
+  header nav .nav-links {
+    display: none;
+  }
+}
+
   /* ─── Hero with video background ─── */
   .hero {
     padding: 140px 48px 140px;
@@ -809,22 +953,45 @@
 <body>
 
   <!-- Navigation -->
-  <header>
-    <nav aria-label="Main navigation">
-      <div class="logo-slot">
-        <a href="/" aria-label="Sweet Elevation Bakery — Home">
-          <img src="assets/logo.png" alt="Sweet Elevation Bakery">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="about-us/">About</a></li>
-        <li><a href="weddings-events/">Weddings &amp; Events</a></li>
-        <li><a href="classes/">Store</a></li>
-        <li><a href="portfolio/">Portfolio</a></li>
-        <li><a href="charcuterie/">Charcuterie</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav aria-label="Main navigation">
+    <div class="logo-slot">
+      <a href="/" aria-label="Sweet Elevation Bakery — Home">
+        <img src="assets/logo.png" alt="Sweet Elevation Bakery">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="about-us/">About</a></li>
+      <li><a href="weddings-events/">Weddings &amp; Events</a></li>
+      <li><a href="classes/">Store</a></li>
+      <li><a href="portfolio/">Portfolio</a></li>
+      <li><a href="charcuterie/">Charcuterie</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="about-us/">About</a></li>
+    <li><a href="weddings-events/">Weddings &amp; <em>Events</em></a></li>
+    <li><a href="classes/">Store</a></li>
+    <li><a href="portfolio/">Portfolio</a></li>
+    <li><a href="charcuterie/">Charcuterie</a></li>
+    <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
+  </ul>
+  <div class="mobile-menu-foot">
+    <div>356 Troy Schenectady Rd, Latham NY</div>
+    <a href="tel:+15188180010">(518) 818-0010</a>
+  </div>
+</div>
 
   <main>
 
@@ -1106,6 +1273,60 @@
 
     </div>
   </footer>
+
+<script>
+  (function() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+
+    if (!hamburger || !mobileMenu) return;
+
+    function openMenu() {
+      hamburger.classList.add('active');
+      mobileMenu.classList.add('active');
+      body.classList.add('menu-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Close menu');
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      body.classList.remove('menu-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
+    }
+
+    // Toggle on hamburger click
+    hamburger.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close when any menu link is tapped
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+    // Close menu if window resizes past mobile breakpoint (e.g. rotating tablet)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900 && mobileMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
