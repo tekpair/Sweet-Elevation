@@ -3,41 +3,33 @@
   ============================================================
   WEBSITE BY TEKPAIR
   ============================================================
-
   Design & Development: Tekpair
   tekpair.com/webdesign | Cohoes, NY | Capital Region
-
   A site like this starts at $300.
   connor@tekpair.com
-
   ============================================================
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Store | Sweet Elevation Bakery — Latham, NY</title>
 <meta name="description" content="Digital baking guides, signature recipes, members club, and shipped goods from Sweet Elevation Bakery in Latham, NY.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Sweet Elevation Bakery">
 <link rel="canonical" href="https://sweetelevationbakery.com/classes/">
-
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sweet Elevation Bakery">
 <meta property="og:title" content="Store | Sweet Elevation Bakery">
 <meta property="og:description" content="Bake at home guides, recipes, and more from Sweet Elevation Bakery.">
 <meta property="og:url" content="https://sweetelevationbakery.com/classes/">
 <meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
-
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1f2950">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --cream: #faf3ea;
@@ -49,7 +41,6 @@
     --ink-soft: #5a5b73;
     --line: #e8dfd0;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -80,409 +71,422 @@
     gap: 14px;
   }
   .logo-slot a { display: block; line-height: 0; }
-  .logo-slot img {
-    height: 78px;
-    width: auto;
-    max-width: 260px;
-    object-fit: contain;
-    display: block;
-  }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .logo-slot img { height: 78px; width: auto; max-width: 260px; object-fit: contain; display: block; }
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; justify-content: center; flex-wrap: wrap; }
   .nav-links a {
-    text-decoration: none;
-    color: var(--navy);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-    position: relative;
+    text-decoration: none; color: var(--navy);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: color 0.2s; position: relative;
   }
   .nav-links a:hover { color: var(--peach-deep); }
   .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 1.5px;
-    background: var(--peach-deep);
-    transition: width 0.3s;
+    content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 1.5px; background: var(--peach-deep); transition: width 0.3s;
   }
   .nav-links a:hover::after { width: 80%; }
   .nav-links a.active { color: var(--peach-deep); }
   .nav-links a.active::after { width: 80%; }
 
   /* ─── Page Hero ─── */
-  .page-hero {
-    text-align: center;
-    padding: 90px 48px 30px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .page-hero .script {
-    font-family: 'Caveat', cursive;
-    font-size: 36px;
-    color: var(--peach-deep);
-    margin-bottom: 4px;
-    transform: rotate(-2deg);
-    display: inline-block;
-    font-weight: 600;
-  }
+  .page-hero { text-align: center; padding: 90px 48px 30px; max-width: 900px; margin: 0 auto; }
   .page-hero h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(54px, 7vw, 104px);
-    line-height: 1.0;
-    letter-spacing: -0.025em;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 22px;
+    font-size: clamp(54px, 7vw, 104px); line-height: 1.0; letter-spacing: -0.025em;
+    font-weight: 400; color: var(--navy); margin-bottom: 22px;
   }
   .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
-  .page-hero p {
-    font-size: 17px;
-    color: var(--ink-soft);
-    max-width: 580px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
+  .page-hero p { font-size: 17px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.7; }
 
-  /* ─── Custom Quote Banner ─── */
-  .quote-banner-wrap {
-    max-width: 1100px;
-    margin: 30px auto 0;
-    padding: 0 48px;
+  /* ─── Top Row: Quote Banner + Member Promo ─── */
+  .top-row-wrap { max-width: 1300px; margin: 30px auto 0; padding: 0 48px; }
+  .top-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 20px;
+    align-items: stretch;
   }
   .quote-banner {
     background: var(--cream-deep);
     border: 1px solid var(--peach);
     border-left: 4px solid var(--peach-deep);
-    border-radius: 6px;
-    padding: 24px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .quote-banner-text {
-    flex: 1;
-    min-width: 260px;
+    border-radius: 8px;
+    padding: 28px 30px;
+    display: flex; flex-direction: column; justify-content: center;
+    gap: 16px;
   }
   .quote-banner-text strong {
     font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--navy);
-    display: block;
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
+    font-size: 20px; font-weight: 400; color: var(--navy);
+    display: block; margin-bottom: 6px; letter-spacing: -0.01em;
   }
-  .quote-banner-text p {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-  }
+  .quote-banner-text p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
   .quote-banner-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--navy);
-    color: var(--cream);
-    padding: 12px 22px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: var(--cream);
+    padding: 12px 22px; border-radius: 100px; text-decoration: none;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: all 0.25s ease; align-self: flex-start;
+  }
+  .quote-banner-cta:hover { background: var(--peach-deep); transform: translateY(-1px); }
+  .quote-banner-cta svg { width: 12px; height: 12px; }
+
+  .member-promo {
+    background: var(--peach);
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .member-promo::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, var(--peach-deep) 0%, transparent 65%);
+    opacity: 0.5; border-radius: 50%;
+  }
+  .member-promo-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--navy);
+    opacity: 0.7; margin-bottom: 8px; position: relative;
+  }
+  .member-promo h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px; font-weight: 400; color: var(--navy);
+    line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 8px; position: relative;
+  }
+  .member-promo h3 em { font-style: italic; }
+  .member-promo p {
+    font-size: 13px; color: var(--navy); opacity: 0.75; line-height: 1.55;
+    margin-bottom: 18px; position: relative;
+  }
+  .member-promo-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: var(--cream);
+    padding: 11px 20px; border-radius: 100px; text-decoration: none;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: all 0.25s ease; align-self: flex-start; position: relative;
+  }
+  .member-promo-cta:hover { background: var(--cream); color: var(--navy); }
+  .member-promo-cta svg { width: 11px; height: 11px; }
+
+  /* ─── Catalog Toolbar ─── */
+  .catalog-toolbar-wrap { max-width: 1300px; margin: 50px auto 0; padding: 0 48px; }
+  .catalog-toolbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+    padding-bottom: 24px; border-bottom: 1px solid var(--line);
+  }
+  .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-pill {
+    background: transparent; border: 1px solid var(--line);
+    color: var(--navy);
+    padding: 9px 18px; border-radius: 100px;
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s ease;
+  }
+  .filter-pill:hover { border-color: var(--peach-deep); color: var(--peach-deep); }
+  .filter-pill.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+  .search-wrap { position: relative; min-width: 240px; }
+  .search-input {
+    background: var(--cream);
+    border: 1px solid var(--line);
     border-radius: 100px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: all 0.25s ease;
-    flex-shrink: 0;
+    padding: 10px 18px 10px 38px;
+    font-family: 'Inter', sans-serif; font-size: 13px; color: var(--navy);
+    width: 100%; transition: border 0.2s;
   }
-  .quote-banner-cta:hover {
-    background: var(--peach-deep);
-    transform: translateY(-1px);
-  }
-  .quote-banner-cta svg {
-    width: 12px;
-    height: 12px;
+  .search-input::placeholder { color: rgba(31, 41, 80, 0.4); }
+  .search-input:focus { outline: none; border-color: var(--peach-deep); }
+  .search-icon {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px; color: var(--ink-soft); pointer-events: none;
   }
 
-  /* ─── Store Grid ─── */
-  .store {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 80px 48px 100px;
+  .results-count {
+    font-size: 12px; color: var(--ink-soft);
+    padding: 18px 0 0;
+    max-width: 1300px; margin: 0 auto; padding-left: 48px; padding-right: 48px;
+    letter-spacing: 0.03em;
   }
-  .store-grid {
+
+  /* ─── Catalog Grid ─── */
+  .catalog { max-width: 1300px; margin: 0 auto; padding: 32px 48px 100px; }
+  .catalog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
-  .store-card {
+  .product-card {
     background: var(--cream-deep);
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none; color: inherit;
   }
-  .store-card:hover {
+  .product-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(31, 41, 80, 0.08);
   }
-  .store-card-img {
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    background: var(--peach);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--cream);
+  .product-card-img {
+    aspect-ratio: 4/3; overflow: hidden; background: var(--peach);
+    display: flex; align-items: center; justify-content: center; color: var(--cream);
+    position: relative;
   }
-  .store-card-img svg {
-    width: 64px;
-    height: 64px;
-    opacity: 0.85;
+  .product-card-img svg { width: 64px; height: 64px; opacity: 0.85; }
+  .product-card-img img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  .store-card-body {
-    padding: 28px 26px 30px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  .product-card-tag-overlay {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--cream); color: var(--navy);
+    font-size: 9px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 100px;
   }
-  .store-card-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--peach-deep);
-    margin-bottom: 8px;
+  .product-card-body {
+    padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;
   }
-  .store-card h3 {
+  .product-card h3 {
     font-family: 'DM Serif Display', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
+    font-size: 22px; font-weight: 400; color: var(--navy);
+    margin-bottom: 8px; letter-spacing: -0.01em; line-height: 1.2;
   }
-  .store-card p {
-    font-size: 14px;
+  .product-card p {
+    font-size: 13px; color: var(--ink-soft); line-height: 1.6;
+    margin-bottom: 18px; flex: 1;
+  }
+  .product-card-footer {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .product-card-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px; color: var(--navy); letter-spacing: -0.01em;
+  }
+  .product-card-price.soon {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--peach-deep);
+    font-family: 'Inter', sans-serif;
+  }
+  .product-card-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--navy); color: var(--cream);
+    padding: 9px 16px; border-radius: 100px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+  .product-card:hover .product-card-cta { background: var(--peach-deep); }
+  .product-card-cta svg { width: 10px; height: 10px; }
+
+  /* ─── No Results ─── */
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 24px;
     color: var(--ink-soft);
-    line-height: 1.65;
-    margin-bottom: 22px;
-    flex: 1;
   }
-  .store-card-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--navy);
-    color: var(--cream);
-    padding: 9px 18px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    align-self: flex-start;
-  }
-  .store-card-status.live {
-    background: var(--peach-deep);
-  }
-  .store-card-status svg {
-    width: 11px;
-    height: 11px;
+  .no-results h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px; color: var(--navy); margin-bottom: 8px; font-weight: 400;
   }
 
-  /* ─── Notify Section ─── */
-  .notify {
-    background: var(--navy);
-    color: var(--cream);
-    padding: 110px 48px;
-    text-align: center;
+  /* ─── Membership Section ─── */
+  .membership {
+    background: var(--cream-deep);
+    padding: 100px 48px;
   }
-  .notify-inner {
-    max-width: 620px;
+  .membership-inner { max-width: 1100px; margin: 0 auto; }
+  .membership-head { text-align: center; margin-bottom: 50px; }
+  .membership-head .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px; color: var(--peach-deep);
+    margin-bottom: 4px; transform: rotate(-2deg); display: inline-block;
+    font-weight: 600;
+  }
+  .membership-head h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px); font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.02em; color: var(--navy); margin-bottom: 14px;
+  }
+  .membership-head h2 em { font-style: italic; color: var(--peach-deep); }
+  .membership-head p {
+    color: var(--ink-soft); font-size: 16px; max-width: 560px; margin: 0 auto; line-height: 1.7;
+  }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .tier-card {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 36px 28px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+  }
+  .tier-card.featured {
+    border-color: var(--peach-deep);
+    background: var(--cream);
+    position: relative;
+    transform: scale(1.02);
+  }
+  .tier-card.featured::before {
+    content: 'Best Value';
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--peach-deep); color: var(--cream);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 100px;
+  }
+  .tier-name {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--peach-deep);
+    margin-bottom: 12px;
+  }
+  .tier-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px; color: var(--navy); line-height: 1;
+    letter-spacing: -0.025em; margin-bottom: 4px;
+  }
+  .tier-price-unit {
+    font-size: 13px; color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .tier-savings {
+    font-size: 11px; color: var(--peach-deep); font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 22px; min-height: 14px;
+  }
+  .tier-cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--navy); color: var(--cream);
+    padding: 13px 24px; border-radius: 100px; text-decoration: none;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: all 0.25s ease; margin-top: auto;
+  }
+  .tier-cta:hover { background: var(--peach-deep); transform: translateY(-1px); }
+  .tier-card.featured .tier-cta { background: var(--peach-deep); }
+  .tier-card.featured .tier-cta:hover { background: var(--navy); }
+
+  .member-perks {
+    background: var(--cream); border-radius: 8px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+  }
+  .member-perks h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: var(--navy); font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .perk-list {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px;
+    list-style: none;
+  }
+  .perk-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.5;
+  }
+  .perk-list svg {
+    width: 16px; height: 16px; color: var(--peach-deep); flex-shrink: 0; margin-top: 3px;
+  }
+
+  .cancel-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: var(--cream);
+    padding: 18px 24px;
+    border-radius: 8px;
+    border: 1px dashed var(--line);
+    max-width: 640px;
     margin: 0 auto;
   }
+  .cancel-note strong { color: var(--navy); font-weight: 600; }
+
+  /* ─── Notify Section ─── */
+  .notify { background: var(--navy); color: var(--cream); padding: 110px 48px; text-align: center; }
+  .notify-inner { max-width: 620px; margin: 0 auto; }
   .notify .script {
-    font-family: 'Caveat', cursive;
-    font-size: 36px;
-    color: var(--peach);
-    margin-bottom: 4px;
-    transform: rotate(-2deg);
-    display: inline-block;
-    font-weight: 600;
+    font-family: 'Caveat', cursive; font-size: 36px; color: var(--peach);
+    margin-bottom: 4px; transform: rotate(-2deg); display: inline-block; font-weight: 600;
   }
   .notify h2 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(36px, 4.5vw, 56px);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 18px;
+    font-size: clamp(36px, 4.5vw, 56px); font-weight: 400;
+    line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px;
   }
   .notify h2 em { font-style: italic; color: var(--peach); }
   .notify p {
-    color: rgba(250, 243, 234, 0.7);
-    font-size: 16px;
-    margin-bottom: 32px;
-    line-height: 1.65;
+    color: rgba(250, 243, 234, 0.7); font-size: 16px;
+    margin-bottom: 32px; line-height: 1.65;
   }
   .notify-form {
-    display: flex;
-    gap: 8px;
-    max-width: 460px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    display: flex; gap: 8px; max-width: 460px; margin: 0 auto; flex-wrap: wrap;
   }
   .notify-form input {
-    flex: 1;
-    min-width: 220px;
+    flex: 1; min-width: 220px;
     background: rgba(250, 243, 234, 0.08);
     border: 1px solid rgba(250, 243, 234, 0.2);
-    border-radius: 100px;
-    padding: 14px 22px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: var(--cream);
+    border-radius: 100px; padding: 14px 22px;
+    font-family: 'Inter', sans-serif; font-size: 14px; color: var(--cream);
     transition: border 0.2s, background 0.2s;
   }
-  .notify-form input::placeholder {
-    color: rgba(250, 243, 234, 0.4);
-  }
-  .notify-form input:focus {
-    outline: none;
-    border-color: var(--peach);
-    background: rgba(250, 243, 234, 0.12);
-  }
+  .notify-form input::placeholder { color: rgba(250, 243, 234, 0.4); }
+  .notify-form input:focus { outline: none; border-color: var(--peach); background: rgba(250, 243, 234, 0.12); }
   .notify-form button {
-    background: var(--peach);
-    color: var(--navy);
-    border: none;
-    padding: 14px 28px;
-    border-radius: 100px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.25s ease;
+    background: var(--peach); color: var(--navy); border: none;
+    padding: 14px 28px; border-radius: 100px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.25s ease;
   }
-  .notify-form button:hover {
-    background: var(--peach-deep);
-    color: var(--cream);
-    transform: translateY(-1px);
-  }
-  .notify-fineprint {
-    font-size: 11px;
-    color: rgba(250, 243, 234, 0.4);
-    margin-top: 18px;
-    letter-spacing: 0.02em;
-  }
+  .notify-form button:hover { background: var(--peach-deep); color: var(--cream); transform: translateY(-1px); }
+  .notify-fineprint { font-size: 11px; color: rgba(250, 243, 234, 0.4); margin-top: 18px; letter-spacing: 0.02em; }
 
   /* ─── Footer ─── */
-  footer {
-    background: var(--navy);
-    color: var(--cream);
-    padding: 90px 48px 36px;
-    border-top: 1px solid rgba(250, 243, 234, 0.08);
-  }
+  footer { background: var(--navy); color: var(--cream); padding: 90px 48px 36px; border-top: 1px solid rgba(250, 243, 234, 0.08); }
   .foot-inner { max-width: 1400px; margin: 0 auto; }
   .foot-top {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 1fr;
-    gap: 64px;
-    padding-bottom: 56px;
-    border-bottom: 1px solid rgba(250, 243, 234, 0.1);
-    margin-bottom: 36px;
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 64px;
+    padding-bottom: 56px; border-bottom: 1px solid rgba(250, 243, 234, 0.1); margin-bottom: 36px;
   }
   .foot-brand .foot-logo {
-    background: var(--cream);
-    padding: 16px 20px;
-    border-radius: 8px;
-    width: fit-content;
-    margin-bottom: 24px;
+    background: var(--cream); padding: 16px 20px; border-radius: 8px;
+    width: fit-content; margin-bottom: 24px;
   }
-  .foot-brand .foot-logo img {
-    height: 64px;
-    width: auto;
-    max-width: 200px;
-    display: block;
-  }
+  .foot-brand .foot-logo img { height: 64px; width: auto; max-width: 200px; display: block; }
   .foot-tagline {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 18px;
-    line-height: 1.5;
-    color: var(--peach);
-    max-width: 280px;
-    margin-bottom: 24px;
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 18px; line-height: 1.5; color: var(--peach);
+    max-width: 280px; margin-bottom: 24px;
   }
-  .foot-contact {
-    font-size: 14px;
-    color: rgba(250, 243, 234, 0.65);
-    line-height: 1.8;
-  }
-  .foot-contact a {
-    color: rgba(250, 243, 234, 0.85);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .foot-contact { font-size: 14px; color: rgba(250, 243, 234, 0.65); line-height: 1.8; }
+  .foot-contact a { color: rgba(250, 243, 234, 0.85); text-decoration: none; transition: color 0.2s; }
   .foot-contact a:hover { color: var(--peach); }
-  .foot-col h4 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: var(--peach);
-    font-weight: 400;
-  }
+  .foot-col h4 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 20px; color: var(--peach); font-weight: 400; }
   .foot-col ul { list-style: none; }
   .foot-col li { margin-bottom: 12px; }
-  .foot-col a {
-    color: rgba(250, 243, 234, 0.65);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s;
-  }
+  .foot-col a { color: rgba(250, 243, 234, 0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
   .foot-col a:hover { color: var(--peach); }
   .foot-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: rgba(250, 243, 234, 0.5);
-    letter-spacing: 0.04em;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em; gap: 20px; flex-wrap: wrap;
   }
   .tekpair-credit {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--peach);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    transition: opacity 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--peach); text-decoration: none;
+    font-size: 12px; font-weight: 500; transition: opacity 0.2s;
   }
   .tekpair-credit:hover { opacity: 0.75; }
 
   /* ─── Responsive ─── */
   @media (max-width: 1000px) {
-    .store-grid { grid-template-columns: repeat(2, 1fr); }
+    .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+    .tier-grid { grid-template-columns: 1fr; }
+    .tier-card.featured { transform: none; }
   }
   @media (max-width: 900px) {
     nav { padding: 18px 20px 16px; gap: 12px; }
@@ -491,11 +495,18 @@
     .nav-links a { font-size: 11px; letter-spacing: 0.08em; }
 
     .page-hero { padding: 60px 24px 30px; }
-    .quote-banner-wrap { padding: 0 24px; margin-top: 20px; }
-    .quote-banner { padding: 20px 22px; gap: 16px; }
-    .quote-banner-cta { width: 100%; justify-content: center; }
+    .top-row-wrap { padding: 0 24px; margin-top: 24px; }
+    .top-row { grid-template-columns: 1fr; gap: 14px; }
 
-    .store { padding: 60px 24px 80px; }
+    .catalog-toolbar-wrap { padding: 0 24px; }
+    .catalog-toolbar { flex-direction: column; align-items: stretch; }
+    .search-wrap { width: 100%; }
+    .results-count { padding-left: 24px; padding-right: 24px; }
+
+    .catalog { padding: 30px 24px 80px; }
+
+    .membership { padding: 80px 24px; }
+    .perk-list { grid-template-columns: 1fr; gap: 10px; }
 
     .notify { padding: 80px 24px; }
 
@@ -504,11 +515,9 @@
     .foot-brand { grid-column: 1 / -1; }
     .foot-bottom { justify-content: center; flex-direction: column; gap: 14px; text-align: center; }
   }
-
   @media (max-width: 600px) {
-    .store-grid { grid-template-columns: 1fr; }
+    .catalog-grid { grid-template-columns: 1fr; }
   }
-
   @media (max-width: 500px) {
     .nav-links { gap: 12px; }
     .nav-links a { font-size: 10px; }
@@ -546,146 +555,152 @@
       <p>Digital guides, signature recipes, members club, and shipped goods — everything you can take home from Sweet Elevation.</p>
     </section>
 
-    <!-- Custom Quote Redirect Banner -->
-    <div class="quote-banner-wrap">
-      <div class="quote-banner">
-        <div class="quote-banner-text">
-          <strong>Looking for a custom order?</strong>
-          <p>Cakes, cookies, weddings, and more are handled separately through our MCB.</p>
+    <!-- Top Row: Quote Banner + Member Promo -->
+    <div class="top-row-wrap">
+      <div class="top-row">
+
+        <!-- Custom Quote Banner -->
+        <div class="quote-banner">
+          <div class="quote-banner-text">
+            <strong>Looking for a custom order?</strong>
+            <p>Cakes, cookies, weddings, and more are handled separately through our MCB.</p>
+          </div>
+          <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="quote-banner-cta">
+            Get Custom Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
-        <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="quote-banner-cta">
-          Get Custom Quote
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-        </a>
+
+        <!-- Members Club Promo -->
+        <div class="member-promo">
+          <div>
+            <div class="member-promo-tag">Members Club</div>
+            <h3>Join the <em>Inner Circle.</em></h3>
+            <p>Monthly recipes, member perks, and exclusive drops.</p>
+          </div>
+          <a href="#membership" class="member-promo-cta">
+            See Tiers
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
       </div>
     </div>
 
-    <!-- Store Grid -->
-    <section class="store">
-      <div class="store-grid">
+    <!-- Catalog Toolbar (Filters + Search) -->
+    <div class="catalog-toolbar-wrap">
+      <div class="catalog-toolbar">
+        <div class="filter-pills" id="filter-pills">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="digital">Digital</button>
+          <button class="filter-pill" data-filter="physical">Ships to You</button>
+          <button class="filter-pill" data-filter="gift">Gift Cards</button>
+        </div>
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="search-input" class="search-input" placeholder="Search the store…" aria-label="Search products">
+        </div>
+      </div>
+    </div>
+    <div class="results-count" id="results-count"></div>
 
-        <!-- Bake at Home -->
-        <div class="store-card">
-          <div class="store-card-img">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="16" rx="2"/>
-              <circle cx="8" cy="8" r="1"/>
-              <circle cx="12" cy="8" r="1"/>
-              <circle cx="16" cy="8" r="1"/>
-              <rect x="7" y="11" width="10" height="6" rx="1"/>
-            </svg>
-          </div>
-          <div class="store-card-body">
-            <div class="store-card-tag">Digital</div>
-            <h3>Bake at Home</h3>
-            <p>Step-by-step guides and video tutorials from Jennifer — bake her signatures at home, on your own schedule.</p>
-            <div class="store-card-status">Coming Soon</div>
-          </div>
+    <!-- Catalog Grid (rendered by JS from products array) -->
+    <section class="catalog">
+      <div class="catalog-grid" id="catalog-grid"></div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership" id="membership">
+      <div class="membership-inner">
+
+        <div class="membership-head">
+          <div class="script">join the table</div>
+          <h2>The <em>Inner Circle.</em></h2>
+          <p>One membership, three durations — pick what works for you. Longer commitment, bigger savings.</p>
         </div>
 
-        <!-- Signature Recipes -->
-        <div class="store-card">
-          <div class="store-card-img">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
+        <!-- Tier Cards -->
+        <div class="tier-grid">
+
+          <div class="tier-card">
+            <div class="tier-name">Monthly</div>
+            <div class="tier-price">$9</div>
+            <div class="tier-price-unit">per month</div>
+            <div class="tier-savings">&nbsp;</div>
+            <a href="/store/membership/monthly/" class="tier-cta">Join Monthly</a>
           </div>
-          <div class="store-card-body">
-            <div class="store-card-tag">Digital</div>
-            <h3>Signature Recipes</h3>
-            <p>The recipes Jennifer built her name on — single recipes and curated bundles, instantly downloadable.</p>
-            <div class="store-card-status">Coming Soon</div>
+
+          <div class="tier-card">
+            <div class="tier-name">6 Months</div>
+            <div class="tier-price">$48</div>
+            <div class="tier-price-unit">every 6 months</div>
+            <div class="tier-savings">Save $6</div>
+            <a href="/store/membership/6-month/" class="tier-cta">Join 6-Month</a>
           </div>
+
+          <div class="tier-card featured">
+            <div class="tier-name">Annual</div>
+            <div class="tier-price">$84</div>
+            <div class="tier-price-unit">per year</div>
+            <div class="tier-savings">Save $24</div>
+            <a href="/store/membership/annual/" class="tier-cta">Join Annual</a>
+          </div>
+
         </div>
 
-        <!-- Members Club -->
-        <div class="store-card">
-          <div class="store-card-img">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-          </div>
-          <div class="store-card-body">
-            <div class="store-card-tag">Monthly</div>
-            <h3>Members Club</h3>
-            <p>Monthly drops of new recipes, exclusive perks, early access to releases, and member-only discounts.</p>
-            <div class="store-card-status">Coming Soon</div>
-          </div>
+        <!-- Perks List -->
+        <div class="member-perks">
+          <h4>What's included</h4>
+          <ul class="perk-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              One new signature recipe every month
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              One short video tutorial each month
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              10% off all custom orders
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Early access to seasonal menus
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Member-only flavor drops
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Annual members: 1 free bakery treat per visit
+            </li>
+          </ul>
         </div>
 
-        <!-- Recipe Cards -->
-        <div class="store-card">
-          <div class="store-card-img">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="16" rx="2"/>
-              <path d="M3 10h18"/>
-              <path d="M7 14h6"/>
-              <path d="M7 17h4"/>
-            </svg>
-          </div>
-          <div class="store-card-body">
-            <div class="store-card-tag">Ships to you</div>
-            <h3>Printed Recipe Cards</h3>
-            <p>Beautifully printed 4×6 cards of Jennifer's signature recipes — sold in collectible sets, shipped to your door.</p>
-            <div class="store-card-status">Coming Soon</div>
-          </div>
-        </div>
-
-        <!-- Cookbook -->
-        <div class="store-card">
-          <div class="store-card-img">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <div class="store-card-body">
-            <div class="store-card-tag">Ships to you</div>
-            <h3>The Cookbook</h3>
-            <p>A real, printed cookbook from Sweet Elevation — every recipe, every story, every signature. Available digitally or in print.</p>
-            <div class="store-card-status">Coming Soon</div>
-          </div>
-        </div>
-
-        <!-- Gift Cards -->
-        <div class="store-card">
-          <div class="store-card-img">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="6" width="18" height="14" rx="2"/>
-              <path d="M3 11h18"/>
-              <path d="M12 6V4"/>
-              <path d="M9 4h6"/>
-            </svg>
-          </div>
-          <div class="store-card-body">
-            <div class="store-card-tag">Available</div>
-            <h3>Gift Cards</h3>
-            <p>Give the gift of Sweet Elevation. Use in-store or for any custom order. Sent by email — no shipping required.</p>
-            <div class="store-card-status">Coming Soon</div>
-          </div>
+        <!-- Cancellation Note -->
+        <div class="cancel-note">
+          <strong>Need to cancel?</strong> Email us at <a href="mailto:hello@sweetelevationbakery.com" style="color: var(--peach-deep);">hello@sweetelevationbakery.com</a> and we'll take care of it — no hoops, no questions, no awkward exit interviews.
         </div>
 
       </div>
     </section>
 
-    <!-- Notify Me (Waitlist) -->
+    <!-- Notify Me Waitlist -->
     <section class="notify">
       <div class="notify-inner">
         <div class="script">be the first to know</div>
         <h2>Get the <em>opening drop.</em></h2>
         <p>We're launching the store soon — recipes, courses, members club, and more. Drop your email and we'll send one note when it's live.</p>
-
-        <!-- ====================================================
-             FORMSPREE SETUP REQUIRED:
-             Replace YOUR_FORM_ID below with your Formspree form ID.
-             ==================================================== -->
         <form class="notify-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
           <input type="hidden" name="_subject" value="Store waitlist signup">
           <button type="submit">Notify Me</button>
         </form>
-
         <p class="notify-fineprint">No spam. We'll only email when the store opens.</p>
       </div>
     </section>
@@ -695,7 +710,6 @@
   <!-- Footer -->
   <footer>
     <div class="foot-inner">
-
       <div class="foot-top">
         <div class="foot-brand">
           <div class="foot-logo">
@@ -708,7 +722,6 @@
             Tue – Sat
           </div>
         </div>
-
         <div class="foot-col">
           <h4>Order</h4>
           <ul>
@@ -718,7 +731,6 @@
             <li><a href="/charcuterie/">Charcuterie</a></li>
           </ul>
         </div>
-
         <div class="foot-col">
           <h4>Learn</h4>
           <ul>
@@ -728,7 +740,6 @@
             <li><a href="/portfolio/">Portfolio</a></li>
           </ul>
         </div>
-
         <div class="foot-col">
           <h4>About</h4>
           <ul>
@@ -739,7 +750,6 @@
           </ul>
         </div>
       </div>
-
       <div class="foot-bottom">
         <div class="copyright">© 2026 Sweet Elevation Bakery</div>
         <div>
@@ -749,9 +759,156 @@
           </a>
         </div>
       </div>
-
     </div>
   </footer>
+
+  <!-- ====================================================
+       PRODUCT CATALOG DATA
+       ====================================================
+       To add a new product, copy a block, paste it in,
+       and edit the fields. Categories must match the
+       filter pills: digital, physical, gift
+       ==================================================== -->
+  <script>
+    const products = [
+      {
+        slug: 'bake-at-home',
+        name: 'Bake at Home',
+        category: 'digital',
+        categoryLabel: 'Digital',
+        description: 'Step-by-step guides and video tutorials from Jennifer — bake her signatures at home, on your own schedule.',
+        price: null,
+        status: 'Coming Soon',
+        url: '/store/bake-at-home/',
+        image: null,
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="8" r="1"/><circle cx="12" cy="8" r="1"/><circle cx="16" cy="8" r="1"/><rect x="7" y="11" width="10" height="6" rx="1"/></svg>`
+      },
+      {
+        slug: 'signature-recipes',
+        name: 'Signature Recipes',
+        category: 'digital',
+        categoryLabel: 'Digital',
+        description: "The recipes Jennifer built her name on — single recipes and curated bundles, instantly downloadable.",
+        price: null,
+        status: 'Coming Soon',
+        url: '/store/signature-recipes/',
+        image: null,
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`
+      },
+      {
+        slug: 'recipe-cards',
+        name: 'Printed Recipe Cards',
+        category: 'physical',
+        categoryLabel: 'Ships to You',
+        description: "Beautifully printed 4×6 cards of Jennifer's signature recipes — sold in collectible sets, shipped to your door.",
+        price: null,
+        status: 'Coming Soon',
+        url: '/store/recipe-cards/',
+        image: null,
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M7 14h6"/><path d="M7 17h4"/></svg>`
+      },
+      {
+        slug: 'cookbook',
+        name: 'The Cookbook',
+        category: 'physical',
+        categoryLabel: 'Ships to You',
+        description: 'A real, printed cookbook from Sweet Elevation — every recipe, every story, every signature. Available digitally or in print.',
+        price: null,
+        status: 'Coming Soon',
+        url: '/store/cookbook/',
+        image: null,
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`
+      },
+      {
+        slug: 'gift-cards',
+        name: 'Gift Cards',
+        category: 'gift',
+        categoryLabel: 'Gift Cards',
+        description: 'Give the gift of Sweet Elevation. Use in-store or for any custom order. Sent by email — no shipping required.',
+        price: null,
+        status: 'Coming Soon',
+        url: '/store/gift-cards/',
+        image: null,
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 11h18"/><path d="M12 6V4"/><path d="M9 4h6"/></svg>`
+      }
+    ];
+
+    // ─── Render & Filter Logic ───
+    const grid = document.getElementById('catalog-grid');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const searchInput = document.getElementById('search-input');
+    const resultsCount = document.getElementById('results-count');
+
+    let activeFilter = 'all';
+    let searchTerm = '';
+
+    function renderProducts() {
+      const filtered = products.filter(p => {
+        const matchesFilter = activeFilter === 'all' || p.category === activeFilter;
+        const matchesSearch = searchTerm === '' ||
+          p.name.toLowerCase().includes(searchTerm) ||
+          p.description.toLowerCase().includes(searchTerm) ||
+          p.categoryLabel.toLowerCase().includes(searchTerm);
+        return matchesFilter && matchesSearch;
+      });
+
+      resultsCount.textContent = `${filtered.length} ${filtered.length === 1 ? 'item' : 'items'}`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results">
+            <h4>Nothing matches.</h4>
+            <p>Try a different search or filter.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const priceBlock = p.price
+          ? `<span class="product-card-price">$${p.price}</span>`
+          : `<span class="product-card-price soon">${p.status}</span>`;
+        const ctaLabel = p.price ? 'View' : 'Details';
+
+        return `
+          <a href="${p.url}" class="product-card">
+            <div class="product-card-img">
+              ${p.image ? `<img src="${p.image}" alt="${p.name}" loading="lazy">` : p.icon}
+              <span class="product-card-tag-overlay">${p.categoryLabel}</span>
+            </div>
+            <div class="product-card-body">
+              <h3>${p.name}</h3>
+              <p>${p.description}</p>
+              <div class="product-card-footer">
+                ${priceBlock}
+                <span class="product-card-cta">
+                  ${ctaLabel}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        activeFilter = pill.dataset.filter;
+        renderProducts();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value.trim().toLowerCase();
+      renderProducts();
+    });
+
+    // Initial render
+    renderProducts();
+  </script>
 
 </body>
 </html>
