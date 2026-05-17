@@ -805,15 +805,7 @@
         <h2>Tell us about your <em>event.</em></h2>
         <p>Fill in the details below and we'll get back to you within three business days.</p>
       </div>
-
-      <!-- ====================================================
-           FORMSPREE SETUP REQUIRED:
-           1. Sign up free at formspree.io
-           2. Create a new form, set Jennifer's email as recipient
-           3. Replace YOUR_FORM_ID below with your real form ID
-           ==================================================== -->
-      <form class="contact-form" action="https://formspree.io/f/xkoewknp" method="POST">
-
+      <form class="contact-form" action="https://formspree.io/f/xkoewknp" method="POST" autocomplete="off">
         <div class="form-row">
           <div class="form-field">
             <label for="name">Your Name</label>
@@ -951,6 +943,16 @@
       carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
     }
   </script>
+
+  <script>
+  window.addEventListener('pageshow', function(event) {
+    // event.persisted === true means the page was restored from bfcache (back/forward)
+    if (event.persisted || (performance.getEntriesByType('navigation')[0] && performance.getEntriesByType('navigation')[0].type === 'back_forward')) {
+      const form = document.querySelector('.contact-form');
+      if (form) form.reset();
+    }
+  });
+</script>
 
 </body>
 </html>
