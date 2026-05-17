@@ -181,11 +181,10 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  position: absolute;
+  position: fixed;
   right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 102;
+  top: 24px;
+  z-index: 200;
   width: 40px;
   height: 40px;
   align-items: center;
@@ -272,12 +271,13 @@
   transform: translateY(0);
 }
 /* Stagger the link animations when menu opens */
-.mobile-menu.active li:nth-child(1) a { transition-delay: 0.1s; }
-.mobile-menu.active li:nth-child(2) a { transition-delay: 0.15s; }
-.mobile-menu.active li:nth-child(3) a { transition-delay: 0.2s; }
-.mobile-menu.active li:nth-child(4) a { transition-delay: 0.25s; }
-.mobile-menu.active li:nth-child(5) a { transition-delay: 0.3s; }
-.mobile-menu.active li:nth-child(6) a { transition-delay: 0.35s; }
+.mobile-menu.active li:nth-child(1) a { transition-delay: 0.08s; }
+.mobile-menu.active li:nth-child(2) a { transition-delay: 0.13s; }
+.mobile-menu.active li:nth-child(3) a { transition-delay: 0.18s; }
+.mobile-menu.active li:nth-child(4) a { transition-delay: 0.23s; }
+.mobile-menu.active li:nth-child(5) a { transition-delay: 0.28s; }
+.mobile-menu.active li:nth-child(6) a { transition-delay: 0.33s; }
+.mobile-menu.active li:nth-child(7) a { transition-delay: 0.38s; }
 .mobile-menu a:hover {
   color: var(--peach);
 }
@@ -967,19 +967,21 @@ body.menu-open {
       <li><a href="portfolio/">Portfolio</a></li>
       <li><a href="charcuterie/">Charcuterie</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+  </nav>
+</header>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span class="hamburger-icon">
         <span></span>
         <span></span>
         <span></span>
       </span>
     </button>
-  </nav>
-</header>
 
 <!-- Mobile Menu Overlay -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
   <ul>
+    <li><a href="/">Home</a></li>
     <li><a href="about-us/">About</a></li>
     <li><a href="weddings-events/">Weddings &amp; <em>Events</em></a></li>
     <li><a href="classes/">Store</a></li>
