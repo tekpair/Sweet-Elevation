@@ -812,7 +812,7 @@
            2. Create a new form, set Jennifer's email as recipient
            3. Replace YOUR_FORM_ID below with your real form ID
            ==================================================== -->
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="contact-form" action="https://formspree.io/f/xkoewknp" method="POST">
 
         <div class="form-row">
           <div class="form-field">
@@ -828,11 +828,11 @@
         <div class="form-row">
           <div class="form-field">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone">
+            <input type="tel" id="phone" name="phone" pattern="[\d\s\-\(\)\+]{7,}" placeholder="(518) 555-0123">
           </div>
           <div class="form-field">
             <label for="event-date">Event Date</label>
-            <input type="date" id="event-date" name="event-date" required>
+            <input type="date" id="event-date" name="event-date" required min="2026-05-17">
           </div>
         </div>
 
