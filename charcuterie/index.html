@@ -123,6 +123,139 @@
   .nav-links a.active { color: var(--peach-deep); }
   .nav-links a.active::after { width: 80%; }
 
+  /* ─── Hamburger Button ─── */
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: fixed;
+    right: 20px;
+    top: 24px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  .hamburger-icon {
+    position: relative;
+    width: 22px;
+    height: 16px;
+  }
+  .hamburger-icon span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+  .hamburger-icon span:nth-child(1) { top: 0; }
+  .hamburger-icon span:nth-child(2) { top: 7px; }
+  .hamburger-icon span:nth-child(3) { top: 14px; }
+
+  /* Active state: morph into X */
+  .hamburger.active .hamburger-icon span:nth-child(1) {
+    top: 7px;
+    transform: rotate(45deg);
+    background: var(--cream);
+  }
+  .hamburger.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .hamburger-icon span:nth-child(3) {
+    top: 7px;
+    transform: rotate(-45deg);
+    background: var(--cream);
+  }
+
+  /* ─── Mobile Menu Overlay ─── */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy);
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .mobile-menu ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .mobile-menu a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: color 0.2s, opacity 0.5s ease, transform 0.5s ease;
+  }
+  .mobile-menu.active a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger the link animations when menu opens */
+  .mobile-menu.active li:nth-child(1) a { transition-delay: 0.08s; }
+  .mobile-menu.active li:nth-child(2) a { transition-delay: 0.13s; }
+  .mobile-menu.active li:nth-child(3) a { transition-delay: 0.18s; }
+  .mobile-menu.active li:nth-child(4) a { transition-delay: 0.23s; }
+  .mobile-menu.active li:nth-child(5) a { transition-delay: 0.28s; }
+  .mobile-menu.active li:nth-child(6) a { transition-delay: 0.33s; }
+  .mobile-menu.active li:nth-child(7) a { transition-delay: 0.38s; }
+  .mobile-menu a:hover {
+    color: var(--peach);
+  }
+  .mobile-menu a em {
+    font-style: italic;
+    color: var(--peach);
+  }
+  .mobile-menu-foot {
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    color: rgba(250, 243, 234, 0.5);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .mobile-menu-foot a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--peach);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  /* Lock body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
   /* ─── Page Hero ─── */
   .page-hero {
     text-align: center;
@@ -394,6 +527,9 @@
     .nav-links { gap: 16px; }
     .nav-links a { font-size: 11px; letter-spacing: 0.08em; }
 
+    .hamburger { display: inline-flex; }
+    header nav .nav-links { display: none; }
+
     .page-hero { padding: 60px 24px 30px; }
     .showcase { padding: 20px 24px 60px; }
     .showcase-image { aspect-ratio: 4/3; }
@@ -423,19 +559,43 @@
     <nav aria-label="Main navigation">
       <div class="logo-slot">
         <a href="/" aria-label="Sweet Elevation Bakery — Home">
-          <img src="/Sweet-Elevation/assets/logo.png" alt="Sweet Elevation Bakery">
+          <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
         </a>
       </div>
       <ul class="nav-links">
         <li><a href="/about-us/">About</a></li>
         <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
-        <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Order</a></li>
-        <li><a href="/classes/">Store</a></li>
+        <li><a href="/store/">Store</a></li>
         <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/charcuterie/" class="active">Charcuterie</a></li>
       </ul>
     </nav>
   </header>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/weddings-events/">Weddings &amp; <em>Events</em></a></li>
+      <li><a href="/store/">Store</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/charcuterie/">Charcuterie</a></li>
+      <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
+    </ul>
+    <div class="mobile-menu-foot">
+      <div>356 Troy Schenectady Rd, Latham NY</div>
+      <a href="tel:+15188180010">(518) 818-0010</a>
+    </div>
+  </div>
 
   <main>
 
@@ -449,7 +609,7 @@
     <!-- Showcase Image -->
     <section class="showcase">
       <div class="showcase-image">
-        <img src="/Sweet-Elevation/assets/charcuterie.jpeg" alt="Charcuterie board by Gouda Giggles at Sweet Elevation Bakery in Latham, NY" loading="eager">
+        <img src="/assets/charcuterie.jpeg" alt="Charcuterie board by Gouda Giggles at Sweet Elevation Bakery in Latham, NY" loading="eager">
       </div>
     </section>
 
@@ -504,7 +664,7 @@
       <div class="foot-top">
         <div class="foot-brand">
           <div class="foot-logo">
-            <img src="/Sweet-Elevation/assets/logo.png" alt="Sweet Elevation Bakery">
+            <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
           </div>
           <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
           <div class="foot-contact">
@@ -517,7 +677,7 @@
         <div class="foot-col">
           <h4>Order</h4>
           <ul>
-            <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Custom Quotes</a></li>
+            <li><a href="/#our-sweets" target="_blank" rel="noopener">Custom Quotes</a></li>
             <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
             <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
             <li><a href="/charcuterie/">Charcuterie</a></li>
@@ -527,9 +687,9 @@
         <div class="foot-col">
           <h4>Learn</h4>
           <ul>
-            <li><a href="/classes/">Courses</a></li>
-            <li><a href="/recipes/">Recipes</a></li>
-            <li><a href="/membership/">Members Club</a></li>
+            <li><a href="/store/">Bake at Home</a></li>
+            <li><a href="/store/">Recipes</a></li>
+            <li><a href="/store/#membership/">Members Club</a></li>
             <li><a href="/portfolio/">Portfolio</a></li>
           </ul>
         </div>
@@ -538,7 +698,7 @@
           <h4>About</h4>
           <ul>
             <li><a href="/about-us/">Our Story</a></li>
-            <li><a href="/contact-us/">Contact</a></li>
+            <li><a href="tel:+15188180010">Contact</a></li>
             <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
             <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
@@ -557,6 +717,60 @@
 
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const body = document.body;
+
+      if (!hamburger || !mobileMenu) return;
+
+      function openMenu() {
+        hamburger.classList.add('active');
+        mobileMenu.classList.add('active');
+        body.classList.add('menu-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Close menu');
+      }
+
+      function closeMenu() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open menu');
+      }
+
+      // Toggle on hamburger click
+      hamburger.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Close when any menu link is tapped
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      // Close menu if window resizes past mobile breakpoint
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 900 && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
