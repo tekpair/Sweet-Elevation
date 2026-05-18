@@ -449,6 +449,24 @@
     font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
     padding: 5px 14px; border-radius: 100px;
   }
+  .tier-cta:disabled,
+  .tier-cta[disabled] {
+    background: var(--cream-deep);
+    color: var(--ink-soft);
+    cursor: not-allowed;
+    transform: none;
+    border: 1px solid var(--line);
+  }
+  .tier-cta:disabled:hover,
+  .tier-cta[disabled]:hover {
+    background: var(--cream-deep);
+    color: var(--ink-soft);
+    transform: none;
+  }
+  .tier-card.featured .tier-cta:disabled {
+    background: var(--cream-deep);
+    color: var(--ink-soft);
+  }
   .tier-name {
     font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--peach-deep);
@@ -482,6 +500,12 @@
     background: var(--cream); border-radius: 8px;
     padding: 32px 36px;
     margin-bottom: 24px;
+  }
+  .member-perks.placeholder p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin: 0;
   }
   .member-perks h4 {
     font-family: 'DM Serif Display', serif;
@@ -721,7 +745,7 @@
           <h2>The <em>Bake Club</em></h2>
         </div>
 
-        <!-- Tier Cards -->
+<!-- Tier Cards -->
         <div class="tier-grid">
 
           <div class="tier-card">
@@ -729,7 +753,7 @@
             <div class="tier-price">$9</div>
             <div class="tier-price-unit">per month</div>
             <div class="tier-savings">&nbsp;</div>
-            <a href="/store/membership/monthly/" class="tier-cta">Subscribe</a>
+            <button class="tier-cta" disabled>Coming Soon</button>
           </div>
 
           <div class="tier-card">
@@ -737,7 +761,7 @@
             <div class="tier-price">$48</div>
             <div class="tier-price-unit">every 6 months</div>
             <div class="tier-savings">Save $6</div>
-            <a href="/store/membership/6-month/" class="tier-cta">Subscribe</a>
+            <button class="tier-cta" disabled>Coming Soon</button>
           </div>
 
           <div class="tier-card featured">
@@ -745,40 +769,15 @@
             <div class="tier-price">$84</div>
             <div class="tier-price-unit">per year</div>
             <div class="tier-savings">Save $24</div>
-            <a href="/store/membership/annual/" class="tier-cta">Subscribe</a>
+            <button class="tier-cta" disabled>Coming Soon</button>
           </div>
 
         </div>
 
-        <!-- Perks List -->
-        <div class="member-perks">
+<!-- Perks Placeholder -->
+        <div class="member-perks placeholder">
           <h4>What's included</h4>
-          <ul class="perk-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              One new signature recipe every month
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              One short (2-3 min.) video tutorial each month
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              5% off all custom orders
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              Early access to seasonal menus
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              Member-only flavor drops
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              Annual members: 1 free bakery treat per visit, each year
-            </li>
-          </ul>
+          <p>We're still finalizing what members will get — think monthly recipes, video tutorials, member-only drops, and perks for our most loyal customers.</p>
         </div>
 
         <!-- Cancellation Note -->
