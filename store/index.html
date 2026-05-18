@@ -345,15 +345,6 @@
     text-transform: uppercase; color: var(--peach-deep);
     font-family: 'Inter', sans-serif;
   }
-  .product-card-cta {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--navy); color: var(--cream);
-    padding: 9px 16px; border-radius: 100px;
-    font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-    transition: all 0.25s ease;
-  }
-  .product-card:hover .product-card-cta { background: var(--peach-deep); }
-  .product-card-cta svg { width: 10px; height: 10px; }
 
   /* ─── No Results ─── */
   .no-results {
@@ -1025,10 +1016,6 @@
               <p>${p.description}</p>
               <div class="product-card-footer">
                 ${priceBlock}
-                <span class="product-card-cta">
-                  ${ctaLabel}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                </span>
               </div>
             </div>
           </a>
