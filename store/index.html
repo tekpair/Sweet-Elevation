@@ -473,46 +473,6 @@
   }
   .cancel-note strong { color: var(--navy); font-weight: 600; }
 
-  /* ─── Notify Section ─── */
-  .notify { background: var(--navy); color: var(--cream); padding: 110px 48px; text-align: center; }
-  .notify-inner { max-width: 620px; margin: 0 auto; }
-  .notify .script {
-    font-family: 'Caveat', cursive; font-size: 36px; color: var(--peach);
-    margin-bottom: 4px; transform: rotate(-2deg); display: inline-block; font-weight: 600;
-  }
-  .notify h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(36px, 4.5vw, 56px); font-weight: 400;
-    line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px;
-  }
-  .notify h2 em { font-style: italic; color: var(--peach); }
-  .notify p {
-    color: rgba(250, 243, 234, 0.7); font-size: 16px;
-    margin-bottom: 32px; line-height: 1.65;
-  }
-  .notify-form {
-    display: flex; gap: 8px; max-width: 460px; margin: 0 auto; flex-wrap: wrap;
-  }
-  .notify-form input {
-    flex: 1; min-width: 220px;
-    background: rgba(250, 243, 234, 0.08);
-    border: 1px solid rgba(250, 243, 234, 0.2);
-    border-radius: 100px; padding: 14px 22px;
-    font-family: 'Inter', sans-serif; font-size: 14px; color: var(--cream);
-    transition: border 0.2s, background 0.2s;
-  }
-  .notify-form input::placeholder { color: rgba(250, 243, 234, 0.4); }
-  .notify-form input:focus { outline: none; border-color: var(--peach); background: rgba(250, 243, 234, 0.12); }
-  .notify-form button {
-    background: var(--peach); color: var(--navy); border: none;
-    padding: 14px 28px; border-radius: 100px;
-    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    cursor: pointer; transition: all 0.25s ease;
-  }
-  .notify-form button:hover { background: var(--peach-deep); color: var(--cream); transform: translateY(-1px); }
-  .notify-fineprint { font-size: 11px; color: rgba(250, 243, 234, 0.4); margin-top: 18px; letter-spacing: 0.02em; }
-
   /* ─── Footer ─── */
   footer { background: var(--navy); color: var(--cream); padding: 90px 48px 36px; border-top: 1px solid rgba(250, 243, 234, 0.08); }
   .foot-inner { max-width: 1400px; margin: 0 auto; }
@@ -777,20 +737,6 @@
           <strong>Need to cancel?</strong> Email us at <a href="mailto:sweetelevationbakery@gmail.com" style="color: var(--peach-deep);">sweetelevationbakery@gmail.com</a> and we'll take care of it — no hoops, no questions, no awkward exit interviews.
         </div>
 
-      </div>
-    </section>
-
-    <!-- Notify Me Waitlist -->
-    <section class="notify">
-      <div class="notify-inner">
-        <h2>Stay tuned for <em>the drop.</em></h2>
-        <p>We will be launching our online store soon — recipes, courses, monthly memberships, and more. Drop your email and we'll notify you when it's live.</p>
-        <form class="notify-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-          <input type="hidden" name="_subject" value="Store waitlist signup">
-          <button type="submit">Notify Me</button>
-        </form>
-        <p class="notify-fineprint">No spam. We'll only email when the store opens.</p>
       </div>
     </section>
 
