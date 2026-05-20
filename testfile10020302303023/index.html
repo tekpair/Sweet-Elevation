@@ -898,9 +898,9 @@
           <h1 class="product-title">The <em>Bake Club</em> Box</h1>
           <p class="product-subtitle">A monthly box of Jennifer's signature bakes — your size, your treats, shipped to your door.</p>
 
-          <div class="month-banner">
+<div class="month-banner">
             <strong>This month features</strong>
-            Chocolate Chip Cookies · OMG Bars · Vanilla Buttercream Cupcakes
+            Chocolate Chip Cookies · Lemon Bars · OMG Bars · Vanilla Buttercream Cupcakes
           </div>
 
           <div class="price-row">
@@ -964,16 +964,6 @@
             </div>
           </div>
 
-          <!-- Item Picker -->
-          <div class="selector-group">
-            <div class="selector-label">
-              <span>Pick your treats</span>
-              <span class="chosen" id="item-chosen">0 of 6 selected</span>
-            </div>
-            <div class="item-list" id="item-list">
-              <!-- Items rendered by JS -->
-            </div>
-
             <!-- Shipping progress -->
             <div class="ship-progress" id="ship-progress">
               <svg class="ship-progress-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -988,11 +978,11 @@
               <div class="ship-progress-bar" id="ship-progress-bar" style="width: 42%;"></div>
             </div>
           </div>
-
-          <!-- Buy Now -->
+        
+<!-- Buy Now -->
           <div class="buy-row">
-            <a href="https://sweetelevationbakery.com/store" class="buy-btn disabled" id="buy-btn">
-              <span id="buy-btn-text">Pick your treats to continue</span>
+            <a href="https://sweetelevationbakery.com/store" class="buy-btn" id="buy-btn">
+              <span id="buy-btn-text">Buy Now</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
             </a>
           </div>
@@ -1151,72 +1141,19 @@
     })();
   </script>
 
-  <!-- ====================================================
+<!-- ====================================================
        BOX LOGIC
        — Per-item price: $3.50
        — Sizes: 6 / 12 / 24
        — Free shipping over $50 OR on subscription
-       — Update monthly items in MONTHLY_ITEMS array below
        ==================================================== -->
   <script>
     const PER_ITEM_PRICE = 3.50;
     const FREE_SHIP_THRESHOLD = 50;
 
-    // Update this each month — what's featured in the box
-    const MONTHLY_ITEMS = [
-      { id: 'cookie', name: 'Chocolate Chip Cookie', desc: 'Rich chocolate chips blended with brown sugar and vanilla for a chewy texture in every bite.' },
-      { id: 'brownie', name: 'OMG Bar', desc: 'Layers of chocolate fudge brownie, buttery shortbread, vanilla buttercream, and ganache topped with chocolate sprinkles.' },
-      { id: 'cupcake', name: 'Vanilla Buttercream Cupcake', desc: 'Soft vanilla cupcake topped with creamy vanilla buttercream frosting and colorful sprinkles.' }
-    ];
-
     // ─── State ───
     let currentSize = 6;
     let currentFreq = 'once';
-    let cart = {}; // { itemId: qty }
-
-    // ─── Render items ───
-    const itemList = document.getElementById('item-list');
-    function renderItems() {
-      itemList.innerHTML = '';
-      MONTHLY_ITEMS.forEach(item => {
-        const row = document.createElement('div');
-        row.className = 'item-row' + ((cart[item.id] || 0) > 0 ? ' has-qty' : '');
-        row.innerHTML = `
-          <div class="item-row-info">
-            <div class="item-row-name">${item.name}</div>
-            <div class="item-row-desc">${item.desc}</div>
-          </div>
-          <div class="item-stepper">
-            <button data-action="minus" data-id="${item.id}" aria-label="Decrease ${item.name}" ${(cart[item.id] || 0) === 0 ? 'disabled' : ''}>−</button>
-            <span class="item-qty">${cart[item.id] || 0}</span>
-            <button data-action="plus" data-id="${item.id}" aria-label="Increase ${item.name}">+</button>
-          </div>
-        `;
-        itemList.appendChild(row);
-      });
-
-      // Wire steppers
-      itemList.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const id = this.dataset.id;
-          const action = this.dataset.action;
-          const totalSelected = totalCartCount();
-
-          if (action === 'plus') {
-            if (totalSelected >= currentSize) return; // box full
-            cart[id] = (cart[id] || 0) + 1;
-          } else {
-            if ((cart[id] || 0) > 0) cart[id]--;
-          }
-          renderItems();
-          updateAll();
-        });
-      });
-    }
-
-    function totalCartCount() {
-      return Object.values(cart).reduce((a, b) => a + b, 0);
-    }
 
     // ─── Size selector ───
     document.querySelectorAll('.swatch').forEach(sw => {
@@ -1226,22 +1163,6 @@
         currentSize = parseInt(this.dataset.size, 10);
         document.getElementById('size-chosen').textContent =
           (currentSize === 6 ? 'Small' : currentSize === 12 ? 'Medium' : 'Large') + ' · ' + currentSize + ' items';
-
-        // If they shrunk the box, trim cart to fit
-        let total = totalCartCount();
-        if (total > currentSize) {
-          // Remove items proportionally until we fit
-          const ids = Object.keys(cart);
-          while (totalCartCount() > currentSize && ids.length > 0) {
-            for (const id of ids) {
-              if (cart[id] > 0) {
-                cart[id]--;
-                if (totalCartCount() <= currentSize) break;
-              }
-            }
-          }
-          renderItems();
-        }
         updateAll();
       });
     });
@@ -1261,7 +1182,6 @@
     // ─── Update everything ───
     function updateAll() {
       const subtotal = currentSize * PER_ITEM_PRICE;
-      const selected = totalCartCount();
 
       // Price
       const priceEl = document.getElementById('price-value');
@@ -1270,13 +1190,6 @@
         priceEl.textContent = `$${subtotal.toFixed(2)}`;
         priceEl.style.opacity = '1';
       }, 100);
-
-      // Item count label
-      const itemChosen = document.getElementById('item-chosen');
-      itemChosen.textContent = `${selected} of ${currentSize} selected`;
-      itemChosen.className = 'chosen';
-      if (selected === currentSize) itemChosen.classList.add('success');
-      else if (selected > 0) itemChosen.classList.add('warn');
 
       // Shipping progress
       const progressEl = document.getElementById('ship-progress');
@@ -1299,27 +1212,10 @@
         barEl.style.width = `${percent}%`;
       }
 
-      // Buy button state
-      const buyBtn = document.getElementById('buy-btn');
+      // Buy button label
       const buyText = document.getElementById('buy-btn-text');
-      if (selected === currentSize) {
-        buyBtn.classList.remove('disabled');
-        buyText.textContent = currentFreq === 'once' ? 'Buy Now' : 'Subscribe Now';
-      } else {
-        buyBtn.classList.add('disabled');
-        const remaining = currentSize - selected;
-        buyText.textContent = selected === 0
-          ? 'Pick your treats to continue'
-          : `Pick ${remaining} more to continue`;
-      }
+      buyText.textContent = currentFreq === 'once' ? 'Buy Now' : 'Subscribe Now';
     }
-
-    // ─── Prevent disabled buy click ───
-    document.getElementById('buy-btn').addEventListener('click', function(e) {
-      if (this.classList.contains('disabled')) {
-        e.preventDefault();
-      }
-    });
 
     // ─── Share ───
     const pageUrl = window.location.href;
@@ -1348,7 +1244,6 @@
     }
 
     // ─── Init ───
-    renderItems();
     updateAll();
   </script>
 
