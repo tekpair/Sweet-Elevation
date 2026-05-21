@@ -354,6 +354,40 @@
     transition: opacity 0.2s;
   }
 
+.ship-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: -16px;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .ship-note.included {
+    color: var(--success);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .warning-banner {
+    background: rgba(232, 159, 128, 0.12);
+    border-left: 3px solid var(--peach-deep);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .warning-banner svg {
+    width: 18px;
+    height: 18px;
+    color: var(--peach-deep);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .warning-banner strong { font-weight: 600; }
+
   /* ─── Selector ─── */
   .selector-group { margin-bottom: 28px; }
   .selector-label {
@@ -903,10 +937,11 @@
             Chocolate Chip Cookies · Lemon Bars · OMG Bars · Vanilla Buttercream Cupcakes
           </div>
 
-          <div class="price-row">
-            <span class="price-label">Total</span>
+<div class="price-row">
+            <span class="price-label">Box Price</span>
             <span class="price-value" id="price-value">$21.00</span>
           </div>
+          <p class="ship-note" id="ship-note">+ shipping calculated at checkout</p>
 
           <!-- Size Selector -->
           <div class="selector-group">
@@ -964,19 +999,17 @@
             </div>
           </div>
 
-<!-- Shipping progress -->
+<!-- Shipping warning -->
           <div class="selector-group">
-            <div class="ship-progress" id="ship-progress">
-              <svg class="ship-progress-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="3" width="15" height="13"/>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                <circle cx="5.5" cy="18.5" r="2.5"/>
-                <circle cx="18.5" cy="18.5" r="2.5"/>
+            <div class="warning-banner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 9v4"/>
+                <path d="M12 17h.01"/>
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
               </svg>
-              <span class="ship-progress-text" id="ship-progress-text">
-                <strong>$29.00</strong> away from free shipping
+              <span>
+                <strong>Ships uninsulated.</strong> Please refrigerate immediately upon arrival. Treats stay fresh 2-3 days refrigerated. Freeze instead to extend by 60 days.
               </span>
-              <div class="ship-progress-bar" id="ship-progress-bar" style="width: 42%;"></div>
             </div>
           </div>
 
@@ -988,20 +1021,25 @@
             </a>
           </div>
 
-          <!-- Description -->
+<!-- Description -->
           <div class="product-section">
             <h3>About this box</h3>
-            <p>One box. Your size, your treats, shipped fresh to your door. Each month features a new lineup of Jennifer's signatures — pick what you want, how much, and how often.</p>
-            <p>Subscribe monthly for free shipping every box. One-time orders ship free at $50+, calculated otherwise.</p>
+            <p>A curated monthly box of Jennifer's signature bakes — your size, your sweets, shipped fresh to your door. Each month features a new lineup of her favorites.</p>
+            <p><strong>Free shipping</strong> on Large boxes. Small and Medium boxes ship at USPS calculated rates ($6–$12 depending on destination).</p>
+            <p><strong>Subscribers save 10%</strong> on every recurring order. Cancel or skip anytime.</p>
 
             <div class="detail-pills">
               <span class="detail-pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 Made fresh, then shipped
               </span>
+<span class="detail-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                Free shipping on Large
+              </span>
               <span class="detail-pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                Free shipping on subscriptions
+                10% off subscriptions
               </span>
               <span class="detail-pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1014,14 +1052,30 @@
             </div>
           </div>
 
-          <!-- Ingredients -->
+          <!-- Handling & returns -->
           <div class="product-section">
-            <h3>Ingredients &amp; Allergens</h3>
-            <div class="ingredients-placeholder">
-              Ingredient and allergen info varies by item. Each box ships with a labeled card — full list coming soon.
-            </div>
+            <h3>Handling &amp; returns</h3>
+            <p><strong>When your box arrives:</strong> Refrigerate immediately. Boxes ship uninsulated, so timing matters. Treats stay fresh 3–5 days refrigerated, longer if frozen.</p>
+            <p><strong>Damaged shipments:</strong> If your box arrives significantly damaged, email us at <a href="mailto:sweetelevationbakery@gmail.com" style="color: var(--peach-deep);">sweetelevationbakery@gmail.com</a> within 24 hours of delivery with photos. We'll make it right.</p>
+            <p><strong>All sales final.</strong> Due to the perishable nature of our products, we don't accept returns or exchanges outside of damaged shipments.</p>
           </div>
 
+     <!-- Ingredients -->
+          <div class="product-section">
+            <h3>Ingredients &amp; Allergens</h3>
+            <p>Full ingredient lists for each item are included on the label card shipped with your box. Ingredients vary by month based on the featured lineup.</p>
+            <div class="warning-banner" style="margin-top: 14px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 9v4"/>
+                <path d="M12 17h.01"/>
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              </svg>
+              <span>
+                <strong>Allergen notice:</strong> All items are made and packaged in a facility that processes <strong>wheat, gluten, and tree nuts</strong>. We cannot guarantee against cross-contamination. If you have a severe allergy, please do not order.
+              </span>
+            </div>
+          </div>
+          
           <!-- Share -->
           <div class="share-row">
             <span class="share-label">Share</span>
@@ -1149,8 +1203,13 @@
        — Free shipping over $50 OR on subscription
        ==================================================== -->
   <script>
-    const PER_ITEM_PRICE = 3.50;
-    const FREE_SHIP_THRESHOLD = 50;
+// ─── Pricing config ───
+    const SIZE_CONFIG = {
+      6:  { price: 21, name: 'Small',  freeShip: false },
+      12: { price: 42, name: 'Medium', freeShip: false },
+      24: { price: 84, name: 'Large',  freeShip: true  }
+    };
+    const SUBSCRIPTION_DISCOUNT = 0.10; // 10% off recurring
 
     // ─── State ───
     let currentSize = 6;
@@ -1180,42 +1239,41 @@
       });
     });
 
-    // ─── Update everything ───
+ // ─── Update everything ───
     function updateAll() {
-      const subtotal = currentSize * PER_ITEM_PRICE;
+      const config = SIZE_CONFIG[currentSize];
+      let price = config.price;
 
-      // Price
+      // Apply 10% subscription discount
+      if (currentFreq === 'monthly') {
+        price = price * (1 - SUBSCRIPTION_DISCOUNT);
+      }
+
+      // Price display
       const priceEl = document.getElementById('price-value');
       priceEl.style.opacity = '0.4';
       setTimeout(() => {
-        priceEl.textContent = `$${subtotal.toFixed(2)}`;
+        priceEl.textContent = `$${price.toFixed(2)}`;
         priceEl.style.opacity = '1';
       }, 100);
 
-      // Shipping progress
-      const progressEl = document.getElementById('ship-progress');
-      const textEl = document.getElementById('ship-progress-text');
-      const barEl = document.getElementById('ship-progress-bar');
-
-      if (currentFreq === 'monthly') {
-        progressEl.classList.add('unlocked');
-        textEl.innerHTML = `<strong>Free shipping</strong> — included with your subscription.`;
-        barEl.style.width = '100%';
-      } else if (subtotal >= FREE_SHIP_THRESHOLD) {
-        progressEl.classList.add('unlocked');
-        textEl.innerHTML = `<strong>Free shipping unlocked.</strong> You're set.`;
-        barEl.style.width = '100%';
+      // Shipping note
+      const shipNote = document.getElementById('ship-note');
+      if (config.freeShip) {
+        shipNote.textContent = '✓ Free shipping included';
+        shipNote.classList.add('included');
       } else {
-        progressEl.classList.remove('unlocked');
-        const remaining = FREE_SHIP_THRESHOLD - subtotal;
-        textEl.innerHTML = `<strong>$${remaining.toFixed(2)}</strong> away from free shipping`;
-        const percent = Math.min(100, (subtotal / FREE_SHIP_THRESHOLD) * 100);
-        barEl.style.width = `${percent}%`;
+        shipNote.textContent = '+ shipping calculated at checkout ($6–$12)';
+        shipNote.classList.remove('included');
       }
 
       // Buy button label
       const buyText = document.getElementById('buy-btn-text');
-      buyText.textContent = currentFreq === 'once' ? 'Buy Now' : 'Subscribe Now';
+      if (currentFreq === 'monthly') {
+        buyText.textContent = `Subscribe — Save 10%`;
+      } else {
+        buyText.textContent = 'Buy Now';
+      }
     }
 
     // ─── Share ───
