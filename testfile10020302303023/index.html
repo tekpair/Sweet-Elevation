@@ -1231,14 +1231,16 @@
         buyText.textContent = 'Buy Now';
       }
 
-      // Buy button URL — Shopify cart permalink with subscription support
+// Buy button URL — Shopify cart permalink with subscription support
+      // Uses the /cart/add format which properly handles selling plans
       const buyBtn = document.getElementById('buy-btn');
-      let cartUrl = `${SHOPIFY_STORE}/cart/${config.variantId}:1`;
+      let cartUrl;
       if (currentFreq === 'monthly') {
-        cartUrl += `?selling_plan=${config.sellingPlanId}`;
+        cartUrl = `${SHOPIFY_STORE}/cart/add?items[][id]=${config.variantId}&items[][quantity]=1&items[][selling_plan]=${config.sellingPlanId}&return_to=/checkout`;
+      } else {
+        cartUrl = `${SHOPIFY_STORE}/cart/add?items[][id]=${config.variantId}&items[][quantity]=1&return_to=/checkout`;
       }
       buyBtn.href = cartUrl;
-    }
 
     // ─── Share ───
     const pageUrl = window.location.href;
