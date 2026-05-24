@@ -266,39 +266,65 @@
     overflow: hidden;
   }
 
-  /* ─── Page Hero ─── */
-  .page-hero {
-    text-align: center;
-    padding: 90px 48px 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .page-hero .script {
-    font-family: 'Caveat', cursive;
-    font-size: 36px;
-    color: var(--peach-deep);
-    margin-bottom: 4px;
-    transform: rotate(-2deg);
-    display: inline-block;
-    font-weight: 600;
-  }
-  .page-hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(54px, 7vw, 104px);
-    line-height: 1.0;
-    letter-spacing: -0.025em;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 24px;
-  }
-  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
-  .page-hero p {
-    font-size: 18px;
-    color: var(--ink-soft);
-    max-width: 620px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
+/* ─── Page Hero (with banner) ─── */
+.page-hero {
+  position: relative;
+  text-align: center;
+  padding: 140px 48px 110px;
+  max-width: none;
+  margin: 0;
+  width: 100%;
+  background-image: url('/assets/charcuterie.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  isolation: isolate;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(31, 41, 80, 0.70) 0%,
+    rgba(31, 41, 80, 0.82) 100%
+  );
+  z-index: -1;
+}
+.page-hero .script {
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  color: var(--peach);
+  margin-bottom: 4px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.page-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(54px, 7vw, 104px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 24px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+.page-hero h1 em {
+  font-style: italic;
+  color: var(--peach);
+}
+.page-hero p {
+  font-size: 18px;
+  color: rgba(250, 243, 234, 0.92);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
 
   /* ─── Showcase image ─── */
   .showcase {
@@ -540,7 +566,7 @@
     .hamburger { display: inline-flex; }
     header nav .nav-links { display: none; }
 
-    .page-hero { padding: 60px 24px 30px; }
+.page-hero { padding: 90px 24px 70px; }
     .showcase { padding: 20px 24px 60px; }
     .showcase-image { aspect-ratio: 4/3; }
 
@@ -614,13 +640,6 @@
       <div class="script">cheese, please</div>
       <h1>Charcuterie at <em>Sweet Elevation</em></h1>
       <p>Hand-built charcuterie boards and group workshops.</p>
-    </section>
-
-    <!-- Showcase Image -->
-    <section class="showcase">
-      <div class="showcase-image">
-        <img src="/assets/charcuterie.jpeg" alt="Charcuterie board by Gouda Giggles at Sweet Elevation Bakery in Latham, NY" loading="eager">
-      </div>
     </section>
 
     <!-- What We Offer -->
