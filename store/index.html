@@ -174,24 +174,55 @@
   }
   body.menu-open { overflow: hidden; }
 
-  /* ─── Page Hero ─── */
-  .page-hero { text-align: center; padding: 90px 48px 30px; max-width: 900px; margin: 0 auto; }
-  .page-hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(54px, 7vw, 104px); line-height: 1.0; letter-spacing: -0.025em;
-    font-weight: 400; color: var(--navy); margin-bottom: 22px;
-  }
-  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
-  .page-hero p { font-size: 17px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.7; }
-
-  /* ─── Top Row: Quote Banner + Member Promo ─── */
-  .top-row-wrap { max-width: 1300px; margin: 30px auto 0; padding: 0 48px; }
-  .top-row {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 20px;
-    align-items: stretch;
-  }
+/* ─── Page Hero (with banner) ─── */
+.page-hero {
+  position: relative;
+  text-align: center;
+  padding: 140px 48px 110px;
+  max-width: none;
+  margin: 0;
+  width: 100%;
+  background-image: url('/assets/store.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  isolation: isolate;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(31, 41, 80, 0.70) 0%,
+    rgba(31, 41, 80, 0.82) 100%
+  );
+  z-index: -1;
+}
+.page-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(54px, 7vw, 104px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 22px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+.page-hero h1 em {
+  font-style: italic;
+  color: var(--peach);
+}
+.page-hero p {
+  font-size: 17px;
+  color: rgba(250, 243, 234, 0.92);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
   .quote-banner {
     background: var(--cream-deep);
     border: 1px solid var(--peach);
@@ -506,7 +537,7 @@
     header nav .nav-links { display: none; }
     .hamburger { display: inline-flex; }
 
-    .page-hero { padding: 60px 24px 30px; }
+.page-hero { padding: 90px 24px 70px; }
     .top-row-wrap { padding: 0 24px; margin-top: 24px; }
     .top-row { grid-template-columns: 1fr; gap: 14px; }
 
@@ -600,7 +631,7 @@
         <div class="quote-banner">
           <div class="quote-banner-text">
             <strong>Looking for a custom order?</strong>
-            <p>Cakes, cookies, weddings, and more are handled separately through our MCB.</p>
+           <p>Cakes, cookies, and more are handled separately through <a href="/#our-sweets" target="_blank" rel="noopener" style="color: var(--peach-deep);">MyCustomBakes</a>.</p>
           </div>
           <a href="/#our-sweets" class="quote-banner-cta">
             Get Custom Quote
