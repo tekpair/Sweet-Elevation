@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  WEBSITE BY TEKPAIR
+  ============================================================
+  Design & Development: Tekpair
+  tekpair.com/webdesign | Cohoes, NY | Capital Region
+  ============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Returns & Refunds Policy | Sweet Elevation Bakery — Latham, NY</title>
+<meta name="description" content="Sweet Elevation Bakery's returns and refunds policy. Damaged shipments, replacements, and subscription cancellations.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sweetelevationbakery.com/returns/">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1f2950">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #faf3ea;
+    --cream-deep: #f4ead9;
+    --navy: #1f2950;
+    --navy-soft: #3d4670;
+    --peach: #f4c4ad;
+    --peach-deep: #e89f80;
+    --ink-soft: #5a5b73;
+    --line: #e8dfd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 48px 18px;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .logo-slot a { display: block; line-height: 0; }
+  .logo-slot img { height: 78px; width: auto; max-width: 260px; object-fit: contain; display: block; }
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .nav-links a {
+    text-decoration: none; color: var(--navy);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: color 0.2s; position: relative;
+  }
+  .nav-links a:hover { color: var(--peach-deep); }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 1.5px; background: var(--peach-deep); transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 80%; }
+
+  .hamburger {
+    display: none;
+    background: transparent; border: none; cursor: pointer; padding: 8px;
+    position: fixed; right: 20px; top: 24px; z-index: 200;
+    width: 40px; height: 40px;
+    align-items: center; justify-content: center;
+  }
+  .hamburger-icon { position: relative; width: 22px; height: 16px; }
+  .hamburger-icon span {
+    position: absolute; left: 0; width: 100%; height: 2px;
+    background: var(--navy); border-radius: 100px; transition: all 0.3s ease;
+  }
+  .hamburger-icon span:nth-child(1) { top: 0; }
+  .hamburger-icon span:nth-child(2) { top: 7px; }
+  .hamburger-icon span:nth-child(3) { top: 14px; }
+  .hamburger.active .hamburger-icon span:nth-child(1) { top: 7px; transform: rotate(45deg); background: var(--cream); }
+  .hamburger.active .hamburger-icon span:nth-child(2) { opacity: 0; }
+  .hamburger.active .hamburger-icon span:nth-child(3) { top: 7px; transform: rotate(-45deg); background: var(--cream); }
+
+  .mobile-menu {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--navy); z-index: 101;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 40px 24px;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  .mobile-menu.active { opacity: 1; visibility: visible; }
+  .mobile-menu ul { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 28px; }
+  .mobile-menu a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px; font-weight: 400;
+    color: var(--cream); text-decoration: none;
+    letter-spacing: -0.01em; display: inline-block;
+    opacity: 0; transform: translateY(20px);
+    transition: color 0.2s, opacity 0.5s ease, transform 0.5s ease;
+  }
+  .mobile-menu.active a { opacity: 1; transform: translateY(0); }
+  .mobile-menu.active li:nth-child(1) a { transition-delay: 0.08s; }
+  .mobile-menu.active li:nth-child(2) a { transition-delay: 0.13s; }
+  .mobile-menu.active li:nth-child(3) a { transition-delay: 0.18s; }
+  .mobile-menu.active li:nth-child(4) a { transition-delay: 0.23s; }
+  .mobile-menu.active li:nth-child(5) a { transition-delay: 0.28s; }
+  .mobile-menu.active li:nth-child(6) a { transition-delay: 0.33s; }
+  .mobile-menu.active li:nth-child(7) a { transition-delay: 0.38s; }
+  .mobile-menu a em { font-style: italic; color: var(--peach); }
+  .mobile-menu-foot {
+    position: absolute; bottom: 40px; text-align: center;
+    color: rgba(250, 243, 234, 0.5);
+    font-size: 12px; letter-spacing: 0.05em;
+  }
+  .mobile-menu-foot a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: var(--peach); font-weight: 500;
+    display: inline-block; margin-top: 4px;
+  }
+  body.menu-open { overflow: hidden; }
+
+  .page-hero {
+    text-align: center;
+    padding: 80px 48px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .page-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(44px, 6vw, 84px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
+  .page-hero .updated {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-style: italic;
+    letter-spacing: 0.04em;
+  }
+
+  .doc {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 48px 100px;
+  }
+  .doc h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .doc h2 em { font-style: italic; color: var(--peach-deep); }
+  .doc h2:first-child { margin-top: 0; }
+  .doc h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 28px;
+    margin-bottom: 12px;
+  }
+  .doc p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .doc p strong { color: var(--navy); font-weight: 600; }
+  .doc ul {
+    list-style: none;
+    margin-bottom: 16px;
+    padding-left: 0;
+  }
+  .doc ul li {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .doc ul li::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    width: 4px;
+    height: 4px;
+    background: var(--peach-deep);
+    border-radius: 50%;
+  }
+  .doc ul li strong { color: var(--navy); font-weight: 600; }
+  .doc ol {
+    margin-bottom: 16px;
+    padding-left: 22px;
+  }
+  .doc ol li {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 10px;
+    padding-left: 6px;
+  }
+  .doc ol li::marker { color: var(--peach-deep); font-weight: 600; }
+  .doc a {
+    color: var(--peach-deep);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .doc a:hover { color: var(--navy); }
+
+  .doc-intro {
+    background: var(--cream-deep);
+    border-left: 3px solid var(--peach-deep);
+    padding: 18px 22px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+  }
+  .doc-intro p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 0;
+    color: var(--navy);
+  }
+
+  footer { background: var(--navy); color: var(--cream); padding: 90px 48px 36px; border-top: 1px solid rgba(250, 243, 234, 0.08); }
+  .foot-inner { max-width: 1400px; margin: 0 auto; }
+  .foot-top {
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 64px;
+    padding-bottom: 56px; border-bottom: 1px solid rgba(250, 243, 234, 0.1); margin-bottom: 36px;
+  }
+  .foot-brand .foot-logo {
+    background: var(--cream); padding: 16px 20px; border-radius: 8px;
+    width: fit-content; margin-bottom: 24px;
+  }
+  .foot-brand .foot-logo img { height: 64px; width: auto; max-width: 200px; display: block; }
+  .foot-tagline {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 18px; line-height: 1.5; color: var(--peach);
+    max-width: 280px; margin-bottom: 24px;
+  }
+  .foot-contact { font-size: 14px; color: rgba(250, 243, 234, 0.65); line-height: 1.8; }
+  .foot-contact a { color: rgba(250, 243, 234, 0.85); text-decoration: none; transition: color 0.2s; }
+  .foot-contact a:hover { color: var(--peach); }
+  .foot-col h4 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 20px; color: var(--peach); font-weight: 400; }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 12px; }
+  .foot-col a { color: rgba(250, 243, 234, 0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--peach); }
+  .foot-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em; gap: 20px; flex-wrap: wrap;
+  }
+  .tekpair-credit {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--peach); text-decoration: none;
+    font-size: 12px; font-weight: 500; transition: opacity 0.2s;
+  }
+  .tekpair-credit:hover { opacity: 0.75; }
+
+  @media (max-width: 900px) {
+    nav { padding: 18px 20px 16px; gap: 12px; }
+    .logo-slot img { height: 60px; }
+    header nav .nav-links { display: none; }
+    .hamburger { display: inline-flex; }
+    .page-hero { padding: 60px 24px 24px; }
+    .doc { padding: 30px 24px 70px; }
+    footer { padding: 70px 24px 32px; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-bottom { justify-content: center; flex-direction: column; gap: 14px; text-align: center; }
+  }
+  @media (max-width: 500px) {
+    .foot-top { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo-slot">
+        <a href="/" aria-label="Sweet Elevation Bakery — Home">
+          <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+        <li><a href="/store/">Store</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/charcuterie/">Charcuterie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="hamburger-icon"><span></span><span></span><span></span></span>
+  </button>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/weddings-events/">Weddings &amp; <em>Events</em></a></li>
+      <li><a href="/store/">Store</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/charcuterie/">Charcuterie</a></li>
+      <li><a href="/#our-sweets">Get a <em>Quote</em></a></li>
+    </ul>
+    <div class="mobile-menu-foot">
+      <div>356 Troy Schenectady Rd, Latham NY</div>
+      <a href="tel:+15188180010">(518) 818-0010</a>
+    </div>
+  </div>
+
+
+  <main>
+
+    <section class="page-hero">
+      <h1>Returns &amp; <em>Refunds</em></h1>
+      <p class="updated">Last updated: May 23, 2026</p>
+    </section>
+
+    <div class="doc">
+
+      <div class="doc-intro">
+        <p>Our products are handmade, perishable baked goods. Our return and refund policy reflects that reality.</p>
+      </div>
+
+      <h2>1. All sales <em>final</em></h2>
+      <p>Due to the perishable nature of our products, we do not accept returns or exchanges. Once an order is placed and shipped or fulfilled, it cannot be returned for a refund.</p>
+
+      <h2>2. Exception: Significant damage in <em>shipping</em></h2>
+      <p>If your box arrives significantly damaged in shipping, we will make it right. This applies to:</p>
+      <ul>
+        <li>Crushed or destroyed packaging that ruined the contents</li>
+        <li>Spoiled or melted contents on arrival (when caused by carrier delays beyond our control)</li>
+        <li>Missing items that were on your order receipt</li>
+        <li>Items that arrived in unsafe condition (e.g., punctured packaging)</li>
+      </ul>
+      <p><strong>To request a replacement or refund for damage:</strong></p>
+      <ol>
+        <li>Email <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a> within 24 hours of delivery</li>
+        <li>Include your order number and clear photos of the damage</li>
+        <li>We will respond within 2 business days and either ship a replacement, issue a partial refund, or issue a full refund at our discretion</li>
+      </ol>
+
+      <h2>3. What does <em>not</em> qualify for a refund</h2>
+      <ul>
+        <li>Minor cosmetic imperfections (cookies break sometimes, they still taste great)</li>
+        <li>You forgot to refrigerate the box and it spoiled</li>
+        <li>You did not like a particular flavor</li>
+        <li>You placed the wrong order</li>
+        <li>The package was marked delivered but you say you did not receive it (carrier claims must be filed with the carrier directly; we will assist where possible)</li>
+        <li>Reports of damage made more than 24 hours after delivery</li>
+      </ul>
+
+      <h2>4. Subscription <em>cancellations</em></h2>
+      <p>The Bake Club Box subscription can be canceled anytime before the next month's box is packed and labeled. Cancel via Shopify's customer portal or email us directly at <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.</p>
+      <p>Once a box is packed and labeled for shipment, that specific charge and order cannot be reversed. The subscription itself can still be stopped before the next cycle. We do not provide partial refunds for partially used billing periods.</p>
+
+      <h2>5. <em>Chargebacks</em></h2>
+      <p>If you have an issue with an order, please contact us first at <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>. We will work to resolve it. Filing a chargeback without contacting us is considered a violation of these terms and may result in a permanent ban from future purchases.</p>
+
+      <h2>6. <em>Custom orders</em></h2>
+      <p>Custom orders (cakes, weddings, events) are handled separately through <a href="https://mycustombakes.com" target="_blank" rel="noopener">MyCustomBakes.com</a> and have their own deposit, deadline, and cancellation policies communicated at quote time.</p>
+
+      <h2>7. <em>Contact</em></h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+15188180010">(518) 818-0010</a></li>
+        <li><strong>Address:</strong> 356 Troy Schenectady Rd, Latham, NY 12110</li>
+      </ul>
+
+    </div>
+
+  </main>
+
+<!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="foot-logo">
+            <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+          </div>
+          <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+          <div class="foot-contact">
+            <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+            <a href="tel:+15188180010">(518) 818-0010</a><br>
+            Tue – Sat
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="/#our-sweets">Custom Quotes</a></li>
+            <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
+            <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+            <li><a href="/charcuterie/">Charcuterie</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="/store/">Bake at Home</a></li>
+            <li><a href="/store/">Recipes</a></li>
+            <li><a href="/store/">Bake Club</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="/about-us/">Our Story</a></li>
+            <li><a href="tel:+15188180010">Contact</a></li>
+            <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <div class="copyright">© 2026 Sweet Elevation Bakery</div>
+        <div>
+          Website by
+          <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+            <span>Tekpair</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const body = document.body;
+      if (!hamburger || !mobileMenu) return;
+      function openMenu() {
+        hamburger.classList.add('active');
+        mobileMenu.classList.add('active');
+        body.classList.add('menu-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+      hamburger.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('active')) closeMenu(); else openMenu();
+      });
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
+      });
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 900 && mobileMenu.classList.contains('active')) closeMenu();
+      });
+    })();
+  </script>
+
+
+</body>
+</html>
