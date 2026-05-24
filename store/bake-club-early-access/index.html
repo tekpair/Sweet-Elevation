@@ -701,6 +701,111 @@
   }
   .share-btn svg { width: 16px; height: 16px; }
 
+/* ─── Legal Accordion ─── */
+.legal-toggle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+.legal-toggle:hover { color: var(--peach-deep); }
+.legal-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.legal-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--peach-deep);
+}
+.legal-chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--ink-soft);
+  transition: transform 0.3s ease;
+}
+.legal-toggle.open .legal-chevron {
+  transform: rotate(180deg);
+}
+.legal-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.legal-content.open {
+  max-height: 600px;
+}
+.legal-list {
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.legal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  gap: 14px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.legal-item:hover {
+  border-color: var(--peach);
+  transform: translateY(-1px);
+}
+.legal-item-info { flex: 1; min-width: 0; }
+.legal-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.legal-item-desc {
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.legal-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--navy);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.legal-visit-btn:hover {
+  background: var(--peach-deep);
+  transform: translateY(-1px);
+}
+.legal-visit-btn svg { width: 11px; height: 11px; }
+
+@media (max-width: 500px) {
+  .legal-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .legal-visit-btn { align-self: stretch; justify-content: center; }
+}
+
   .toast {
     position: fixed;
     bottom: 30px;
@@ -866,7 +971,7 @@
 
           <div class="month-banner">
             <strong>This month features</strong>
-            Brookies · Raspbery Linzers · OMG Bars
+            Brookies · Raspberry Linzers · OMG Bars
           </div>
 
           <!-- Launch / Preorder Notice -->
@@ -967,7 +1072,7 @@
           <div class="product-section">
             <h3>About this box</h3>
             <p>A curated monthly box of Jennifer's signature bakes — your size, your sweets, shipped fresh to your door. Each month features a new lineup of her favorites.</p>
-            <p><strong>Free shipping</strong> on orders $84.00+. Orders totaling less than $84.00 at checkout will ship at carrier-calculated rates.</p>
+            <p><strong>Free shipping</strong> on orders $84.00+ total. Orders totaling less than $84.00 at checkout will ship at carrier-calculated rates via USPS or UPS.</p>
             <p><strong>Subscribers save 10%</strong> on every recurring order. Cancel or skip anytime.</p>
 
             <div class="detail-pills">
@@ -977,7 +1082,7 @@
               </span>
               <span class="detail-pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                Free shipping on Orders $84.00+
+                Free shipping on orders $84.00+
               </span>
               <span class="detail-pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1019,6 +1124,62 @@
               </span>
             </div>
           </div>
+
+          <!-- Legal Accordion -->
+<div class="product-section">
+  <button class="legal-toggle" id="legal-toggle" aria-expanded="false" aria-controls="legal-content">
+    <span class="legal-toggle-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="legal-icon">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
+      Legal
+    </span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="legal-chevron">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+  <div class="legal-content" id="legal-content">
+    <div class="legal-list">
+      <div class="legal-item">
+        <div class="legal-item-info">
+          <div class="legal-item-name">Privacy Policy</div>
+          <div class="legal-item-desc">What data we collect and how we use it.</div>
+        </div>
+        <a href="/privacy/" class="legal-visit-btn">Visit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="legal-item">
+        <div class="legal-item-info">
+          <div class="legal-item-name">Terms of Service</div>
+          <div class="legal-item-desc">Ordering, payments, and your rights.</div>
+        </div>
+        <a href="/terms/" class="legal-visit-btn">Visit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="legal-item">
+        <div class="legal-item-info">
+          <div class="legal-item-name">Returns &amp; Refunds</div>
+          <div class="legal-item-desc">Damaged shipments and cancellations.</div>
+        </div>
+        <a href="/refunds/" class="legal-visit-btn">Visit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="legal-item">
+        <div class="legal-item-info">
+          <div class="legal-item-name">Shipping Policy</div>
+          <div class="legal-item-desc">Carriers, costs, and delivery times.</div>
+        </div>
+        <a href="/shipping/" class="legal-visit-btn">Visit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
           <!-- Share -->
           <div class="share-row">
@@ -1151,29 +1312,27 @@
     const SHOPIFY_STORE = 'https://sweetelevation.myshopify.com';
 
     // ─── Pricing + variant config ───
-    const SIZE_CONFIG = {
-      6:  {
-        price: 21,
-        name: 'Small',
-        freeShip: false,
-        variantId: '43405744111706',
-        sellingPlanId: '3431989338'
-      },
-      12: {
-        price: 42,
-        name: 'Medium',
-        freeShip: false,
-        variantId: '43405744144474',
-        sellingPlanId: '3432185946'
-      },
-      24: {
-        price: 84,
-        name: 'Large',
-        freeShip: false,
-        variantId: '43405744177242',
-        sellingPlanId: '3432218714'
-      }
-    };
+const SIZE_CONFIG = {
+  6:  {
+    price: 21,
+    name: 'Small',
+    variantId: '43405744111706',
+    sellingPlanId: '3431989338'
+  },
+  12: {
+    price: 42,
+    name: 'Medium',
+    variantId: '43405744144474',
+    sellingPlanId: '3432185946'
+  },
+  24: {
+    price: 84,
+    name: 'Large',
+    variantId: '43405744177242',
+    sellingPlanId: '3432218714'
+  }
+};
+const FREE_SHIPPING_THRESHOLD = 84;
     const SUBSCRIPTION_DISCOUNT = 0.10; // 10% off recurring
 
     // ─── State ───
@@ -1222,15 +1381,15 @@
         priceEl.style.opacity = '1';
       }, 100);
 
-      // Shipping note
-      const shipNote = document.getElementById('ship-note');
-      if (config.freeShip) {
-        shipNote.textContent = '✓ Free shipping included';
-        shipNote.classList.add('included');
-      } else {
-        shipNote.textContent = '+ shipping calculated at checkout';
-        shipNote.classList.remove('included');
-      }
+// Shipping note — only free when total reaches $84
+const shipNote = document.getElementById('ship-note');
+if (price >= FREE_SHIPPING_THRESHOLD) {
+  shipNote.textContent = '✓ Free shipping included';
+  shipNote.classList.add('included');
+} else {
+  shipNote.textContent = '+ shipping calculated at checkout';
+  shipNote.classList.remove('included');
+}
 
       // Buy button label
       const buyText = document.getElementById('buy-btn-text');
@@ -1278,8 +1437,21 @@
       setTimeout(() => toast.classList.remove('show'), 2800);
     }
 
-    // ─── Init ───
-    updateAll();
+// ─── Legal accordion ───
+(function() {
+  const toggle = document.getElementById('legal-toggle');
+  const content = document.getElementById('legal-content');
+  if (!toggle || !content) return;
+  toggle.addEventListener('click', function() {
+    const isOpen = toggle.classList.contains('open');
+    toggle.classList.toggle('open');
+    content.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', !isOpen);
+  });
+})();
+
+// ─── Init ───
+updateAll();
   </script>
 
 </body>
