@@ -109,7 +109,7 @@
     transition: opacity 0.4s ease, visibility 0.4s ease;
   }
   .mobile-menu.active { opacity: 1; visibility: visible; }
-  .mobile-menu ul { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 28px; }
+  .mobile-menu ul { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 22px; padding-bottom: 90px; }
   .mobile-menu a {
     font-family: 'DM Serif Display', serif;
     font-size: 32px; font-weight: 400;
@@ -308,6 +308,7 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <header>
     <nav aria-label="Main navigation">
       <div class="logo-slot">
@@ -321,14 +322,21 @@
         <li><a href="/store/">Store</a></li>
         <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/charcuterie/">Charcuterie</a></li>
+        <li><a href="/careers/">Careers</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hamburger button -->
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-    <span class="hamburger-icon"><span></span><span></span><span></span></span>
+    <span class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
   </button>
 
+  <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <ul>
       <li><a href="/">Home</a></li>
@@ -337,6 +345,7 @@
       <li><a href="/store/">Store</a></li>
       <li><a href="/portfolio/">Portfolio</a></li>
       <li><a href="/charcuterie/">Charcuterie</a></li>
+      <li><a href="/careers/">Careers</a></li>
       <li><a href="/#our-sweets">Get a <em>Quote</em></a></li>
     </ul>
     <div class="mobile-menu-foot">
@@ -344,6 +353,7 @@
       <a href="tel:+15188180010">(518) 818-0010</a>
     </div>
   </div>
+
 
 
   <main>
