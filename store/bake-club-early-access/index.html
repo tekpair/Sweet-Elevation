@@ -489,47 +489,43 @@
   }
 }
 
-  .launch-notice {
-    background: var(--cream);
-    border: 1px solid var(--peach);
-    border-radius: 8px;
-    padding: 18px 20px;
-    margin-bottom: 28px;
-    position: relative;
+.launch-notice-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream);
+  border: 1px solid rgba(232, 159, 128, 0.35);
+  border-radius: 100px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.launch-notice-mini strong {
+  color: var(--peach-deep);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.launch-notice-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--peach-deep);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+@media (max-width: 500px) {
+  .launch-notice-mini {
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 11.5px;
   }
-  .launch-notice-pill {
-    position: absolute;
-    top: -10px;
-    left: 16px;
-    background: var(--peach-deep);
-    color: var(--cream);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 100px;
-  }
-  .launch-notice-body strong {
-    font-weight: 600;
-    color: var(--navy);
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
-  .launch-notice-body p {
-    font-size: 13px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-  .launch-notice-body p:last-child { margin-bottom: 0; }
-  .launch-notice-body a {
-    color: var(--peach-deep);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .launch-notice-body a:hover { color: var(--navy); }
+}
 
   .price-row {
     display: flex;
@@ -735,7 +731,11 @@
   }
 
   /* ─── Buy Button ─── */
-  .buy-row { margin-top: 32px; }
+.buy-row { margin-top: 32px; }
+@media (max-width: 700px) {
+  .buy-row { margin-top: 24px; }
+  .buy-btn { padding: 16px 28px; font-size: 12px; }
+}
   .buy-btn {
     display: inline-flex;
     align-items: center;
@@ -768,19 +768,20 @@
   .buy-btn svg { width: 14px; height: 14px; }
 
   /* ─── Description / Ingredients ─── */
+.product-section {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 700px) {
   .product-section {
-    margin-top: 36px;
-    padding-top: 32px;
-    border-top: 1px solid var(--line);
+    margin-top: 28px;
+    padding-top: 24px;
   }
   .product-section h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
+    font-size: 20px;
   }
+}
   .product-section p {
     font-size: 15px;
     color: var(--ink-soft);
@@ -788,6 +789,44 @@
     margin-bottom: 14px;
   }
   .product-section p:last-child { margin-bottom: 0; }
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.info-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.info-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--peach-deep);
+  border-radius: 50%;
+}
+.info-list li strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+.info-list li a {
+  color: var(--peach-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.info-list li a:hover {
+  color: var(--navy);
+}
 
   .detail-pills {
     display: flex;
@@ -1180,15 +1219,11 @@
   </div>
 </div>
 
-          <!-- Launch / Preorder Notice -->
-          <div class="launch-notice">
-            <div class="launch-notice-pill">Launching Soon</div>
-            <div class="launch-notice-body">
-              <strong>Thanks for pre-ordering! We're shipping our first boxes soon.</strong>
-              <p>Bake Club officially opens for public orders June 1. It may take up to 2–3 week to package, label and ship while we build out the process.</p>
-              <p>Need to cancel or report an issue? Email <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a> and we'll take care of it. Once a box is packed and labeled for shipment, we can no longer cancel that order — but future months can be paused or canceled anytime.</p>
-            </div>
-          </div>
+<!-- Launch / Preorder Notice -->
+<div class="launch-notice-mini">
+  <span class="launch-notice-dot"></span>
+  <span><strong>Pre-ordering:</strong> First boxes ship around June 10. Public launch June 15.</span>
+</div>
 
           <div class="price-row">
             <span class="price-label">Box Price</span>
@@ -1252,20 +1287,6 @@
             </div>
           </div>
 
-          <!-- Shipping warning -->
-          <div class="selector-group">
-            <div class="warning-banner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 9v4"/>
-                <path d="M12 17h.01"/>
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-              </svg>
-              <span>
-                <strong>Ships uninsulated.</strong> Please refrigerate immediately upon arrival. Treats stay fresh 2–3 days refrigerated. Freeze instead to extend by 60 days.
-              </span>
-            </div>
-          </div>
-
           <!-- Buy Now -->
           <div class="buy-row">
             <a href="#" class="buy-btn" id="buy-btn">
@@ -1274,46 +1295,51 @@
             </a>
           </div>
 
-          <!-- Description -->
-          <div class="product-section">
-            <h3>About this box</h3>
-            <p>A curated monthly box of Jennifer's signature bakes — your size, your sweets, shipped fresh to your door. Each month features a new lineup of her favorites.</p>
-            <p><strong>Free shipping</strong> on orders $84.00+ total. Orders totaling less than $84.00 at checkout will ship at carrier-calculated rates via USPS or UPS.</p>
-            <p><strong>Subscribers save 10%</strong> on every recurring order. Cancel or skip anytime.</p>
+    <!-- Quick Facts (pills only) -->
+<div class="product-section">
+  <h3>What's included</h3>
+  <div class="detail-pills">
+    <span class="detail-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Made fresh, shipped weekly
+    </span>
+    <span class="detail-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Free shipping $84+
+    </span>
+    <span class="detail-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Save 10% monthly
+    </span>
+    <span class="detail-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Cancel anytime
+    </span>
+    <span class="detail-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Ships in US only
+    </span>
+  </div>
+</div>
 
-            <div class="detail-pills">
-              <span class="detail-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                Made fresh, then shipped
-              </span>
-              <span class="detail-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                Free shipping on orders $84.00+
-              </span>
-              <span class="detail-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                10% off subscriptions
-              </span>
-              <span class="detail-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                Cancel anytime
-              </span>
-              <span class="detail-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                US shipping only
-              </span>
-            </div>
-          </div>
-
-          <!-- Handling & returns -->
-          <div class="product-section">
-            <h3>Handling, shipping &amp; cancellations</h3>
-            <p><strong>When your box arrives:</strong> Refrigerate immediately. Boxes ship uninsulated, so timing matters. Treats stay fresh 2–3 days refrigerated, longer if frozen.</p>
-            <p><strong>Shipping time:</strong> All estimated delivery dates are calculated at checkout via UPS or USPS. Upon confirmation, your order will be packaged and shipped the following business day.</p>
-            <p><strong>Need to cancel or report an issue?</strong> Email <a href="mailto:sweetelevationbakery@gmail.com" style="color: var(--peach-deep);">sweetelevationbakery@gmail.com</a>. Subscriptions can be paused or canceled anytime before the next month's box is packed. Once a box is packed and labeled for shipment, that order can no longer be canceled — but the subscription itself can still be stopped before the next cycle.</p>
-            <p><strong>Damaged shipments:</strong> If your box arrives significantly damaged, email us within 24 hours of delivery with photos and we'll make it right.</p>
-            <p><strong>All sales final.</strong> Due to the perishable nature of our products, we don't accept returns or exchanges outside of damaged shipments.</p>
-          </div>
+<!-- Handling & Shipping -->
+<div class="product-section">
+  <h3>Good to know</h3>
+  <ul class="info-list">
+    <li>
+      <strong>On arrival:</strong> Refrigerate immediately. Ships uninsulated. Fresh 2–3 days refrigerated, ~60 days frozen.
+    </li>
+    <li>
+      <strong>Shipping:</strong> UPS or USPS, calculated at checkout. Ships the next business day after order.
+    </li>
+    <li>
+      <strong>Cancel anytime</strong> before your next box is packed. Email <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.
+    </li>
+    <li>
+      <strong>Damaged?</strong> Email us within 24 hours with photos and we'll make it right. All sales otherwise final (perishable food).
+    </li>
+  </ul>
+</div>
 
           <!-- Ingredients -->
           <div class="product-section">
