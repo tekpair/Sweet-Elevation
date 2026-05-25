@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  WEBSITE BY TEKPAIR
+  ============================================================
+
+  Design & Development: Tekpair
+  tekpair.com/webdesign | Cohoes, NY | Capital Region
+
+  A site like this starts at $300.
+  connor@tekpair.com
+
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0LS4N0398"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q0LS4N0398');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Careers | Sweet Elevation Bakery — Latham, NY</title>
+<meta name="description" content="Now hiring at Sweet Elevation Bakery in Latham, NY. Join our team — currently looking for an experienced cake decorator with room to grow.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sweet Elevation Bakery">
+<meta name="geo.region" content="US-NY">
+<meta name="geo.placename" content="Latham, New York">
+<link rel="canonical" href="https://sweetelevationbakery.com/careers/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sweet Elevation Bakery">
+<meta property="og:title" content="Careers | Sweet Elevation Bakery">
+<meta property="og:description" content="Now hiring at Sweet Elevation Bakery in Latham, NY.">
+<meta property="og:url" content="https://sweetelevationbakery.com/careers/">
+<meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1f2950">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #faf3ea;
+    --cream-deep: #f4ead9;
+    --navy: #1f2950;
+    --navy-soft: #3d4670;
+    --peach: #f4c4ad;
+    --peach-deep: #e89f80;
+    --ink-soft: #5a5b73;
+    --line: #e8dfd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── Navigation ─── */
+  header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 48px 18px;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .logo-slot a { display: block; line-height: 0; }
+  .logo-slot img { height: 78px; width: auto; max-width: 260px; object-fit: contain; display: block; }
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .nav-links a {
+    text-decoration: none; color: var(--navy);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: color 0.2s; position: relative;
+  }
+  .nav-links a:hover { color: var(--peach-deep); }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 1.5px; background: var(--peach-deep); transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 80%; }
+  .nav-links a.active { color: var(--peach-deep); }
+  .nav-links a.active::after { width: 80%; }
+
+  /* ─── Hamburger Button ─── */
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: fixed;
+    right: 20px;
+    top: 24px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  .hamburger-icon { position: relative; width: 22px; height: 16px; }
+  .hamburger-icon span {
+    position: absolute; left: 0; width: 100%; height: 2px;
+    background: var(--navy); border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+  .hamburger-icon span:nth-child(1) { top: 0; }
+  .hamburger-icon span:nth-child(2) { top: 7px; }
+  .hamburger-icon span:nth-child(3) { top: 14px; }
+  .hamburger.active .hamburger-icon span:nth-child(1) { top: 7px; transform: rotate(45deg); background: var(--cream); }
+  .hamburger.active .hamburger-icon span:nth-child(2) { opacity: 0; }
+  .hamburger.active .hamburger-icon span:nth-child(3) { top: 7px; transform: rotate(-45deg); background: var(--cream); }
+
+  /* ─── Mobile Menu Overlay ─── */
+  .mobile-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  .mobile-menu.active { opacity: 1; visibility: visible; }
+  .mobile-menu ul { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 28px; }
+  .mobile-menu a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px; font-weight: 400;
+    color: var(--cream); text-decoration: none;
+    letter-spacing: -0.01em;
+    position: relative; display: inline-block;
+    opacity: 0; transform: translateY(20px);
+    transition: color 0.2s, opacity 0.5s ease, transform 0.5s ease;
+  }
+  .mobile-menu.active a { opacity: 1; transform: translateY(0); }
+  .mobile-menu.active li:nth-child(1) a { transition-delay: 0.08s; }
+  .mobile-menu.active li:nth-child(2) a { transition-delay: 0.13s; }
+  .mobile-menu.active li:nth-child(3) a { transition-delay: 0.18s; }
+  .mobile-menu.active li:nth-child(4) a { transition-delay: 0.23s; }
+  .mobile-menu.active li:nth-child(5) a { transition-delay: 0.28s; }
+  .mobile-menu.active li:nth-child(6) a { transition-delay: 0.33s; }
+  .mobile-menu.active li:nth-child(7) a { transition-delay: 0.38s; }
+  .mobile-menu.active li:nth-child(8) a { transition-delay: 0.43s; }
+  .mobile-menu a:hover { color: var(--peach); }
+  .mobile-menu a em { font-style: italic; color: var(--peach); }
+  .mobile-menu-foot {
+    position: absolute; bottom: 40px; text-align: center;
+    color: rgba(250, 243, 234, 0.5);
+    font-size: 12px; letter-spacing: 0.05em;
+  }
+  .mobile-menu-foot a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: var(--peach); font-weight: 500;
+    display: inline-block; margin-top: 4px;
+  }
+  body.menu-open { overflow: hidden; }
+
+  /* ─── Page Hero (with banner) ─── */
+  .page-hero {
+    position: relative;
+    text-align: center;
+    padding: 140px 48px 110px;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+    background-image: url('/assets/bakery.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(31, 41, 80, 0.70) 0%,
+      rgba(31, 41, 80, 0.82) 100%
+    );
+    z-index: -1;
+  }
+  .page-hero .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  .page-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 6.5vw, 92px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 24px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  .page-hero h1 em {
+    font-style: italic;
+    color: var(--peach);
+  }
+  .page-hero p {
+    font-size: 18px;
+    color: rgba(250, 243, 234, 0.92);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  /* ─── Role Section ─── */
+  .role {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 48px 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .role-main {
+    position: relative;
+  }
+  .role-main .script {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .role-main h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .role-main h2 em { font-style: italic; color: var(--peach-deep); }
+  .role-main p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .role-main p strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  /* Quick facts sidebar */
+  .role-facts {
+    position: sticky;
+    top: 150px;
+    background: var(--cream-deep);
+    border-radius: 8px;
+    padding: 32px 28px;
+    border: 1px solid var(--line);
+  }
+  .role-facts h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .role-facts h4 em { font-style: italic; color: var(--peach-deep); }
+  .fact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .fact-row:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 24px;
+    border-bottom: none;
+  }
+  .fact-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--peach-deep);
+  }
+  .fact-value {
+    font-size: 15px;
+    color: var(--navy);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .fact-value em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .role-facts .apply-cta {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 14px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+  .role-facts .apply-cta:hover {
+    background: var(--peach-deep);
+    transform: translateY(-2px);
+  }
+  .role-facts .apply-cta svg { width: 12px; height: 12px; }
+
+  /* ─── Lists (responsibilities + requirements) ─── */
+  .role-lists {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .role-list-block h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+  }
+  .role-list-block h3 em { font-style: italic; color: var(--peach-deep); }
+  .role-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .role-list li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .role-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    background: var(--peach-deep);
+    border-radius: 50%;
+  }
+  .role-list li strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  /* ─── Growth Section ─── */
+  .growth {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 90px 48px;
+    text-align: center;
+  }
+  .growth-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .growth .script {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: var(--peach);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .growth h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+  .growth h2 em { font-style: italic; color: var(--peach); }
+  .growth p {
+    color: rgba(250, 243, 234, 0.78);
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+  .growth p:last-child { margin-bottom: 0; }
+
+  /* ─── Apply Form ─── */
+  .apply {
+    padding: 110px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .apply-head {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .apply-head .script {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    color: var(--peach-deep);
+    margin-bottom: 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+  }
+  .apply-head h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .apply-head h2 em { font-style: italic; color: var(--peach-deep); }
+  .apply-head p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .apply-form {
+    background: var(--cream-deep);
+    padding: 48px;
+    border-radius: 8px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .form-row .form-field { margin-bottom: 0; }
+  .form-field label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .form-field label .req {
+    color: var(--peach-deep);
+    margin-left: 2px;
+  }
+  .form-field-hint {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    margin-top: -2px;
+    font-style: italic;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    transition: border 0.2s, box-shadow 0.2s;
+    width: 100%;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--peach-deep);
+    box-shadow: 0 0 0 3px rgba(232, 159, 128, 0.15);
+  }
+  .form-field textarea {
+    resize: vertical;
+    min-height: 130px;
+    font-family: 'Inter', sans-serif;
+  }
+  .form-submit {
+    margin-top: 8px;
+    text-align: center;
+  }
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 18px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--peach-deep);
+    transform: translateY(-2px);
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 90px 48px 36px;
+    border-top: 1px solid rgba(250, 243, 234, 0.08);
+  }
+  .foot-inner { max-width: 1400px; margin: 0 auto; }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(250, 243, 234, 0.1);
+    margin-bottom: 36px;
+  }
+  .foot-brand .foot-logo {
+    background: var(--cream);
+    padding: 16px 20px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+  .foot-brand .foot-logo img { height: 64px; width: auto; max-width: 200px; display: block; }
+  .foot-tagline {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 18px; line-height: 1.5; color: var(--peach);
+    max-width: 280px; margin-bottom: 24px;
+  }
+  .foot-contact { font-size: 14px; color: rgba(250, 243, 234, 0.65); line-height: 1.8; }
+  .foot-contact a { color: rgba(250, 243, 234, 0.85); text-decoration: none; transition: color 0.2s; }
+  .foot-contact a:hover { color: var(--peach); }
+  .foot-col h4 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 20px; color: var(--peach); font-weight: 400; }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 12px; }
+  .foot-col a { color: rgba(250, 243, 234, 0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--peach); }
+  .foot-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em; gap: 20px; flex-wrap: wrap;
+  }
+  .tekpair-credit {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--peach); text-decoration: none;
+    font-size: 12px; font-weight: 500; transition: opacity 0.2s;
+  }
+  .tekpair-credit:hover { opacity: 0.75; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    nav { padding: 18px 20px 16px; gap: 12px; }
+    .logo-slot img { height: 60px; }
+    header nav .nav-links { display: none; }
+    .hamburger { display: inline-flex; }
+
+    .page-hero { padding: 90px 24px 70px; }
+    .page-hero h1 { margin-bottom: 18px; }
+    .page-hero p { font-size: 16px; }
+
+    .open-roles { padding: 22px 24px; }
+    .open-roles-text { font-size: 13px; }
+
+    .role {
+      grid-template-columns: 1fr;
+      padding: 50px 24px 30px;
+      gap: 36px;
+    }
+    .role-main h2 { margin-bottom: 18px; }
+    .role-main p { font-size: 15px; line-height: 1.7; }
+    .role-facts {
+      position: static;
+      padding: 28px 24px;
+    }
+    .role-facts h4 { margin-bottom: 18px; padding-bottom: 14px; }
+    .fact-row { padding-bottom: 14px; margin-bottom: 14px; }
+    .fact-value { font-size: 14px; }
+
+    .role-lists {
+      grid-template-columns: 1fr;
+      padding: 0 24px 50px;
+      gap: 32px;
+    }
+    .role-list-block h3 { font-size: 24px; margin-bottom: 18px; }
+    .role-list { gap: 12px; }
+    .role-list li { font-size: 14.5px; padding-left: 22px; line-height: 1.6; }
+    .role-list li::before { top: 8px; width: 7px; height: 7px; }
+
+    .honest-note {
+      padding: 0 24px;
+      margin-bottom: 40px;
+    }
+    .honest-note-inner { padding: 16px 18px; }
+    .honest-note-inner p { font-size: 13.5px; }
+
+    .growth { padding: 70px 24px; }
+    .growth p { font-size: 15px; }
+
+    .apply { padding: 80px 24px; }
+    .apply-form { padding: 28px 22px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-row .form-field { margin-bottom: 16px; }
+    /* CRITICAL: 16px minimum to prevent iOS zoom on focus */
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-size: 16px;
+      padding: 13px 14px;
+    }
+    .form-field label { font-size: 11px; letter-spacing: 0.1em; }
+    .form-field-hint { font-size: 12px; }
+    .apply-head h2 { margin-bottom: 14px; }
+    .apply-head p { font-size: 15px; line-height: 1.6; }
+
+    footer { padding: 70px 24px 32px; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-bottom { justify-content: center; flex-direction: column; gap: 14px; text-align: center; }
+  }
+
+  @media (max-width: 500px) {
+    .page-hero { padding: 70px 20px 60px; }
+    .page-hero .script { font-size: 28px; }
+    .page-hero p { font-size: 15px; }
+
+    .open-roles { padding: 18px 20px; }
+    .open-roles-inner { gap: 10px; }
+    .open-roles-pill { font-size: 10px; padding: 5px 12px; }
+    .open-roles-text { font-size: 13px; text-align: center; }
+
+    .role { padding: 40px 20px 24px; gap: 28px; }
+    .role-main .script { font-size: 26px; }
+    .role-main h2 { font-size: 34px; margin-bottom: 16px; }
+    .role-main p { font-size: 14.5px; margin-bottom: 14px; }
+
+    .role-facts { padding: 24px 20px; }
+    .role-facts h4 { font-size: 20px; }
+    .fact-label { font-size: 9.5px; letter-spacing: 0.12em; }
+    .fact-value { font-size: 14px; }
+    .fact-value em { font-size: 12px; }
+    .role-facts .apply-cta { padding: 13px 20px; font-size: 11px; }
+
+    .role-lists { padding: 0 20px 40px; gap: 28px; }
+    .role-list-block h3 { font-size: 22px; }
+    .role-list li { font-size: 14px; }
+
+    .honest-note { padding: 0 20px; margin-bottom: 32px; }
+
+    .growth { padding: 56px 20px; }
+    .growth h2 { font-size: 30px; margin-bottom: 16px; }
+    .growth p { font-size: 14.5px; }
+
+    .apply { padding: 60px 20px; }
+    .apply-head h2 { font-size: 36px; }
+    .apply-form { padding: 22px 18px; border-radius: 6px; }
+
+    footer { padding: 60px 20px 28px; }
+    .foot-top { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo-slot">
+        <a href="/" aria-label="Sweet Elevation Bakery — Home">
+          <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+        <li><a href="/store/">Store</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/charcuterie/">Charcuterie</a></li>
+        <li><a href="/careers/" class="active">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hamburger button -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/weddings-events/">Weddings &amp; <em>Events</em></a></li>
+      <li><a href="/store/">Store</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/charcuterie/">Charcuterie</a></li>
+      <li><a href="/careers/">Careers</a></li>
+      <li><a href="/#our-sweets">Get a <em>Quote</em></a></li>
+    </ul>
+    <div class="mobile-menu-foot">
+      <div>356 Troy Schenectady Rd, Latham NY</div>
+      <a href="tel:+15188180010">(518) 818-0010</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <h1>Join Sweet <em>Elevation</em></h1>
+      <p>We're a small, but structured, growing bakery in Latham &mdash; and we're looking for someone serious about their craft to grow with us.</p>
+    </section>
+
+    <!-- Role Detail -->
+    <section class="role">
+      <div class="role-main">
+        <div class="script">the role</div>
+        <h2>Cake <em>Decorator</em></h2>
+        <p>We're looking for a <strong>highly qualified, experienced cake decorator</strong> to join Sweet Elevation Bakery. Custom cakes are the heart of what we do &mdash; weddings, birthdays, anniversaries, and everything in between &mdash; and the right person will bring real skill, real ownership, and the ability to work fast and clean in a team kitchen.</p>
+        <p>You'll be working directly alongside Jennifer (Owner &amp; Executive Pastry Chef) on a mix of custom orders, walk-in requests, and event work. <strong>This is not an entry-level role.</strong> We need someone with serious time in the field who can step in and produce quality work from day one.</p>
+        <p>Before you apply: <strong>look at our work.</strong> Browse our <a href="/portfolio/" style="color: var(--peach-deep); text-decoration: underline; text-underline-offset: 2px;">Portfolio</a> and our <a href="https://www.facebook.com/sweetelevationbakery/photos" target="_blank" rel="noopener" style="color: var(--peach-deep); text-decoration: underline; text-underline-offset: 2px;">Facebook albums</a>. If our style is something you could already replicate &mdash; or get there with a little training &mdash; we want to hear from you. If our work feels out of reach, this isn't the right fit.</p>
+      </div>
+
+      <aside class="role-facts">
+        <h4>Quick <em>facts</em></h4>
+
+        <div class="fact-row">
+          <span class="fact-label">Pay</span>
+          <span class="fact-value">$25+/hr<br><em>Depending on experience &amp; qualifications</em></span>
+        </div>
+
+        <div class="fact-row">
+          <span class="fact-label">Hours</span>
+          <span class="fact-value">Full-time or Part-time<br><em>Minimum 20+ hours per week to start</em></span>
+        </div>
+
+        <div class="fact-row">
+          <span class="fact-label">Schedule</span>
+          <span class="fact-value">Tuesday-Saturday<br><em>Always off Sundays &amp; Mondays (we're closed)</em></span>
+        </div>
+
+        <div class="fact-row">
+          <span class="fact-label">Location</span>
+          <span class="fact-value">Latham, NY<br><em>356 Troy Schenectady Rd</em></span>
+        </div>
+
+        <div class="fact-row">
+          <span class="fact-label">Reports to</span>
+          <span class="fact-value">Jennifer Gates<br><em>Owner &amp; Executive Pastry Chef</em></span>
+        </div>
+
+        <a href="#apply" class="apply-cta">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+      </aside>
+    </section>
+
+    <!-- Responsibilities + Requirements -->
+    <section class="role-lists">
+      <div class="role-list-block">
+        <h3>What you'll <em>do</em></h3>
+        <ul class="role-list">
+          <li><strong>Decorate custom cakes</strong> for weddings, birthdays, anniversaries, and other events &mdash; both walk-in orders and pre-booked specials.</li>
+          <li><strong>Stack, ice, and finish cakes</strong> smoothly and evenly to a high standard, especially in buttercream.</li>
+          <li><strong>Produce detailed fondant work</strong> &mdash; sculpting, draping, hand-cut decorations, and fully covered tiered cakes.</li>
+          <li><strong>Work fast in a team kitchen</strong> &mdash; meeting tight production timelines without sacrificing quality.</li>
+          <li><strong>Take ownership of decorating projects</strong> from concept through final presentation.</li>
+          <li><strong>Support general bakery operations</strong> where needed &mdash; baking assistance, prep, and maintaining a clean station.</li>
+        </ul>
+      </div>
+
+      <div class="role-list-block">
+        <h3>What we're <em>looking for</em></h3>
+        <ul class="role-list">
+          <li><strong>5+ years of cake decorating experience</strong> in fast-paced, professional bakery environment(s). <em>Schooling, internships, and home decorating do not count.</em></li>
+          <li><strong>A portfolio of your work</strong> &mdash; Instagram, website, or photos we can review without logging in.</li>
+          <li><strong>Proven buttercream skills</strong> &mdash; you can stack and ice a cake smoothly and evenly without supervision.</li>
+          <li><strong>Strong fondant skills</strong> &mdash; we produce highly decorated cakes that require fondant fluency.</li>
+          <li><strong>Available Fridays &amp; Saturdays</strong> &mdash; non-negotiable. We're closed Sundays and Mondays.</li>
+          <li><strong>Reliable, punctual, serious about your craft.</strong> Show your intention to stay during your 30-day evaluation. We invest in people who plan to stick around.</li>
+          <li><strong>Capital Region local</strong> &mdash; this is an in-person role at our Latham shop.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Growth Section -->
+    <section class="growth">
+      <div class="growth-inner">
+        <div class="script">what's next</div>
+        <h2>And some room to <em>grow</em></h2>
+        <p>Sweet Elevation is growing. We're launching Bake Club, expanding into nationwide shipped goods, and building toward something bigger than a single-storefront bakery.</p>
+        <p>This role may start out as a Cake Decorator &mdash; but the right person can grow into a leadership position as we expand. If you're someone who wants to build a career, not just clock in for a shift, that opportunity is here.</p>
+      </div>
+    </section>
+
+    <!-- Apply Form -->
+    <section class="apply" id="apply">
+      <div class="apply-head">
+        <div class="script">your turn to</div>
+        <h2>Apply <em>now</em></h2>
+        <p>Before you fill this out: review our <a href="/portfolio/" style="color: var(--peach-deep); text-decoration: underline; text-underline-offset: 2px;">Portfolio</a> and <a href="https://www.facebook.com/sweetelevationbakery/photos" target="_blank" rel="noopener" style="color: var(--peach-deep); text-decoration: underline; text-underline-offset: 2px;">Facebook albums</a>. If our style isn't something you can match (or grow into quickly with training), this isn't the right fit. If it is &mdash; we want to hear from you.</p>
+      </div>
+
+      <form class="apply-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST" autocomplete="off">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Full Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" pattern="[\d\s\-\(\)\+]{7,}" placeholder="(518) 555-0123" required>
+          </div>
+          <div class="form-field">
+            <label for="city">City / Area</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Albany, Cohoes, Latham">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="experience-years">Years of Cake Decorating Experience <span class="req">*</span></label>
+            <select id="experience-years" name="experience-years" required>
+              <option value="">Choose one&hellip;</option>
+              <option value="Less than 5 years">Less than 5 years</option>
+              <option value="5-7 years">5&ndash;7 years</option>
+              <option value="8-10 years">8&ndash;10 years</option>
+              <option value="10+ years">10+ years</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="referred-by">How did you hear about us?</label>
+            <select id="referred-by" name="referred-by">
+              <option value="">Choose one&hellip;</option>
+              <option value="Indeed">Indeed</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Word of mouth">Word of mouth</option>
+              <option value="Google search">Google search</option>
+              <option value="Walked by the shop">Walked by the shop</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="weekends-available">Can you work Fridays AND Saturdays? <span class="req">*</span></label>
+          <div class="form-field-hint">This is a hard requirement. We're closed Sundays &amp; Mondays.</div>
+          <select id="weekends-available" name="weekends-available" required>
+            <option value="">Choose one&hellip;</option>
+            <option value="Yes, both Fri &amp; Sat">Yes, both Fridays and Saturdays</option>
+            <option value="One but not the other">One but not the other</option>
+            <option value="Neither">Neither</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="previous-bakeries">Where have you worked? <span class="req">*</span></label>
+          <div class="form-field-hint">List the bakeries or shops where you've decorated. Include city, role, job duties, and roughly how long you were there.</div>
+          <textarea id="previous-bakeries" name="previous-bakeries"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="portfolio">Portfolio Link <span class="req">*</span></label>
+          <div class="form-field-hint">Instagram, website, Pinterest, or any link where we can see your work. If your work isn't online, let us know.</div>
+          <input type="url" id="portfolio" name="portfolio">
+        </div>
+
+        <div class="form-field">
+          <label for="strengths">What kinds of cakes do you do best?</label>
+          <div class="form-field-hint">Buttercream florals? Sculpted/3D? Fondant work? Wedding tiers? Be specific &mdash; we want to know your style.</div>
+          <textarea id="strengths" name="strengths"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="about-you">Anything else we should know?</label>
+          <textarea id="about-you" name="about-you"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+        </div>
+
+        <p class="form-note">
+          We read every application personally. If you're a strong fit, we'll be in touch within a week. If you do not hear from us within that time, please consider that we’ve decided to move forward with other candidates at this time.<br>
+          Questions? Email <a href="mailto:sweetelevationbakery@gmail.com" style="color: var(--peach-deep);">sweetelevationbakery@gmail.com</a>.
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="foot-logo">
+            <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+          </div>
+          <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+          <div class="foot-contact">
+            <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+            <a href="tel:+15188180010">(518) 818-0010</a><br>
+            Tue &ndash; Sat
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="/#our-sweets">Custom Quotes</a></li>
+            <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
+            <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+            <li><a href="/charcuterie/">Charcuterie</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="/store/">Bake at Home</a></li>
+            <li><a href="/store/">Recipes</a></li>
+            <li><a href="/store/">Bake Club</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="/about-us/">Our Story</a></li>
+            <li><a href="tel:+15188180010">Contact</a></li>
+            <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <div class="copyright">&copy; 2026 Sweet Elevation Bakery</div>
+        <div>
+          Website by
+          <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+            <span>Tekpair</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Hamburger menu script -->
+  <script>
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const body = document.body;
+
+      if (!hamburger || !mobileMenu) return;
+
+      function openMenu() {
+        hamburger.classList.add('active');
+        mobileMenu.classList.add('active');
+        body.classList.add('menu-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Close menu');
+      }
+
+      function closeMenu() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open menu');
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 900 && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+
+  <!-- Form bfcache reset -->
+  <script>
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted || (performance.getEntriesByType('navigation')[0] && performance.getEntriesByType('navigation')[0].type === 'back_forward')) {
+        const form = document.querySelector('.apply-form');
+        if (form) form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
