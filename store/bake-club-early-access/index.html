@@ -489,42 +489,117 @@
   }
 }
 
-.launch-notice-mini {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* ─── Pre-order notice (expandable) ─── */
+.preorder-notice {
   background: var(--cream);
   border: 1px solid rgba(232, 159, 128, 0.35);
-  border-radius: 100px;
-  padding: 10px 16px;
+  border-radius: 12px;
   margin-bottom: 24px;
-  font-size: 12px;
-  color: var(--ink-soft);
-  line-height: 1.4;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.launch-notice-mini strong {
-  color: var(--peach-deep);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.preorder-notice:hover {
+  border-color: var(--peach-deep);
 }
-.launch-notice-dot {
-  width: 8px;
-  height: 8px;
+.preorder-toggle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  color: var(--navy);
+}
+.preorder-dot {
+  width: 9px;
+  height: 9px;
   background: var(--peach-deep);
   border-radius: 50%;
   flex-shrink: 0;
-  animation: pulse-dot 2s ease-in-out infinite;
+  position: relative;
+  animation: preorder-pulse 2s ease-in-out infinite;
 }
-@keyframes pulse-dot {
+.preorder-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--peach-deep);
+  opacity: 0.3;
+  animation: preorder-ring 2s ease-in-out infinite;
+}
+@keyframes preorder-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
+  50% { opacity: 0.7; transform: scale(0.92); }
+}
+@keyframes preorder-ring {
+  0% { transform: scale(0.8); opacity: 0.4; }
+  100% { transform: scale(2); opacity: 0; }
+}
+.preorder-headline {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--navy);
+}
+.preorder-headline strong {
+  color: var(--peach-deep);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 3px;
+}
+.preorder-chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.preorder-notice.open .preorder-chevron {
+  transform: rotate(180deg);
+}
+.preorder-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.preorder-notice.open .preorder-details {
+  max-height: 800px;
+}
+.preorder-details-inner {
+  padding: 4px 16px 18px 37px;
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+  padding-top: 14px;
+}
+.preorder-details-inner p {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.preorder-details-inner p:last-child {
+  margin-bottom: 0;
+}
+.preorder-details-inner p strong {
+  color: var(--navy);
+  font-weight: 600;
 }
 @media (max-width: 500px) {
-  .launch-notice-mini {
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-size: 11.5px;
+  .preorder-toggle { padding: 12px 14px; gap: 10px; }
+  .preorder-headline { font-size: 12px; }
+  .preorder-details-inner {
+    padding: 14px 14px 16px 14px;
   }
+  .preorder-details-inner p { font-size: 12px; }
 }
 
   .price-row {
@@ -1219,10 +1294,27 @@
   </div>
 </div>
 
-<!-- Launch / Preorder Notice -->
-<div class="launch-notice-mini">
-  <span class="launch-notice-dot"></span>
-  <span><strong>Pre-ordering:</strong> First boxes ship around June 10. Public launch June 15.</span>
+<!-- Pre-order Notice (expandable) -->
+<div class="preorder-notice" id="preorder-notice">
+  <button class="preorder-toggle" id="preorder-toggle" aria-expanded="false" aria-controls="preorder-details">
+    <span class="preorder-dot"></span>
+    <span class="preorder-headline">
+      <strong>Pre-ordering</strong>
+      First boxes ship around <strong style="color: var(--navy); font-size: 13px; letter-spacing: 0; text-transform: none; display: inline;">June 15</strong>. Tap to learn more.
+    </span>
+    <svg class="preorder-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+  <div class="preorder-details" id="preorder-details">
+    <div class="preorder-details-inner">
+      <p><strong>Nothing ships before June 15.</strong> We're still waiting on our branded boxes to arrive. Once they're here (around June 15), we'll start packing, labeling, and shipping every pre-order in the queue.</p>
+      <p><strong>Don't panic if your order looks "stuck."</strong> We've received it — it's just waiting in our queue until our boxes get here. You won't see a tracking number until we begin shipping.</p>
+      <p><strong>Heads up on Shopify estimates.</strong> Since this is our first time selling on Shopify, dates like "fulfilled by" or "ships by" in your order confirmation are auto-generated estimates from the platform. Trust this page, not those.</p>
+      <p><strong>Subscribers — your future boxes will be on time.</strong> Once we're rolling, every monthly box will ship before your next billing cycle begins. No double-charges, no delays.</p>
+      <p style="margin-top: 14px;">Questions? Email <a href="mailto:sweetelevationbakery@gmail.com" style="color: var(--peach-deep); text-decoration: underline; text-underline-offset: 2px;">sweetelevationbakery@gmail.com</a>.</p>
+    </div>
+  </div>
 </div>
 
           <div class="price-row">
@@ -1642,6 +1734,18 @@ if (price >= FREE_SHIPPING_THRESHOLD) {
       setTimeout(() => toast.classList.remove('show'), 2800);
     }
 
+// ─── Pre-order notice toggle ───
+(function() {
+  const notice = document.getElementById('preorder-notice');
+  const toggle = document.getElementById('preorder-toggle');
+  if (!notice || !toggle) return;
+  toggle.addEventListener('click', function() {
+    const isOpen = notice.classList.contains('open');
+    notice.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', !isOpen);
+  });
+})();
+    
 // ─── Legal accordion ───
 (function() {
   const toggle = document.getElementById('legal-toggle');
