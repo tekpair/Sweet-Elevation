@@ -366,6 +366,52 @@
     transform: translateY(-2px);
   }
   .role-facts .apply-cta svg { width: 12px; height: 12px; }
+  .role-facts .agency-cta {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--navy);
+    padding: 12px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    margin-top: 8px;
+    border: 1.5px solid rgba(31, 41, 80, 0.2);
+  }
+  .role-facts .agency-cta:hover {
+    border-color: var(--peach-deep);
+    color: var(--peach-deep);
+    transform: translateY(-1px);
+  }
+  .role-facts .agency-cta svg { width: 11px; height: 11px; }
+  .role-facts .cta-divider {
+    text-align: center;
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 14px 0 10px;
+    position: relative;
+  }
+  .role-facts .cta-divider::before,
+  .role-facts .cta-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--line);
+  }
+  .role-facts .cta-divider::before { left: 0; }
+  .role-facts .cta-divider::after { right: 0; }
 
   /* ─── Lists (responsibilities + requirements) ─── */
   .role-lists {
@@ -842,9 +888,16 @@
           <span class="fact-value">Jennifer Gates<br><em>Owner &amp; Executive Pastry Chef</em></span>
         </div>
 
-        <a href="#apply" class="apply-cta">
+<a href="#apply" class="apply-cta">
           Apply Now
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <div class="cta-divider">or</div>
+
+        <a href="mailto:sweetelevationbakery@gmail.com?subject=Workforce%20Agency%20Inquiry%20%E2%80%94%20Cake%20Decorator&amp;body=Hi%20Sweet%20Elevation%2C%0A%0AI%27m%20reaching%20out%20on%20behalf%20of%20a%20candidate%20interested%20in%20your%20Cake%20Decorator%20role.%0A%0AAgency%20name%3A%20%0AMy%20name%20%26%20role%3A%20%0AContact%20phone%3A%20%0A%0ACandidate%20summary%3A%20%0AYears%20of%20experience%3A%20%0APortfolio%20link%3A%20%0A%0AThanks%2C%0A" class="agency-cta">
+          Agencies / Recruiters
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </aside>
     </section>
