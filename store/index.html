@@ -378,6 +378,87 @@
     width: 12px;
     height: 12px;
   }
+  /* ─── Utility Cards Row (Track Order + Gift Card) ─── */
+  .utility-row-wrap {
+    max-width: 1300px;
+    margin: 20px auto 0;
+    padding: 0 48px;
+  }
+  .utility-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .utility-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--navy);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .utility-card:hover {
+    border-color: var(--peach-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(31, 41, 80, 0.06);
+  }
+  .utility-card-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--cream-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--peach-deep);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .utility-card:hover .utility-card-icon {
+    background: var(--peach);
+    color: var(--navy);
+  }
+  .utility-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .utility-card-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .utility-card-text strong {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--navy);
+    display: block;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .utility-card-text p {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .utility-card-arrow {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--ink-soft);
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+  .utility-card:hover .utility-card-arrow {
+    color: var(--peach-deep);
+    transform: translateX(3px);
+  }
 
   @media (max-width: 900px) {
     .gift-banner-wrap { padding: 0 24px; }
@@ -549,6 +630,9 @@
     .top-row-wrap { padding: 0 24px; margin-top: 24px; }
     .top-row { grid-template-columns: 1fr; gap: 14px; }
 
+    .utility-row-wrap { padding: 0 24px; margin-top: 14px; }
+    .utility-row { grid-template-columns: 1fr; gap: 12px; }
+
     .catalog-toolbar-wrap { padding: 0 24px; }
     .catalog-toolbar { flex-direction: column; align-items: stretch; }
     .search-wrap { width: 100%; }
@@ -661,6 +745,49 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           </a>
         </div>
+
+      </div>
+    </div>
+
+<!-- Utility Cards: Track Order + Gift Card -->
+    <div class="utility-row-wrap">
+      <div class="utility-row">
+
+        <!-- Track Your Order -->
+        <a href="REPLACE_WITH_TRACK_ORDER_URL" class="utility-card">
+          <div class="utility-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 16h6"/>
+              <path d="M21 12v4a2 2 0 0 1-2 2h-3"/>
+              <path d="M3 16V8a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8"/>
+              <circle cx="7" cy="18" r="2"/>
+              <circle cx="17" cy="18" r="2"/>
+            </svg>
+          </div>
+          <div class="utility-card-text">
+            <strong>Track your order</strong>
+            <p>Check shipping status and delivery updates.</p>
+          </div>
+          <svg class="utility-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Gift Card -->
+        <a href="REPLACE_WITH_GIFT_CARD_URL" class="utility-card">
+          <div class="utility-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"/>
+              <rect x="2" y="7" width="20" height="5"/>
+              <line x1="12" y1="22" x2="12" y2="7"/>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            </svg>
+          </div>
+          <div class="utility-card-text">
+            <strong>Buy an eGift Card</strong>
+            <p>The perfect gift for any sweet tooth.</p>
+          </div>
+          <svg class="utility-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
 
       </div>
     </div>
