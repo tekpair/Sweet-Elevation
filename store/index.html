@@ -378,7 +378,7 @@
     width: 12px;
     height: 12px;
   }
-  /* ─── Utility Cards Row (Track Order + Gift Card) ─── */
+/* ─── Utility Cards Row (Track Order + Gift Card) ─── */
   .utility-row-wrap {
     max-width: 1300px;
     margin: 20px auto 0;
@@ -402,6 +402,10 @@
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    width: 100%;
   }
   .utility-card:hover {
     border-color: var(--peach-deep);
@@ -460,16 +464,152 @@
     transform: translateX(3px);
   }
 
-  @media (max-width: 900px) {
-    .gift-banner-wrap { padding: 0 24px; }
-    .gift-banner {
-      flex-direction: column;
-      text-align: center;
-      gap: 16px;
-      padding: 24px 22px;
-    }
+  /* ─── Gift Card Modal ─── */
+  .gift-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 41, 80, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 300;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
+  .gift-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .gift-modal {
+    background: var(--cream);
+    border-radius: 12px;
+    max-width: 480px;
+    width: 100%;
+    padding: 36px 32px 32px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(31, 41, 80, 0.25);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.3s ease;
+  }
+  .gift-modal-overlay.active .gift-modal {
+    transform: translateY(0) scale(1);
+  }
+  .gift-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--ink-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .gift-modal-close:hover {
+    background: var(--cream-deep);
+    color: var(--navy);
+  }
+  .gift-modal-close svg { width: 18px; height: 18px; }
+  .gift-modal-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .gift-modal-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    background: var(--cream-deep);
+    color: var(--peach-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gift-modal-icon svg { width: 26px; height: 26px; }
+  .gift-modal h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .gift-modal h3 em {
+    font-style: italic;
+    color: var(--peach-deep);
+  }
+  .gift-modal-subhead {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .gift-modal-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .gift-option {
+    background: var(--cream-deep);
+    border: 2px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 18px;
+    text-decoration: none;
+    color: var(--navy);
+    text-align: center;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .gift-option:hover {
+    border-color: var(--peach-deep);
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(31, 41, 80, 0.08);
+  }
+  .gift-option-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .gift-option-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .gift-modal-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  body.modal-open { overflow: hidden; }
 
+  @media (max-width: 500px) {
+    .gift-modal { padding: 32px 22px 24px; }
+    .gift-modal h3 { font-size: 24px; }
+    .gift-modal-options { gap: 10px; }
+    .gift-option { padding: 18px 14px; }
+    .gift-option-amount { font-size: 26px; }
+  }
   /* ─── Catalog Toolbar ─── */
   .catalog-toolbar-wrap { max-width: 1300px; margin: 50px auto 0; padding: 0 48px; }
   .catalog-toolbar {
@@ -754,7 +894,7 @@
       <div class="utility-row">
 
         <!-- Track Your Order -->
-        <a href="REPLACE_WITH_TRACK_ORDER_URL" class="utility-card">
+        <a href="https://sweetelevation.myshopify.com/tools/track" class="utility-card">
           <div class="utility-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 16h6"/>
@@ -771,8 +911,8 @@
           <svg class="utility-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
         </a>
 
-        <!-- Gift Card -->
-        <a href="REPLACE_WITH_GIFT_CARD_URL" class="utility-card">
+<!-- Gift Card -->
+        <button type="button" class="utility-card" id="gift-card-trigger" aria-haspopup="dialog" aria-controls="gift-modal">
           <div class="utility-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 12 20 22 4 22 4 12"/>
@@ -787,8 +927,57 @@
             <p>The perfect gift for any sweet tooth.</p>
           </div>
           <svg class="utility-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-        </a>
+        </button>
 
+      </div>
+    </div>
+
+    <!-- Gift Card Modal -->
+    <div class="gift-modal-overlay" id="gift-modal" role="dialog" aria-modal="true" aria-labelledby="gift-modal-title">
+      <div class="gift-modal">
+        <button type="button" class="gift-modal-close" id="gift-modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="gift-modal-header">
+          <div class="gift-modal-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"/>
+              <rect x="2" y="7" width="20" height="5"/>
+              <line x1="12" y1="22" x2="12" y2="7"/>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            </svg>
+          </div>
+          <h3 id="gift-modal-title">Choose an <em>amount</em></h3>
+          <p class="gift-modal-subhead">eGift cards are delivered by email. Pick a value to get started.</p>
+        </div>
+
+        <div class="gift-modal-options">
+          <a href="https://78qg01-1q.myshopify.com/cart/43431697678426:1?channel=buy_button" target="_blank" rel="noopener" class="gift-option">
+            <span class="gift-option-amount">$10</span>
+            <span class="gift-option-label">eGift Card</span>
+          </a>
+          <a href="https://78qg01-1q.myshopify.com/cart/43431697711194:1?channel=buy_button" target="_blank" rel="noopener" class="gift-option">
+            <span class="gift-option-amount">$25</span>
+            <span class="gift-option-label">eGift Card</span>
+          </a>
+          <a href="https://78qg01-1q.myshopify.com/cart/43431697743962:1?channel=buy_button" target="_blank" rel="noopener" class="gift-option">
+            <span class="gift-option-amount">$50</span>
+            <span class="gift-option-label">eGift Card</span>
+          </a>
+          <a href="https://78qg01-1q.myshopify.com/cart/43431697776730:1?channel=buy_button" target="_blank" rel="noopener" class="gift-option">
+            <span class="gift-option-amount">$100</span>
+            <span class="gift-option-label">eGift Card</span>
+          </a>
+        </div>
+
+        <div class="gift-modal-footer">
+          Sent to the recipient's email after checkout. Never expires.
+        </div>
       </div>
     </div>
 
@@ -1011,6 +1200,47 @@ return `
 
     renderProducts();
   </script>
+  renderProducts();
+  </script>
+
+  <!-- Gift Card Modal Toggle -->
+  <script>
+    (function() {
+      const trigger = document.getElementById('gift-card-trigger');
+      const modal = document.getElementById('gift-modal');
+      const closeBtn = document.getElementById('gift-modal-close');
+      const body = document.body;
+
+      if (!trigger || !modal || !closeBtn) return;
+
+      function openModal() {
+        modal.classList.add('active');
+        body.classList.add('modal-open');
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        body.classList.remove('modal-open');
+      }
+
+      trigger.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close when clicking outside the modal content
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
+</body>
 
 </body>
 </html>
