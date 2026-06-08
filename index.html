@@ -953,6 +953,65 @@ body.menu-open {
       gap: 32px;
     }
   }
+
+  /* ─── Bottom Tab Bar ─── */
+  .bottom-tab-bar { display: none; }
+  @media (max-width: 900px) {
+    .hamburger { display: none !important; }
+    .bottom-tab-bar {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      z-index: 200;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      box-shadow: 0 -4px 24px rgba(31, 41, 80, 0.10);
+    }
+    .tab-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 4px 12px;
+      gap: 3px;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      min-width: 0;
+    }
+    .tab-item svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .tab-item.active { color: var(--peach-deep); }
+    .tab-item.active svg { transform: translateY(-2px); }
+    .tab-item:active { opacity: 0.7; }
+    .tab-quote .tab-icon-wrap {
+      background: var(--navy);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .tab-quote svg { width: 18px; height: 18px; color: var(--cream); }
+    .tab-quote:hover .tab-icon-wrap,
+    .tab-quote.active .tab-icon-wrap { background: var(--peach-deep); transform: translateY(-2px); }
+    body { padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+  }
 </style>
 </head>
 <body>
@@ -994,7 +1053,7 @@ body.menu-open {
     <li><a href="/portfolio/">Portfolio</a></li>
     <li><a href="/charcuterie/">Charcuterie</a></li>
     <li><a href="/careers/">Careers</a></li>
-    <li><a href="#our-sweets" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
+    <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
   </ul>
   <div class="mobile-menu-foot">
     <div>356 Troy Schenectady Rd, Latham NY</div>
@@ -1013,7 +1072,7 @@ body.menu-open {
       <div class="hero-content">
         <h1>Sweet<br><em>Elevation</em></h1>
         <div class="hero-cta-row">
-          <a href="#our-sweets" class="btn btn-primary">
+          <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/><path d="M2 21h20"/></svg>
             Get a Quote
           </a>
@@ -1312,7 +1371,7 @@ body.menu-open {
           </div>
         </div>
 
-        <a href="#our-sweets" class="btn btn-primary">
+        <a href="https://mycustombakes.com" target="_blank" rel="noopener" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/><path d="M2 21h20"/></svg>
           Get a Quote
         </a>
@@ -1342,7 +1401,7 @@ body.menu-open {
         <div class="foot-col">
           <h4>Order</h4>
           <ul>
-            <li><a href="/#our-sweets" target="_blank" rel="noopener">Custom Quotes</a></li>
+            <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Custom Quotes</a></li>
             <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
             <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
             <li><a href="/charcuterie/">Charcuterie</a></li>
@@ -1438,5 +1497,40 @@ body.menu-open {
   })();
 </script>
 
+<nav class="bottom-tab-bar" aria-label="Mobile navigation">
+  <a href="/" class="tab-item" data-path="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="/about-us/" class="tab-item" data-path="/about-us/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span>About</span>
+  </a>
+  <a href="https://mycustombakes.com" class="tab-item tab-quote" target="_blank" rel="noopener" aria-label="Get a custom quote">
+    <div class="tab-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/></svg>
+    </div>
+    <span>Quote</span>
+  </a>
+  <a href="/store/" class="tab-item" data-path="/store/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <span>Store</span>
+  </a>
+  <a href="/portfolio/" class="tab-item" data-path="/portfolio/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Portfolio</span>
+  </a>
+</nav>
+<script>
+(function() {
+  var p = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.tab-item[data-path]').forEach(function(el) {
+    var dp = el.getAttribute('data-path').replace(/\/$/, '') || '/';
+    if (dp === '/' ? (p === '/' || p === '') : (p === dp || p.startsWith(dp + '/'))) {
+      el.classList.add('active');
+    }
+  });
+})();
+</script>
 </body>
 </html>
