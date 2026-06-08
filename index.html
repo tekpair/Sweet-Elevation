@@ -1019,69 +1019,6 @@ body.menu-open {
   }
 
 
-  /* ─── Fruit Pastries Pre-Order Banner ─── */
-  .fruit-banner {
-    background: var(--cream-deep);
-    border-top: 3px solid var(--peach-deep);
-    border-bottom: 1px solid var(--line);
-    padding: 20px 48px;
-    position: relative;
-    z-index: 2;
-    isolation: isolate;
-  }
-  .fruit-banner-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .fruit-banner-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .fruit-banner-icon {
-    font-size: 28px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .fruit-banner-badge {
-    display: inline-block;
-    background: var(--peach-deep);
-    color: #fff;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 100px;
-    margin-bottom: 5px;
-  }
-  .fruit-banner-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(16px, 2vw, 22px);
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    display: block;
-  }
-  .fruit-banner-title em { font-style: italic; color: var(--peach-deep); }
-  .fruit-banner-desc {
-    font-size: 13px;
-    color: var(--ink-soft);
-    display: block;
-    margin-top: 2px;
-  }
-  .fruit-banner-cta { white-space: nowrap; flex-shrink: 0; }
-  @media (max-width: 700px) {
-    .fruit-banner { padding: 16px 20px; }
-    .fruit-banner-inner { flex-wrap: wrap; gap: 12px; }
-    .fruit-banner-cta { flex: 1; justify-content: center; }
-  }
-
 </style>
 </head>
 <body>
@@ -1153,21 +1090,6 @@ body.menu-open {
         </div>
       </div>
     </section>
-
-<!-- Fruit Pastries Pre-Order Banner -->
-<div class="fruit-banner">
-  <div class="fruit-banner-inner">
-    <div class="fruit-banner-left">
-      <div class="fruit-banner-icon">🍓</div>
-      <div>
-        <span class="fruit-banner-badge">Pre-Order Open</span>
-        <span class="fruit-banner-title">Seasonal <em>Fruit Pastries</em></span>
-        <span class="fruit-banner-desc">Fresh strawberry tarts, fruit Danishes &amp; more — made to order</span>
-      </div>
-    </div>
-    <a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener" class="btn btn-primary fruit-banner-cta">Pre-Order Now</a>
-  </div>
-</div>
 
 <!-- Menu (peach background) -->
 <div class="menu-wrap" id="our-sweets">
