@@ -802,7 +802,7 @@
       border-top: 1px solid var(--line);
       z-index: 200;
       padding-bottom: env(safe-area-inset-bottom, 0px);
-      box-shadow: 0 -4px 24px rgba(31, 41, 80, 0.10);
+      box-shadow: 0 -2px 10px rgba(31, 41, 80, 0.07);
     }
     .tab-item {
       flex: 1;
@@ -810,42 +810,40 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 10px 4px 12px;
-      gap: 3px;
+      padding: 7px 1px 8px;
+      gap: 2px;
       text-decoration: none;
       color: var(--ink-soft);
-      font-size: 10px;
+      font-size: 7.5px;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
       transition: color 0.2s;
       min-width: 0;
+      line-height: 1;
     }
-    .tab-item svg {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
+    .tab-item svg { width: 17px; height: 17px; flex-shrink: 0; }
+    .tab-item span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .tab-item.active { color: var(--peach-deep); }
-    .tab-item.active svg { transform: translateY(-2px); }
     .tab-item:active { opacity: 0.7; }
     .tab-quote .tab-icon-wrap {
       background: var(--navy);
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 2px;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s;
     }
-    .tab-quote svg { width: 18px; height: 18px; color: var(--cream); }
+    .tab-quote svg { width: 14px; height: 14px; color: var(--cream); }
     .tab-quote:hover .tab-icon-wrap,
-    .tab-quote.active .tab-icon-wrap { background: var(--peach-deep); transform: translateY(-2px); }
-    body { padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+    .tab-quote.active .tab-icon-wrap { background: var(--peach-deep); }
+    .tab-quote span { color: var(--navy); font-weight: 600; }
+    .tab-quote.active span { color: var(--peach-deep); }
+    body { padding-bottom: calc(54px + env(safe-area-inset-bottom, 0px)); }
   }
+
 </style>
 </head>
 <body>
@@ -888,7 +886,7 @@
       <li><a href="/portfolio/">Portfolio</a></li>
       <li><a href="/charcuterie/">Charcuterie</a></li>
       <li><a href="/careers/">Careers</a></li>
-      <li><a href="https://mycustombakes.com" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
+      <li><a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
     </ul>
     <div class="mobile-menu-foot">
       <div>356 Troy Schenectady Rd, Latham NY</div>
@@ -1220,7 +1218,11 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
     <span>About</span>
   </a>
-  <a href="https://mycustombakes.com" class="tab-item tab-quote" target="_blank" rel="noopener" aria-label="Get a custom quote">
+  <a href="/weddings-events/" class="tab-item" data-path="/weddings-events/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C9.8 2 8 3.8 8 6c0 3.5 4 8 4 8s4-4.5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="12" cy="6" r="1.5" fill="currentColor"/></svg>
+    <span>Weddings</span>
+  </a>
+  <a href="https://www.mycustombakes.com/sweetelevationbakery/products" class="tab-item tab-quote" target="_blank" rel="noopener" aria-label="Get a custom quote">
     <div class="tab-icon-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/></svg>
     </div>
@@ -1233,6 +1235,14 @@
   <a href="/portfolio/" class="tab-item" data-path="/portfolio/">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
     <span>Portfolio</span>
+  </a>
+  <a href="/charcuterie/" class="tab-item" data-path="/charcuterie/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="11"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+    <span>Charcuterie</span>
+  </a>
+  <a href="/careers/" class="tab-item" data-path="/careers/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+    <span>Careers</span>
   </a>
 </nav>
 <script>
