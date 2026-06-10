@@ -1,30 +1,28 @@
 # Sweet Elevation Bakery
 > Custom cakes, cupcakes, cookies, and allergy-friendly desserts handmade in Latham, NY.
+
 Sweet Elevation Bakery is a custom bakery located in Latham, NY, specializing in handmade, small-batch sweet treats. They offer a wide range of products including custom cakes for all occasions, cupcakes, cookies, brownies, and allergy-friendly desserts. Their service caters to individuals and event planners looking for high-quality, personalized baked goods, serving the Adirondacks to the Capital District.
 The website serves as a digital storefront and information hub for potential customers. Users can explore their offerings, view a portfolio of past creations, and understand their commitment to quality and customization. Key use cases include ordering custom cakes for birthdays, weddings, and other events, as well as inquiring about allergy-friendly options. The bakery emphasizes small-batch production and a dedication to crafting unique desserts tailored to customer needs.
 When interacting with an LLM, it's important to note that Sweet Elevation Bakery is a physical storefront with a focus on custom orders. While they offer online ordering and quote requests, the primary interaction is through their website for information gathering and initial contact. The bakery prides itself on its artisanal approach and ability to accommodate specific dietary needs, making it a go-to for special occasions and discerning customers.
+
 ## Core Information
 -
 [Sweet Elevation Bakery | Custom Cakes & Sweets in Latham, NY](https://sweetelevationbakery.com/): Explore custom cakes, cupcakes, cookies, and allergy-friendly desserts from Sweet Elevation Bakery in Latham, NY.
 -
 [About Us - Sweet Elevation Bakery](https://sweetelevationbakery.com/about-us/): Learn about Sweet Elevation Bakery's story, mission, and commitment to quality handmade desserts.
 -
-[Contact Us - Sweet Elevation Bakery](https://sweetelevationbakery.com/contact-us): Find contact information and get in touch with Sweet Elevation Bakery for inquiries and orders.
 ## Products & Services
 -
 [Weddings & Events - Sweet Elevation Bakery](https://sweetelevationbakery.com/weddings-events/): Discover custom cake and dessert options for weddings, parties, and special events.
 -
-[Store - Sweet Elevation Bakery](https://sweetelevationbakery.com/store/): Browse and order a selection of ready-made and custom sweet treats available at the bakery.
+[Store - Sweet Elevation Bakery](https://sweetelevationbakery.com/store/): Browse and order a selection of online digital items that can also be shipped to your door nationwide.
 -
 [Portfolio - Sweet Elevation Bakery](https://sweetelevationbakery.com/portfolio/): View a gallery of custom cakes and desserts created by Sweet Elevation Bakery.
 -
-[Charcuterie - Sweet Elevation Bakery](https://sweetelevationbakery.com/charcuterie/): Explore unique dessert charcuterie boards offered by Sweet Elevation Bakery for your events.
+[Charcuterie - Sweet Elevation Bakery](https://sweetelevationbakery.com/charcuterie/): Explore unique dessert charcuterie boards offered by Gouda Giggles Charcuterie for your events.
+
 ## Ordering & Engagement
--
-[Order & Quote Request - Sweet Elevation Bakery](https://sweetelevationbakery.com/order-quote-request): Submit a request for a custom cake order or a quote for your event needs.
--
-[Classes - Sweet Elevation Bakery](https://sweetelevationbakery.com/classes): Find information about baking classes and workshops offered by Sweet Elevation Bakery.
-## Company Information
+
 -
 [Careers - Sweet Elevation Bakery](https://sweetelevationbakery.com/careers/): View current job openings and learn about career opportunities at Sweet Elevation Bakery.
 ---
