@@ -633,6 +633,74 @@ body.menu-open {
     max-width: 520px;
   }
 
+/* ─── Fruit Pastries Feature ─── */
+
+.fruit-feature {
+  background: var(--cream);
+  padding: 110px 48px;
+}
+
+.fruit-feature-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.fruit-feature-image {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.fruit-feature-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.fruit-feature-script {
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  color: var(--peach-deep);
+  margin-bottom: 4px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  font-weight: 600;
+}
+
+.fruit-feature-content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.fruit-feature-content h2 em {
+  color: var(--peach-deep);
+  font-style: italic;
+}
+
+.fruit-feature-content p {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 18px;
+  max-width: 500px;
+}
+
+@media (max-width: 900px) {
+  .fruit-feature {
+    padding: 80px 24px;
+  }
+
+  .fruit-feature-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
   /* ─── Coming Soon: Courses Hub ─── */
   .hub {
     background: var(--navy);
@@ -1097,6 +1165,35 @@ body.menu-open {
         </div>
       </div>
     </section>
+
+<!-- Featured Fruit Pastries -->
+<section class="fruit-feature">
+  <div class="fruit-feature-inner">
+
+    <div class="fruit-feature-image">
+      <img src="assets/fruit-pastries.jpg" alt="Assorted Fruit Pastries at Sweet Elevation Bakery">
+    </div>
+
+    <div class="fruit-feature-content">
+<div class="fruit-feature-script">a taste of NYC</div>
+
+<h2>Without <em>the drive.</em></h2>
+
+<p>
+Fruit Pastries have become one of our signature specialties. These labor-intensive pastries are handcrafted over approximately two days using flaky pastry, fruit fillings, specialty creams, curds, and ganaches.
+</p>
+
+<p>
+While many pastry lovers travel to New York City to find pastries like these, we're proud to make them fresh right here in Latham with a rotating selection of unique flavors available throughout the year.
+</p>
+
+      <a href="https://www.mycustombakes.com/sweetelevationbakery/presales/view/Fruit%20Pastry%20June%20Pre-Sale" class="btn btn-primary">
+        Order Fruit Pastries
+      </a>
+    </div>
+
+  </div>
+</section>
 
 <!-- Menu (peach background) -->
 <div class="menu-wrap" id="our-sweets">
