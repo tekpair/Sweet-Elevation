@@ -274,7 +274,7 @@
   .form-iframe-wrap iframe {
     display: block;
     width: 100%;
-    height: 1080px;
+    height: 1962px;
     border: none;
     background: #fff;
   }
@@ -293,21 +293,100 @@
   .feedback-note p strong { color: var(--navy); }
 
   /* ─── Footer ─── */
-  footer { background: var(--navy); color: var(--cream); }
-  .foot-inner { max-width: 1400px; margin: 0 auto; padding: 64px 48px 32px; }
-  .foot-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-  .foot-logo img { height: 60px; width: auto; object-fit: contain; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: 0.9; }
-  .foot-tagline { font-size: 13px; color: rgba(250,243,234,0.6); line-height: 1.6; margin-bottom: 18px; max-width: 260px; }
-  .foot-contact { font-size: 13px; color: rgba(250,243,234,0.6); line-height: 1.9; }
-  .foot-contact a { color: rgba(250,243,234,0.6); text-decoration: none; transition: color 0.2s; }
+  footer {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 90px 48px 36px;
+  }
+  .foot-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(250, 243, 234, 0.1);
+    margin-bottom: 36px;
+  }
+  .foot-brand .foot-logo {
+    background: var(--cream);
+    padding: 16px 20px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+  .foot-brand .foot-logo img {
+    height: 64px;
+    width: auto;
+    max-width: 200px;
+    display: block;
+  }
+  .foot-tagline {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--peach);
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+  .foot-contact {
+    font-size: 14px;
+    color: rgba(250, 243, 234, 0.65);
+    line-height: 1.8;
+  }
+  .foot-contact a {
+    color: rgba(250, 243, 234, 0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .foot-contact a:hover { color: var(--peach); }
-  .foot-col h4 { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,243,234,0.4); margin-bottom: 16px; }
-  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .foot-col a { font-size: 14px; color: rgba(250,243,234,0.75); text-decoration: none; transition: color 0.2s; }
+  .foot-col h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--peach);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 12px; }
+  .foot-col a {
+    color: rgba(250, 243, 234, 0.65);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
   .foot-col a:hover { color: var(--peach); }
-  .foot-bottom { border-top: 1px solid rgba(250,243,234,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(250,243,234,0.35); flex-wrap: wrap; gap: 8px; }
-  .tekpair-credit { color: rgba(250,243,234,0.35); text-decoration: none; transition: color 0.2s; }
-  .tekpair-credit:hover { color: var(--peach); }
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .foot-bottom .copyright { line-height: 1; }
+  .tekpair-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--peach);
+    text-decoration: none;
+    transition: opacity 0.2s;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .tekpair-credit:hover { opacity: 0.75; }
+  .tekpair-credit span { line-height: 1; display: inline-block; }
 
   /* ─── Bottom Tab Bar ─── */
   .bottom-tab-bar { display: none; }
@@ -369,12 +448,23 @@
     .crumb { padding: 20px 24px 0; }
     .feedback-form-wrap { padding: 0 16px; }
     .feedback-note { padding: 0 16px; }
-    .foot-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .foot-inner { padding: 48px 24px 24px; }
+    footer { padding: 70px 24px 32px; }
+    .foot-top {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 32px;
+      padding-bottom: 40px;
+    }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-bottom {
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      text-align: center;
+    }
   }
 
   @media (max-width: 500px) {
-    .foot-top { grid-template-columns: 1fr; }
+    .foot-top { grid-template-columns: 1fr; gap: 32px; }
   }
 </style>
 </head>
@@ -421,15 +511,8 @@
 
 <main>
 
-  <div class="crumb">
-    <a href="/">Home</a>
-    <span class="sep">/</span>
-    <span class="current">Feedback Center</span>
-  </div>
-
   <!-- Hero -->
   <section class="feedback-hero">
-    <div class="feedback-eyebrow">your voice</div>
     <h1>The <em>Feedback</em> Center</h1>
     <p>This isn't a support desk. It's a space for people who genuinely care about Sweet Elevation — members, customers, and community — to share what's working, what isn't, and what you'd love to see next.</p>
   </section>
@@ -467,13 +550,8 @@
         </div>
       </div>
       <div class="form-iframe-wrap">
-        <!--
-          PASTE YOUR GOOGLE FORM EMBED URL BELOW.
-          In Google Forms: Send → <> Embed → copy the src="..." value from the iframe code.
-          Replace PASTE_YOUR_GOOGLE_FORM_SRC_URL_HERE with that URL.
-        -->
         <iframe
-          src="PASTE_YOUR_GOOGLE_FORM_SRC_URL_HERE"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeucz4JFkI9iBoxfJaccCTukrF7GbMhCVmpE5cFvo4uR8J_VQ/viewform?embedded=true"
           title="Sweet Elevation Feedback Center"
           loading="lazy"
           allowfullscreen>
@@ -528,6 +606,7 @@
         <ul>
           <li><a href="/about-us/">Our Story</a></li>
           <li><a href="tel:+15188180010">Contact</a></li>
+          <li><a href="/feedback/">Feedback Center</a></li>
           <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
@@ -535,7 +614,12 @@
     </div>
     <div class="foot-bottom">
       <div class="copyright">© 2026 Sweet Elevation Bakery</div>
-      <div>Website by <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit">Tekpair</a></div>
+      <div>
+        Website by
+        <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+          <span>Tekpair</span>
+        </a>
+      </div>
     </div>
   </div>
 </footer>
