@@ -704,6 +704,17 @@
     text-transform: uppercase; color: var(--peach-deep);
     font-family: 'Inter', sans-serif;
   }
+  .product-card-buy {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--navy); color: var(--cream);
+    text-decoration: none; border-radius: 100px;
+    padding: 8px 16px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .product-card-buy:hover { background: var(--peach-deep); transform: translateY(-1px); }
+  .product-card-buy svg { width: 13px; height: 13px; flex-shrink: 0; }
 
   /* ─── No Results ─── */
   .no-results {
@@ -1243,6 +1254,10 @@ grid.innerHTML = filtered.map(p => {
     ? `<span class="product-card-price">$${p.price}</span>`
     : `<span class="product-card-price soon">${p.status}</span>`;
 
+  const buyBtn = p.url
+    ? `<a href="${p.url}" class="product-card-buy">Buy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>`
+    : '';
+
 return `
           <div class="product-card">
             <div class="product-card-img">
@@ -1254,6 +1269,7 @@ return `
               <p>${p.description}</p>
               <div class="product-card-footer">
                 ${priceBlock}
+                ${buyBtn}
               </div>
             </div>
           </div>
