@@ -2668,7 +2668,7 @@
         });
 
         if (!response.ok) {
-          let message = 'We could not send your inquiry. Please try again, or call the bakery at (518) 818-0010.';
+          let message = 'We could not send your inquiry. Please try again, or email us at sweetelevationbakery@gmail.com.';
           try {
             const data = await response.json();
             if (data && Array.isArray(data.errors) && data.errors.length) {
