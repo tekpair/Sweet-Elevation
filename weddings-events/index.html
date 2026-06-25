@@ -644,6 +644,263 @@
     line-height: 1.6;
   }
 
+  /* ─── Multi-step wizard ─── */
+  .form-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 38px;
+    gap: 4px;
+  }
+  .progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    position: relative;
+  }
+  .progress-step::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -50%;
+    width: 100%;
+    height: 2px;
+    background: var(--line);
+    z-index: 0;
+  }
+  .progress-step:first-child::before { display: none; }
+  .progress-step.done::before { background: var(--peach-deep); }
+  .progress-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    position: relative;
+    z-index: 1;
+    transition: all 0.25s;
+  }
+  .progress-step.active .progress-dot {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--cream);
+  }
+  .progress-step.done .progress-dot {
+    background: var(--peach-deep);
+    border-color: var(--peach-deep);
+    color: var(--cream);
+  }
+  .progress-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  .progress-step.active .progress-label { color: var(--navy); }
+
+  .form-step { display: none; }
+  .form-step.active { display: block; animation: stepIn 0.3s ease; }
+  @keyframes stepIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .step-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--peach-deep);
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.15;
+  }
+  .step-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+    line-height: 1.55;
+  }
+  .req-star { color: var(--peach-deep); }
+
+  /* Checkbox / selectable cards */
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .check-card {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 14px;
+    color: var(--navy);
+    user-select: none;
+  }
+  .check-card:hover { border-color: var(--peach-deep); }
+  .check-card input { width: 18px; height: 18px; accent-color: var(--peach-deep); flex-shrink: 0; cursor: pointer; }
+  .check-card:has(input:checked) {
+    border-color: var(--peach-deep);
+    background: rgba(232, 159, 128, 0.08);
+  }
+
+  /* Radio pills */
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pill-opt {
+    position: relative;
+    cursor: pointer;
+  }
+  .pill-opt input {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .pill-opt span {
+    display: inline-block;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 9px 18px;
+    font-size: 13px;
+    color: var(--navy);
+    transition: all 0.2s;
+  }
+  .pill-opt:hover span { border-color: var(--peach-deep); }
+  .pill-opt input:checked + span {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--cream);
+  }
+
+  /* Conditional blocks */
+  .cond-block {
+    display: none;
+    border-left: 3px solid var(--peach-deep);
+    background: rgba(232, 159, 128, 0.05);
+    border-radius: 0 8px 8px 0;
+    padding: 22px 24px 8px;
+    margin-bottom: 18px;
+  }
+  .cond-block.show { display: block; animation: stepIn 0.25s ease; }
+  .cond-block-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  /* Warning / screening banners */
+  .form-warning {
+    display: none;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .form-warning.show { display: flex; }
+  .form-warning svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+  .form-warning strong { display: block; margin-bottom: 2px; }
+  .form-warning.warn {
+    background: #fdf3e7;
+    border: 1px solid #f0c891;
+    color: #8a5a1a;
+  }
+  .form-warning.stop {
+    background: #fcebea;
+    border: 1px solid #e8a9a3;
+    color: #9a342b;
+  }
+  .form-warning.info {
+    background: #eef2fb;
+    border: 1px solid #c2cfe8;
+    color: #3a4a72;
+  }
+
+  /* Acknowledgments */
+  .ack-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 15px 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .ack-item input { width: 18px; height: 18px; accent-color: var(--peach-deep); flex-shrink: 0; margin-top: 1px; cursor: pointer; }
+  .ack-item label, .ack-item span { font-size: 13.5px; color: var(--navy); line-height: 1.5; cursor: pointer; }
+  .ack-item strong { font-weight: 600; }
+
+  /* Step actions */
+  .step-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .btn-back {
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    padding: 12px 8px;
+    transition: color 0.2s;
+  }
+  .btn-back:hover { color: var(--navy); }
+  .btn-back.hidden { visibility: hidden; }
+
+  .field-error {
+    color: #c0392b;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .form-field input.invalid,
+  .form-field select.invalid,
+  .form-field textarea.invalid,
+  .check-grid.invalid,
+  .pill-row.invalid {
+    border-color: #c0392b !important;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+  }
+  .group-error { color: #c0392b; font-size: 12px; margin-top: 8px; display: none; }
+  .group-error.show { display: block; }
+  .field-help { font-size: 12px; color: var(--ink-soft); margin-top: -1px; }
+
   .btn {
     display: inline-flex;
     align-items: center;
@@ -777,6 +1034,10 @@
     .contact-form { padding: 32px 24px; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
     .form-row .form-field { margin-bottom: 16px; }
+    .check-grid { grid-template-columns: 1fr; }
+    .progress-label { display: none; }
+    .form-progress { margin-bottom: 30px; }
+    .step-title { font-size: 22px; }
 
     footer { padding: 70px 24px 32px; }
     .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
@@ -1011,68 +1272,479 @@
         <h2>Tell us about your <em>event.</em></h2>
         <p>Fill in the details below and we'll get back to you within two to three business days.</p>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/xkoewknp" method="POST" autocomplete="off">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-          </div>
+      <form class="contact-form" id="event-form" action="https://formspree.io/f/xkoewknp" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
+        <input type="hidden" name="_subject" value="New Weddings & Events Inquiry">
+
+        <!-- Progress -->
+        <div class="form-progress">
+          <div class="progress-step active" data-step="0"><div class="progress-dot">1</div><div class="progress-label">Contact</div></div>
+          <div class="progress-step" data-step="1"><div class="progress-dot">2</div><div class="progress-label">Order</div></div>
+          <div class="progress-step" data-step="2"><div class="progress-dot">3</div><div class="progress-label">Fulfillment</div></div>
+          <div class="progress-step" data-step="3"><div class="progress-dot">4</div><div class="progress-label">Confirm</div></div>
         </div>
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" pattern="[\d\s\-\(\)\+]{7,}" placeholder="(518) 555-0123">
-          </div>
-          <div class="form-field">
-            <label for="event-date">Event Date</label>
-            <input type="date" id="event-date" name="event-date" required>
-          </div>
-        </div>
+        <!-- ───────────── STEP 1: Contact & Event ───────────── -->
+        <div class="form-step active" data-step="0">
+          <div class="step-eyebrow">Step 1 of 4</div>
+          <h3 class="step-title">Contact &amp; event</h3>
+          <p class="step-sub">Just the basics to get started.</p>
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="event-type">Event Type</label>
-            <select id="event-type" name="event-type" required>
-              <option value="">Choose one…</option>
-              <option value="Wedding">Wedding</option>
-              <option value="Birthday">Birthday</option>
-              <option value="Anniversary">Anniversary</option>
-              <option value="Shower">Bridal / Baby Shower</option>
-              <option value="Corporate">Corporate Event</option>
-              <option value="Other">Other</option>
-            </select>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name <span class="req-star">*</span></label>
+              <input type="text" id="name" name="name" data-required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email Address <span class="req-star">*</span></label>
+              <input type="email" id="email" name="email" data-required>
+            </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone Number <span class="req-star">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="(518) 555-0123" data-required>
+            </div>
+            <div class="form-field">
+              <label for="contact-method">Preferred Contact Method <span class="req-star">*</span></label>
+              <select id="contact-method" name="preferred-contact" data-required>
+                <option value="">Choose one…</option>
+                <option value="Email">Email</option>
+                <option value="Phone call">Phone call</option>
+                <option value="Text message">Text message</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="event-type">Event Type <span class="req-star">*</span></label>
+              <select id="event-type" name="event-type" data-required>
+                <option value="">Choose one…</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Shower">Bridal / Baby Shower</option>
+                <option value="Corporate">Corporate Event</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="event-date">Event Date <span class="req-star">*</span></label>
+              <input type="date" id="event-date" name="event-date" data-required>
+            </div>
+          </div>
+
           <div class="form-field">
-            <label for="guest-count">Approx. Guest Count</label>
+            <label for="guest-count">Approximate Guest Count</label>
             <input type="number" id="guest-count" name="guest-count" min="1" placeholder="e.g. 50">
           </div>
+
+          <div class="form-warning warn" id="warn-rush" data-screen>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span><strong>That's fewer than 7 days away.</strong>We're unable to accept standard custom-order requests with fewer than seven days' notice. Rush availability is not guaranteed — you can still submit, but please confirm by phone.</span>
+          </div>
+          <div class="form-warning warn" id="warn-large" data-screen>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Heads up on timing.</strong>Weddings and large-event orders require additional planning time and may not be available on short notice.</span>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn-back hidden">&larr; Back</button>
+            <button type="button" class="btn btn-primary btn-next">Continue &rarr;</button>
+          </div>
         </div>
 
-        <div class="form-field">
-          <label for="setup">Is delivery & setup needed?</label>
-          <select id="setup" name="setup">
-            <option value="No, pickup only">No, I'll pick it up</option>
-            <option value="Yes, delivery only">Delivery only</option>
-            <option value="Yes, delivery + setup">Delivery + full setup (table, plates, presentation)</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
+        <!-- ───────────── STEP 2: Order details ───────────── -->
+        <div class="form-step" data-step="1">
+          <div class="step-eyebrow">Step 2 of 4</div>
+          <h3 class="step-title">What are you ordering?</h3>
+          <p class="step-sub">Pick everything that applies — we'll only ask follow-ups for what you choose.</p>
+
+          <div class="form-field">
+            <label>Products needed <span class="req-star">*</span></label>
+            <div class="check-grid" id="order-grid" data-required-group>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Custom cake" data-cond="cake"> Custom cake</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Wedding cake" data-cond="cake"> Wedding cake</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Cupcakes" data-cond="cupcakes"> Cupcakes</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Custom sugar cookies" data-cond="cookies"> Custom sugar cookies</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Cake pops" data-cond="cakepops"> Cake pops</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Brownies / bars" data-cond="brownies"> Brownies / bars</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Chocolate-covered treats" data-cond="choc"> Chocolate-covered treats</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Dessert table" data-cond="dessert"> Dessert table</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Cutting cake plus desserts" data-cond="cake cutting"> Cutting cake + desserts</label>
+              <label class="check-card"><input type="checkbox" name="ordering" value="Other" data-cond="other"> Other</label>
+            </div>
+            <div class="group-error" id="order-error">Please select at least one item.</div>
+          </div>
+
+          <!-- Cake details -->
+          <div class="cond-block" data-block="cake">
+            <div class="cond-block-title">Cake details</div>
+            <div class="form-field">
+              <label for="cake-servings">How many cake servings are needed? <span class="req-star">*</span></label>
+              <input type="number" id="cake-servings" name="cake-servings" min="1" placeholder="e.g. 75" data-required>
+            </div>
+            <div class="form-field">
+              <label>Tiers / format <span class="req-star">*</span></label>
+              <div class="pill-row" data-required-group>
+                <label class="pill-opt"><input type="radio" name="cake-tiers" value="Single tier"><span>Single tier</span></label>
+                <label class="pill-opt"><input type="radio" name="cake-tiers" value="Two tier"><span>Two tier</span></label>
+                <label class="pill-opt"><input type="radio" name="cake-tiers" value="Three tier"><span>Three tier</span></label>
+                <label class="pill-opt"><input type="radio" name="cake-tiers" value="Sheet cake"><span>Sheet cake</span></label>
+                <label class="pill-opt"><input type="radio" name="cake-tiers" value="Unsure"><span>Unsure</span></label>
+              </div>
+              <div class="group-error">Please choose one.</div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cake-shape">Shape</label>
+                <select id="cake-shape" name="cake-shape">
+                  <option value="">Choose one…</option>
+                  <option>Round</option><option>Square</option><option>Sheet</option><option>Unsure</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="cake-flavors">Flavor(s)</label>
+                <input type="text" id="cake-flavors" name="cake-flavors" placeholder="e.g. vanilla, chocolate">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cake-filling">Filling(s)</label>
+                <input type="text" id="cake-filling" name="cake-filling" placeholder="e.g. raspberry, buttercream">
+              </div>
+              <div class="form-field">
+                <label for="cake-colors">Colors / design theme</label>
+                <input type="text" id="cake-colors" name="cake-colors" placeholder="e.g. blush + gold, rustic">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="cake-wording">Wording on cake</label>
+              <input type="text" id="cake-wording" name="cake-wording" placeholder="e.g. Happy 50th, Mr &amp; Mrs Gates">
+            </div>
+            <div class="form-field">
+              <label for="cake-other-dessert">Is another dessert being served?</label>
+              <select id="cake-other-dessert" name="cake-other-dessert">
+                <option value="">Choose one…</option>
+                <option>No — cake only</option>
+                <option>Yes — cake plus other desserts</option>
+                <option>Unsure</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="cake-tasting">Interested in a tasting?</label>
+              <select id="cake-tasting" name="cake-tasting">
+                <option value="">Choose one…</option>
+                <option>Yes, I'd like a tasting</option>
+                <option>No, not needed</option>
+                <option>Maybe</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Cupcakes -->
+          <div class="cond-block" data-block="cupcakes">
+            <div class="cond-block-title">Cupcakes</div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cupcake-qty">How many cupcakes? <span class="req-star">*</span></label>
+                <input type="number" id="cupcake-qty" name="cupcake-qty" min="1" placeholder="e.g. 24" data-required>
+              </div>
+              <div class="form-field">
+                <label for="cupcake-flavors">Flavor(s)</label>
+                <input type="text" id="cupcake-flavors" name="cupcake-flavors" placeholder="e.g. vanilla, red velvet">
+              </div>
+            </div>
+          </div>
+
+          <!-- Cookies -->
+          <div class="cond-block" data-block="cookies">
+            <div class="cond-block-title">Custom sugar cookies</div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cookie-qty">How many cookies? <span class="req-star">*</span></label>
+                <input type="number" id="cookie-qty" name="cookie-qty" min="1" placeholder="e.g. 36" data-required>
+              </div>
+              <div class="form-field">
+                <label for="cookie-theme">Design / theme</label>
+                <input type="text" id="cookie-theme" name="cookie-theme" placeholder="e.g. floral, baby shower">
+              </div>
+            </div>
+          </div>
+
+          <!-- Cake pops -->
+          <div class="cond-block" data-block="cakepops">
+            <div class="cond-block-title">Cake pops</div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cakepop-qty">How many cake pops? <span class="req-star">*</span></label>
+                <input type="number" id="cakepop-qty" name="cakepop-qty" min="1" placeholder="e.g. 24" data-required>
+              </div>
+              <div class="form-field">
+                <label for="cakepop-flavors">Flavor / color</label>
+                <input type="text" id="cakepop-flavors" name="cakepop-flavors" placeholder="e.g. chocolate, gold drizzle">
+              </div>
+            </div>
+          </div>
+
+          <!-- Brownies / bars -->
+          <div class="cond-block" data-block="brownies">
+            <div class="cond-block-title">Brownies / bars</div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="brownie-qty">How many pieces? <span class="req-star">*</span></label>
+                <input type="number" id="brownie-qty" name="brownie-qty" min="1" placeholder="e.g. 48" data-required>
+              </div>
+              <div class="form-field">
+                <label for="brownie-type">Type</label>
+                <input type="text" id="brownie-type" name="brownie-type" placeholder="e.g. fudge brownies, lemon bars">
+              </div>
+            </div>
+          </div>
+
+          <!-- Chocolate-covered treats -->
+          <div class="cond-block" data-block="choc">
+            <div class="cond-block-title">Chocolate-covered treats</div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="choc-qty">How many pieces? <span class="req-star">*</span></label>
+                <input type="number" id="choc-qty" name="choc-qty" min="1" placeholder="e.g. 24" data-required>
+              </div>
+              <div class="form-field">
+                <label for="choc-type">Which treats?</label>
+                <input type="text" id="choc-type" name="choc-type" placeholder="e.g. strawberries, Oreos, pretzels">
+              </div>
+            </div>
+          </div>
+
+          <!-- Dessert table -->
+          <div class="cond-block" data-block="dessert">
+            <div class="cond-block-title">Dessert table</div>
+            <div class="form-field">
+              <label for="dt-only">Will this be the only dessert? <span class="req-star">*</span></label>
+              <select id="dt-only" name="dessert-only" data-required>
+                <option value="">Choose one…</option>
+                <option>Yes — the dessert table is everything</option>
+                <option>No — there's also a cake / other desserts</option>
+                <option>Unsure</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Desired pieces per guest <span class="req-star">*</span></label>
+              <div class="pill-row" data-required-group>
+                <label class="pill-opt"><input type="radio" name="dessert-pieces" value="1-2"><span>1–2</span></label>
+                <label class="pill-opt"><input type="radio" name="dessert-pieces" value="2-3"><span>2–3</span></label>
+                <label class="pill-opt"><input type="radio" name="dessert-pieces" value="3-4"><span>3–4</span></label>
+                <label class="pill-opt"><input type="radio" name="dessert-pieces" value="Unsure"><span>Unsure</span></label>
+              </div>
+              <div class="group-error">Please choose one.</div>
+            </div>
+            <div class="form-field">
+              <label for="dt-which">Which desserts are wanted?</label>
+              <textarea id="dt-which" name="dessert-which" placeholder="e.g. cookies, cake pops, brownies, mini tarts…"></textarea>
+            </div>
+            <div class="form-field">
+              <label for="dt-everyone">Are you expecting every guest to receive every item?</label>
+              <select id="dt-everyone" name="dessert-everyone">
+                <option value="">Choose one…</option>
+                <option>Yes — one of each per guest</option>
+                <option>No — a variety to choose from</option>
+                <option>Unsure</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="dt-setup">Delivery only or full display setup? <span class="req-star">*</span></label>
+              <select id="dt-setup" name="dessert-setup" data-required>
+                <option value="">Choose one…</option>
+                <option>Delivery only (you set up)</option>
+                <option>Full display setup by Sweet Elevation</option>
+                <option>Unsure</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Cutting cake + desserts -->
+          <div class="cond-block" data-block="cake cutting">
+            <div class="cond-block-title">Cutting cake + desserts</div>
+            <div class="form-field">
+              <label for="cc-servings">Cutting cake servings <span class="req-star">*</span></label>
+              <input type="number" id="cc-servings" name="cutting-cake-servings" min="1" placeholder="e.g. 20" data-required>
+            </div>
+            <div class="form-field">
+              <label for="cc-desserts">Which accompanying desserts?</label>
+              <textarea id="cc-desserts" name="cutting-cake-desserts" placeholder="e.g. cookies, brownies, cake pops to round out the table…"></textarea>
+            </div>
+          </div>
+
+          <!-- Other -->
+          <div class="cond-block" data-block="other">
+            <div class="cond-block-title">Tell us more</div>
+            <div class="form-field">
+              <label for="other-desc">What else are you looking for? <span class="req-star">*</span></label>
+              <textarea id="other-desc" name="other-description" placeholder="Describe what you have in mind." data-required></textarea>
+            </div>
+          </div>
+
+          <!-- Budget -->
+          <div class="form-field">
+            <label for="budget">Estimated budget <span class="req-star">*</span></label>
+            <select id="budget" name="budget" data-required>
+              <option value="">Choose a range…</option>
+              <option>Under $150</option>
+              <option>$150–$300</option>
+              <option>$300–$500</option>
+              <option>$500–$1,000</option>
+              <option>$1,000–$2,000</option>
+              <option>$2,000+</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <!-- Theme / inspiration -->
+          <div class="form-field">
+            <label for="inspiration">Colors, theme &amp; inspiration</label>
+            <textarea id="inspiration" name="inspiration" placeholder="Color palette, vibe, design references, links to Pinterest/Instagram…"></textarea>
+          </div>
+          <div class="form-field">
+            <label for="photos">Inspiration photos (optional)</label>
+            <input type="file" id="photos" name="inspiration-photos" accept="image/*" multiple>
+            <div class="field-help">You can also email photos to sweetelevationbakery@gmail.com.</div>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn-back">&larr; Back</button>
+            <button type="button" class="btn btn-primary btn-next">Continue &rarr;</button>
+          </div>
         </div>
 
-        <div class="form-field">
-          <label for="details">Tell us about the event</label>
-          <textarea id="details" name="details" placeholder="What's the occasion? Any color palette, flavors, or design references? The more detail the better." required></textarea>
+        <!-- ───────────── STEP 3: Fulfillment ───────────── -->
+        <div class="form-step" data-step="2">
+          <div class="step-eyebrow">Step 3 of 4</div>
+          <h3 class="step-title">Pickup or delivery</h3>
+          <p class="step-sub">Your order date can differ from your event date — tell us when you need it in hand.</p>
+
+          <div class="form-field">
+            <label for="fulfillment">How would you like to receive your order? <span class="req-star">*</span></label>
+            <select id="fulfillment" name="fulfillment" data-required>
+              <option value="">Choose one…</option>
+              <option value="Pickup">Pickup — I'll come get it</option>
+              <option value="Delivery">Delivery only</option>
+              <option value="Delivery + setup">Delivery + full setup</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fulfill-date">Requested pickup / delivery date <span class="req-star">*</span></label>
+              <input type="date" id="fulfill-date" name="fulfillment-date" data-required>
+            </div>
+            <div class="form-field">
+              <label for="fulfill-time">Requested time or setup window <span class="req-star">*</span></label>
+              <input type="text" id="fulfill-time" name="fulfillment-time" placeholder="e.g. 2–4 PM, or by 11 AM" data-required>
+            </div>
+          </div>
+
+          <div class="form-warning info" id="warn-sunday" data-screen>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span><strong>That date is a Sunday — we're closed.</strong>Orders for Sunday events must be picked up during an available Saturday pickup window. We'll coordinate this with you.</span>
+          </div>
+          <div class="form-warning info" id="warn-delivery" data-screen>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span><strong>About delivery.</strong>Delivery availability and fees are based on distance, timing, staffing, and setup requirements. We'll confirm the fee before finalizing.</span>
+          </div>
+
+          <!-- Venue block (delivery/setup only) -->
+          <div class="cond-block" data-block="venue">
+            <div class="cond-block-title">Venue &amp; setup details</div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="venue-name">Venue name <span class="req-star">*</span></label>
+                <input type="text" id="venue-name" name="venue-name" data-required>
+              </div>
+              <div class="form-field">
+                <label for="venue-indoor">Indoor or outdoor event? <span class="req-star">*</span></label>
+                <select id="venue-indoor" name="venue-indoor-outdoor" data-required>
+                  <option value="">Choose one…</option>
+                  <option>Indoor</option><option>Outdoor</option><option>Both / covered outdoor</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="venue-address">Full venue address <span class="req-star">*</span></label>
+              <input type="text" id="venue-address" name="venue-address" placeholder="Street, city, state, ZIP" data-required>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="event-start">Event start time <span class="req-star">*</span></label>
+                <input type="time" id="event-start" name="event-start-time" data-required>
+              </div>
+              <div class="form-field">
+                <label for="vendor-arrival">Earliest vendor arrival time <span class="req-star">*</span></label>
+                <input type="time" id="vendor-arrival" name="vendor-arrival-time" data-required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="completion-time">Required completion time <span class="req-star">*</span></label>
+              <input type="time" id="completion-time" name="completion-time" data-required>
+            </div>
+            <div class="form-field">
+              <label for="venue-access">Stairs, elevator, loading area, security, or restricted access?</label>
+              <textarea id="venue-access" name="venue-access" placeholder="Describe how we'll get in and where we'll set up."></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="coordinator-name">Venue coordinator's name</label>
+                <input type="text" id="coordinator-name" name="coordinator-name">
+              </div>
+              <div class="form-field">
+                <label for="coordinator-contact">Coordinator's contact</label>
+                <input type="text" id="coordinator-contact" name="coordinator-contact" placeholder="Phone or email">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="supplies">Who is supplying the dessert table, linens, trays, stands, plates, and utensils?</label>
+              <textarea id="supplies" name="supplies" placeholder="e.g. venue provides table + linens; we provide stands; caterer provides plates…"></textarea>
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn-back">&larr; Back</button>
+            <button type="button" class="btn btn-primary btn-next">Continue &rarr;</button>
+          </div>
         </div>
 
-        <div class="form-submit">
-          <button type="submit" class="btn btn-primary">Send Inquiry</button>
-        </div>
+        <!-- ───────────── STEP 4: Confirmation ───────────── -->
+        <div class="form-step" data-step="3">
+          <div class="step-eyebrow">Step 4 of 4</div>
+          <h3 class="step-title">A few quick acknowledgments</h3>
+          <p class="step-sub">Please confirm the following before submitting.</p>
 
-        <p class="form-note">We read every inquiry personally and respond within two to three business days.<br>Please book at least one week before your event.</p>
+          <label class="ack-item">
+            <input type="checkbox" name="ack-policies" value="Acknowledged" data-required>
+            <span>I understand <strong>booking policies &amp; lead times</strong>, and that custom orders typically need at least seven days' notice.</span>
+          </label>
+          <label class="ack-item">
+            <input type="checkbox" name="ack-deposit" value="Acknowledged" data-required>
+            <span>I understand my <strong>event date is only reserved once a deposit is paid</strong>, and that quotes are not confirmed bookings.</span>
+          </label>
+          <label class="ack-item">
+            <input type="checkbox" name="ack-inspiration" value="Acknowledged" data-required>
+            <span>I understand <strong>inspiration photos are references</strong> — the final design is Sweet Elevation's handmade interpretation, not an exact copy.</span>
+          </label>
+          <label class="ack-item">
+            <input type="checkbox" name="ack-allergy" value="Acknowledged" data-required>
+            <span>I understand items are made in a kitchen that <strong>handles allergens</strong> (nuts, dairy, eggs, gluten, soy) and cross-contact is possible.</span>
+          </label>
+
+          <div class="step-actions">
+            <button type="button" class="btn-back">&larr; Back</button>
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          </div>
+
+          <p class="form-note">We read every inquiry personally and respond within two to three business days.</p>
+        </div>
 
       </form>
     </section>
@@ -1161,16 +1833,180 @@
     });
   </script>
 
-  <!-- Auto-set min date on event date picker -->
+  <!-- Multi-step event form -->
 <script>
   (function() {
-    const dateInput = document.getElementById('event-date');
-    if (!dateInput) return;
+    const form = document.getElementById('event-form');
+    if (!form) return;
+
+    const steps = Array.from(form.querySelectorAll('.form-step'));
+    const progress = Array.from(form.querySelectorAll('.progress-step'));
+    let current = 0;
+
+    // Min date = today on date pickers
     const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    dateInput.min = `${yyyy}-${mm}-${dd}`;
+    const todayStr = today.getFullYear() + '-' +
+      String(today.getMonth() + 1).padStart(2, '0') + '-' +
+      String(today.getDate()).padStart(2, '0');
+    form.querySelectorAll('input[type="date"]').forEach(function(d) { d.min = todayStr; });
+
+    function showStep(i) {
+      steps.forEach(function(s, idx) { s.classList.toggle('active', idx === i); });
+      progress.forEach(function(p, idx) {
+        p.classList.toggle('active', idx === i);
+        p.classList.toggle('done', idx < i);
+      });
+      current = i;
+      const sec = document.querySelector('.contact');
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function isVisible(el) {
+      return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    }
+
+    function clearErrors(step) {
+      step.querySelectorAll('.invalid').forEach(function(e) { e.classList.remove('invalid'); });
+      step.querySelectorAll('.group-error.show').forEach(function(e) { e.classList.remove('show'); });
+    }
+
+    function validateStep(step) {
+      clearErrors(step);
+      let ok = true, firstBad = null;
+
+      // single required fields
+      step.querySelectorAll('[data-required]').forEach(function(el) {
+        if (!isVisible(el)) return;
+        let bad = el.type === 'checkbox' ? !el.checked : !String(el.value).trim();
+        if (bad) {
+          ok = false;
+          el.classList.add('invalid');
+          if (!firstBad) firstBad = el;
+        }
+      });
+
+      // required groups (checkboxes or radios — at least one)
+      step.querySelectorAll('[data-required-group]').forEach(function(group) {
+        if (!isVisible(group)) return;
+        const checked = group.querySelectorAll('input:checked').length;
+        if (!checked) {
+          ok = false;
+          group.classList.add('invalid');
+          const err = group.parentElement.querySelector('.group-error');
+          if (err) err.classList.add('show');
+          if (!firstBad) firstBad = group;
+        }
+      });
+
+      // email sanity
+      const email = step.querySelector('#email');
+      if (email && isVisible(email) && email.value.trim() && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) {
+        ok = false; email.classList.add('invalid');
+        if (!firstBad) firstBad = email;
+      }
+
+      if (firstBad) firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return ok;
+    }
+
+    // Next / Back
+    form.querySelectorAll('.btn-next').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (validateStep(steps[current])) showStep(current + 1);
+      });
+    });
+    form.querySelectorAll('.btn-back').forEach(function(btn) {
+      btn.addEventListener('click', function() { if (current > 0) showStep(current - 1); });
+    });
+
+    // ── Conditional product blocks ──
+    const orderChecks = form.querySelectorAll('#order-grid input[type="checkbox"]');
+    function syncProductBlocks() {
+      const active = {};
+      orderChecks.forEach(function(cb) { if (cb.checked) active[cb.getAttribute('data-cond')] = true; });
+      form.querySelectorAll('[data-block]').forEach(function(block) {
+        const key = block.getAttribute('data-block');
+        if (key === 'venue') return; // handled separately
+        block.classList.toggle('show', !!active[key]);
+      });
+    }
+    orderChecks.forEach(function(cb) { cb.addEventListener('change', syncProductBlocks); });
+
+    // ── Conditional venue block (delivery/setup) ──
+    const fulfillment = form.querySelector('#fulfillment');
+    const venueBlock = form.querySelector('[data-block="venue"]');
+    function syncVenue() {
+      const v = fulfillment ? fulfillment.value : '';
+      const needsVenue = v === 'Delivery' || v === 'Delivery + setup';
+      if (venueBlock) venueBlock.classList.toggle('show', needsVenue);
+      runScreens();
+    }
+    if (fulfillment) fulfillment.addEventListener('change', syncVenue);
+
+    // ── Screening messages ──
+    const eventDate = form.querySelector('#event-date');
+    const eventType = form.querySelector('#event-type');
+    const fulfillDate = form.querySelector('#fulfill-date');
+
+    function parseLocal(v) { return v ? new Date(v + 'T00:00:00') : null; }
+    function daysUntil(d) {
+      if (!d) return null;
+      const t0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      return Math.round((d - t0) / 86400000);
+    }
+    function show(id, on) {
+      const el = form.querySelector('#' + id);
+      if (el) el.classList.toggle('show', on);
+    }
+
+    function runScreens() {
+      const ev = parseLocal(eventDate && eventDate.value);
+      const dUntil = daysUntil(ev);
+      const type = eventType ? eventType.value : '';
+      const dessertSelected = form.querySelector('input[value="Dessert table"]:checked') ||
+                              form.querySelector('input[value="Cutting cake plus desserts"]:checked');
+
+      show('warn-rush', dUntil !== null && dUntil >= 0 && dUntil < 7);
+      show('warn-large', dUntil !== null && dUntil >= 0 && dUntil < 30 &&
+        (type === 'Wedding' || !!dessertSelected));
+
+      const fd = parseLocal(fulfillDate && fulfillDate.value);
+      const method = fulfillment ? fulfillment.value : '';
+      show('warn-sunday', !!fd && fd.getDay() === 0);
+      show('warn-delivery', method === 'Delivery' || method === 'Delivery + setup');
+    }
+
+    [eventDate, eventType, fulfillDate].forEach(function(el) {
+      if (el) el.addEventListener('change', runScreens);
+    });
+    orderChecks.forEach(function(cb) { cb.addEventListener('change', runScreens); });
+
+    // Clear invalid state as the user fixes fields
+    form.addEventListener('input', function(e) {
+      if (e.target.classList) e.target.classList.remove('invalid');
+    });
+    form.addEventListener('change', function(e) {
+      const grp = e.target.closest('[data-required-group]');
+      if (grp) {
+        grp.classList.remove('invalid');
+        const err = grp.parentElement.querySelector('.group-error');
+        if (err) err.classList.remove('show');
+      }
+    });
+
+    // Final submit — validate all visible steps
+    form.addEventListener('submit', function(e) {
+      for (let i = 0; i < steps.length; i++) {
+        if (!validateStep(steps[i])) {
+          e.preventDefault();
+          showStep(i);
+          return;
+        }
+      }
+    });
+
+    syncProductBlocks();
+    syncVenue();
   })();
 </script>
 
