@@ -2604,9 +2604,9 @@
       return 'New ' + type + ' Inquiry — ' + customerName + (readableDate ? ' — ' + readableDate : '');
     }
 
-    function buildCleanFormData() {
-      const raw = new FormData(form);
-      const clean = new FormData();
+    function formatTimeForSubmission(value) { const match = /^(\d{1,2}):(\d{2})$/.exec(value); if (!match) return value; const hour24 = Number(match[1]); const minutes = match[2]; const period = hour24 >= 12 ? 'PM' : 'AM'; const hour12 = hour24 % 12 || 12; return hour12 + ':' + minutes + ' ' + period + ' Eastern Time'; }
+
+function buildCleanFormData() { const raw = new FormData(form); const clean = new FormData(); const easternTimeFields = new Set([ 'Event Start Time', 'Earliest Vendor Arrival Time', 'Required Setup Completion Time' ]); raw.forEach(function(value, key) { if (value instanceof File) { if (value.name && value.size > 0) { clean.append(key, value); } return; } const trimmed = String(value).trim(); if (trimmed === '') return; const submittedValue = easternTimeFields.has(key) ? formatTimeForSubmission(trimmed) : trimmed; clean.append(key, submittedValue); }); return clean; }
 
       raw.forEach(function(value, key) {
         if (value instanceof File) {
