@@ -915,6 +915,22 @@
   .btn-back:hover { color: var(--navy); }
   .btn-back.hidden { visibility: hidden; }
 
+  .step-validation-message {
+  display: none;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: #fcebea;
+  border: 1px solid #e8a9a3;
+  border-radius: 6px;
+  color: #9a342b;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.step-validation-message.show {
+  display: block;
+}
   .field-error {
     color: #c0392b;
     font-size: 12px;
@@ -2406,15 +2422,42 @@
       return ok;
     }
 
-    // Next / Back
-    form.querySelectorAll('.btn-next').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        if (validateStep(steps[current])) showStep(current + 1);
-      });
-    });
-    form.querySelectorAll('.btn-back').forEach(function(btn) {
-      btn.addEventListener('click', function() { if (current > 0) showStep(current - 1); });
-    });
+    
+// Next / Back
+form.querySelectorAll('.btn-next').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const currentStep = steps[current];
+
+    if (!validateStep(currentStep)) {
+      let errorMessage = currentStep.querySelector('.step-validation-message');
+
+      if (!errorMessage) {
+        errorMessage = document.createElement('div');
+        errorMessage.className = 'step-validation-message';
+        errorMessage.textContent =
+          'Please complete all required fields before continuing.';
+
+        currentStep
+          .querySelector('.step-actions')
+          .insertAdjacentElement('beforebegin', errorMessage);
+      }
+
+      errorMessage.classList.add('show');
+      return;
+    }
+
+    const errorMessage =
+      currentStep.querySelector('.step-validation-message');
+
+    if (errorMessage) {
+      errorMessage.classList.remove('show');
+    }
+
+    if (current < steps.length - 1) {
+      showStep(current + 1);
+    }
+  });
+});
 
     // ── Conditional product blocks ──
     // Hidden fields are disabled, cleared, and omitted from Formspree submissions.
