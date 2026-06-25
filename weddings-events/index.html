@@ -2678,6 +2678,14 @@ function buildCleanFormData() {
     'Required Setup Completion Time'
   ]);
 
+  raw.forEach(function(value, key) {
+    if (value instanceof File) {
+      if (value.name && value.size > 0) {
+        clean.append(key, value);
+      }
+      return;
+    }
+
     const trimmed = String(value).trim();
 
     if (trimmed === '') return;
@@ -2691,21 +2699,6 @@ function buildCleanFormData() {
 
   return clean;
 }
-
-function buildCleanFormData() { const raw = new FormData(form); const clean = new FormData(); const easternTimeFields = new Set([ 'Event Start Time', 'Earliest Vendor Arrival Time', 'Required Setup Completion Time' ]); raw.forEach(function(value, key) { if (value instanceof File) { if (value.name && value.size > 0) { clean.append(key, value); } return; } const trimmed = String(value).trim(); if (trimmed === '') return; const submittedValue = easternTimeFields.has(key) ? formatTimeForSubmission(trimmed) : trimmed; clean.append(key, submittedValue); }); return clean; }
-
-      raw.forEach(function(value, key) {
-        if (value instanceof File) {
-          if (value.name && value.size > 0) clean.append(key, value);
-          return;
-        }
-
-        const trimmed = String(value).trim();
-        if (trimmed !== '') clean.append(key, trimmed);
-      });
-
-      return clean;
-    }
 
     function showSubmissionStatus(message, type) {
       if (!statusBox) return;
