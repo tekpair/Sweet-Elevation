@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Inquiry Received | Sweet Elevation Bakery</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf3ea;
+      --cream-deep: #f4ead9;
+      --navy: #1f2950;
+      --peach: #f4c4ad;
+      --peach-deep: #e89f80;
+      --ink-soft: #5a5b73;
+      --line: #e8dfd0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+    }
+    .card {
+      width: min(680px, 100%);
+      background: var(--cream-deep);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: clamp(36px, 7vw, 68px);
+      text-align: center;
+      box-shadow: 0 18px 50px rgba(31, 41, 80, 0.08);
+    }
+    .logo {
+      display: block;
+      width: min(230px, 70%);
+      height: auto;
+      margin: 0 auto 26px;
+    }
+    .script {
+      font-family: 'Caveat', cursive;
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--peach-deep);
+      transform: rotate(-2deg);
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(42px, 8vw, 66px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin-bottom: 22px;
+    }
+    h1 em { color: var(--peach-deep); font-weight: 400; }
+    p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .note {
+      margin-top: 20px;
+      padding: 15px 17px;
+      border-radius: 7px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--navy);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary { background: var(--navy); color: var(--cream); }
+    .btn-secondary { border: 1px solid var(--navy); color: var(--navy); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--peach-deep); }
+    .contact {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    .contact a { color: var(--navy); font-weight: 600; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <a href="/" aria-label="Sweet Elevation Bakery home">
+      <img class="logo" src="/assets/logo.png" alt="Sweet Elevation Bakery">
+    </a>
+    <div class="script">thank you!</div>
+    <h1>Your inquiry is <em>on its way.</em></h1>
+    <p>We received your wedding or event request. We review every inquiry personally and will respond within two to three business days.</p>
+    <div class="note">
+      Your date is not reserved until your quote is accepted and the required deposit or payment has been received.
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Return Home</a>
+      <a class="btn btn-secondary" href="/portfolio/">View Portfolio</a>
+    </div>
+    <div class="contact">Need to add something? Email us at <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.</div>
+  </main>
+</body>
+</html>
