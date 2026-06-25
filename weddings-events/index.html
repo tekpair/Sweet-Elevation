@@ -901,6 +901,219 @@
   .group-error.show { display: block; }
   .field-help { font-size: 12px; color: var(--ink-soft); margin-top: -1px; }
 
+  /* ─── Custom Select ─── */
+  .custom-select { position: relative; width: 100%; }
+  .custom-select select { display: none; }
+  .select-display {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 42px 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    cursor: pointer;
+    transition: border 0.2s, box-shadow 0.2s;
+    position: relative;
+    user-select: none;
+    line-height: 1.4;
+  }
+  .select-display::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--ink-soft);
+    border-bottom: 2px solid var(--ink-soft);
+    transform: translateY(-65%) rotate(45deg);
+    transition: transform 0.2s;
+  }
+  .custom-select.open .select-display::after {
+    transform: translateY(-25%) rotate(-135deg);
+  }
+  .select-display:hover,
+  .select-display:focus {
+    border-color: var(--peach-deep);
+    outline: none;
+  }
+  .custom-select.open .select-display {
+    border-color: var(--peach-deep);
+    box-shadow: 0 0 0 3px rgba(232, 159, 128, 0.15);
+    border-radius: 4px 4px 0 0;
+  }
+  .select-display.placeholder { color: var(--ink-soft); }
+  .select-display.invalid {
+    border-color: #c0392b !important;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+  }
+  .select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    border: 1px solid var(--peach-deep);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 8px 24px rgba(31, 41, 80, 0.12);
+    z-index: 50;
+    max-height: 220px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--peach-deep) transparent;
+  }
+  .custom-select.open .select-options { display: block; }
+  .select-option {
+    padding: 12px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .select-option:hover { background: var(--cream-deep); }
+  .select-option.active {
+    background: rgba(232, 159, 128, 0.12);
+    color: var(--peach-deep);
+    font-weight: 500;
+  }
+
+  /* ─── Custom Date Picker ─── */
+  .custom-date { position: relative; width: 100%; }
+  .custom-date input[type="date"] { display: none; }
+  .date-display {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 14px 42px 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    cursor: pointer;
+    transition: border 0.2s, box-shadow 0.2s;
+    position: relative;
+    user-select: none;
+    line-height: 1.4;
+  }
+  .date-display::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a5b73' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .date-display:hover,
+  .date-display:focus {
+    border-color: var(--peach-deep);
+    outline: none;
+  }
+  .date-display.placeholder { color: var(--ink-soft); }
+  .date-display.invalid {
+    border-color: #c0392b !important;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+  }
+  .cal-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(31, 41, 80, 0.14);
+    z-index: 50;
+    padding: 16px;
+    width: 300px;
+  }
+  .custom-date.open .cal-popup { display: block; }
+  .cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .cal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 400;
+  }
+  .cal-nav {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--navy);
+    transition: all 0.2s;
+    font-size: 14px;
+    padding: 0;
+  }
+  .cal-nav:hover { border-color: var(--peach-deep); color: var(--peach-deep); }
+  .cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    margin-bottom: 4px;
+  }
+  .cal-weekday {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 4px 0;
+  }
+  .cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .cal-day {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--navy);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.15s;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .cal-day:hover:not(.disabled):not(.empty) {
+    background: var(--cream-deep);
+  }
+  .cal-day.today {
+    border: 1px solid var(--peach);
+  }
+  .cal-day.selected {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .cal-day.disabled {
+    color: var(--line);
+    cursor: default;
+  }
+  .cal-day.empty {
+    cursor: default;
+  }
+
   .btn {
     display: inline-flex;
     align-items: center;
@@ -1038,6 +1251,7 @@
     .progress-label { display: none; }
     .form-progress { margin-bottom: 30px; }
     .step-title { font-size: 22px; }
+    .cal-popup { width: 100%; min-width: 260px; }
 
     footer { padding: 70px 24px 32px; }
     .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
@@ -1272,7 +1486,7 @@
         <h2>Tell us about your <em>event.</em></h2>
         <p>Fill in the details below and we'll get back to you within two to three business days.</p>
       </div>
-      <form class="contact-form" id="event-form" action="https://formspree.io/f/xkoewknp" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
+      <form class="contact-form" id="event-form" action="https://formspree.io/f/xkoewknp" method="POST" autocomplete="off" novalidate>
         <input type="hidden" name="_subject" value="New Weddings & Events Inquiry">
 
         <!-- Progress -->
@@ -1606,12 +1820,6 @@
             <label for="inspiration">Colors, theme &amp; inspiration</label>
             <textarea id="inspiration" name="inspiration" placeholder="Color palette, vibe, design references, links to Pinterest/Instagram…"></textarea>
           </div>
-          <div class="form-field">
-            <label for="photos">Inspiration photos (optional)</label>
-            <input type="file" id="photos" name="inspiration-photos" accept="image/*" multiple>
-            <div class="field-help">You can also email photos to sweetelevationbakery@gmail.com.</div>
-          </div>
-
           <div class="step-actions">
             <button type="button" class="btn-back">&larr; Back</button>
             <button type="button" class="btn btn-primary btn-next">Continue &rarr;</button>
@@ -1833,6 +2041,249 @@
     });
   </script>
 
+  <!-- Custom form controls -->
+<script>
+(function() {
+  // ── Phone auto-format ──
+  var phone = document.getElementById('phone');
+  if (phone) {
+    phone.addEventListener('input', function(e) {
+      var x = phone.value.replace(/\D/g, '').substring(0, 10);
+      var a = x.substring(0, 3);
+      var b = x.substring(3, 6);
+      var c = x.substring(6, 10);
+      if (x.length > 6) phone.value = '(' + a + ') ' + b + '-' + c;
+      else if (x.length > 3) phone.value = '(' + a + ') ' + b;
+      else if (x.length > 0) phone.value = '(' + a;
+      else phone.value = '';
+    });
+  }
+
+  // ── Custom Selects ──
+  document.querySelectorAll('#event-form select').forEach(function(sel) {
+    var wrap = document.createElement('div');
+    wrap.className = 'custom-select';
+    sel.parentNode.insertBefore(wrap, sel);
+    wrap.appendChild(sel);
+
+    var display = document.createElement('div');
+    display.className = 'select-display placeholder';
+    display.setAttribute('tabindex', '0');
+    display.setAttribute('role', 'combobox');
+    display.setAttribute('aria-expanded', 'false');
+    var firstOpt = sel.options[0];
+    display.textContent = firstOpt ? firstOpt.textContent : 'Choose…';
+    wrap.appendChild(display);
+
+    var list = document.createElement('div');
+    list.className = 'select-options';
+    list.setAttribute('role', 'listbox');
+
+    Array.from(sel.options).forEach(function(opt, i) {
+      if (i === 0) return;
+      var item = document.createElement('div');
+      item.className = 'select-option';
+      item.setAttribute('role', 'option');
+      item.textContent = opt.textContent;
+      item.setAttribute('data-value', opt.value);
+      item.addEventListener('click', function() {
+        sel.value = opt.value;
+        display.textContent = opt.textContent;
+        display.classList.remove('placeholder');
+        list.querySelectorAll('.select-option').forEach(function(o) { o.classList.remove('active'); });
+        item.classList.add('active');
+        wrap.classList.remove('open');
+        display.setAttribute('aria-expanded', 'false');
+        display.classList.remove('invalid');
+        sel.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+      list.appendChild(item);
+    });
+    wrap.appendChild(list);
+
+    display.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wasOpen = wrap.classList.contains('open');
+      closeAllSelects();
+      if (!wasOpen) {
+        wrap.classList.add('open');
+        display.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    display.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        display.click();
+      } else if (e.key === 'Escape') {
+        wrap.classList.remove('open');
+        display.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  function closeAllSelects() {
+    document.querySelectorAll('.custom-select.open').forEach(function(s) {
+      s.classList.remove('open');
+      s.querySelector('.select-display').setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.addEventListener('click', function() { closeAllSelects(); });
+
+  // ── Custom Date Pickers ──
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DAYS = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+
+  document.querySelectorAll('#event-form input[type="date"]').forEach(function(inp) {
+    var wrap = document.createElement('div');
+    wrap.className = 'custom-date';
+    inp.parentNode.insertBefore(wrap, inp);
+    wrap.appendChild(inp);
+
+    var display = document.createElement('div');
+    display.className = 'date-display placeholder';
+    display.setAttribute('tabindex', '0');
+    display.textContent = 'Select a date…';
+    wrap.appendChild(display);
+
+    var popup = document.createElement('div');
+    popup.className = 'cal-popup';
+    wrap.appendChild(popup);
+
+    var now = new Date();
+    var viewYear = now.getFullYear();
+    var viewMonth = now.getMonth();
+    var selected = null;
+
+    function render() {
+      popup.innerHTML = '';
+      var header = document.createElement('div');
+      header.className = 'cal-header';
+
+      var prev = document.createElement('button');
+      prev.type = 'button';
+      prev.className = 'cal-nav';
+      prev.innerHTML = '&#8249;';
+      prev.addEventListener('click', function(e) {
+        e.stopPropagation();
+        viewMonth--;
+        if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+        render();
+      });
+
+      var title = document.createElement('span');
+      title.className = 'cal-title';
+      title.textContent = MONTHS[viewMonth] + ' ' + viewYear;
+
+      var next = document.createElement('button');
+      next.type = 'button';
+      next.className = 'cal-nav';
+      next.innerHTML = '&#8250;';
+      next.addEventListener('click', function(e) {
+        e.stopPropagation();
+        viewMonth++;
+        if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+        render();
+      });
+
+      header.appendChild(prev);
+      header.appendChild(title);
+      header.appendChild(next);
+      popup.appendChild(header);
+
+      var weekdays = document.createElement('div');
+      weekdays.className = 'cal-weekdays';
+      DAYS.forEach(function(d) {
+        var wd = document.createElement('div');
+        wd.className = 'cal-weekday';
+        wd.textContent = d;
+        weekdays.appendChild(wd);
+      });
+      popup.appendChild(weekdays);
+
+      var days = document.createElement('div');
+      days.className = 'cal-days';
+
+      var firstDay = new Date(viewYear, viewMonth, 1).getDay();
+      var daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+      var today = new Date();
+      var todayY = today.getFullYear(), todayM = today.getMonth(), todayD = today.getDate();
+
+      for (var e = 0; e < firstDay; e++) {
+        var empty = document.createElement('div');
+        empty.className = 'cal-day empty';
+        days.appendChild(empty);
+      }
+
+      for (var d = 1; d <= daysInMonth; d++) {
+        var cell = document.createElement('div');
+        cell.className = 'cal-day';
+        cell.textContent = d;
+
+        var cellDate = new Date(viewYear, viewMonth, d);
+        var past = cellDate < new Date(todayY, todayM, todayD);
+        if (past) {
+          cell.classList.add('disabled');
+        } else {
+          (function(day, date) {
+            cell.addEventListener('click', function(ev) {
+              ev.stopPropagation();
+              selected = date;
+              var val = date.getFullYear() + '-' +
+                String(date.getMonth() + 1).padStart(2, '0') + '-' +
+                String(date.getDate()).padStart(2, '0');
+              inp.value = val;
+              display.textContent = MONTHS[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+              display.classList.remove('placeholder');
+              display.classList.remove('invalid');
+              wrap.classList.remove('open');
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+          })(d, cellDate);
+        }
+
+        if (viewYear === todayY && viewMonth === todayM && d === todayD) {
+          cell.classList.add('today');
+        }
+        if (selected && viewYear === selected.getFullYear() && viewMonth === selected.getMonth() && d === selected.getDate()) {
+          cell.classList.add('selected');
+        }
+
+        days.appendChild(cell);
+      }
+      popup.appendChild(days);
+    }
+
+    display.addEventListener('click', function(ev) {
+      ev.stopPropagation();
+      closeAllSelects();
+      var wasOpen = wrap.classList.contains('open');
+      closeAllDates();
+      if (!wasOpen) {
+        if (selected) { viewYear = selected.getFullYear(); viewMonth = selected.getMonth(); }
+        render();
+        wrap.classList.add('open');
+      }
+    });
+
+    display.addEventListener('keydown', function(ev) {
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); display.click(); }
+      else if (ev.key === 'Escape') { wrap.classList.remove('open'); }
+    });
+
+    popup.addEventListener('click', function(ev) { ev.stopPropagation(); });
+  });
+
+  function closeAllDates() {
+    document.querySelectorAll('.custom-date.open').forEach(function(d) { d.classList.remove('open'); });
+  }
+
+  var origClick = document.onclick;
+  document.addEventListener('click', function() { closeAllDates(); });
+})();
+</script>
+
   <!-- Multi-step event form -->
 <script>
   (function() {
@@ -1862,11 +2313,14 @@
     }
 
     function isVisible(el) {
+      var wrap = el.closest('.custom-select') || el.closest('.custom-date');
+      if (wrap) return !!(wrap.offsetWidth || wrap.offsetHeight || wrap.getClientRects().length);
       return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
     }
 
     function clearErrors(step) {
       step.querySelectorAll('.invalid').forEach(function(e) { e.classList.remove('invalid'); });
+      step.querySelectorAll('.select-display.invalid, .date-display.invalid').forEach(function(e) { e.classList.remove('invalid'); });
       step.querySelectorAll('.group-error.show').forEach(function(e) { e.classList.remove('show'); });
     }
 
@@ -1877,11 +2331,18 @@
       // single required fields
       step.querySelectorAll('[data-required]').forEach(function(el) {
         if (!isVisible(el)) return;
+        var customWrap = el.closest('.custom-select') || el.closest('.custom-date');
+        if (customWrap && !isVisible(customWrap)) return;
         let bad = el.type === 'checkbox' ? !el.checked : !String(el.value).trim();
         if (bad) {
           ok = false;
-          el.classList.add('invalid');
-          if (!firstBad) firstBad = el;
+          if (customWrap) {
+            var disp = customWrap.querySelector('.select-display, .date-display');
+            if (disp) { disp.classList.add('invalid'); if (!firstBad) firstBad = disp; }
+          } else {
+            el.classList.add('invalid');
+            if (!firstBad) firstBad = el;
+          }
         }
       });
 
