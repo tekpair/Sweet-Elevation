@@ -14,12 +14,13 @@
       --cream: #faf3ea;
       --cream-deep: #f4ead9;
       --navy: #1f2950;
-      --peach: #f4c4ad;
       --peach-deep: #e89f80;
       --ink-soft: #5a5b73;
       --line: #e8dfd0;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       min-height: 100vh;
       background: var(--cream);
@@ -27,107 +28,158 @@
       font-family: 'Inter', sans-serif;
       display: grid;
       place-items: center;
-      padding: 32px 20px;
+      padding: 24px 18px;
     }
-    .card {
-      width: min(680px, 100%);
-      background: var(--cream-deep);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: clamp(36px, 7vw, 68px);
+
+    .confirmation {
+      width: min(540px, 100%);
       text-align: center;
-      box-shadow: 0 18px 50px rgba(31, 41, 80, 0.08);
+      padding: 34px 30px 30px;
+      background: rgba(244, 234, 217, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 12px 34px rgba(31, 41, 80, 0.06);
     }
+
     .logo {
       display: block;
-      width: min(230px, 70%);
+      width: min(165px, 58%);
       height: auto;
-      margin: 0 auto 26px;
+      margin: 0 auto 16px;
     }
+
     .script {
+      display: inline-block;
+      margin-bottom: 2px;
       font-family: 'Caveat', cursive;
-      font-size: 34px;
+      font-size: 27px;
       font-weight: 600;
       color: var(--peach-deep);
       transform: rotate(-2deg);
-      display: inline-block;
-      margin-bottom: 5px;
     }
+
     h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(42px, 8vw, 66px);
+      font-size: clamp(36px, 7vw, 48px);
       font-weight: 400;
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-      margin-bottom: 22px;
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
     }
-    h1 em { color: var(--peach-deep); font-weight: 400; }
-    p {
-      color: var(--ink-soft);
-      font-size: 16px;
-      line-height: 1.75;
-      max-width: 520px;
+
+    h1 em {
+      color: var(--peach-deep);
+      font-weight: 400;
+    }
+
+    .intro {
+      max-width: 445px;
       margin: 0 auto;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.65;
     }
-    .note {
-      margin-top: 20px;
-      padding: 15px 17px;
-      border-radius: 7px;
-      background: var(--cream);
-      border: 1px solid var(--line);
-      font-size: 13px;
-      line-height: 1.6;
+
+    .reservation-note {
+      max-width: 445px;
+      margin: 18px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
       color: var(--navy);
+      font-size: 12.5px;
+      line-height: 1.55;
     }
+
     .actions {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin-top: 30px;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 22px;
     }
-    .btn {
+
+    .primary-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 13px 25px;
+      min-height: 43px;
+      padding: 11px 23px;
       border-radius: 999px;
+      background: var(--navy);
+      color: var(--cream);
       text-decoration: none;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: transform 0.2s ease, background 0.2s ease;
     }
-    .btn-primary { background: var(--navy); color: var(--cream); }
-    .btn-secondary { border: 1px solid var(--navy); color: var(--navy); }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary:hover { background: var(--peach-deep); }
-    .contact {
-      margin-top: 28px;
-      font-size: 13px;
-      color: var(--ink-soft);
+
+    .primary-link:hover {
+      background: var(--peach-deep);
+      transform: translateY(-1px);
     }
-    .contact a { color: var(--navy); font-weight: 600; text-decoration: none; }
+
+    .text-link {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(31, 41, 80, 0.3);
+      padding-bottom: 2px;
+    }
+
+    .text-link:hover { color: var(--peach-deep); }
+
+    .contact {
+      margin-top: 20px;
+      color: var(--ink-soft);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .contact a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 520px) {
+      body { padding: 16px; }
+      .confirmation { padding: 28px 20px 25px; }
+      .logo { width: 145px; margin-bottom: 13px; }
+      .script { font-size: 25px; }
+      h1 { font-size: 37px; }
+      .actions { gap: 13px; margin-top: 20px; }
+    }
   </style>
 </head>
 <body>
-  <main class="card">
+  <main class="confirmation">
     <a href="/" aria-label="Sweet Elevation Bakery home">
       <img class="logo" src="/assets/logo.png" alt="Sweet Elevation Bakery">
     </a>
+
     <div class="script">thank you!</div>
     <h1>Your inquiry is <em>on its way.</em></h1>
-    <p>We received your wedding or event request. We review every inquiry personally and will respond within two to three business days.</p>
-    <div class="note">
-      Your date is not reserved until your quote is accepted and the required deposit or payment has been received.
-    </div>
+
+    <p class="intro">
+      We received your wedding or event request and will respond within two to three business days.
+    </p>
+
+    <p class="reservation-note">
+      Please note: your date is not reserved until your quote is accepted and the required deposit is received.
+    </p>
+
     <div class="actions">
-      <a class="btn btn-primary" href="/">Return Home</a>
-      <a class="btn btn-secondary" href="/portfolio/">View Portfolio</a>
+      <a class="primary-link" href="/">Return Home</a>
+      <a class="text-link" href="/portfolio/">View Portfolio</a>
     </div>
-    <div class="contact">Need to add something? Email us at <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.</div>
+
+    <p class="contact">
+      Need to add something? Email us at <a href="emailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.
+    </p>
   </main>
 </body>
 </html>
