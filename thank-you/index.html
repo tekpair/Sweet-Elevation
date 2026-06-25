@@ -80,16 +80,6 @@
       line-height: 1.65;
     }
 
-    .reservation-note {
-      max-width: 445px;
-      margin: 18px auto 0;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--navy);
-      font-size: 12.5px;
-      line-height: 1.55;
-    }
-
     .actions {
       display: flex;
       align-items: center;
@@ -145,6 +135,89 @@
       text-decoration: none;
     }
 
+
+
+    /* ─── One-time celebration animation ─── */
+    .sprinkle-layer {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .sprinkle {
+      position: absolute;
+      top: -28px;
+      width: 5px;
+      height: 15px;
+      border-radius: 999px;
+      opacity: 0;
+      animation: sprinkleFall var(--fall-time, 2.7s) cubic-bezier(.2,.72,.35,1) var(--delay, 0s) forwards;
+      transform: rotate(var(--start-rotate, 0deg));
+    }
+
+    .confirmation {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(16px) scale(0.985);
+      animation: cardEnter 0.7s cubic-bezier(.2,.8,.25,1) 0.12s forwards;
+    }
+
+    .logo,
+    .script,
+    h1,
+    .intro,
+    .actions,
+    .contact {
+      opacity: 0;
+      transform: translateY(9px);
+      animation: contentEnter 0.55s ease forwards;
+    }
+
+    .logo { animation-delay: 0.28s; }
+    .script { animation-delay: 0.38s; }
+    h1 { animation-delay: 0.46s; }
+    .intro { animation-delay: 0.54s; }
+    .actions { animation-delay: 0.64s; }
+    .contact { animation-delay: 0.74s; }
+
+    @keyframes cardEnter {
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes contentEnter {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes sprinkleFall {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -18px, 0) rotate(var(--start-rotate, 0deg));
+      }
+      12% { opacity: 0.78; }
+      100% {
+        opacity: 0;
+        transform: translate3d(var(--drift, 20px), 112vh, 0) rotate(var(--end-rotate, 480deg));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sprinkle-layer { display: none; }
+      .confirmation,
+      .logo,
+      .script,
+      h1,
+      .intro,
+      .actions,
+      .contact {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
     @media (max-width: 520px) {
       body { padding: 16px; }
       .confirmation { padding: 28px 20px 25px; }
@@ -156,6 +229,8 @@
   </style>
 </head>
 <body>
+  <div class="sprinkle-layer" id="sprinkle-layer" aria-hidden="true"></div>
+
   <main class="confirmation">
     <a href="/" aria-label="Sweet Elevation Bakery home">
       <img class="logo" src="/assets/logo.png" alt="Sweet Elevation Bakery">
@@ -168,18 +243,42 @@
       We received your wedding or event request and will respond within two to three business days.
     </p>
 
-    <p class="reservation-note">
-      Please note: your date is not reserved until your quote is accepted and the required deposit is received.
-    </p>
-
     <div class="actions">
       <a class="primary-link" href="/">Return Home</a>
       <a class="text-link" href="/portfolio/">View Portfolio</a>
     </div>
 
     <p class="contact">
-      Need to add something? Email us at <a href="emailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.
+      Need to modify something? Email us at <a href="mailto:sweetelevationbakery@gmail.com">sweetelevationbakery@gmail.com</a>.
     </p>
   </main>
+
+  <script>
+    (() => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const layer = document.getElementById('sprinkle-layer');
+      const colors = ['#1f2950', '#e89f80', '#f4c4ad', '#5a5b73'];
+      const count = window.innerWidth < 520 ? 14 : 22;
+
+      for (let i = 0; i < count; i += 1) {
+        const sprinkle = document.createElement('span');
+        sprinkle.className = 'sprinkle';
+        sprinkle.style.left = `${Math.random() * 100}%`;
+        sprinkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        sprinkle.style.setProperty('--delay', `${(Math.random() * 0.65).toFixed(2)}s`);
+        sprinkle.style.setProperty('--fall-time', `${(2.15 + Math.random() * 1.15).toFixed(2)}s`);
+        sprinkle.style.setProperty('--drift', `${(-55 + Math.random() * 110).toFixed(0)}px`);
+        sprinkle.style.setProperty('--start-rotate', `${Math.floor(Math.random() * 180)}deg`);
+        sprinkle.style.setProperty('--end-rotate', `${360 + Math.floor(Math.random() * 420)}deg`);
+        sprinkle.style.width = `${4 + Math.random() * 3}px`;
+        sprinkle.style.height = `${10 + Math.random() * 8}px`;
+        layer.appendChild(sprinkle);
+      }
+
+      window.setTimeout(() => layer.remove(), 4200);
+    })();
+  </script>
+
 </body>
 </html>
