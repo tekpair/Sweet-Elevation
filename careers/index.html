@@ -822,7 +822,10 @@
       will-change: transform;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
+      transition: transform 0.28s ease;
     }
+    /* Hide the tab bar while the user is typing in a form field */
+    body.tabbar-typing .bottom-tab-bar { transform: translateY(125%); }
     .tab-item {
       flex: 1;
       display: flex;
@@ -1277,6 +1280,23 @@
     if (dp === '/' ? (p === '/' || p === '') : (p === dp || p.startsWith(dp + '/'))) {
       el.classList.add('active');
     }
+  });
+})();
+</script>
+
+<!-- Hide bottom tab bar while typing in a form field -->
+<script>
+(function() {
+  var typing = 'input, textarea, select';
+  function isField(el) { return el && el.matches && el.matches(typing); }
+  document.addEventListener('focusin', function(e) {
+    if (isField(e.target)) document.body.classList.add('tabbar-typing');
+  });
+  document.addEventListener('focusout', function(e) {
+    if (!isField(e.target)) return;
+    setTimeout(function() {
+      if (!isField(document.activeElement)) document.body.classList.remove('tabbar-typing');
+    }, 120);
   });
 })();
 </script>
