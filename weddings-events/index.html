@@ -29,7 +29,7 @@
 
 <!-- Primary SEO -->
 <title>Weddings & Events | Sweet Elevation Bakery — Latham, NY</title>
-<meta name="description" content="Custom wedding cakes, dessert tables, and event desserts from Sweet Elevation Bakery in Latham, NY. Delivery and setup available across the Capital Region.">
+<meta name="description" content="Wedding cakes, dessert tables, and large-scale event desserts from Sweet Elevation Bakery in Latham, NY. Standard custom orders should use our regular quote forms.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Sweet Elevation Bakery">
 <meta name="geo.region" content="US-NY">
@@ -39,7 +39,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sweet Elevation Bakery">
 <meta property="og:title" content="Weddings & Events | Sweet Elevation Bakery">
-<meta property="og:description" content="Custom wedding cakes and event desserts in the Capital Region.">
+<meta property="og:description" content="Wedding cakes, dessert tables, and large-scale event desserts in the Capital Region.">
 <meta property="og:url" content="https://sweetelevationbakery.com/weddings-events/">
 <meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
 
@@ -308,6 +308,48 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   position: relative;
 }
+
+  /* ─── Inquiry Scope Notice ─── */
+  .scope-notice {
+    max-width: 980px;
+    margin: 48px auto 0;
+    padding: 0 48px;
+  }
+  .scope-notice-inner {
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--peach-deep);
+    border-radius: 8px;
+    padding: 28px 32px;
+  }
+  .scope-notice h2,
+  .scope-notice h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .scope-notice p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .scope-notice p:last-child { margin-bottom: 0; }
+  .scope-notice a,
+  .contact-head a,
+  .form-warning a,
+  .ack-item a {
+    color: var(--peach-deep);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .scope-notice a:hover,
+  .contact-head a:hover,
+  .form-warning a:hover,
+  .ack-item a:hover { text-decoration: underline; }
 
   /* ─── What We Offer ─── */
   .offer {
@@ -1274,6 +1316,8 @@
 
 .page-hero { padding: 90px 24px 70px; }
     .offer { padding: 40px 24px 80px; }
+    .scope-notice { padding: 0 24px; margin-top: 32px; }
+    .scope-notice-inner { padding: 24px 22px; }
     .offer-grid { grid-template-columns: 1fr; gap: 16px; }
 
     .planning { padding: 80px 24px; }
@@ -1433,7 +1477,16 @@
     <section class="page-hero">
       <div class="script">make it unforgettable</div>
       <h1>Weddings &amp; <em>Events</em></h1>
-      <p>From wedding cakes to dessert tables for milestone birthdays, showers, and corporate events — we'll build something worth remembering.</p>
+      <p>From wedding cakes and dessert tables to showers, corporate events, and large-scale celebrations — we'll build something worth remembering.</p>
+    </section>
+
+    <!-- Inquiry Scope Notice -->
+    <section class="scope-notice" aria-labelledby="scope-notice-title">
+      <div class="scope-notice-inner">
+        <h2 id="scope-notice-title">Wedding &amp; event inquiries only</h2>
+        <p>This page is for <strong>weddings, large-scale events, dessert tables, corporate events, showers, and catering-style dessert orders</strong> that require additional planning, coordination, delivery, setup, or multiple dessert items.</p>
+        <p>Looking for a single birthday cake, small cookie order, cupcakes, cake pops, or a standard pickup order? Please use our <a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">regular quote/order forms</a> instead.</p>
+      </div>
     </section>
 
     <!-- What We Offer -->
@@ -1448,8 +1501,8 @@
             <path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/>
             <path d="M2 21h20"/>
           </svg>
-          <h3>Custom Cakes</h3>
-          <p>Tiered, sculpted, or simple — designed around your event, your flavors, and your vision.</p>
+          <h3>Wedding &amp; Event Cakes</h3>
+          <p>Tiered cakes, cutting cakes, and large-event cakes designed around your celebration, flavors, and vision.</p>
         </div>
 
         <div class="offer-card">
@@ -1527,10 +1580,15 @@
       <div class="contact-head">
         <div class="script">let's talk</div>
         <h2>Tell us about your <em>event.</em></h2>
-        <p>Fill in the details below and we'll get back to you within two to three business days.</p>
+        <p>This form is for weddings, large events, dessert tables, corporate events, showers, and catering-style orders. For standard cakes, cookies, cupcakes, or small pickup orders, please use our <a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">regular quote forms</a>.</p>
       </div>
       <form class="contact-form" id="event-form" action="https://formspree.io/f/xkoewknp" method="POST" autocomplete="off" novalidate>
         <input type="hidden" name="subject" id="form-subject" value="New Weddings &amp; Events Inquiry">
+
+        <div class="form-warning info show" id="scope-reminder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Before you begin:</strong>This form is for wedding and large-scale event inquiries only. Standard custom orders — including one cake, a small cookie order, cupcakes, or cake pops — should be submitted through our <a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">regular quote/order forms</a>.</span>
+        </div>
 
         <!-- Progress -->
         <div class="form-progress">
@@ -1544,7 +1602,7 @@
         <div class="form-step active" data-step="0">
           <div class="step-eyebrow">Step 1 of 4</div>
           <h3 class="step-title">Contact &amp; event</h3>
-          <p class="step-sub">Just the basics to get started.</p>
+          <p class="step-sub">Just the basics to get started — and to make sure this is the right inquiry form.</p>
 
           <div class="form-row">
             <div class="form-field">
@@ -1572,18 +1630,18 @@
               </select>
             </div>
           </div>
-
-          <div class="form-row">
+<div class="form-row">
             <div class="form-field">
               <label for="event-type">Event Type <span class="req-star">*</span></label>
               <select id="event-type" name="Event Type" data-required>
                 <option value="">Choose one…</option>
                 <option value="Wedding">Wedding</option>
-                <option value="Birthday">Birthday</option>
-                <option value="Anniversary">Anniversary</option>
+                <option value="Large milestone birthday / private event">Large milestone birthday / private event</option>
+                <option value="Anniversary / large celebration">Anniversary / large celebration</option>
                 <option value="Shower">Bridal / Baby Shower</option>
                 <option value="Corporate">Corporate Event</option>
-                <option value="Other">Other</option>
+                <option value="Dessert table / catered event">Dessert table / catered event</option>
+                <option value="Other large event">Other large event</option>
               </select>
             </div>
             <div class="form-field">
@@ -1595,11 +1653,12 @@
           <div class="form-field">
             <label for="guest-count">Approximate Guest Count</label>
             <input type="number" id="guest-count" name="Approximate Guest Count" min="1" placeholder="e.g. 50">
+            <div class="field-help">This form is intended for large events, dessert tables, catering-style orders, or orders requiring delivery/setup.</div>
           </div>
 
           <div class="form-warning warn" id="warn-rush" data-screen>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <span><strong>That's fewer than 7 days away.</strong>We're unable to accept standard custom-order requests with fewer than seven days' notice. Rush availability is not guaranteed — you can still submit, but please confirm by phone.</span>
+            <span><strong>That's fewer than 7 days away.</strong>Weddings and event-scale orders usually require more planning time. Rush availability is not guaranteed — you can still submit, but please confirm by phone.</span>
           </div>
           <div class="form-warning warn" id="warn-large" data-screen>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -1616,28 +1675,28 @@
         <div class="form-step" data-step="1">
           <div class="step-eyebrow">Step 2 of 4</div>
           <h3 class="step-title">What are you ordering?</h3>
-          <p class="step-sub">Pick everything that applies — we'll only ask follow-ups for what you choose.</p>
+          <p class="step-sub">Pick everything that applies for your event. For one-off cakes, small cookie orders, cupcakes, cake pops, or standard pickup orders, please use the regular quote forms instead.</p>
 
           <div class="form-field">
             <label>Products needed <span class="req-star">*</span></label>
             <div class="check-grid" id="order-grid" data-required-group>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Custom cake" data-cond="cake"> Custom cake</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Large event cake" data-cond="cake"> Large event cake</label>
               <label class="check-card"><input type="checkbox" name="Products Needed" value="Wedding cake" data-cond="cake"> Wedding cake</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Cupcakes" data-cond="cupcakes"> Cupcakes</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Custom sugar cookies" data-cond="cookies"> Custom sugar cookies</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Cake pops" data-cond="cakepops"> Cake pops</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Brownies / bars" data-cond="brownies"> Brownies / bars</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Chocolate-covered treats" data-cond="choc"> Chocolate-covered treats</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Dessert table" data-cond="dessert"> Dessert table</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Event cupcake order" data-cond="cupcakes"> Event cupcake order</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Event favor cookies / large cookie order" data-cond="cookies"> Event favor cookies / large cookie order</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Event cake pops" data-cond="cakepops"> Event cake pops</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Brownies / bars for an event" data-cond="brownies"> Brownies / bars for an event</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Chocolate-covered treats for an event" data-cond="choc"> Chocolate-covered treats for an event</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Dessert table / full dessert spread" data-cond="dessert"> Dessert table / full dessert spread</label>
               <label class="check-card"><input type="checkbox" name="Products Needed" value="Cutting cake plus desserts" data-cond="cake cutting"> Cutting cake + desserts</label>
-              <label class="check-card"><input type="checkbox" name="Products Needed" value="Other" data-cond="other"> Other</label>
+              <label class="check-card"><input type="checkbox" name="Products Needed" value="Other large-event desserts" data-cond="other"> Other large-event desserts</label>
             </div>
             <div class="group-error" id="order-error">Please select at least one item.</div>
           </div>
 
           <!-- Cake details -->
           <div class="cond-block" data-block="cake">
-            <div class="cond-block-title">Cake details</div>
+            <div class="cond-block-title">Wedding / event cake details</div>
             <div class="form-field">
               <label for="cake-servings">How many cake servings are needed? <span class="req-star">*</span></label>
               <input type="number" id="cake-servings" name="Cake Servings" min="1" placeholder="e.g. 75" data-required>
@@ -1848,9 +1907,7 @@
             <label for="budget">Estimated budget <span class="req-star">*</span></label>
             <select id="budget" name="Estimated Budget" data-required>
               <option value="">Choose a range…</option>
-              <option>Under $150</option>
-              <option>$150–$300</option>
-              <option>$300–$500</option>
+              <option>$250–$500</option>
               <option>$500–$1,000</option>
               <option>$1,000–$2,000</option>
               <option>$2,000+</option>
@@ -1971,6 +2028,11 @@
           <div class="step-eyebrow">Step 4 of 4</div>
           <h3 class="step-title">A few quick acknowledgments</h3>
           <p class="step-sub">Please confirm the following before submitting.</p>
+
+          <label class="ack-item">
+            <input type="checkbox" name="Event Inquiry Scope Acknowledgment" value="Confirmed" data-required>
+            <span>I understand this form is for <strong>weddings, large events, dessert tables, catering-style orders, or orders requiring event planning/setup</strong>. Standard custom orders — including single birthday cakes, small cookie orders, cupcakes, and cake pops — must be submitted through the <a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">regular quote/order forms</a>.</span>
+          </label>
 
           <label class="ack-item">
             <input type="checkbox" data-required>
@@ -2405,8 +2467,7 @@
           if (!firstBad) firstBad = group;
         }
       });
-
-      // email sanity
+// email sanity
       const email = step.querySelector('#email');
       if (email && isVisible(email) && email.value.trim() && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) {
         ok = false; email.classList.add('invalid');
@@ -2593,12 +2654,21 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
       const ev = parseLocal(eventDate && eventDate.value);
       const dUntil = daysUntil(ev);
       const type = eventType ? eventType.value : '';
-      const dessertSelected = form.querySelector('input[value="Dessert table"]:checked') ||
-                              form.querySelector('input[value="Cutting cake plus desserts"]:checked');
+      const dessertSelected = form.querySelector('input[data-cond="dessert"]:checked') ||
+                              form.querySelector('input[data-cond="cake cutting"]:checked');
+      const isLargeEventType = [
+        'Wedding',
+        'Large milestone birthday / private event',
+        'Anniversary / large celebration',
+        'Shower',
+        'Corporate',
+        'Dessert table / catered event',
+        'Other large event'
+      ].indexOf(type) !== -1;
 
       show('warn-rush', dUntil !== null && dUntil >= 0 && dUntil < 7);
       show('warn-large', dUntil !== null && dUntil >= 0 && dUntil < 30 &&
-        (type === 'Wedding' || !!dessertSelected));
+        (isLargeEventType || !!dessertSelected));
 
       const fd = parseLocal(fulfillDate && fulfillDate.value);
       const method = fulfillment ? fulfillment.value : '';
@@ -2606,7 +2676,7 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
       show('warn-delivery', method === 'Delivery' || method === 'Delivery + setup');
     }
 
-    [eventDate, eventType, fulfillDate].forEach(function(el) {
+    [inquiryScope, eventDate, eventType, fulfillDate].forEach(function(el) {
       if (el) el.addEventListener('change', runScreens);
     });
     orderChecks.forEach(function(cb) { cb.addEventListener('change', runScreens); });
@@ -2616,6 +2686,12 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
       if (e.target.classList) e.target.classList.remove('invalid');
     });
     form.addEventListener('change', function(e) {
+      if (e.target.classList) e.target.classList.remove('invalid');
+      const customWrap = e.target.closest && e.target.closest('.custom-select, .custom-date');
+      if (customWrap) {
+        const display = customWrap.querySelector('.select-display, .date-display');
+        if (display) display.classList.remove('invalid');
+      }
       const grp = e.target.closest('[data-required-group]');
       if (grp) {
         grp.classList.remove('invalid');
