@@ -807,29 +807,81 @@
   /* Checkbox / selectable cards */
   .check-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     margin-bottom: 6px;
   }
-  .check-card {
+  .form-field .check-card {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 11px;
-    background: var(--cream);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 14px 16px;
+    gap: 12px;
+    min-height: 62px;
+    background: rgba(250, 243, 234, 0.72);
+    border: 1px solid rgba(232, 223, 208, 0.95);
+    border-radius: 10px;
+    padding: 15px 16px;
     cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    font-size: 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    line-height: 1.35;
+    text-transform: none;
     color: var(--navy);
     user-select: none;
+    box-shadow: 0 1px 0 rgba(31, 41, 80, 0.04);
+    transition: border-color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+    contain: layout paint;
   }
-  .check-card:hover { border-color: var(--peach-deep); }
-  .check-card input { width: 18px; height: 18px; accent-color: var(--peach-deep); flex-shrink: 0; cursor: pointer; }
-  .check-card:has(input:checked) {
+  .form-field .check-card:hover,
+  .form-field .check-card:focus-within {
+    border-color: rgba(232, 159, 128, 0.85);
+    background: rgba(250, 243, 234, 0.96);
+    box-shadow: 0 6px 16px rgba(31, 41, 80, 0.07);
+    transform: translateY(-1px);
+  }
+  .form-field .check-card.is-checked {
     border-color: var(--peach-deep);
-    background: rgba(232, 159, 128, 0.08);
+    background: rgba(232, 159, 128, 0.12);
+    box-shadow: 0 0 0 1px rgba(232, 159, 128, 0.18), 0 8px 18px rgba(31, 41, 80, 0.07);
+  }
+  .form-field .check-card input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    border: 1.5px solid rgba(90, 91, 115, 0.45);
+    border-radius: 6px;
+    background: var(--cream);
+    flex-shrink: 0;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: background-color 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+  }
+  .form-field .check-card input::before {
+    content: '';
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid var(--cream);
+    border-bottom: 2px solid var(--cream);
+    transform: rotate(-45deg) scale(0);
+    transform-origin: center;
+    transition: transform 0.12s ease;
+  }
+  .form-field .check-card input:checked {
+    background: var(--peach-deep);
+    border-color: var(--peach-deep);
+    box-shadow: 0 0 0 3px rgba(232, 159, 128, 0.18);
+  }
+  .form-field .check-card input:checked::before { transform: rotate(-45deg) scale(1); }
+  .form-field .check-card input:focus-visible {
+    outline: 2px solid rgba(232, 159, 128, 0.55);
+    outline-offset: 2px;
+  }
+  .check-grid.invalid .check-card {
+    border-color: rgba(192, 57, 43, 0.38);
   }
 
   /* Radio pills */
@@ -879,6 +931,13 @@
     font-size: 18px;
     color: var(--navy);
     margin-bottom: 16px;
+  }
+  .venue-details {
+    display: none;
+  }
+  .venue-details.show {
+    display: block;
+    animation: stepIn 0.25s ease;
   }
 
   /* Warning / screening banners */
@@ -1332,6 +1391,7 @@
     .form-row { grid-template-columns: 1fr; gap: 0; }
     .form-row .form-field { margin-bottom: 16px; }
     .check-grid { grid-template-columns: 1fr; }
+    .form-field .check-card { min-height: 56px; padding: 14px 15px; }
     .progress-label { display: none; }
     .form-progress { margin-bottom: 30px; }
     .step-title { font-size: 22px; }
@@ -1965,54 +2025,72 @@
           <!-- Venue block (delivery/setup only) -->
           <div class="cond-block" data-block="venue">
             <div class="cond-block-title">Venue &amp; setup details</div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="venue-name">Venue name <span class="req-star">*</span></label>
-                <input type="text" id="venue-name" name="Venue Name" data-required>
-              </div>
-              <div class="form-field">
-                <label for="venue-indoor">Indoor or outdoor event? <span class="req-star">*</span></label>
-                <select id="venue-indoor" name="Venue Setting" data-required>
-                  <option value="">Choose one…</option>
-                  <option>Indoor</option><option>Outdoor</option><option>Both / covered outdoor</option>
-                </select>
-              </div>
-            </div>
+
             <div class="form-field">
-              <label for="venue-address">Full venue address <span class="req-star">*</span></label>
-              <input type="text" id="venue-address" name="Venue Address" placeholder="Street, city, state, ZIP" data-required>
+              <label for="venue-status">Venue status <span class="req-star">*</span></label>
+              <select id="venue-status" name="Venue Status" data-required>
+                <option value="">Choose one…</option>
+                <option value="Venue is confirmed">Venue is confirmed / I have the details</option>
+                <option value="Venue not confirmed yet">Venue is not booked yet / I don't have the details</option>
+              </select>
+              <div class="field-help">If the venue is not finalized yet, you can still submit the inquiry. We'll collect delivery/setup details later.</div>
             </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="event-start">Event start time <span class="req-star">*</span></label>
-                <input type="time" id="event-start" name="Event Start Time" data-required>
+
+            <div class="form-warning info" id="warn-venue-unknown" data-screen>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span><strong>No problem.</strong>If your venue is not confirmed yet, submit what you know now and we'll follow up for delivery or setup details once they are available.</span>
+            </div>
+
+            <div class="venue-details" id="venue-details">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="venue-name">Venue name <span class="req-star">*</span></label>
+                  <input type="text" id="venue-name" name="Venue Name" data-required>
+                </div>
+                <div class="form-field">
+                  <label for="venue-indoor">Indoor or outdoor event? <span class="req-star">*</span></label>
+                  <select id="venue-indoor" name="Venue Setting" data-required>
+                    <option value="">Choose one…</option>
+                    <option>Indoor</option><option>Outdoor</option><option>Both / covered outdoor</option>
+                  </select>
+                </div>
               </div>
               <div class="form-field">
-                <label for="vendor-arrival">Earliest vendor arrival time <span class="req-star">*</span></label>
-                <input type="time" id="vendor-arrival" name="Earliest Vendor Arrival Time" data-required>
+                <label for="venue-address">Full venue address <span class="req-star">*</span></label>
+                <input type="text" id="venue-address" name="Venue Address" placeholder="Street, city, state, ZIP" data-required>
               </div>
-            </div>
-            <div class="form-field">
-              <label for="completion-time">Required completion time <span class="req-star">*</span></label>
-              <input type="time" id="completion-time" name="Required Setup Completion Time" data-required>
-            </div>
-            <div class="form-field">
-              <label for="venue-access">Stairs, elevator, loading area, security, or restricted access?</label>
-              <textarea id="venue-access" name="Venue Access Details" placeholder="Describe how we'll get in and where we'll set up."></textarea>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="coordinator-name">Venue coordinator's name</label>
-                <input type="text" id="coordinator-name" name="Venue or Event Coordinator">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="event-start">Event start time <span class="req-star">*</span></label>
+                  <input type="time" id="event-start" name="Event Start Time" data-required>
+                </div>
+                <div class="form-field">
+                  <label for="vendor-arrival">Earliest vendor arrival time <span class="req-star">*</span></label>
+                  <input type="time" id="vendor-arrival" name="Earliest Vendor Arrival Time" data-required>
+                </div>
               </div>
               <div class="form-field">
-                <label for="coordinator-contact">Coordinator's contact</label>
-                <input type="text" id="coordinator-contact" name="Coordinator Contact Information" placeholder="Phone or email">
+                <label for="completion-time">Required completion time <span class="req-star">*</span></label>
+                <input type="time" id="completion-time" name="Required Setup Completion Time" data-required>
               </div>
-            </div>
-            <div class="form-field">
-              <label for="supplies">Who is supplying the dessert table, linens, trays, stands, plates, and utensils?</label>
-              <textarea id="supplies" name="Dessert Table Supplies Responsibility" placeholder="e.g. venue provides table + linens; we provide stands; caterer provides plates…"></textarea>
+              <div class="form-field">
+                <label for="venue-access">Stairs, elevator, loading area, security, or restricted access?</label>
+                <textarea id="venue-access" name="Venue Access Details" placeholder="Describe how we'll get in and where we'll set up."></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="coordinator-name">Venue coordinator's name</label>
+                  <input type="text" id="coordinator-name" name="Venue or Event Coordinator">
+                </div>
+                <div class="form-field">
+                  <label for="coordinator-contact">Coordinator's contact</label>
+                  <input type="text" id="coordinator-contact" name="Coordinator Contact Information" placeholder="Phone or email">
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="supplies">Who is supplying the dessert table, linens, trays, stands, plates, and utensils?</label>
+                <textarea id="supplies" name="Dessert Table Supplies Responsibility" placeholder="e.g. venue provides table + linens; we provide stands; caterer provides plates…"></textarea>
+              </div>
             </div>
           </div>
 
@@ -2568,6 +2646,10 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
     }
 
     function setConditionalBlockState(block, enabled) {
+      const nextState = enabled ? 'true' : 'false';
+      if (block.getAttribute('data-cond-enabled') === nextState) return;
+      block.setAttribute('data-cond-enabled', nextState);
+
       block.classList.toggle('show', enabled);
       block.setAttribute('aria-hidden', enabled ? 'false' : 'true');
 
@@ -2609,7 +2691,15 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
       });
     }
 
+    function syncCheckCardClasses() {
+      orderChecks.forEach(function(cb) {
+        const card = cb.closest('.check-card');
+        if (card) card.classList.toggle('is-checked', cb.checked);
+      });
+    }
+
     function syncProductBlocks() {
+      syncCheckCardClasses();
       const active = {};
       orderChecks.forEach(function(cb) {
         if (cb.checked) active[cb.getAttribute('data-cond')] = true;
@@ -2625,13 +2715,58 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
     // ── Conditional venue block (delivery/setup) ──
     const fulfillment = form.querySelector('#fulfillment');
     const venueBlock = form.querySelector('[data-block="venue"]');
+    const venueStatus = form.querySelector('#venue-status');
+    const venueDetails = form.querySelector('#venue-details');
+
+    function setVenueDetailsState(enabled) {
+      if (!venueDetails) return;
+      const nextState = enabled ? 'true' : 'false';
+      if (venueDetails.getAttribute('data-details-enabled') === nextState) return;
+      venueDetails.setAttribute('data-details-enabled', nextState);
+      venueDetails.classList.toggle('show', enabled);
+      venueDetails.setAttribute('aria-hidden', enabled ? 'false' : 'true');
+
+      venueDetails.querySelectorAll('input, select, textarea').forEach(function(field) {
+        if (!field.hasAttribute('data-original-required')) {
+          field.setAttribute('data-original-required', field.hasAttribute('data-required') ? 'true' : 'false');
+        }
+        if (!field.hasAttribute('data-original-native-required')) {
+          field.setAttribute('data-original-native-required', field.required ? 'true' : 'false');
+        }
+
+        field.disabled = !enabled;
+
+        if (enabled) {
+          if (field.getAttribute('data-original-required') === 'true') field.setAttribute('data-required', '');
+          if (field.getAttribute('data-original-native-required') === 'true') field.required = true;
+        } else {
+          clearField(field);
+          field.removeAttribute('data-required');
+          field.required = false;
+        }
+
+        const customWrap = field.closest('.custom-select') || field.closest('.custom-date');
+        if (customWrap) customWrap.classList.toggle('is-disabled', !enabled);
+      });
+    }
+
+    function syncVenueDetails() {
+      const needsVenue = !!(venueBlock && venueBlock.classList.contains('show'));
+      const isUnknown = venueStatus && venueStatus.value === 'Venue not confirmed yet';
+      const hasConfirmedVenue = venueStatus && venueStatus.value === 'Venue is confirmed';
+      setVenueDetailsState(needsVenue && hasConfirmedVenue);
+      show('warn-venue-unknown', needsVenue && isUnknown);
+    }
+
     function syncVenue() {
       const v = fulfillment ? fulfillment.value : '';
       const needsVenue = v === 'Delivery' || v === 'Delivery + setup';
       if (venueBlock) setConditionalBlockState(venueBlock, needsVenue);
+      syncVenueDetails();
       runScreens();
     }
     if (fulfillment) fulfillment.addEventListener('change', syncVenue);
+    if (venueStatus) venueStatus.addEventListener('change', syncVenueDetails);
 
     // ── Screening messages ──
     const eventDate = form.querySelector('#event-date');
@@ -2675,7 +2810,7 @@ form.querySelectorAll('.btn-back').forEach(function(btn) {
       show('warn-delivery', method === 'Delivery' || method === 'Delivery + setup');
     }
 
-    [inquiryScope, eventDate, eventType, fulfillDate].forEach(function(el) {
+    [eventDate, eventType, fulfillDate, venueStatus].forEach(function(el) {
       if (el) el.addEventListener('change', runScreens);
     });
     orderChecks.forEach(function(cb) { cb.addEventListener('change', runScreens); });
@@ -2800,6 +2935,7 @@ function buildCleanFormData() {
       // Re-sync immediately before submission so every hidden conditional field is disabled.
       syncProductBlocks();
       syncVenue();
+      syncVenueDetails();
 
       if (subjectField) subjectField.value = buildSubjectLine();
       const formData = buildCleanFormData();
@@ -2840,6 +2976,7 @@ function buildCleanFormData() {
 
     syncProductBlocks();
     syncVenue();
+    syncVenueDetails();
   })();
 </script>
 
