@@ -175,17 +175,20 @@
   }
   body.menu-open { overflow: hidden; }
 
-  /* ─── Page Hero ─── */
+  /* ─── Page Hero (banner) ─── */
   .page-hero {
+    position: relative;
     text-align: center;
-    padding: 72px 48px 56px;
-    background: var(--cream-deep);
+    padding: 112px 48px 96px;
+    background-image: linear-gradient(rgba(31,41,80,0.60), rgba(31,41,80,0.72)), url('/assets/presales.jpg');
+    background-size: cover;
+    background-position: center;
     border-bottom: 1px solid var(--line);
   }
   .page-hero .script {
     font-family: 'Caveat', cursive;
     font-size: 32px;
-    color: var(--peach-deep);
+    color: var(--peach);
     transform: rotate(-2deg);
     display: inline-block;
     font-weight: 600;
@@ -197,13 +200,13 @@
     line-height: 1.0;
     letter-spacing: -0.025em;
     font-weight: 400;
-    color: var(--navy);
+    color: var(--cream);
     margin-bottom: 16px;
   }
-  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
+  .page-hero h1 em { font-style: italic; color: var(--peach); }
   .page-hero p {
     font-size: 16px;
-    color: var(--ink-soft);
+    color: rgba(250, 243, 234, 0.85);
     max-width: 560px;
     margin: 0 auto;
     line-height: 1.7;
