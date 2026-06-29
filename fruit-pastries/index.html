@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  WEBSITE BY TEKPAIR
+  ============================================================
+  Design & Development: Tekpair
+  tekpair.com/webdesign | Cohoes, NY | Capital Region
+  A site like this starts at $300.
+  connor@tekpair.com
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0LS4N0398"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q0LS4N0398');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruit Pastry Pre-Sales | Sweet Elevation Bakery — Latham, NY</title>
+<meta name="description" content="Weekly fruit pastry pre-sales from Sweet Elevation Bakery in Latham, NY. New flavors every week — subscribe to get notified when the next drop goes live.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sweet Elevation Bakery">
+<link rel="canonical" href="https://sweetelevationbakery.com/fruit-pastries/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sweet Elevation Bakery">
+<meta property="og:title" content="Fruit Pastry Pre-Sales | Sweet Elevation Bakery">
+<meta property="og:description" content="New fruit pastry flavors every week. Subscribe to get notified when the next pre-sale drops.">
+<meta property="og:url" content="https://sweetelevationbakery.com/fruit-pastries/">
+<meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1f2950">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf3ea;
+    --cream-deep: #f4ead9;
+    --navy: #1f2950;
+    --navy-soft: #3d4670;
+    --peach: #f4c4ad;
+    --peach-deep: #e89f80;
+    --ink-soft: #5a5b73;
+    --line: #e8dfd0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── Navigation ─── */
+  header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 48px 18px;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .logo-slot a { display: block; line-height: 0; }
+  .logo-slot img { height: 78px; width: auto; max-width: 260px; object-fit: contain; display: block; }
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .nav-links a {
+    text-decoration: none; color: var(--navy);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: color 0.2s; position: relative;
+  }
+  .nav-links a:hover { color: var(--peach-deep); }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 1.5px; background: var(--peach-deep); transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 80%; }
+  .nav-links a.active { color: var(--peach-deep); }
+  .nav-links a.active::after { width: 80%; }
+
+  /* ─── Hamburger Button ─── */
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: fixed;
+    right: 20px;
+    top: 24px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  .hamburger-icon { position: relative; width: 22px; height: 16px; }
+  .hamburger-icon span {
+    position: absolute; left: 0; width: 100%; height: 2px;
+    background: var(--navy); border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+  .hamburger-icon span:nth-child(1) { top: 0; }
+  .hamburger-icon span:nth-child(2) { top: 7px; }
+  .hamburger-icon span:nth-child(3) { top: 14px; }
+  .hamburger.active .hamburger-icon span:nth-child(1) { top: 7px; transform: rotate(45deg); background: var(--cream); }
+  .hamburger.active .hamburger-icon span:nth-child(2) { opacity: 0; }
+  .hamburger.active .hamburger-icon span:nth-child(3) { top: 7px; transform: rotate(-45deg); background: var(--cream); }
+
+  /* ─── Mobile Menu Overlay ─── */
+  .mobile-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  .mobile-menu.active { opacity: 1; visibility: visible; }
+  .mobile-menu ul { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 22px; padding-bottom: 90px; }
+  .mobile-menu a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px; font-weight: 400;
+    color: var(--cream); text-decoration: none;
+    letter-spacing: -0.01em;
+    position: relative; display: inline-block;
+    opacity: 0; transform: translateY(20px);
+    transition: color 0.2s, opacity 0.5s ease, transform 0.5s ease;
+  }
+  .mobile-menu.active a { opacity: 1; transform: translateY(0); }
+  .mobile-menu.active li:nth-child(1) a { transition-delay: 0.08s; }
+  .mobile-menu.active li:nth-child(2) a { transition-delay: 0.13s; }
+  .mobile-menu.active li:nth-child(3) a { transition-delay: 0.18s; }
+  .mobile-menu.active li:nth-child(4) a { transition-delay: 0.23s; }
+  .mobile-menu.active li:nth-child(5) a { transition-delay: 0.28s; }
+  .mobile-menu.active li:nth-child(6) a { transition-delay: 0.33s; }
+  .mobile-menu.active li:nth-child(7) a { transition-delay: 0.38s; }
+  .mobile-menu a:hover { color: var(--peach); }
+  .mobile-menu a em { font-style: italic; color: var(--peach); }
+  .mobile-menu-foot {
+    position: absolute; bottom: 40px; text-align: center;
+    color: rgba(250, 243, 234, 0.5);
+    font-size: 12px; letter-spacing: 0.05em;
+  }
+  .mobile-menu-foot a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: var(--peach); font-weight: 500;
+    display: inline-block; margin-top: 4px;
+  }
+  body.menu-open { overflow: hidden; }
+
+  /* ─── Page Hero ─── */
+  .page-hero {
+    text-align: center;
+    padding: 72px 48px 56px;
+    background: var(--cream-deep);
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero .script {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: var(--peach-deep);
+    transform: rotate(-2deg);
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .page-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--peach-deep); }
+  .page-hero p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ─── Intro: image + details ─── */
+  .presale-intro-wrap { max-width: 1100px; margin: 64px auto 0; padding: 0 48px; }
+  .presale-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+    align-items: center;
+  }
+  .presale-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--peach);
+  }
+  .presale-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .presale-detail .script {
+    font-family: 'Caveat', cursive;
+    font-size: 24px; color: var(--peach-deep); font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .presale-detail h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; font-weight: 400; color: var(--navy);
+    line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px;
+  }
+  .presale-detail h2 em { font-style: italic; color: var(--peach-deep); }
+  .presale-detail > p {
+    font-size: 15px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 26px;
+  }
+  .presale-facts { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .presale-facts li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; color: var(--navy);
+  }
+  .presale-facts svg {
+    width: 20px; height: 20px; flex-shrink: 0; color: var(--peach-deep); margin-top: 1px;
+  }
+  .presale-facts strong { font-weight: 600; }
+
+  /* ─── Subscribe Box ─── */
+  .subscribe-wrap { max-width: 1100px; margin: 72px auto 0; padding: 0 48px; }
+  .subscribe {
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 56px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .subscribe::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, var(--peach-deep) 0%, transparent 65%);
+    opacity: 0.3; border-radius: 50%; pointer-events: none;
+  }
+  .subscribe::after {
+    content: ''; position: absolute; bottom: -100px; left: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, var(--peach) 0%, transparent 70%);
+    opacity: 0.12; border-radius: 50%; pointer-events: none;
+  }
+  .subscribe-script {
+    font-family: 'Caveat', cursive;
+    font-size: 26px; color: var(--peach); font-weight: 600;
+    position: relative; margin-bottom: 4px;
+  }
+  .subscribe h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 44px); font-weight: 400;
+    line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px;
+    position: relative;
+  }
+  .subscribe h2 em { font-style: italic; color: var(--peach); }
+  .subscribe > p {
+    font-size: 15px; color: rgba(250,243,234,0.72); line-height: 1.65;
+    max-width: 460px; margin: 0 auto 30px; position: relative;
+  }
+  .subscribe-form {
+    display: flex; gap: 12px; max-width: 480px; margin: 0 auto;
+    position: relative;
+  }
+  .subscribe-form input[type="email"] {
+    flex: 1;
+    background: var(--cream);
+    border: 2px solid transparent;
+    border-radius: 100px;
+    padding: 15px 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    transition: border-color 0.2s;
+    min-width: 0;
+  }
+  .subscribe-form input[type="email"]::placeholder { color: rgba(31,41,80,0.45); }
+  .subscribe-form input[type="email"]:focus { outline: none; border-color: var(--peach); }
+  .subscribe-form input[type="email"].invalid { border-color: #e07a5f; }
+  .subscribe-form button {
+    background: var(--peach-deep);
+    color: var(--cream);
+    border: none;
+    border-radius: 100px;
+    padding: 15px 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .subscribe-form button:hover { background: var(--peach); transform: translateY(-1px); }
+  .subscribe-form button:disabled { opacity: 0.6; cursor: default; transform: none; }
+  .subscribe-fineprint {
+    font-size: 12px; color: rgba(250,243,234,0.5);
+    margin-top: 16px; position: relative;
+  }
+  .subscribe-message {
+    position: relative;
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+    color: var(--peach);
+  }
+  .subscribe-message.error { color: #f4a78c; }
+  /* Success state replaces the form */
+  .subscribe-success {
+    display: none;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .subscribe.subscribed .subscribe-form,
+  .subscribe.subscribed .subscribe-fineprint,
+  .subscribe.subscribed .subscribe-message { display: none; }
+  .subscribe.subscribed .subscribe-success { display: flex; }
+  .subscribe-success-icon {
+    width: 56px; height: 56px;
+    background: var(--peach-deep);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream);
+  }
+  .subscribe-success-icon svg { width: 28px; height: 28px; }
+  .subscribe-success p { font-size: 16px; color: var(--cream); max-width: 380px; line-height: 1.6; }
+
+  /* ─── Order CTA ─── */
+  .order-cta-wrap { max-width: 1100px; margin: 56px auto 0; padding: 0 48px 100px; text-align: center; }
+  .order-cta-wrap h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px; font-weight: 400; color: var(--navy);
+    margin-bottom: 8px; letter-spacing: -0.01em;
+  }
+  .order-cta-wrap p { font-size: 14px; color: var(--ink-soft); margin-bottom: 24px; }
+  .order-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: var(--cream);
+    text-decoration: none; border-radius: 100px;
+    padding: 15px 32px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .order-cta:hover { background: var(--peach-deep); transform: translateY(-1px); }
+  .order-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* ─── Footer ─── */
+  footer { background: var(--navy); color: var(--cream); padding: 90px 48px 36px; border-top: 1px solid rgba(250, 243, 234, 0.08); }
+  .foot-inner { max-width: 1400px; margin: 0 auto; }
+  .foot-top {
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 64px;
+    padding-bottom: 56px; border-bottom: 1px solid rgba(250, 243, 234, 0.1); margin-bottom: 36px;
+  }
+  .foot-brand .foot-logo {
+    background: var(--cream); padding: 16px 20px; border-radius: 8px;
+    width: fit-content; margin-bottom: 24px;
+  }
+  .foot-brand .foot-logo img { height: 64px; width: auto; max-width: 200px; display: block; }
+  .foot-tagline {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 18px; line-height: 1.5; color: var(--peach);
+    max-width: 280px; margin-bottom: 24px;
+  }
+  .foot-contact { font-size: 14px; color: rgba(250, 243, 234, 0.65); line-height: 1.8; }
+  .foot-contact a { color: rgba(250, 243, 234, 0.85); text-decoration: none; transition: color 0.2s; }
+  .foot-contact a:hover { color: var(--peach); }
+  .foot-col h4 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 20px; color: var(--peach); font-weight: 400; }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 12px; }
+  .foot-col a { color: rgba(250, 243, 234, 0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--peach); }
+  .foot-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(250, 243, 234, 0.5);
+    letter-spacing: 0.04em; gap: 20px; flex-wrap: wrap;
+  }
+  .tekpair-credit {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--peach); text-decoration: none;
+    font-size: 12px; font-weight: 500; transition: opacity 0.2s;
+  }
+  .tekpair-credit:hover { opacity: 0.75; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    nav { padding: 18px 20px 16px; gap: 12px; }
+    .logo-slot img { height: 60px; }
+    header nav .nav-links { display: none; }
+    .hamburger { display: inline-flex; }
+
+    .page-hero { padding: 64px 24px 50px; }
+    .presale-intro-wrap { padding: 0 24px; margin-top: 48px; }
+    .presale-intro { grid-template-columns: 1fr; gap: 28px; }
+    .presale-detail h2 { font-size: 30px; }
+
+    .subscribe-wrap { padding: 0 24px; margin-top: 56px; }
+    .subscribe { padding: 44px 26px; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-form button { width: 100%; }
+
+    .order-cta-wrap { padding: 0 24px 80px; margin-top: 48px; }
+
+    footer { padding: 70px 24px 32px; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-bottom { justify-content: center; flex-direction: column; gap: 14px; text-align: center; }
+  }
+  @media (max-width: 500px) {
+    .foot-top { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ─── Bottom Tab Bar ─── */
+  .bottom-tab-bar { display: none; }
+  @media (max-width: 900px) {
+    .hamburger { display: none !important; }
+    .bottom-tab-bar {
+      flex-direction: row;
+      align-items: stretch;
+      padding: 0;
+      margin: 0;
+      max-width: none;
+      gap: 0;
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      z-index: 200;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      box-shadow: 0 -2px 10px rgba(31, 41, 80, 0.07);
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .tab-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 1px 8px;
+      gap: 2px;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 7.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      min-width: 0;
+      line-height: 1;
+    }
+    .tab-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .tab-item span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 8px; }
+    .tab-item.active { color: var(--peach-deep); }
+    .tab-item:active { opacity: 0.7; }
+    .tab-quote { flex: 1.5; }
+    .tab-quote .tab-icon-wrap {
+      background: var(--navy);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .tab-quote svg { width: 15px; height: 15px; color: var(--cream); }
+    .tab-quote:hover .tab-icon-wrap,
+    .tab-quote.active .tab-icon-wrap { background: var(--peach-deep); }
+    .tab-quote span { color: var(--navy); font-weight: 600; font-size: 8px; }
+    .tab-quote.active span { color: var(--peach-deep); }
+    body { padding-bottom: calc(54px + env(safe-area-inset-bottom, 0px)); }
+  }
+
+</style>
+
+<!-- Tidio Live Chat -->
+<script src="//code.tidio.co/jg3ncjzp7lgyx12uzrxsvqfarcnx9btw.js" async></script>
+
+</head>
+<body>
+
+     <!-- Navigation -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo-slot">
+        <a href="/" aria-label="Sweet Elevation Bakery — Home">
+          <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+        <li><a href="/store/">Store</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/charcuterie/">Charcuterie</a></li>
+        <li><a href="/careers/">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hamburger button -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/weddings-events/">Weddings &amp; <em>Events</em></a></li>
+      <li><a href="/store/">Store</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/charcuterie/">Charcuterie</a></li>
+      <li><a href="/careers/">Careers</a></li>
+      <li><a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
+    </ul>
+    <div class="mobile-menu-foot">
+      <div>356 Troy Schenectady Rd, Latham NY</div>
+      <a href="tel:+15188180010">(518) 818-0010</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="script">fresh every week</div>
+      <h1>Fruit Pastry <em>Pre-Sales</em></h1>
+      <p>New flavors drop every week — handmade in small batches and gone fast. Subscribe to be the first to know when the next batch goes live.</p>
+    </section>
+
+    <!-- Intro: photo + details -->
+    <div class="presale-intro-wrap">
+      <div class="presale-intro">
+        <div class="presale-photo">
+          <img src="/assets/fruit-pastries.jpg" alt="Fruit pastries by Sweet Elevation Bakery" loading="lazy">
+        </div>
+        <div class="presale-detail">
+          <div class="script">how it works</div>
+          <h2>A new flavor, <em>every single week.</em></h2>
+          <p>Jennifer bakes a fresh rotation of fruit pastries each week — think seasonal fillings, flaky layers, and a different twist every time. They sell out, so we open pre-orders early.</p>
+          <ul class="presale-facts">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span><strong>$10 each</strong> — small-batch, made to order</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+              <span><strong>New flavors weekly</strong> — never the same week twice</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span><strong>Order by Monday</strong> — pick up Thursday–Saturday</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscribe Box -->
+    <div class="subscribe-wrap">
+      <section class="subscribe" id="subscribe">
+        <div class="subscribe-script">don't miss a drop</div>
+        <h2>Get the <em>weekly flavor</em> alert</h2>
+        <p>Drop your email and we'll let you know the moment each week's fruit pastry pre-sale opens — before they sell out.</p>
+
+        <form class="subscribe-form" id="subscribe-form" novalidate>
+          <input type="email" id="subscribe-email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
+          <button type="submit" id="subscribe-button">Notify Me</button>
+        </form>
+        <div class="subscribe-fineprint">Weekly-ish. No spam. Unsubscribe anytime.</div>
+        <div class="subscribe-message" id="subscribe-message" role="status" aria-live="polite"></div>
+
+        <div class="subscribe-success" aria-hidden="true">
+          <div class="subscribe-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <p>You're on the list! We'll email you the moment the next fruit pastry pre-sale goes live.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Order CTA -->
+    <div class="order-cta-wrap">
+      <h3>Pre-sale open now?</h3>
+      <p>If this week's batch is live, you can order it directly here.</p>
+      <a href="https://www.mycustombakes.com/sweetelevationbakery/presales" target="_blank" rel="noopener" class="order-cta">
+        Order This Week's Batch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="foot-logo">
+            <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+          </div>
+          <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+          <div class="foot-contact">
+            <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+            <a href="tel:+15188180010">(518) 818-0010</a><br>
+            Tue – Sat
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">Custom Quotes</a></li>
+            <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
+            <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+            <li><a href="/charcuterie/">Charcuterie</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="/store/">Bake at Home</a></li>
+            <li><a href="/fruit-pastries/">Fruit Pastries</a></li>
+            <li><a href="/store/bake-club/">Bake Club</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="/about-us/">Our Story</a></li>
+            <li><a href="tel:+15188180010">Contact</a></li>
+            <li><a href="/feedback/">Feedback Center</a></li>
+            <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="copyright">© 2026 Sweet Elevation Bakery</div>
+        <div>
+          Website by
+          <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit" aria-label="Tekpair">
+            <span>Tekpair</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hamburger menu script -->
+  <script>
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const body = document.body;
+
+      if (!hamburger || !mobileMenu) return;
+
+      function openMenu() {
+        hamburger.classList.add('active');
+        mobileMenu.classList.add('active');
+        body.classList.add('menu-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Close menu');
+      }
+
+      function closeMenu() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open menu');
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 900 && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+
+  <!-- ====================================================
+       FRUIT PASTRY SUBSCRIBE FORM
+       ----------------------------------------------------
+       The subscribe API is not wired up yet. When Jennifer
+       provides the endpoint / logic, replace the body of
+       sendSubscribe() below. Everything else (validation,
+       UI states, success panel) is already in place.
+       ==================================================== -->
+  <script>
+    (function() {
+      const form = document.getElementById('subscribe-form');
+      const emailInput = document.getElementById('subscribe-email');
+      const button = document.getElementById('subscribe-button');
+      const message = document.getElementById('subscribe-message');
+      const section = document.getElementById('subscribe');
+      if (!form) return;
+
+      function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      // ── Replace this with the real subscribe API call ──
+      // Should return a Promise that resolves on success and
+      // rejects (throws) on failure. Example:
+      //
+      //   const res = await fetch('YOUR_ENDPOINT', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify({ email })
+      //   });
+      //   if (!res.ok) throw new Error('Subscribe failed');
+      //
+      function sendSubscribe(email) {
+        return new Promise(function(resolve) {
+          // TEMPORARY: no backend yet — resolve so the UI flow works.
+          // Remove this stub once the real endpoint is in place.
+          setTimeout(resolve, 600);
+        });
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        message.classList.remove('error');
+
+        if (!isValidEmail(email)) {
+          emailInput.classList.add('invalid');
+          message.classList.add('error');
+          message.textContent = 'Please enter a valid email address.';
+          emailInput.focus();
+          return;
+        }
+
+        emailInput.classList.remove('invalid');
+        button.disabled = true;
+        button.textContent = 'Joining…';
+        message.textContent = '';
+
+        sendSubscribe(email).then(function() {
+          section.classList.add('subscribed');
+        }).catch(function() {
+          button.disabled = false;
+          button.textContent = 'Notify Me';
+          message.classList.add('error');
+          message.textContent = 'Something went wrong. Please try again.';
+        });
+      });
+
+      emailInput.addEventListener('input', function() {
+        if (emailInput.classList.contains('invalid') && isValidEmail(emailInput.value.trim())) {
+          emailInput.classList.remove('invalid');
+          message.textContent = '';
+          message.classList.remove('error');
+        }
+      });
+    })();
+  </script>
+
+<nav class="bottom-tab-bar" aria-label="Mobile navigation">
+  <a href="/about-us/" class="tab-item" data-path="/about-us/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span>About</span>
+  </a>
+  <a href="/weddings-events/" class="tab-item" data-path="/weddings-events/">
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2C12 7 7 12 2 12C7 12 12 17 12 22C12 17 17 12 22 12C17 12 12 7 12 2Z"/></svg>
+    <span>Weddings</span>
+  </a>
+  <a href="/store/" class="tab-item" data-path="/store/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <span>Store</span>
+  </a>
+  <a href="https://www.mycustombakes.com/sweetelevationbakery/products" class="tab-item tab-quote" target="_blank" rel="noopener" aria-label="Get a custom quote">
+    <div class="tab-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/></svg>
+    </div>
+    <span>Quote</span>
+  </a>
+  <a href="/portfolio/" class="tab-item" data-path="/portfolio/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Portfolio</span>
+  </a>
+  <a href="/charcuterie/" class="tab-item" data-path="/charcuterie/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="11"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+    <span>Boards</span>
+  </a>
+  <a href="/careers/" class="tab-item" data-path="/careers/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+    <span>Careers</span>
+  </a>
+</nav>
+<script>
+(function() {
+  var p = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.tab-item[data-path]').forEach(function(el) {
+    var dp = el.getAttribute('data-path').replace(/\/$/, '') || '/';
+    if (dp === '/' ? (p === '/' || p === '') : (p === dp || p.startsWith(dp + '/'))) {
+      el.classList.add('active');
+    }
+  });
+})();
+</script>
+</body>
+</html>
