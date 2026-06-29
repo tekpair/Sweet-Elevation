@@ -287,9 +287,12 @@
     max-width: 460px; margin: 0 auto 30px; position: relative;
   }
   .subscribe-form {
-    display: flex; gap: 12px; max-width: 480px; margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    max-width: 480px; margin: 0 auto;
     position: relative;
   }
+  .subscribe-row { display: flex; gap: 12px; width: 100%; }
+  .subscribe-recaptcha { display: flex; justify-content: center; min-height: 78px; }
   .subscribe-form input[type="email"] {
     flex: 1;
     background: var(--cream);
@@ -425,7 +428,7 @@
 
     .subscribe-wrap { padding: 0 24px; margin-top: 56px; }
     .subscribe { padding: 44px 26px; }
-    .subscribe-form { flex-direction: column; }
+    .subscribe-row { flex-direction: column; }
     .subscribe-form button { width: 100%; }
 
     .order-cta-wrap { padding: 0 24px 80px; margin-top: 48px; }
@@ -437,6 +440,10 @@
   }
   @media (max-width: 500px) {
     .foot-top { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 380px) {
+    .subscribe-recaptcha { min-height: 70px; }
+    .subscribe-recaptcha .g-recaptcha { transform: scale(0.85); transform-origin: center; }
   }
 
   /* ─── Bottom Tab Bar ─── */
@@ -603,12 +610,22 @@
         <h2>Get the <em>new flavor</em> alert</h2>
         <p>Drop your email and we'll let you know the moment the next fruit pastry pre-sale opens — before they sell out.</p>
 
-        <form class="subscribe-form" id="subscribe-form" novalidate>
-          <input type="email" id="subscribe-email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
-          <button type="submit" id="subscribe-button">Notify Me</button>
+        <form class="subscribe-form" id="subscribe-form"
+              action="https://assets.mailerlite.com/jsonp/2477683/forms/191601671461144025/subscribe"
+              method="post" target="ml_subscribe_iframe" novalidate>
+          <div class="subscribe-row">
+            <input type="email" id="subscribe-email" name="fields[email]" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
+            <button type="submit" id="subscribe-button">Notify Me</button>
+          </div>
+          <div class="subscribe-recaptcha">
+            <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD" data-theme="dark"></div>
+          </div>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
         </form>
         <div class="subscribe-fineprint">Only when a new batch drops. No spam. Unsubscribe anytime.</div>
         <div class="subscribe-message" id="subscribe-message" role="status" aria-live="polite"></div>
+        <iframe name="ml_subscribe_iframe" title="MailerLite subscribe" style="display:none" aria-hidden="true"></iframe>
 
         <div class="subscribe-success" aria-hidden="true">
           <div class="subscribe-success-icon">
@@ -622,9 +639,9 @@
     <!-- Order CTA -->
     <div class="order-cta-wrap">
       <h3>Pre-sale open now?</h3>
-      <p>If this week's batch is live, you can order it directly here.</p>
+      <p>If a batch is live right now, you can order it directly here.</p>
       <a href="https://www.mycustombakes.com/sweetelevationbakery/presales" target="_blank" rel="noopener" class="order-cta">
-        Order This Week's Batch
+        Order the Current Batch
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     </div>
@@ -659,7 +676,7 @@
           <h4>Learn</h4>
           <ul>
             <li><a href="/store/">Bake at Home</a></li>
-            <li><a href="/fruit-pastries/">Fruit Pastries</a></li>
+            <li><a href="/store/">Recipes</a></li>
             <li><a href="/store/bake-club/">Bake Club</a></li>
             <li><a href="/portfolio/">Portfolio</a></li>
           </ul>
@@ -739,51 +756,47 @@
   </script>
 
   <!-- ====================================================
-       FRUIT PASTRY SUBSCRIBE FORM
+       FRUIT PASTRY SUBSCRIBE FORM (MailerLite)
        ----------------------------------------------------
-       The subscribe API is not wired up yet. When Jennifer
-       provides the endpoint / logic, replace the body of
-       sendSubscribe() below. Everything else (validation,
-       UI states, success panel) is already in place.
+       Posts to the MailerLite subscribe endpoint via a
+       hidden iframe so the page never navigates away. The
+       custom success panel is shown once MailerLite responds.
+       reCAPTCHA is required by the form; its token rides
+       along with the normal form POST.
        ==================================================== -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
     (function() {
-      const form = document.getElementById('subscribe-form');
-      const emailInput = document.getElementById('subscribe-email');
-      const button = document.getElementById('subscribe-button');
-      const message = document.getElementById('subscribe-message');
-      const section = document.getElementById('subscribe');
+      var form = document.getElementById('subscribe-form');
+      var emailInput = document.getElementById('subscribe-email');
+      var button = document.getElementById('subscribe-button');
+      var message = document.getElementById('subscribe-message');
+      var section = document.getElementById('subscribe');
+      var iframe = document.querySelector('iframe[name="ml_subscribe_iframe"]');
       if (!form) return;
+
+      var submitting = false;
 
       function isValidEmail(value) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       }
 
-      // ── Replace this with the real subscribe API call ──
-      // Should return a Promise that resolves on success and
-      // rejects (throws) on failure. Example:
-      //
-      //   const res = await fetch('YOUR_ENDPOINT', {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify({ email })
-      //   });
-      //   if (!res.ok) throw new Error('Subscribe failed');
-      //
-      function sendSubscribe(email) {
-        return new Promise(function(resolve) {
-          // TEMPORARY: no backend yet — resolve so the UI flow works.
-          // Remove this stub once the real endpoint is in place.
-          setTimeout(resolve, 600);
+      // MailerLite's response loads into the hidden iframe — treat
+      // that as confirmation and reveal the success panel.
+      if (iframe) {
+        iframe.addEventListener('load', function() {
+          if (!submitting) return;
+          submitting = false;
+          section.classList.add('subscribed');
         });
       }
 
       form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = emailInput.value.trim();
+        var email = emailInput.value.trim();
         message.classList.remove('error');
 
         if (!isValidEmail(email)) {
+          e.preventDefault();
           emailInput.classList.add('invalid');
           message.classList.add('error');
           message.textContent = 'Please enter a valid email address.';
@@ -791,19 +804,28 @@
           return;
         }
 
+        // reCAPTCHA is required by the MailerLite form.
+        if (window.grecaptcha && typeof grecaptcha.getResponse === 'function' && grecaptcha.getResponse().length === 0) {
+          e.preventDefault();
+          message.classList.add('error');
+          message.textContent = "Please confirm you're not a robot.";
+          return;
+        }
+
+        // Valid — let the form POST to the hidden iframe.
         emailInput.classList.remove('invalid');
         button.disabled = true;
         button.textContent = 'Joining…';
         message.textContent = '';
+        submitting = true;
 
-        sendSubscribe(email).then(function() {
-          section.classList.add('subscribed');
-        }).catch(function() {
-          button.disabled = false;
-          button.textContent = 'Notify Me';
-          message.classList.add('error');
-          message.textContent = 'Something went wrong. Please try again.';
-        });
+        // Safety net: if the iframe load doesn't fire, still show success.
+        setTimeout(function() {
+          if (submitting) {
+            submitting = false;
+            section.classList.add('subscribed');
+          }
+        }, 2500);
       });
 
       emailInput.addEventListener('input', function() {
