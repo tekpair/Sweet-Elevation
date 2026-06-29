@@ -641,80 +641,108 @@ body.menu-open {
     max-width: 520px;
   }
 
-  /* ─── Fruit Pastries Weekly Banner ─── */
-  .fruit-banner {
+  /* ─── Featured Section (home) ─── */
+  .home-featured {
     background: var(--navy);
-    padding: 56px 48px;
+    padding: 84px 48px;
     position: relative;
     z-index: 2;
   }
-  .fruit-banner-inner {
+  .home-featured-head {
     max-width: 1200px;
+    margin: 0 auto 36px;
+    text-align: center;
+  }
+  .home-featured-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--peach);
+  }
+  .home-featured-eyebrow svg { width: 13px; height: 13px; }
+  .home-featured-inner {
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 36px;
-    align-items: center;
-  }
-  .fruit-banner-img {
-    width: 90px; height: 90px;
-    border-radius: 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: rgba(250, 243, 234, 0.04);
+    border: 1px solid rgba(250, 243, 234, 0.1);
+    border-radius: 16px;
     overflow: hidden;
-    flex-shrink: 0;
-    border: 3px solid rgba(250,243,234,0.15);
   }
-  .fruit-banner-img img {
+  .home-featured-img {
+    position: relative;
+    min-height: 320px;
+    overflow: hidden;
+    background: var(--peach);
+  }
+  .home-featured-img img {
     width: 100%; height: 100%;
     object-fit: cover; display: block;
+    transition: transform 0.5s ease;
   }
-  .fruit-banner-text {
+  .home-featured-inner:hover .home-featured-img img { transform: scale(1.04); }
+  .home-featured-text {
     color: var(--cream);
+    padding: 48px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .fruit-banner-script {
+  .home-featured-script {
     font-family: 'Caveat', cursive;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--peach);
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
-  .fruit-banner-text h3 {
+  .home-featured-text h3 {
     font-family: 'DM Serif Display', serif;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 6px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
   }
-  .fruit-banner-text h3 em {
-    font-style: italic; color: var(--peach);
+  .home-featured-text h3 em { font-style: italic; color: var(--peach); }
+  .home-featured-text > p {
+    font-size: 15px;
+    color: rgba(250,243,234,0.7);
+    line-height: 1.65;
+    margin-bottom: 14px;
   }
-  .fruit-banner-text p {
+  .home-featured-meta {
     font-size: 13px;
-    color: rgba(250,243,234,0.6);
-    line-height: 1.5;
+    color: rgba(250,243,234,0.55);
+    line-height: 1.6;
+    margin-bottom: 26px;
   }
-  .fruit-banner-cta {
+  .home-featured-cta {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--peach-deep); color: var(--cream);
     text-decoration: none; border-radius: 100px;
-    padding: 12px 24px; font-size: 12px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 14px 28px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
     transition: background 0.2s, transform 0.15s;
-    white-space: nowrap; flex-shrink: 0;
+    white-space: nowrap; align-self: flex-start;
   }
-  .fruit-banner-cta:hover {
+  .home-featured-cta:hover {
     background: var(--peach); transform: translateY(-1px);
   }
-  .fruit-banner-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .home-featured-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 
   @media (max-width: 900px) {
-    .fruit-banner { padding: 40px 24px; }
-    .fruit-banner-inner {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 20px;
-      justify-items: center;
-    }
-    .fruit-banner-img { width: 72px; height: 72px; }
+    .home-featured { padding: 60px 24px; }
+    .home-featured-inner { grid-template-columns: 1fr; }
+    .home-featured-img { min-height: 240px; aspect-ratio: 16/10; }
+    .home-featured-text { padding: 34px 28px; }
+    .home-featured-text h3 { font-size: 28px; }
+    .home-featured-cta { align-self: stretch; justify-content: center; }
   }
 
   /* ─── Coming Soon: Courses Hub ─── */
@@ -1396,21 +1424,28 @@ body.menu-open {
       </svg>
     </div>
 
-<!-- Weekly Fruit Pastries -->
-<section class="fruit-banner">
-  <div class="fruit-banner-inner">
-    <div class="fruit-banner-img">
+<!-- Featured -->
+<section class="home-featured">
+  <div class="home-featured-head">
+    <span class="home-featured-eyebrow">
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      Featured
+    </span>
+  </div>
+  <div class="home-featured-inner">
+    <div class="home-featured-img">
       <img src="assets/fruit-pastries.jpg" alt="Fruit pastries by Sweet Elevation Bakery" loading="lazy">
     </div>
-    <div class="fruit-banner-text">
-      <div class="fruit-banner-script">every week</div>
+    <div class="home-featured-text">
+      <div class="home-featured-script">every week</div>
       <h3>Fruit Pastry <em>Pre-Sales</em></h3>
-      <p>$10 each · New flavors weekly · Order by Monday, pick up Thu–Sat</p>
+      <p>A new fruit pastry flavor drops every week — handmade in small batches and gone fast. Subscribe to get the alert before they sell out.</p>
+      <div class="home-featured-meta">$10 each · New flavors weekly · Order by Monday, pick up Thu–Sat</div>
+      <a href="/fruit-pastries/" class="home-featured-cta">
+        Learn More &amp; Subscribe
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
-    <a href="https://www.mycustombakes.com/sweetelevationbakery/presales" target="_blank" rel="noopener" class="fruit-banner-cta">
-      Order Now
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-    </a>
   </div>
 </section>
 
