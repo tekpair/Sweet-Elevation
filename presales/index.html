@@ -23,16 +23,16 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fruit Pastry Pre-Sales | Sweet Elevation Bakery — Latham, NY</title>
-<meta name="description" content="Fruit pastry pre-sales from Sweet Elevation Bakery in Latham, NY. Fresh small-batch pastries in new seasonal flavors — subscribe to get notified when the next drop goes live.">
+<title>Pre-Sales | Sweet Elevation Bakery — Latham, NY</title>
+<meta name="description" content="Browse every Sweet Elevation Bakery pre-sale — limited small-batch runs opened for pre-order before they sell out. Subscribe to catch the next drop.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Sweet Elevation Bakery">
-<link rel="canonical" href="https://sweetelevationbakery.com/fruit-pastries/">
+<link rel="canonical" href="https://sweetelevationbakery.com/presales/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sweet Elevation Bakery">
-<meta property="og:title" content="Fruit Pastry Pre-Sales | Sweet Elevation Bakery">
-<meta property="og:description" content="Fresh small-batch fruit pastries in new seasonal flavors. Subscribe to get notified when the next pre-sale opens.">
-<meta property="og:url" content="https://sweetelevationbakery.com/fruit-pastries/">
+<meta property="og:title" content="Pre-Sales | Sweet Elevation Bakery">
+<meta property="og:description" content="Limited small-batch pre-sales from Sweet Elevation Bakery. Browse what's live and subscribe to catch the next drop.">
+<meta property="og:url" content="https://sweetelevationbakery.com/presales/">
 <meta property="og:image" content="https://sweetelevationbakery.com/og-image.jpg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -160,6 +160,7 @@
   .mobile-menu.active li:nth-child(5) a { transition-delay: 0.28s; }
   .mobile-menu.active li:nth-child(6) a { transition-delay: 0.33s; }
   .mobile-menu.active li:nth-child(7) a { transition-delay: 0.38s; }
+  .mobile-menu.active li:nth-child(8) a { transition-delay: 0.43s; }
   .mobile-menu a:hover { color: var(--peach); }
   .mobile-menu a em { font-style: italic; color: var(--peach); }
   .mobile-menu-foot {
@@ -203,49 +204,63 @@
   .page-hero p {
     font-size: 16px;
     color: var(--ink-soft);
-    max-width: 540px;
+    max-width: 560px;
     margin: 0 auto;
     line-height: 1.7;
   }
 
-  /* ─── Intro: image + details ─── */
-  .presale-intro-wrap { max-width: 1100px; margin: 64px auto 0; padding: 0 48px; }
-  .presale-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 44px;
-    align-items: center;
-  }
-  .presale-photo {
+  /* ─── Presale Cards ─── */
+  .presales-wrap { max-width: 1100px; margin: 60px auto 0; padding: 0 48px; }
+  .presales-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .presale-card {
+    display: flex; flex-direction: column;
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
     border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .presale-card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(31, 41, 80, 0.1); }
+  .presale-card-img {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
     background: var(--peach);
   }
-  .presale-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .presale-detail .script {
-    font-family: 'Caveat', cursive;
-    font-size: 24px; color: var(--peach-deep); font-weight: 600;
-    margin-bottom: 4px;
+  .presale-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .presale-card:hover .presale-card-img img { transform: scale(1.04); }
+  .presale-card-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+    color: var(--peach);
   }
-  .presale-detail h2 {
+  .presale-card-placeholder svg { width: 60px; height: 60px; opacity: 0.9; }
+  .presale-badge {
+    position: absolute; top: 14px; left: 14px;
+    font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 100px;
+  }
+  .presale-badge.open { background: var(--peach-deep); color: var(--cream); }
+  .presale-badge.soon { background: rgba(31, 41, 80, 0.85); color: var(--cream); }
+  .presale-card-body { padding: 26px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+  .presale-card-body h3 {
     font-family: 'DM Serif Display', serif;
-    font-size: 36px; font-weight: 400; color: var(--navy);
-    line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px;
+    font-size: 24px; font-weight: 400; color: var(--navy);
+    line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px;
   }
-  .presale-detail h2 em { font-style: italic; color: var(--peach-deep); }
-  .presale-detail > p {
-    font-size: 15px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 26px;
+  .presale-card-body h3 em { font-style: italic; color: var(--peach-deep); }
+  .presale-card-body p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+  .presale-card-foot {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   }
-  .presale-facts { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-  .presale-facts li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 14px; color: var(--navy);
-  }
-  .presale-facts svg {
-    width: 20px; height: 20px; flex-shrink: 0; color: var(--peach-deep); margin-top: 1px;
-  }
-  .presale-facts strong { font-weight: 600; }
+  .presale-card.is-open .presale-card-foot { color: var(--peach-deep); }
+  .presale-card.is-soon .presale-card-foot { color: var(--ink-soft); }
+  .presale-card-foot svg { width: 13px; height: 13px; transition: transform 0.2s ease; }
+  .presale-card:hover .presale-card-foot svg { transform: translateX(3px); }
 
   /* ─── Subscribe Box ─── */
   .subscribe-wrap { max-width: 1100px; margin: 72px auto 0; padding: 0 48px; }
@@ -336,7 +351,6 @@
     color: var(--peach);
   }
   .subscribe-message.error { color: #f4a78c; }
-  /* Success state replaces the form */
   .subscribe-success {
     display: none;
     position: relative;
@@ -358,24 +372,7 @@
   .subscribe-success-icon svg { width: 28px; height: 28px; }
   .subscribe-success p { font-size: 16px; color: var(--cream); max-width: 380px; line-height: 1.6; }
 
-  /* ─── Order CTA ─── */
-  .order-cta-wrap { max-width: 1100px; margin: 56px auto 0; padding: 0 48px 100px; text-align: center; }
-  .order-cta-wrap h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 26px; font-weight: 400; color: var(--navy);
-    margin-bottom: 8px; letter-spacing: -0.01em;
-  }
-  .order-cta-wrap p { font-size: 14px; color: var(--ink-soft); margin-bottom: 24px; }
-  .order-cta {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--navy); color: var(--cream);
-    text-decoration: none; border-radius: 100px;
-    padding: 15px 32px; font-size: 12px; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .order-cta:hover { background: var(--peach-deep); transform: translateY(-1px); }
-  .order-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .presales-foot-spacer { height: 100px; }
 
   /* ─── Footer ─── */
   footer { background: var(--navy); color: var(--cream); padding: 90px 48px 36px; border-top: 1px solid rgba(250, 243, 234, 0.08); }
@@ -422,21 +419,20 @@
     .hamburger { display: inline-flex; }
 
     .page-hero { padding: 64px 24px 50px; }
-    .presale-intro-wrap { padding: 0 24px; margin-top: 48px; }
-    .presale-intro { grid-template-columns: 1fr; gap: 28px; }
-    .presale-detail h2 { font-size: 30px; }
+    .presales-wrap { padding: 0 24px; margin-top: 44px; }
 
     .subscribe-wrap { padding: 0 24px; margin-top: 56px; }
     .subscribe { padding: 44px 26px; }
     .subscribe-row { flex-direction: column; }
     .subscribe-form button { width: 100%; }
 
-    .order-cta-wrap { padding: 0 24px 80px; margin-top: 48px; }
-
     footer { padding: 70px 24px 32px; }
     .foot-top { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
     .foot-brand { grid-column: 1 / -1; }
     .foot-bottom { justify-content: center; flex-direction: column; gap: 14px; text-align: center; }
+  }
+  @media (max-width: 640px) {
+    .presales-grid { grid-template-columns: 1fr; gap: 20px; }
   }
   @media (max-width: 500px) {
     .foot-top { grid-template-columns: 1fr; gap: 32px; }
@@ -516,7 +512,6 @@
 
 </style>
 
-
 </head>
 <body>
 
@@ -555,10 +550,10 @@
       <li><a href="/about-us/">About</a></li>
       <li><a href="/weddings-events/">Weddings &amp; <em>Events</em></a></li>
       <li><a href="/store/">Store</a></li>
+      <li><a href="/presales/">Pre-<em>Sales</em></a></li>
       <li><a href="/portfolio/">Portfolio</a></li>
       <li><a href="/charcuterie/">Charcuterie</a></li>
       <li><a href="/careers/">Careers</a></li>
-      <li><a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">Get a <em>Quote</em></a></li>
     </ul>
     <div class="mobile-menu-foot">
       <div>356 Troy Schenectady Rd, Latham NY</div>
@@ -570,36 +565,49 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
-      <div class="script">fresh &amp; small-batch</div>
-      <h1>Fruit Pastry <em>Pre-Sales</em></h1>
-      <p>Handmade in small batches and gone fast — new seasonal flavors every drop. Subscribe to be the first to know when the next batch goes live.</p>
+      <div class="script">fresh drops</div>
+      <h1>Pre-<em>Sales</em></h1>
+      <p>Limited small-batch runs we open for pre-order before they sell out. Browse what's live now, and subscribe to catch the next one.</p>
     </section>
 
-    <!-- Intro: photo + details -->
-    <div class="presale-intro-wrap">
-      <div class="presale-intro">
-        <div class="presale-photo">
-          <img src="/assets/fruit-pastries.jpg" alt="Fruit pastries by Sweet Elevation Bakery" loading="lazy">
-        </div>
-        <div class="presale-detail">
-          <div class="script">how it works</div>
-          <h2>Small batches, <em>fresh flavors.</em></h2>
-          <p>Jennifer bakes fruit pastries in limited small batches — think seasonal fillings, flaky layers, and a different twist each time. They sell out, so we open pre-orders early and let subscribers know first.</p>
-          <ul class="presale-facts">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <span><strong>$10 each</strong> — small-batch, made to order</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
-              <span><strong>New seasonal flavors</strong> — a different twist each drop</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span><strong>Pre-order early</strong> — pickup window shared with each drop</span>
-            </li>
-          </ul>
-        </div>
+    <!-- Presale Cards -->
+    <div class="presales-wrap">
+      <div class="presales-grid">
+
+        <!-- Fruit Pastries -->
+        <a href="/fruit-pastries/" class="presale-card is-open">
+          <div class="presale-card-img">
+            <img src="/assets/fruit-pastries.jpg" alt="Fruit pastries by Sweet Elevation Bakery" loading="lazy">
+            <span class="presale-badge open">Open</span>
+          </div>
+          <div class="presale-card-body">
+            <h3>Fruit Pastry <em>Pre-Sales</em></h3>
+            <p>Handmade fruit pastries in new seasonal flavors — small batches that go fast. $10 each, pre-order and pick up.</p>
+            <span class="presale-card-foot">
+              View &amp; Subscribe
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- USA 250 Royal Icing Shortbread -->
+        <a href="#subscribe" class="presale-card is-soon">
+          <div class="presale-card-img">
+            <div class="presale-card-placeholder">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="presale-badge soon">Coming Soon</span>
+          </div>
+          <div class="presale-card-body">
+            <h3>USA 250 <em>Royal Icing</em> Shortbread</h3>
+            <p>Hand-decorated royal icing shortbread cookies celebrating America's 250th. Dropping soon — subscribe to be first in line.</p>
+            <span class="presale-card-foot">
+              Get Notified
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
       </div>
     </div>
 
@@ -607,8 +615,8 @@
     <div class="subscribe-wrap">
       <section class="subscribe" id="subscribe">
         <div class="subscribe-script">don't miss a drop</div>
-        <h2>Get the <em>new flavor</em> alert</h2>
-        <p>Drop your email and we'll let you know the moment the next fruit pastry pre-sale opens — before they sell out.</p>
+        <h2>Get every <em>pre-sale</em> alert</h2>
+        <p>Drop your email and we'll let you know the moment a new pre-sale opens — fruit pastries, shortbread, and whatever's next.</p>
 
         <form class="subscribe-form" id="subscribe-form"
               action="https://assets.mailerlite.com/jsonp/2477683/forms/191601671461144025/subscribe"
@@ -623,7 +631,7 @@
           <input type="hidden" name="ml-submit" value="1">
           <input type="hidden" name="anticsrf" value="true">
         </form>
-        <div class="subscribe-fineprint">Only when a new batch drops. No spam. Unsubscribe anytime.</div>
+        <div class="subscribe-fineprint">Only when a new pre-sale drops. No spam. Unsubscribe anytime.</div>
         <div class="subscribe-message" id="subscribe-message" role="status" aria-live="polite"></div>
         <iframe name="ml_subscribe_iframe" title="MailerLite subscribe" style="display:none" aria-hidden="true"></iframe>
 
@@ -631,20 +639,12 @@
           <div class="subscribe-success-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <p>You're on the list! We'll email you the moment the next fruit pastry pre-sale goes live.</p>
+          <p>You're on the list! We'll email you the moment the next pre-sale goes live.</p>
         </div>
       </section>
     </div>
 
-    <!-- Order CTA -->
-    <div class="order-cta-wrap">
-      <h3>Pre-sale open now?</h3>
-      <p>If a batch is live right now, you can order it directly here.</p>
-      <a href="https://www.mycustombakes.com/sweetelevationbakery/presales" target="_blank" rel="noopener" class="order-cta">
-        Order the Current Batch
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-      </a>
-    </div>
+    <div class="presales-foot-spacer"></div>
 
   </main>
 
@@ -757,7 +757,7 @@
   </script>
 
   <!-- ====================================================
-       FRUIT PASTRY SUBSCRIBE FORM (MailerLite)
+       PRE-SALE SUBSCRIBE FORM (MailerLite)
        ----------------------------------------------------
        Posts to the MailerLite subscribe endpoint via a
        hidden iframe so the page never navigates away. The
@@ -782,8 +782,6 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       }
 
-      // MailerLite's response loads into the hidden iframe — treat
-      // that as confirmation and reveal the success panel.
       if (iframe) {
         iframe.addEventListener('load', function() {
           if (!submitting) return;
@@ -805,7 +803,6 @@
           return;
         }
 
-        // reCAPTCHA is required by the MailerLite form.
         if (window.grecaptcha && typeof grecaptcha.getResponse === 'function' && grecaptcha.getResponse().length === 0) {
           e.preventDefault();
           message.classList.add('error');
@@ -813,14 +810,12 @@
           return;
         }
 
-        // Valid — let the form POST to the hidden iframe.
         emailInput.classList.remove('invalid');
         button.disabled = true;
         button.textContent = 'Joining…';
         message.textContent = '';
         submitting = true;
 
-        // Safety net: if the iframe load doesn't fire, still show success.
         setTimeout(function() {
           if (submitting) {
             submitting = false;
