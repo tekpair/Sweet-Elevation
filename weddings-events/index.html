@@ -426,6 +426,38 @@
     line-height: 1.7;
   }
 
+  /* ─── Trusted By ─── */
+  .trust {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 84px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .trust::before {
+    content: ''; position: absolute; top: -90px; right: -70px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, var(--peach-deep) 0%, transparent 65%);
+    opacity: 0.25; border-radius: 50%; pointer-events: none;
+  }
+  .trust-inner { max-width: 760px; margin: 0 auto; position: relative; }
+  .trust-script {
+    font-family: 'Caveat', cursive;
+    font-size: 26px; color: var(--peach); font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .trust h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 4vw, 46px); font-weight: 400;
+    line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px;
+  }
+  .trust h2 em { font-style: italic; color: var(--peach); }
+  .trust p {
+    font-size: 16px; color: rgba(250, 243, 234, 0.72);
+    line-height: 1.7; max-width: 600px; margin: 0 auto;
+  }
+
   /* ─── Carousel ─── */
   .gallery {
     padding: 110px 0 100px;
@@ -1319,6 +1351,8 @@
     .planning { padding: 80px 24px; }
     .planning-grid { grid-template-columns: 1fr; gap: 14px; }
 
+    .trust { padding: 64px 24px; }
+
     .gallery { padding: 80px 0; }
     .gallery-head, .carousel-wrap { padding-left: 24px; padding-right: 24px; }
     .carousel-item { width: 78vw; }
@@ -1514,6 +1548,15 @@
           <p>We'll deliver to your venue, set up the cake, arrange the table, and make sure everything's presentation-ready.</p>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="trust">
+      <div class="trust-inner">
+        <div class="trust-script">in good company</div>
+        <h2>Trusted by <em>big names</em>, too.</h2>
+        <p>It's not just weddings and private parties. We've created custom desserts and dessert tables for large, well-known companies and reputable brands — delivered on time, on spec, and ready to impress.</p>
       </div>
     </section>
 
