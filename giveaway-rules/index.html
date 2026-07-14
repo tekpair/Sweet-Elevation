@@ -248,6 +248,24 @@
     text-underline-offset: 2px;
   }
   .doc a:hover { color: var(--navy); }
+  .entry-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 6px 0 4px;
+    background: var(--navy);
+    color: var(--cream) !important;
+    text-decoration: none !important;
+    border-radius: 100px;
+    padding: 13px 26px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .entry-btn:hover { background: var(--peach-deep); color: var(--cream) !important; transform: translateY(-1px); }
+  .entry-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
 
   .doc-intro {
     background: var(--cream-deep);
@@ -463,7 +481,13 @@
 
       <h2>4. How to <em>Enter</em></h2>
       <p>During the giveaway period, eligible participants may receive one automatic entry by purchasing Elevation Jars from Sweet Elevation Bakery.</p>
-      <p>No purchase is necessary to enter or win. To enter without making a purchase, complete the official free entry form linked on this page.</p>
+      <p>No purchase is necessary to enter or win. To enter without making a purchase, complete the <a href="https://forms.gle/mPejSfjc5cAediuB7" target="_blank" rel="noopener">official free entry form</a>.</p>
+      <p>
+        <a href="https://forms.gle/mPejSfjc5cAediuB7" target="_blank" rel="noopener" class="entry-btn">
+          Enter for Free
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+      </p>
       <p>Limit one entry per person, regardless of entry method. Duplicate entries may be disqualified. A purchase does not increase your chances of winning.</p>
 
       <h2>5. <em>Prizes</em></h2>
