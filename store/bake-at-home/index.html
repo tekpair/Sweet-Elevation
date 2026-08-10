@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  WEBSITE BY TEKPAIR
+  ============================================================
+
+  Design & Development: Tekpair
+  tekpair.com/webdesign | Cohoes, NY | Capital Region
+
+  A site like this starts at $300.
+  connor@tekpair.com
+
+  ============================================================
+-->
+
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0LS4N0398"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q0LS4N0398');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Bake at Home | Sweet Elevation Bakery</title>
+<meta name="description" content="Bake at Home by Sweet Elevation Bakery — member-only recipes, step-by-step baking tutorials, bakery business education, and one-time digital masterclasses.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sweet Elevation Bakery">
+<link rel="canonical" href="https://sweetelevationbakery.com/store/bake-at-home/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sweet Elevation Bakery">
+<meta property="og:title" content="Bake at Home | Sweet Elevation Bakery, Latham, NY">
+<meta property="og:description" content="Recipes, tutorials, bakery techniques, business education and one-time digital masterclasses from Sweet Elevation Bakery.">
+<meta property="og:url" content="https://sweetelevationbakery.com/store/bake-at-home/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1f2950">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#faf3ea;
+  --cream-deep:#f4ead9;
+  --navy:#1f2950;
+  --navy-soft:#3d4670;
+  --peach:#f4c4ad;
+  --peach-deep:#e89f80;
+  --ink-soft:#5a5b73;
+  --line:#e8dfd0;
+  --white:#fffdf9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--navy);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+
+/* Navigation */
+header{
+  background:var(--cream);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid var(--line);
+}
+nav{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:22px 48px 18px;
+  max-width:1600px;
+  margin:0 auto;
+  gap:14px;
+}
+.logo-slot a{display:block;line-height:0}
+.logo-slot img{height:78px;width:auto;max-width:260px;object-fit:contain;display:block}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav-links a{
+  text-decoration:none;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:color .2s;
+  position:relative;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--peach-deep)}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0;
+  height:1.5px;
+  background:var(--peach-deep);
+  transition:width .3s;
+}
+.nav-links a:hover::after,.nav-links a.active::after{width:80%}
+
+/* Hero */
+.hero{
+  background:var(--cream-deep);
+  border-bottom:1px solid var(--line);
+  padding:82px 24px 78px;
+  text-align:center;
+}
+.script{
+  font-family:'Caveat',cursive;
+  font-size:32px;
+  color:var(--peach-deep);
+  font-weight:600;
+  transform:rotate(-2deg);
+  display:inline-block;
+  margin-bottom:3px;
+}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(52px,7vw,88px);
+  line-height:1;
+  letter-spacing:-.025em;
+  font-weight:400;
+}
+.hero h1 em{font-style:italic;color:var(--peach-deep)}
+.hero p{
+  max-width:700px;
+  margin:20px auto 0;
+  color:var(--ink-soft);
+  font-size:16px;
+  line-height:1.75;
+}
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:13px 24px;
+  border-radius:100px;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  transition:all .22s;
+  border:1px solid var(--navy);
+  cursor:pointer;
+}
+.btn-primary{background:var(--navy);color:var(--cream)}
+.btn-primary:hover{background:var(--peach-deep);border-color:var(--peach-deep)}
+.btn-secondary{background:transparent;color:var(--navy)}
+.btn-secondary:hover{background:var(--cream)}
+
+/* Credibility / intro */
+.intro{padding:70px 0 18px}
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:34px;
+  align-items:stretch;
+}
+.intro-copy{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, var(--white) 0%, #fff8f1 100%);
+  border-radius:12px;
+  padding:34px;
+  position:relative;
+  overflow:hidden;
+}
+.intro-copy::after{
+  content:'';
+  position:absolute;
+  right:-80px;
+  top:-80px;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(244,196,173,.45) 0%, rgba(244,196,173,0) 68%);
+  pointer-events:none;
+}
+.intro-copy h2,.section-head h2{
+  font-family:'DM Serif Display',serif;
+  font-size:42px;
+  line-height:1.08;
+  font-weight:400;
+  letter-spacing:-.015em;
+}
+.intro-copy h2 em,.section-head h2 em{font-style:italic;color:var(--peach-deep)}
+.intro-copy p{color:var(--ink-soft);margin-top:15px;font-size:14px;max-width:640px;position:relative;z-index:1}
+.intro-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+  position:relative;
+  z-index:1;
+}
+.intro-points span{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:100px;
+  background:rgba(255,255,255,.8);
+  border:1px solid var(--line);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--navy);
+}
+.intro-points span::before{
+  content:'•';
+  color:var(--peach-deep);
+  font-size:15px;
+  line-height:1;
+}
+.experience-card{
+  background:var(--navy);
+  color:var(--cream);
+  border-radius:12px;
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  min-height:330px;
+}
+.experience-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(31,41,80,.96) 0%, rgba(31,41,80,.88) 48%, rgba(31,41,80,.58) 100%);
+  z-index:1;
+}
+.experience-card .jennifer-silhouette{
+  position:absolute;
+  right:-10px;
+  bottom:0;
+  height:100%;
+  width:auto;
+  object-fit:cover;
+  opacity:.45;
+  z-index:0;
+  filter:grayscale(100%) contrast(1.05);
+}
+.experience-card .small{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:600;
+  color:var(--peach);
+  margin-bottom:8px;
+  position:relative;
+  z-index:2;
+}
+.experience-card strong{
+  font-family:'DM Serif Display',serif;
+  font-size:28px;
+  font-weight:400;
+  line-height:1.15;
+  position:relative;
+  z-index:2;
+  max-width:360px;
+}
+.experience-card p{
+  color:rgba(250,243,234,.76);
+  font-size:13px;
+  margin-top:10px;
+  position:relative;
+  z-index:2;
+  max-width:360px;
+}
+
+/* Memberships */
+.memberships{padding:68px 0 78px}
+.section-head{text-align:center;max-width:760px;margin:0 auto 36px}
+.section-head p{color:var(--ink-soft);font-size:14px;margin-top:11px}
+.tier-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  align-items:stretch;
+}
+.tier{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:30px 28px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  box-shadow:0 10px 28px rgba(31,41,80,.035);
+}
+.tier.popular{
+  border:2px solid var(--peach-deep);
+  transform:translateY(-8px);
+  box-shadow:0 16px 40px rgba(31,41,80,.08);
+}
+.popular-badge{
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--peach-deep);
+  color:#fff;
+  border-radius:100px;
+  padding:5px 14px;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.tier-kicker{
+  color:var(--peach-deep);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:700;
+}
+.tier h3{
+  font-family:'DM Serif Display',serif;
+  font-size:29px;
+  font-weight:400;
+  margin-top:4px;
+}
+.price{
+  font-family:'DM Serif Display',serif;
+  font-size:40px;
+  line-height:1;
+  margin:17px 0 4px;
+}
+.price small{
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  font-weight:400;
+}
+.tier-desc{
+  color:var(--ink-soft);
+  font-size:13px;
+  min-height:64px;
+  margin-bottom:17px;
+}
+.perks{
+  list-style:none;
+  border-top:1px solid var(--line);
+  padding-top:16px;
+  margin-bottom:23px;
+  flex:1;
+}
+.perks li{
+  position:relative;
+  padding-left:23px;
+  margin:10px 0;
+  font-size:13px;
+  line-height:1.5;
+}
+.perks li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--peach-deep);
+  font-weight:800;
+}
+.perks .reward{
+  font-weight:600;
+  color:var(--navy);
+}
+.tier .btn{width:100%}
+.membership-note{
+  max-width:900px;
+  margin:24px auto 0;
+  padding:16px 20px;
+  background:var(--cream-deep);
+  border:1px solid var(--line);
+  border-radius:9px;
+  color:var(--ink-soft);
+  font-size:11px;
+  text-align:center;
+}
+.membership-note strong{color:var(--navy)}
+
+/* One-time products */
+.one-time{
+  background:var(--cream-deep);
+  padding:82px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.product-feature{
+  max-width:900px;
+  margin:32px auto 0;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+}
+.product-art{
+  min-height:330px;
+  background:var(--navy);
+  position:relative;
+  overflow:hidden;
+}
+.product-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.product-art::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(31,41,80,.08) 0%, rgba(31,41,80,.2) 100%);
+}
+.product-body{padding:38px;display:flex;flex-direction:column;justify-content:center}
+.product-tag{
+  color:var(--peach-deep);
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:9px;
+  font-weight:700;
+}
+.product-body h3{
+  font-family:'DM Serif Display',serif;
+  font-size:32px;
+  font-weight:400;
+  line-height:1.12;
+  margin:7px 0 12px;
+}
+.product-body p{color:var(--ink-soft);font-size:13px}
+.product-list{list-style:none;margin:16px 0 21px}
+.product-list li{font-size:12px;margin:7px 0;padding-left:20px;position:relative}
+.product-list li::before{content:'✓';position:absolute;left:0;color:var(--peach-deep);font-weight:800}
+.product-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.product-price{font-family:'DM Serif Display',serif;font-size:29px}
+.product-price small{font-family:'Inter',sans-serif;color:var(--ink-soft);font-size:11px}
+.product-foot .btn{padding:11px 18px}
+
+/* FAQ-ish clarity */
+.clarity{padding:78px 0}
+.clarity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.clarity-card{
+  border:1px solid var(--line);
+  background:var(--white);
+  border-radius:10px;
+  padding:25px;
+}
+.clarity-card h3{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400}
+.clarity-card p{color:var(--ink-soft);font-size:12px;margin-top:7px}
+
+/* Member access */
+.member-access{padding:0 0 86px}
+.access-box{
+  background:var(--navy);
+  color:var(--cream);
+  border-radius:12px;
+  padding:36px 38px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+.access-box h2{font-family:'DM Serif Display',serif;font-size:30px;font-weight:400}
+.access-box p{font-size:13px;color:rgba(250,243,234,.7);margin-top:5px}
+.access-box .btn{background:var(--peach);color:var(--navy);border-color:var(--peach);flex-shrink:0}
+.access-box .btn:hover{background:var(--cream);border-color:var(--cream)}
+
+/* Footer */
+footer{
+  background:var(--navy);
+  color:var(--cream);
+  padding:90px 48px 36px;
+  border-top:1px solid rgba(250,243,234,.08);
+}
+.foot-inner{max-width:1400px;margin:0 auto}
+.foot-top{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr;
+  gap:64px;
+  padding-bottom:56px;
+  border-bottom:1px solid rgba(250,243,234,.1);
+  margin-bottom:36px;
+}
+.foot-brand .foot-logo{
+  background:var(--cream);
+  padding:16px 20px;
+  border-radius:8px;
+  width:fit-content;
+  margin-bottom:24px;
+}
+.foot-brand .foot-logo img{height:64px;width:auto;max-width:200px;display:block}
+.foot-tagline{
+  font-family:'DM Serif Display',serif;
+  font-style:italic;
+  font-size:18px;
+  line-height:1.5;
+  color:var(--peach);
+  max-width:280px;
+  margin-bottom:24px;
+}
+.foot-contact{font-size:14px;color:rgba(250,243,234,.65);line-height:1.8}
+.foot-contact a{color:rgba(250,243,234,.85);text-decoration:none}
+.foot-col h4{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:20px;color:var(--peach);font-weight:400}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:12px}
+.foot-col a{color:rgba(250,243,234,.65);text-decoration:none;font-size:14px}
+.foot-col a:hover{color:var(--peach)}
+.foot-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  color:rgba(250,243,234,.5);
+  letter-spacing:.04em;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.tekpair-credit{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--peach);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:500;
+}
+
+/* Mobile bottom tab bar to match current site */
+.bottom-tab-bar{display:none}
+
+@media(max-width:1000px){
+  .tier-grid{grid-template-columns:1fr}
+  .tier.popular{transform:none}
+  .intro-grid{grid-template-columns:1fr}
+  .reward-box{grid-template-columns:1fr}
+  .product-feature{grid-template-columns:1fr}
+  .product-art{min-height:220px}
+  .clarity-grid{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  header nav .nav-links{display:none}
+  nav{padding:18px 20px 16px}
+  .logo-slot img{height:60px}
+  .wrap{padding:0 24px}
+  footer{padding:70px 24px 32px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:40px 32px;padding-bottom:40px}
+  .foot-brand{grid-column:1/-1}
+  .foot-bottom{justify-content:center;flex-direction:column;gap:14px;text-align:center}
+  .bottom-tab-bar{
+    flex-direction:row;
+    align-items:stretch;
+    padding:0;
+    margin:0;
+    max-width:none;
+    gap:0;
+    display:flex;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--cream);
+    border-top:1px solid var(--line);
+    z-index:200;
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    box-shadow:0 -2px 10px rgba(31,41,80,.07);
+  }
+  .tab-item{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:7px 1px 8px;
+    gap:2px;
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:7.5px;
+    font-weight:500;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    min-width:0;
+    line-height:1;
+  }
+  .tab-item svg{width:18px;height:18px;flex-shrink:0}
+  .tab-item span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8px}
+  .tab-item.active{color:var(--peach-deep)}
+  .tab-quote{flex:1.5}
+  .tab-quote .tab-icon-wrap{
+    background:var(--navy);
+    border-radius:50%;
+    width:32px;height:32px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .tab-quote svg{width:15px;height:15px;color:var(--cream)}
+  .tab-quote span{color:var(--navy);font-weight:600;font-size:8px}
+  body{padding-bottom:calc(54px + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:650px){
+  .hero{padding:68px 20px 62px}
+  .hero p{font-size:14px}
+  .intro{padding-top:45px}
+  .intro-copy,.experience-card{padding:27px 23px}
+  .intro-copy h2,.section-head h2{font-size:35px}
+  .stats{grid-template-columns:1fr}
+  .reward-steps{grid-template-columns:1fr}
+  .product-body{padding:28px 23px}
+  .access-box{flex-direction:column;align-items:flex-start;padding:30px 24px}
+  .foot-top{grid-template-columns:1fr;gap:32px}
+}
+
+/* ─── Bake at Home photo storefront header ─── */
+.bah-storefront-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(20,29,61,.90) 0%, rgba(31,41,80,.78) 48%, rgba(31,41,80,.48) 100%),
+    url('assets/bakeathomecovernotext.png') center center / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+  padding: 72px 48px 68px;
+}
+.bah-storefront-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13,21,50,.10) 0%, rgba(13,21,50,.24) 100%);
+  pointer-events: none;
+}
+.bah-storefront-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 285px;
+  gap: 60px;
+  align-items: end;
+}
+.bah-storefront-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(62px, 8vw, 100px);
+  line-height: .92;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  color: var(--cream);
+  margin: 0;
+  text-shadow: 0 3px 24px rgba(8,14,34,.18);
+}
+.bah-storefront-hero h1 em {
+  color: var(--peach);
+  font-style: italic;
+}
+.bah-storefront-copy {
+  max-width: 720px;
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(250,243,234,.86);
+}
+.bah-storefront-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+.bah-storefront-hero .btn-primary {
+  background: var(--peach);
+  color: var(--navy);
+  border-color: var(--peach);
+}
+.bah-storefront-hero .btn-primary:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+}
+.bah-storefront-hero .btn-secondary {
+  background: rgba(250,243,234,.08);
+  color: var(--cream);
+  border-color: rgba(250,243,234,.48);
+  backdrop-filter: blur(2px);
+}
+.bah-storefront-hero .btn-secondary:hover {
+  background: rgba(250,243,234,.16);
+  border-color: var(--cream);
+}
+.bah-storefront-side {
+  min-width: 0;
+  border-left: 1px solid rgba(250,243,234,.28);
+  padding-left: 30px;
+  padding-bottom: 5px;
+}
+.bah-storefront-side .small {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--peach);
+  margin-bottom: 7px;
+}
+.bah-storefront-side strong {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 25px;
+  line-height: 1.12;
+  font-weight: 400;
+  color: var(--cream);
+}
+.bah-storefront-side p {
+  margin-top: 9px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(250,243,234,.70);
+}
+
+@media (max-width: 900px) {
+  .bah-storefront-hero {
+    min-height: 0;
+    padding: 62px 24px 58px;
+    background-position: 62% center;
+  }
+  .bah-storefront-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+  .bah-storefront-side {
+    max-width: 520px;
+    border-left: none;
+    border-top: 1px solid rgba(250,243,234,.28);
+    padding-left: 0;
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bah-storefront-hero {
+    padding: 54px 22px 52px;
+    background-position: 68% center;
+  }
+  .bah-storefront-hero h1 {
+    font-size: 58px;
+  }
+  .bah-storefront-copy {
+    font-size: 14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav aria-label="Main navigation">
+    <div class="logo-slot">
+      <a href="/" aria-label="Sweet Elevation Bakery — Home">
+        <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/about-us/">About</a></li>
+      <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+      <li><a href="/store/" class="active">Store</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/charcuterie/">Charcuterie</a></li>
+      <li><a href="/careers/">Careers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="bah-storefront-hero">
+  <div class="bah-storefront-inner">
+    <div>
+      <h1>Bake <em>at Home</em></h1>
+      <p class="bah-storefront-copy">A growing monthly library of recipes, video instruction, techniques, troubleshooting and real bakery knowledge — created for bakers who want useful content they can actually come back to.</p>
+
+      <div class="bah-storefront-actions">
+        <a class="btn btn-primary" href="#memberships">View Memberships</a>
+        <a class="btn btn-secondary" href="#one-time">One-Time Products</a>
+      </div>
+    </div>
+
+    <div class="bah-storefront-side">
+      <span class="small">New content added monthly</span>
+      <strong>Recipes. Videos. Real bakery knowledge.</strong>
+      <p>Choose the membership level that matches the kind of help and access you want.</p>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <div class="script">built from a working bakery</div>
+      <h2>Useful content from people who <em>actually do this every day.</em></h2>
+      <p>Bake at Home is where we share the recipes, techniques, troubleshooting and business knowledge behind Sweet Elevation — organized into membership levels so you can choose how deep you want to go.</p>
+    </div>
+
+    <aside class="experience-card">
+      <img src="assets/jennifer.jpg" alt="Jennifer" class="jennifer-silhouette">
+      <div class="small">Taught by Jennifer</div>
+      <strong>Real bakery experience — not just internet recipes.</strong>
+      <p>Jennifer is the owner and Executive Pastry Chef of Sweet Elevation Bakery, bringing more than 20 years of baking and pastry experience along with real-world storefront bakery ownership behind every lesson.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="memberships" id="memberships">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="script">choose your level</div>
+      <h2>Bake at Home <em>Memberships</em></h2>
+      <p>Start with recipes, add hands-on video instruction, or go all the way inside the bakery.</p>
+    </div>
+
+    <div class="tier-grid">
+
+      <article class="tier">
+        <div class="tier-kicker">Tier One</div>
+        <h3>Recipe Club</h3>
+        <div class="price">$7.99 <small>/ month</small></div>
+        <p class="tier-desc">For bakers who want reliable recipes, practical guidance and fresh inspiration each month.</p>
+
+        <ul class="perks">
+          <li>2 member-only recipes each month</li>
+          <li>Printable recipe cards</li>
+          <li>Ingredient, substitution &amp; storage guidance</li>
+          <li>Member-only baking tips &amp; mini posts</li>
+          <li class="reward">10% Bake Club Rewards</li>
+        </ul>
+
+        <a class="btn btn-primary gumroad-button" href="https://sweetelevation.gumroad.com/l/bake-at-home?option=dvcDBqvTzX1iA2A2eqhc7w%3D%3D">Join Recipe Club</a>
+      </article>
+
+      <article class="tier popular">
+        <span class="popular-badge">Most Popular</span>
+        <div class="tier-kicker">Tier Two</div>
+        <h3>Baker's Bench</h3>
+        <div class="price">$16.99 <small>/ month</small></div>
+        <p class="tier-desc">For bakers who want more than a recipe — see exactly how it's made with video instruction.</p>
+
+        <ul class="perks">
+          <li>Everything in Recipe Club</li>
+          <li>2 step-by-step recipe help videos each month</li>
+          <li>Cake, cookie, filling &amp; decorating techniques</li>
+          <li>Vote on upcoming recipes &amp; tutorials</li>
+          <li class="reward">15% Bake Club Rewards</li>
+        </ul>
+
+        <a class="btn btn-primary gumroad-button" href="https://sweetelevation.gumroad.com/l/bake-at-home?option=AOVXmeI7sX-TbBHTbELaDA%3D%3D">Join Baker's Bench</a>
+      </article>
+
+      <article class="tier">
+        <div class="tier-kicker">Tier Three</div>
+        <h3>Inside the Bakery</h3>
+        <div class="price">$28.99 <small>/ month</small></div>
+        <p class="tier-desc">For serious bakers who want troubleshooting, business education and real bakery operations.</p>
+
+        <ul class="perks">
+          <li>Everything in Baker's Bench</li>
+          <li>2 operations &amp; profitability posts each month</li>
+          <li>Monthly member troubleshooting Q&amp;A</li>
+          <li>Behind-the-scenes bakery systems &amp; workflow</li>
+          <li class="reward">20% Bake Club Rewards</li>
+        </ul>
+
+        <a class="btn btn-primary gumroad-button" href="https://sweetelevation.gumroad.com/l/bake-at-home?option=9hHoHEfVsq-A7v9nzmXMMw%3D%3D">Go Inside the Bakery</a>
+      </article>
+
+    </div>
+
+    <div class="membership-note">
+      <strong>Digital memberships only.</strong> Bake Club Box subscriptions are sold separately. Membership content and access are delivered through Gumroad.
+    </div>
+  </div>
+</section>
+
+
+<section class="one-time" id="one-time">
+  <div class="wrap">
+    <div class="section-head">
+            <h2>One-Time <em>Masterclasses</em></h2>
+      <p>Buy the lesson you want and learn at your own pace without a monthly subscription.</p>
+    </div>
+
+    <article class="product-feature">
+      <div class="product-art">
+        <img src="assets/fruitpastrymaster.png" alt="Fruit Pastry Masterclass">
+      </div>
+
+      <div class="product-body">
+        <div class="product-tag">Complete Recipe + Video Tutorial</div>
+        <h3>Fruit Pastry Masterclass</h3>
+        <p>Learn how to make Sweet Elevation-style fruit pastries from start to finish with the complete recipe and detailed step-by-step video instruction.</p>
+
+        <ul class="product-list">
+          <li>Complete fruit pastry recipe</li>
+          <li>Full recorded tutorial video</li>
+          <li>Step-by-step process and technique guidance</li>
+          <li>One-time purchase</li>
+        </ul>
+
+        <div class="product-foot">
+          <div class="product-price">$35 <small>one-time</small></div>
+          <a class="btn btn-primary" href="#" data-gumroad="fruit-pastry-masterclass">Buy Masterclass</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="clarity">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Choose what works for <em>you.</em></h2>
+    </div>
+
+    <div class="clarity-grid">
+      <div class="clarity-card">
+        <h3>Recipes Only?</h3>
+        <p>Recipe Club gives you new tested recipes, printable cards and practical baking notes without paying for content you don't need.</p>
+      </div>
+      <div class="clarity-card">
+        <h3>Want to See It Done?</h3>
+        <p>Baker's Bench adds recorded tutorials and technique instruction so you can watch the process instead of guessing from a recipe.</p>
+      </div>
+      <div class="clarity-card">
+        <h3>Building a Bakery?</h3>
+        <p>Inside the Bakery adds troubleshooting, operations, workflow and profitability content for bakers who want the commercial side too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="member-access">
+  <div class="wrap">
+    <div class="access-box">
+      <div>
+        <h2>Already a Bake at Home member?</h2>
+        <p>Access your membership content, recipes and tutorials through your digital account.</p>
+      </div>
+      <a class="btn" href="#" data-gumroad="member-library">Access My Content</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <img src="/assets/logo.png" alt="Sweet Elevation Bakery">
+        </div>
+        <p class="foot-tagline">Real recipes, real ingredients, made fresh in Latham, NY.</p>
+        <div class="foot-contact">
+          <a href="https://maps.google.com/?q=356+Troy+Schenectady+Rd+Latham+NY+12110" target="_blank" rel="noopener">356 Troy Schenectady Rd, Latham, NY 12110</a><br>
+          <a href="tel:+15188180010">(518) 818-0010</a><br>
+          Tue – Sat
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Order</h4>
+        <ul>
+          <li><a href="https://www.mycustombakes.com/sweetelevationbakery/products" target="_blank" rel="noopener">Custom Quotes</a></li>
+          <li><a href="/presales/">Pre-Sales</a></li>
+          <li><a href="https://www.doordash.com/store/36335671" target="_blank" rel="noopener">DoorDash Delivery</a></li>
+          <li><a href="/weddings-events/">Weddings &amp; Events</a></li>
+          <li><a href="/charcuterie/">Charcuterie</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/store/bake-at-home/">Bake at Home</a></li>
+          <li><a href="/store/">Recipes</a></li>
+          <li><a href="/store/bake-club/">Bake Club</a></li>
+          <li><a href="/portfolio/">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about-us/">Our Story</a></li>
+          <li><a href="tel:+15188180010">Contact</a></li>
+          <li><a href="/feedback/">Feedback Center</a></li>
+          <li><a href="https://www.facebook.com/sweetelevationbakery" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/sweetelevationbakery" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <div>© 2026 Sweet Elevation Bakery</div>
+      <div>
+        Website by
+        <a href="https://tekpair.com/webdesign" target="_blank" rel="noopener" class="tekpair-credit">
+          <span>Tekpair</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="bottom-tab-bar" aria-label="Mobile navigation">
+  <a href="/about-us/" class="tab-item" data-path="/about-us/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span>About</span>
+  </a>
+  <a href="/weddings-events/" class="tab-item" data-path="/weddings-events/">
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2C12 7 7 12 2 12C7 12 12 17 12 22C12 17 17 12 22 12C17 12 12 7 12 2Z"/></svg>
+    <span>Weddings</span>
+  </a>
+  <a href="/store/" class="tab-item active" data-path="/store/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <span>Store</span>
+  </a>
+  <a href="https://www.mycustombakes.com/sweetelevationbakery/products" class="tab-item tab-quote" target="_blank" rel="noopener" aria-label="Get a custom quote">
+    <div class="tab-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8H4v8"/><path d="M4 13v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M12 9V5"/><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5c0 .83-1.5 2.5-1.5 2.5s-1.5-1.67-1.5-2.5A1.5 1.5 0 0 1 12 3z" fill="currentColor"/></svg>
+    </div>
+    <span>Quote</span>
+  </a>
+  <a href="/portfolio/" class="tab-item" data-path="/portfolio/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span>Portfolio</span>
+  </a>
+  <a href="/charcuterie/" class="tab-item" data-path="/charcuterie/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="11"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+    <span>Boards</span>
+  </a>
+  <a href="/careers/" class="tab-item" data-path="/careers/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+    <span>Careers</span>
+  </a>
+</nav>
+
+<script src="https://gumroad.com/js/gumroad.js"></script>
+
+<script>
+/*
+  GUMROAD LINKS
+*/
+const gumroadLinks = {
+  'fruit-pastry-masterclass': '',
+  'member-library': ''
+};
+
+document.querySelectorAll('[data-gumroad]').forEach(link => {
+  const key = link.dataset.gumroad;
+  const target = gumroadLinks[key];
+
+  if (target) {
+    link.href = target;
+    if (key === 'fruit-pastry-masterclass') {
+      link.classList.add('gumroad-button');
+    }
+  } else {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      alert(key === 'fruit-pastry-masterclass'
+        ? 'Fruit Pastry Masterclass purchasing is coming soon.'
+        : 'Member library access link coming soon.');
+    });
+  }
+});
+
+/* Keep Store highlighted on mobile for all /store/ pages */
+(function(){
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.tab-item[data-path]').forEach(function(el){
+    const dp = el.getAttribute('data-path').replace(/\/$/, '') || '/';
+    if (dp === '/' ? (path === '/' || path === '') : (path === dp || path.startsWith(dp + '/'))) {
+      el.classList.add('active');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
