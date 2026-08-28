@@ -1275,110 +1275,181 @@
     </div>
   </div>
 
-  <main>
+<main>
 
-    <div class="crumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/store/">Store</a><span class="sep">/</span><span class="current">The Bake Club Box</span>
-    </div>
+  <div class="crumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/store/">Store</a>
+    <span class="sep">/</span>
+    <span class="current">The Bake Club Box</span>
+  </div>
 
-    <section class="product">
-      <div class="product-grid">
+  <section class="product">
+    <div class="product-grid">
 
-        <!-- Product Image -->
-        <div class="product-img-wrap">
-          <img src="/assets/comingsoonphoto.jpg" alt="The Bake Club Box by Sweet Elevation Bakery" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="product-img-placeholder" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 8l-9 4-9-4 9-4 9 4z"/>
-              <path d="M3 8v8l9 4 9-4V8"/>
-              <line x1="12" y1="12" x2="12" y2="20"/>
+      <!-- Product Image -->
+      <div class="product-img-wrap">
+        <img
+          src="/assets/comingsoonphoto.jpg"
+          alt="The Bake Club Box by Sweet Elevation Bakery"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="product-img-placeholder" style="display:none;">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 8l-9 4-9-4 9-4 9 4z"/>
+            <path d="M3 8v8l9 4 9-4V8"/>
+            <line x1="12" y1="12" x2="12" y2="20"/>
+          </svg>
+
+          <span>Box Photo</span>
+        </div>
+      </div>
+
+
+      <!-- Product Info -->
+      <div class="product-info">
+
+        <div class="by-jen">
+          <div class="by-jen-avatar">
+            <img
+              src="/assets/jennifer.jpg"
+              alt="Jennifer, Executive Pastry Chef"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='J';"
+            >
+          </div>
+
+          <div class="by-jen-text">
+            Curated by <em>Jennifer</em>
+
+            <svg
+              class="verified-check"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-label="Verified"
+            >
+              <path d="M12 2l2.39 1.96L17.5 3.5l.54 3.11L21 8l-1.04 2.95L21 14l-2.96 1.39L17.5 18.5l-3.11-.54L12 20l-2.39-1.96L6.5 18.5l-.54-3.11L3 14l1.04-2.95L3 8l2.96-1.39L6.5 3.5l3.11.54L12 2z"/>
+              <path
+                d="M9.5 12.5l2 2 4-4"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
             </svg>
-            <span>Box Photo</span>
           </div>
         </div>
 
-        <!-- Product Info -->
-        <div class="product-info">
 
-          <div class="by-jen">
-            <div class="by-jen-avatar">
-              <img src="/assets/jennifer.jpg" alt="Jennifer, Executive Pastry Chef" onerror="this.style.display='none'; this.parentElement.innerHTML='J';">
-            </div>
-            <div class="by-jen-text">
-              Curated by <em>Jennifer</em>
-              <svg class="verified-check" viewBox="0 0 24 24" fill="currentColor" aria-label="Verified">
-                <path d="M12 2l2.39 1.96L17.5 3.5l.54 3.11L21 8l-1.04 2.95L21 14l-2.96 1.39L17.5 18.5l-3.11-.54L12 20l-2.39-1.96L6.5 18.5l-.54-3.11L3 14l1.04-2.95L3 8l2.96-1.39L6.5 3.5l3.11.54L12 2z"/>
-                <path d="M9.5 12.5l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <h1 class="product-title">
+          The <em>Bake Club</em> Box
+        </h1>
+
+
+        <!-- This Month's Features -->
+        <div class="featured-bakes">
+
+          <div class="featured-bakes-header">
+            <span class="featured-bakes-pill">
+
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
-            </div>
+
+              This Month Features
+            </span>
+
+            <span class="featured-bakes-month">
+              August
+            </span>
           </div>
 
-          <h1 class="product-title">The <em>Bake Club</em> Box</h1>
 
-<div class="featured-bakes">
-  <div class="featured-bakes-header">
-    <span class="featured-bakes-pill">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-      </svg>
-      This Month Features
-    </span>
-    <span class="featured-bakes-month">August</span>
-  </div>
-  <div class="featured-bakes-grid">
+          <div class="featured-bakes-grid">
 
-<div class="featured-bake">
-  <span class="featured-bake-num">1</span>
+            <!-- Item 1 -->
+            <div class="featured-bake">
+              <span class="featured-bake-num">1</span>
 
-  <div
-    class="featured-bake-icon-wrap"
-    style="--icon-color:#c97552; --icon-bg:#f7e3d9;"
-  >
-    <i class="ph ph-chart-pie-slice featured-bake-icon" aria-hidden="true"></i>
-  </div>
+              <div
+                class="featured-bake-icon-wrap"
+                style="--icon-color:#c97552; --icon-bg:#f7e3d9;"
+              >
+                <i
+                  class="ph ph-chart-pie-slice featured-bake-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
 
-  <div class="featured-bake-name">August "Classic" Pies</div>
+              <div class="featured-bake-name">
+                August "Classic" Pies
+              </div>
 
-  <div class="featured-bake-desc">
-    One apple and one very berry mini pie, packed with authentic flavor.
-  </div>
-</div>
+              <div class="featured-bake-desc">
+                One apple and one very berry mini pie, packed with authentic flavor.
+              </div>
+            </div>
 
 
-<div class="featured-bake">
-  <span class="featured-bake-num">2</span>
+            <!-- Item 2 -->
+            <div class="featured-bake">
+              <span class="featured-bake-num">2</span>
 
-  <div
-    class="featured-bake-icon-wrap"
-    style="--icon-color:#b9824f; --icon-bg:#f4e8d5;"
-  >
-    <i class="ph ph-cake featured-bake-icon" aria-hidden="true"></i>
-  </div>
+              <div
+                class="featured-bake-icon-wrap"
+                style="--icon-color:#b9824f; --icon-bg:#f4e8d5;"
+              >
+                <i
+                  class="ph ph-cake featured-bake-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
 
-  <div class="featured-bake-name">Cinnamon Crumb Cake</div>
+              <div class="featured-bake-name">
+                Cinnamon Crumb Cake
+              </div>
 
-  <div class="featured-bake-desc">
-    Soft cinnamon cake topped with a buttery, sweet crumb.
-  </div>
-</div>
+              <div class="featured-bake-desc">
+                Soft cinnamon cake topped with a buttery, sweet crumb.
+              </div>
+            </div>
 
 
-<div class="featured-bake">
-  <span class="featured-bake-num">3</span>
+            <!-- Item 3 -->
+            <div class="featured-bake">
+              <span class="featured-bake-num">3</span>
 
-  <div
-    class="featured-bake-icon-wrap"
-    style="--icon-color:#a96845; --icon-bg:#f2e3d8;"
-  >
-    <i class="ph ph-cookie featured-bake-icon" aria-hidden="true"></i>
-  </div>
+              <div
+                class="featured-bake-icon-wrap"
+                style="--icon-color:#a96845; --icon-bg:#f2e3d8;"
+              >
+                <i
+                  class="ph ph-cookie featured-bake-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
 
-  <div class="featured-bake-name">Snickerdoodle Cookies</div>
+              <div class="featured-bake-name">
+                Snickerdoodle Cookies
+              </div>
 
-  <div class="featured-bake-desc">
-    A soft, chewy cookie rolled in classic cinnamon sugar.
-  </div>
-</div>
+              <div class="featured-bake-desc">
+                A soft, chewy cookie rolled in classic cinnamon sugar.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
 
           <div class="price-row">
             <span class="price-label">Box Price</span>
