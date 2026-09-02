@@ -458,6 +458,108 @@
     line-height: 1.7; max-width: 600px; margin: 0 auto;
   }
 
+  /* ─── Trusted Company Logo Marquee ───
+     Export every logo on a transparent 320 × 160 px (2:1) canvas,
+     or use an SVG with a matching 2:1 viewBox. This shared canvas plus
+     the fixed logo-item dimensions keeps every brand visually balanced. */
+  .trusted-logos {
+    width: min(1180px, calc(100vw - 48px));
+    margin: 42px auto 0;
+    position: relative;
+    z-index: 1;
+  }
+  .logo-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    /* Softly masks each edge so logos fade instead of clipping abruptly. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+  }
+  .logo-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    will-change: transform;
+  }
+  .logo-track.is-ready {
+    animation: logo-scroll var(--logo-scroll-duration, 32s) linear infinite;
+  }
+  .logo-set {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding-right: 48px;
+  }
+  .logo-item {
+    width: 180px;
+    height: 90px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 180px;
+  }
+  .logo-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 140px;
+    max-height: 56px;
+    object-fit: contain;
+    /* White monochrome at rest; original brand colors on interaction. */
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.68;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+  .logo-item:hover img,
+  .logo-item:focus-visible img {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  .logo-item:focus-visible {
+    outline: 2px solid var(--peach);
+    outline-offset: 5px;
+    border-radius: 4px;
+  }
+  .logo-marquee:hover .logo-track,
+  .logo-marquee:focus-within .logo-track {
+    animation-play-state: paused;
+  }
+  .logo-disclaimer {
+    max-width: 900px !important;
+    margin: 24px auto 0 !important;
+    color: rgba(250, 243, 234, 0.52) !important;
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+  }
+  @keyframes logo-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(calc(-1 * var(--logo-loop-width)), 0, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee {
+      overflow-x: auto;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .logo-track.is-ready { animation: none; }
+    .logo-set[aria-hidden="true"] { display: none; }
+  }
+
   /* ─── Carousel ─── */
   .gallery {
     padding: 110px 0 100px;
@@ -1352,6 +1454,11 @@
     .planning-grid { grid-template-columns: 1fr; gap: 14px; }
 
     .trust { padding: 64px 24px; }
+    .trusted-logos { width: calc(100vw - 24px); margin-top: 34px; }
+    .logo-set { gap: 24px; padding-right: 24px; }
+    .logo-item { width: 144px; height: 76px; flex-basis: 144px; }
+    .logo-item img { max-width: 118px; max-height: 48px; }
+    .logo-disclaimer { padding: 0 12px; }
 
     .gallery { padding: 80px 0; }
     .gallery-head, .carousel-wrap { padding-left: 24px; padding-right: 24px; }
@@ -1557,6 +1664,34 @@
         <div class="trust-script">in good company</div>
         <h2>Trusted by <em>big names</em>, too.</h2>
         <p>It's not just weddings and private parties. We've created custom desserts and dessert tables for large, well-known companies and reputable brands — delivered on time, on spec, and ready to impress.</p>
+      </div>
+
+      <div class="trusted-logos" aria-label="Organizations whose representatives have been Sweet Elevation Bakery clients">
+        <div class="logo-marquee">
+          <div class="logo-track">
+            <div class="logo-set">
+              <div class="logo-item" tabindex="0"><img src="/assets/company-01.png" alt="Company One"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-02.png" alt="Company Two"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-03.png" alt="Company Three"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-04.png" alt="Company Four"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-05.png" alt="Company Five"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-06.png" alt="Company Six"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-07.png" alt="Company Seven"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-08.png" alt="Company Eight"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-09.png" alt="Company Nine"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-10.png" alt="Company Ten"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-11.png" alt="Company Eleven"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-12.png" alt="Company Twelve"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-13.png" alt="Company Thirteen"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-14.png" alt="Company Fourteen"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-15.png" alt="Company Fifteen"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-16.png" alt="Company Sixteen"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-17.png" alt="Company Seventeen"></div>
+              <div class="logo-item" tabindex="0"><img src="/assets/company-18.png" alt="Company Eighteen"></div>
+            </div>
+          </div>
+        </div>
+        <p class="logo-disclaimer">All trademarks and logos are the property of their respective owners. Their appearance reflects prior work completed for representatives or teams associated with those organizations and does not imply sponsorship, affiliation, or endorsement of Sweet Elevation Bakery.</p>
       </div>
     </section>
 
@@ -3027,6 +3162,54 @@ function buildCleanFormData() {
           closeMenu();
         }
       });
+    })();
+  </script>
+
+  <!-- Build one exact duplicate of the visible logo set for a truly seamless loop. -->
+  <script>
+    (function() {
+      const track = document.querySelector('.logo-track');
+      if (!track) return;
+
+      const firstSet = track.querySelector('.logo-set');
+      if (!firstSet) return;
+
+      /* Remove any old hand-maintained copies so only the current logos are repeated. */
+      track.querySelectorAll('.logo-set:not(:first-child)').forEach(function(set) {
+        set.remove();
+      });
+
+      const duplicateSet = firstSet.cloneNode(true);
+      duplicateSet.setAttribute('aria-hidden', 'true');
+      duplicateSet.querySelectorAll('[tabindex]').forEach(function(item) {
+        item.removeAttribute('tabindex');
+      });
+      duplicateSet.querySelectorAll('img').forEach(function(image) {
+        image.alt = '';
+      });
+      track.appendChild(duplicateSet);
+
+      function syncLogoLoop() {
+        const loopWidth = firstSet.getBoundingClientRect().width;
+        if (!loopWidth) return;
+
+        /* Move exactly one complete set before returning to the identical copy. */
+        track.classList.remove('is-ready');
+        track.style.setProperty('--logo-loop-width', loopWidth + 'px');
+        track.style.setProperty('--logo-scroll-duration', Math.max(20, loopWidth / 48) + 's');
+        void track.offsetWidth;
+        track.classList.add('is-ready');
+      }
+
+      requestAnimationFrame(syncLogoLoop);
+      window.addEventListener('load', syncLogoLoop, { once: true });
+
+      if ('ResizeObserver' in window) {
+        const logoResizeObserver = new ResizeObserver(syncLogoLoop);
+        logoResizeObserver.observe(firstSet);
+      } else {
+        window.addEventListener('resize', syncLogoLoop);
+      }
     })();
   </script>
 
