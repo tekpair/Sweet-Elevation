@@ -1043,12 +1043,82 @@ body.menu-open {
   }
 
 
+  /* ─── Thanksgiving pre-sale announcement ─── */
+  .presale-announcement {
+    background: var(--navy);
+    color: var(--cream);
+    overflow: hidden;
+    width: 100%;
+    border-bottom: 1px solid rgba(250, 243, 234, 0.16);
+  }
+  .presale-announcement-link {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .presale-announcement-link:focus-visible {
+    outline: 3px solid var(--peach);
+    outline-offset: -3px;
+  }
+  .presale-announcement-track {
+    display: flex;
+    width: max-content;
+    flex-shrink: 0;
+    animation: thanksgiving-scroll 32s linear infinite;
+  }
+  .presale-announcement-copy {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+    padding-right: 40px;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .presale-announcement-copy .announcement-star,
+  .presale-announcement-copy .announcement-cta { color: var(--peach); }
+  .presale-announcement-link:hover .presale-announcement-track,
+  .presale-announcement-link:focus-visible .presale-announcement-track {
+    animation-play-state: paused;
+  }
+  @keyframes thanksgiving-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (max-width: 600px) {
+    .presale-announcement-link { min-height: 38px; }
+    .presale-announcement-copy { font-size: 10px; gap: 24px; padding-right: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .presale-announcement-track { animation: none; }
+  }
+
 </style>
 </head>
 <body>
 
   <!-- Navigation -->
 <header>
+  <!-- Thanksgiving announcement: replace /presales/ with the direct Thanksgiving ordering URL if desired. -->
+  <div class="presale-announcement">
+    <a class="presale-announcement-link" href="/presales/" aria-label="Thanksgiving pre-sale is now live. Shop the pre-sale.">
+      <span class="presale-announcement-track" aria-hidden="true">
+        <span class="presale-announcement-copy"><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span></span>
+        <span class="presale-announcement-copy"><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span><span class="announcement-star">✦</span><span>Thanksgiving Pre-Sale Is Now Live!</span><span class="announcement-cta">Shop the Pre-Sale →</span></span>
+      </span>
+    </a>
+  </div>
+
+
   <nav aria-label="Main navigation">
     <div class="logo-slot">
       <a href="/" aria-label="Sweet Elevation Bakery — Home">
